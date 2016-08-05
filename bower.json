@@ -1,0 +1,12 @@
+{
+  "name": "yo-guide-web",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "devDependencies": {
+    "foundation-sass": "^5.5.2"
+  }
+}
