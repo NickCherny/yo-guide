@@ -3,6 +3,7 @@ const plumber = require('gulp-plumber');
 const webpack = require('gulp-webpack');
 const livereload = require('gulp-livereload');
 const sass = require('gulp-sass');
+const path = require('path');
 
 gulp.task('sass', function () {
   gulp.src('./public/sass/*.scss')
@@ -19,18 +20,24 @@ gulp.task('watch', function() {
 gulp.task('develop', function () {
   gulp.src('./public/js/developer/**/*.js')
     .pipe(webpack({
+      entry: './public/js/developer/main.js',
+      output: {
+        filename: '[name].js'
+      },
       watch: true,
       module: {
-        loader: [{
-          test: /\.babel.js$/,
-          exclude: /(node_modules|components)/,
+        loaders: [{
+          test: /\.js?$/,
+          exclude: /node_modules/,
           loader: 'babel-loader',
           query: {
-            presets: ['es2015']
+            presets: ['es2015', 'react']
           }
         }]
-      }
+      },
+      devtool: isDevelopment = 'development' ? 'inline-source-map' : null
     }))
+    .pipe(gulp.dest('./public/js/'))
 });
 
 gulp.task('default', [
