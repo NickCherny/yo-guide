@@ -5,6 +5,10 @@
   "scripts": {
     "start": "node --harmony app.js"
   },
+  "engines": {
+    "node": "4.4.3",
+    "npm": "2.15.1"
+  },
   "dependencies": {
     "body-parser": "^1.13.3",
     "compression": "^1.5.2",
