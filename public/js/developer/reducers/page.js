@@ -4,18 +4,15 @@ const initialState = {
 };
 
 export default function page(state = initialState, action){
+  let data;
 
   switch (action.type){
     case 'SET_YEAR':
-      (function(){
-            return {state, year: action.payload}
-          })();
-          break;
+      data = {state, year: action.payload};
+      break;
     default:
-      (function(){
-        return state;
-      })();
-          break;
+      data = state;
+      break;
   }
-
+  return data;
 }
