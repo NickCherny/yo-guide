@@ -65,9 +65,9 @@ module.exports = (app, config) => {
   app.set('views', config.root + '/app/views');
   app.set('view engine', 'ejs');
 
-  let controllers = glob.sync(config.root + '/app/controllers/*.js');
-  controllers.forEach(function (controller) {
-    require(controller)(app);
+  let routers = glob.sync(config.root + '/app/router/*.js');
+  routers.forEach(function (routers) {
+    require(routers)(app);
   });
 
   app.use(function (req, res, next) {

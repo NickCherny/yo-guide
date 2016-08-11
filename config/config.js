@@ -18,6 +18,10 @@ var config = {
       database: 'yo_web',
       queueLimit: 10,
       acquireTimeout: 10000
+    },
+    adminImagesPaths: {
+      projects: '/public/images/projects',
+      user: '/public/images/user'
     }
   },
 
@@ -35,6 +39,10 @@ var config = {
       database: 'yo_web',
       queueLimit: 10,
       acquireTimeout: 10000
+    },
+    adminImagesPaths: {
+      projects: '/public/images/projects',
+      user: '/public/images/user'
     }
   },
 
@@ -52,6 +60,10 @@ var config = {
       database: 'yo_web',
       queueLimit: 20,
       acquireTimeout: 20000
+    },
+    adminImagesPaths: {
+      projects: '/public/images/projects',
+      user: '/public/images/user'
     }
   }
 };

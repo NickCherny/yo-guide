@@ -1,5 +1,6 @@
 "use strict";
 const pool = require('./connect');
+const path = require('path');
 
 class AdminRequests{
   constructor(){}
@@ -9,6 +10,10 @@ class AdminRequests{
       admin_login: 'nick',
       admin_password: '123'
     }]);
+  }
+  setPhotoProject(name, callback){
+    let sql = `INSERT INTO project (project_photoPath) VALUES (${name})`;
+    console.log(sql);
   }
 }
 module.exports = AdminRequests;
