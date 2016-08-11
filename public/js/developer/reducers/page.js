@@ -4,11 +4,12 @@ const initialState = {
 };
 
 export default function page(state = initialState, action){
-  let data;
+  let data = JSON.stringify(state);
+  data = JSON.parse(data);
 
   switch (action.type){
     case 'SET_YEAR':
-      data = {state, year: action.payload};
+      data = {year: action.payload, photos: []};
       break;
     default:
       data = state;

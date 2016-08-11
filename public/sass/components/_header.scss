@@ -1,0 +1,33 @@
+//@section header (begin)
+.header{
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding: 20px;
+}
+.header{
+  .top-menu{
+    position: relative;
+  }
+}
+.top-menu-b{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  float: right;
+  .top-menu__item{
+    display: inline-block;
+    margin-right: 20px;
+    &:last-child{
+      margin-right: 0;
+    }
+    .top-menu__item-link{
+      transition: all 300ms;
+      color: #0d151f;
+      &:hover{
+        color: lighten(#0d151f, 20%);
+      }
+    }
+  }
+}
+//@section header (end)

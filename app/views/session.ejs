@@ -1,0 +1,13 @@
+<% layout('template.admin')%>
+
+<% if(!remember){ %>
+  <form method="post" action="/remember">
+    <div>
+      <input type="checkbox" name="remember"> Запомнить меня! <input type="submit" value="Отправить">
+    </div>
+  </form>
+<% }else{ %>
+  <div>
+    <p>Запомнили! Кликните что бы забыть <a href="/forget">Забыть</a></p>
+  </div>
+<% } %>

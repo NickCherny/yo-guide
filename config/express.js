@@ -6,19 +6,17 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const session = require('cookie-session');
 const compress = require('compression');
 const methodOverride = require('method-override');
 const http = require('http');
 const engine = require('ejs-locals');
+const passport = require('passport');
 
 module.exports = (app, config) => {
   let env = process.env.NODE_ENV || 'development';
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';
-
-  app.engine('ejs', engine);
-  app.set('views', config.root + '/app/views');
-  app.set('view engine', 'ejs');
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
   app.use(logger('dev'));
@@ -26,10 +24,46 @@ module.exports = (app, config) => {
   app.use(bodyParser.urlencoded({
     extended: true
   }));
+  // Set cookies parser session
   app.use(cookieParser());
+  app.use(session({
+    keys: ['secret']
+  }));
+
+  // Initialize passport
+  app.use(passport.initialize());
+  app.use(passport.session());
+
+  let strategyLogin = require('../app/ext/passport.strategy.ext');
+  passport.use(strategyLogin());
+
+  let admin = passport.authenticate('local', {
+    successRedirect: '/admin',
+    failureRedirect: '/login/admin'
+  });
+
+  app.post('/login/admin', admin);
+
+  let mustBeAuthenticated = function(req, res, next){
+    req.isAuthenticated() ? next() : res.redirect('/login/admin');
+  };
+  app.all('/admin', mustBeAuthenticated);
+  app.all('/admin/*', mustBeAuthenticated);
+
+  passport.serializeUser(function(data, done){
+    done(null, data.username);
+  });
+  passport.deserializeUser(function(id, done){
+    done(null, {username: id})
+  });
+
   app.use(compress());
   app.use(express.static(config.root + '/public'));
   app.use(methodOverride());
+
+  app.engine('ejs', engine);
+  app.set('views', config.root + '/app/views');
+  app.set('view engine', 'ejs');
 
   let controllers = glob.sync(config.root + '/app/controllers/*.js');
   controllers.forEach(function (controller) {

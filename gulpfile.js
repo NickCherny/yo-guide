@@ -6,7 +6,7 @@ const sass = require('gulp-sass');
 const path = require('path');
 
 gulp.task('sass', function () {
-  gulp.src('./public/sass/*.scss')
+  gulp.src('./public/sass/**/*.scss')
     .pipe(plumber())
     .pipe(sass())
     .pipe(gulp.dest('./public/css'))
@@ -14,7 +14,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./public/sass/*.scss', ['sass']);
+  gulp.watch('./public/sass/**/*.scss', ['sass']);
 });
 
 gulp.task('develop', function () {
