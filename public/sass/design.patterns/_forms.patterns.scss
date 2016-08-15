@@ -1,0 +1,409 @@
+//@section buttons style class (begin)
+@import "style.settings";
+
+//@subsection button (begin)
+.Btn {
+  transition: all 300ms;
+  transition-timing-function: ease-in;
+  position: relative;
+  height: 55px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+  border: none;
+  color: #fff;
+  font-size: $fs_small+px;
+  font-size: rem-calc($fs_small);
+  outline: none;
+  font-weight: $fw_normal;
+  &:hover {
+    background-color: inherit;
+    box-shadow: 0px 2px 1px 0px darken($reg_user_color, 20%);
+  }
+  &:active {
+    background-color: inherit;
+    box-shadow: none;
+  }
+}
+.Form-Wrapper {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-transform: translate3d(0, 0, 0);
+  background-color: #f5f5f5;
+  background-color: rgba(255, 255, 255,0.8);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+.Form-Block {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  position: relative;
+  max-width: 460px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 1px 1.5px 3px 0 rgba(43, 43, 47, 0.5);
+  padding-left: 60px;
+  padding-left: rem-calc(60);
+  padding-right: 60px;
+  padding-right: rem-calc(60);
+  margin: 60px auto;
+}
+.Form-Title {
+  font-size: 32px;
+  font-size: rem-calc(32);
+  padding-top: 60px;
+  padding-top: rem-calc(60);
+  padding-bottom: 60px;
+  padding-bottom: rem-calc(60);
+  text-align: left;
+  line-height: 0.7;
+  color: rgba(0, 0, 0, 0.91);
+}
+.Label {
+  position: relative;
+  display: block;
+  margin-bottom: 22px;
+  margin-bottom: rem-calc(22);
+  border: 0;
+}
+.Inpt {
+  font-size: 16px;
+  font-size: rem-calc(16);
+  line-height: 1.4;
+  color: #bbbbbb;
+  border: 0;
+  width: 100%;
+  padding: 14px 0;
+  box-shadow: none;
+  border-bottom: 1px solid #bbbbbb;
+  margin-bottom: 5px;
+  &:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #bbbbbb;
+    outline: none;
+  }
+}
+//@subsection input (end)
+
+//@subsection registration form (begin)
+.usr-registration-wrapper {
+  @extend .Form-Wrapper;
+}
+.usr-registration {
+  @extend .Form-Block;
+  .usr-registration__header-title {
+    @extend .Form-Title;
+  }
+}
+.usr-registration {
+  .usr-registration__form {
+    position: relative;
+  }
+}
+.usr-registration__form {
+  .usr-registration__item-pole {
+    @extend .Label;
+  }
+}
+.usr-registration__item-pole {
+  .usr-registration__item-inpt {
+    @extend .Inpt;
+  }
+}
+.usr-registration__form {
+  .usr-registration__condition-project {
+    font-size: 12px;
+    font-size: rem-calc(12);
+    color: #bbb;
+  }
+}
+.usr-registration__form {
+  .usr-registration__submit-btn {
+    text-align: center;
+    line-height: 25px;
+    @extend .Btn;
+    background-color: $reg_user_color;
+    &:hover {
+      background-color: lighten($reg_user_color, 5%);
+      box-shadow: 0px 2px 1px 0px darken($reg_user_color, 20%);
+    }
+    &:active {
+      background-color: darken($reg_user_color, 20%);
+      box-shadow: none;
+    }
+  }
+}
+.usr-registration__form {
+  .usr-registration__submit-btn_disable {
+    cursor: default;
+    background-color: lighten($reg_user_color, 10%);
+    &:hover {
+      background-color: lighten($reg_user_color, 10%);
+      box-shadow: 0px 0px 0px 0px darken($reg_user_color, 20%);
+    }
+  }
+}
+.usr-registration {
+  .usr-registration__social {
+    position: relative;
+  }
+}
+.usr-registration__social {
+  .usr-registration__social-title {
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+    font-weight: 600;
+    position: relative;
+    color: #7a8099;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-bottom: rem-calc(20);
+  }
+}
+.usr-registration__social {
+  .usr-registration__social-icons {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    padding-bottom: rem-calc(20);
+    border-bottom: 1px solid #bbb;
+  }
+}
+.usr-registration__send-user-block {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-top: rem-calc(20);
+  padding-bottom: 60px;
+  padding-bottom: rem-calc(60);
+}
+.usr-registration__send-user-block {
+  .usr-registration__send-user-text {
+    font-size: 16px;
+    font-size: rem-calc(16);
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.91);
+  }
+}
+.usr-registration__send-user-block {
+  .usr-registration__send-user-btn {
+    .send-user-btn_light {
+      @extend .Btn;
+      box-sizing: border-box;
+      border: 2px solid $reg_user_color;
+      padding: 9.5px 27px;
+      color: rgba(0, 0, 0, 0.91);
+      &:hover {
+        color: #fff;
+        border-color: lighten($reg_user_color, 5%);
+        background-color: lighten($reg_user_color, 5%);
+        box-shadow: 0px 2px 1px 0px darken($reg_user_color, 20%);
+      }
+      &:active {
+        border-color: darken($reg_user_color, 20%);
+        background-color: darken($reg_user_color, 20%);
+        box-shadow: none;
+        color: #fff;
+      }
+    }
+  }
+}
+.usr-registration__item-error-helper {
+  position: relative;
+  color: #ff4c67;
+  font-size: 12px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.usr-registration__confirmation-email-b {
+  position: absolute;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 102;
+  background-color: #fff;
+  padding: 60px;
+  text-align: left;
+  .usr-registration__confirmation-email-header-title {
+    position: relative;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.22;
+    color: #202020;
+    margin-bottom: 57px;
+  }
+}
+.usr-registration__confirmation-email-b {
+  .usr-registration__confirmation-email-content {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.31;
+    color: #232121;
+    margin-bottom: 33px;
+  }
+}
+.usr-registration__confirmation-email-b {
+  margin-top: 20px;
+  margin-top: rem-calc(20);
+  .usr-registration__confirmation-email-link-b {
+    @extend .Btn;
+    border-radius: 5px;
+    background-color: $reg_user_color;
+    text-align: center;
+    line-height: 55px;
+    &:hover {
+      background-color: lighten($reg_user_color, 5%);
+      box-shadow: 0px 2px 1px 0px darken($reg_user_color, 20%);
+    }
+    &:active {
+      background-color: darken($reg_user_color, 20%);
+      box-shadow: none;
+    }
+    .usr-registration__confirmation-email-link {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+.usr-registration__confirmation-email-b {
+  .usr-registration__confirmation-email-settings-profile-b {
+    position: relative;
+    margin-top: 268px;
+  }
+}
+.usr-registration__confirmation-email-close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  &::before, &::after {
+    transition: all 300ms;
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #979797;
+  }
+  &::before{
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+  &:hover {
+    &::before, &::after{
+      background: darken(#979797, 20%);
+    }
+  }
+}
+//@subsection registration form (end)
+
+//@subsection login user (begin)
+.usr-login-wrapper {
+  @extend .Form-Wrapper;
+}
+.usr-login__error-b {
+  @extend .usr-registration__item-error-helper;
+  margin-bottom: 20px;
+  margin-bottom: rem-calc(20);
+}
+.usr-login-form {
+  @extend .Form-Block;
+  .usr-login-form__header-title {
+    @extend .Form-Title;
+  }
+}
+.usr-login-form {
+  .usr-login-form__item-pole {
+    @extend .Label;
+  }
+}
+.usr-login-form__item-pole {
+  .usr-login-form__item-inpt {
+    @extend .Inpt;
+  }
+}
+.usr-login-form__item-pole {
+  .usr-login-form__submit-btn {
+    @extend .Btn;
+    text-align: center;
+    line-height: 55px;
+    background-color: $login_user_color;
+    &:hover {
+      background-color: lighten($login_user_color, 5%);
+      box-shadow: 0px 2px 1px 0px darken($login_user_color, 20%);
+    }
+    &:active {
+      background-color: darken($login_user_color, 20%);
+      box-shadow: none;
+    }
+  }
+}
+.usr-login-form__registration-user {
+  @extend .usr-registration__send-user-block;
+  .usr-login-form__registration-user-btn {
+    position: relative;
+    margin-top: 20px;
+    margin-top: rem-calc(20);
+    .usr-login-form__registration-user-link {
+      @extend .Btn;
+      box-sizing: border-box;
+      border: 2px solid $login_user_color;
+      padding: 9.5px 27px;
+      color: rgba(0, 0, 0, 0.91);
+      &:hover {
+        color: #fff;
+        border-color: lighten($login_user_color, 5%);
+        background-color: lighten($login_user_color, 5%);
+        box-shadow: 0px 2px 1px 0px darken($login_user_color, 20%);
+      }
+      &:active {
+        border-color: darken($login_user_color, 20%);
+        background-color: darken($login_user_color, 20%);
+        box-shadow: none;
+        color: #fff;
+      }
+    }
+  }
+}
+.usr-login-form__item-pole {
+  .usr-login__submit-btn_disable {
+    cursor: default;
+    background-color: lighten($login_user_color, 10%);
+    &:hover {
+      background-color: lighten($login_user_color, 10%);
+      box-shadow: 0px 0px 0px 0px darken($login_user_color, 0%);
+    }
+  }
+}
+//@subsection login user (end)
+
+
+
+
+
+//@section form components (end)
+
+
+
+
+//@section buttons style class (end)

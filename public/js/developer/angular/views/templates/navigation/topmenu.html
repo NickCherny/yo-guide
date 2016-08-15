@@ -1,0 +1,73 @@
+<div data-ng-click="tMenu.EventsClick($event)">
+  <nav class="top-menu">
+    <div class="top-menu_wrapper">
+      <div class="row row-fix">
+        <div class="large-1 columns">
+          <a href="/" class="top-menu__logo-link" ng-class="topmenu.getActiveLink('/')">
+            LOGO
+          </a>
+        </div>
+        <div class="large-4 columns ">
+          <div class="top-menu__search-b">
+            <input type="text"
+                   name="guide_info"
+                   placeholder="Куда вы планируете отправиться?"
+                   data-ng-model="tMenu.search"
+                   data-ng-keyup="tMenu.searchGuideKey($event)"
+                   class="top-menu__search-inpt">
+
+            <div class="top-menu__search-btn-b">
+              <div class="top-menu__search-btn_circle" data-search-guide></div>
+              <div class="top-menu__search-btn_line" data-search-guide></div>
+            </div>
+          </div>
+        </div>
+        <div class="large-5 columns">
+          <div class="top-menu__msg-b">
+            <div class="top-menu__msg_hide-b">
+              <a ui-sref="/user/messages"
+                 class="top-menu__msg-link"
+                 ng-class="topmenu.getActiveLink('/user/messages')">
+                <span class="top-menu__item-msg-text">Сообщения</span>
+                <span class="top-menu__item-msg-img">
+                  <img src="/design/img/top_menu/top_menu_msg_icon.png" alt="">
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="large-2 columns">
+          <div class="top-menu__user-menu top-menu__user-menu_acaunt" data-ng-if="$parent.loginUser">
+            <a ui-sref="/cabinet/home"
+               class="top-menu__user-acaunt-link"
+               ng-class="topmenu.getActiveLink('/cabinet/home')">
+              <span class="top-menu__usr-logo-name">User</span>
+
+              <img data-ng-src=""
+                   class="top-menu__usr-logo-img"
+                   data-ng-alt="user.photo.alt"
+                   id="top_menu__ava_ltl">
+
+            </a>
+            <div class="drop-down-menu">
+              <a ui-sref="/profile" class="drop-down-menu__item-link">Профиль</a>
+              <a ui-sref="/travels" class="drop-down-menu__item-link">Поездки</a>
+              <a ui-sref="/tour" class="drop-down-menu__item-link">Туры</a>
+              <a ui-sref="/profile/settings" class="drop-down-menu__item-link">Настройки</a>
+              <a href="/" class="drop-down-menu__item-link">Выйти</a>
+            </div>
+          </div>
+
+          <div class="top-menu__user-menu">
+            <span class="top-menu__login-user" data-LoginFormVisible>Войти</span>
+            <span class="top-menu__registration-user" data-RegistrationFormVisible>Регистрация</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!--<login-user data-ng-show="tMenu._loginFormVisible"></login-user>-->
+  <!--<registration-user data-ng-show="tMenu._registrationFormVisible"></registration-user>-->
+</div>

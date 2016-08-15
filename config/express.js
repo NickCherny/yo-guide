@@ -34,8 +34,8 @@ module.exports = (app, config) => {
   app.use(passport.initialize());
   app.use(passport.session());
 
-  let strategyLogin = require('../app/ext/passport.strategy.ext');
-  passport.use(strategyLogin());
+  const strategy = require('../app/service/').Strategy;
+  passport.use(strategy.adminLogin());
 
   let admin = passport.authenticate('local', {
     successRedirect: '/admin',

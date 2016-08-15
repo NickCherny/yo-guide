@@ -3,4 +3,6 @@ const express = require('express');
 const config = require('./config/config');
 const app = express();
 
-require('./config/express')(app, config);
+require("babel-core").transform(require('./config/express')(app, config), {
+  ignore: ['node_modules']
+});

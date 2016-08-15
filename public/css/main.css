@@ -4,6 +4,10 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -6380,6 +6384,1098 @@ th.hide-for-touch {
   padding: 0 !important;
   max-width: none; }
 
+.columns-fix {
+  padding: 0; }
+
+.Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .header .header__btn-b, .hero-content .hero__btn, .begin-use .begin-use__btn, .main-page__header .main-page__btn-more-info {
+  transition: all 300ms;
+  transition-timing-function: ease-in;
+  position: relative;
+  height: 55px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-size: 1rem;
+  outline: none;
+  font-weight: 400; }
+  .Btn:hover, .usr-registration__form .usr-registration__submit-btn:hover, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover, .usr-login-form__item-pole .usr-login-form__submit-btn:hover, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover, .header .header__btn-b:hover, .hero-content .hero__btn:hover, .begin-use .begin-use__btn:hover, .main-page__header .main-page__btn-more-info:hover {
+    background-color: inherit;
+    box-shadow: 0px 2px 1px 0px #0f937c; }
+  .Btn:active, .usr-registration__form .usr-registration__submit-btn:active, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active, .usr-login-form__item-pole .usr-login-form__submit-btn:active, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active, .header .header__btn-b:active, .hero-content .hero__btn:active, .begin-use .begin-use__btn:active, .main-page__header .main-page__btn-more-info:active {
+    background-color: inherit;
+    box-shadow: none; }
+
+.Form-Wrapper, .usr-registration-wrapper, .usr-login-wrapper {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-transform: translate3d(0, 0, 0);
+  background-color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; }
+
+.Form-Block, .usr-registration, .usr-login-form {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  position: relative;
+  max-width: 460px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 1px 1.5px 3px 0 rgba(43, 43, 47, 0.5);
+  padding-left: 60px;
+  padding-left: 3.75rem;
+  padding-right: 60px;
+  padding-right: 3.75rem;
+  margin: 60px auto; }
+
+.Form-Title, .usr-registration .usr-registration__header-title, .usr-login-form .usr-login-form__header-title {
+  font-size: 32px;
+  font-size: 2rem;
+  padding-top: 60px;
+  padding-top: 3.75rem;
+  padding-bottom: 60px;
+  padding-bottom: 3.75rem;
+  text-align: left;
+  line-height: 0.7;
+  color: rgba(0, 0, 0, 0.91); }
+
+.Label, .usr-registration__form .usr-registration__item-pole, .usr-login-form .usr-login-form__item-pole {
+  position: relative;
+  display: block;
+  margin-bottom: 22px;
+  margin-bottom: 1.375rem;
+  border: 0; }
+
+.Inpt, .usr-registration__item-pole .usr-registration__item-inpt, .usr-login-form__item-pole .usr-login-form__item-inpt {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #bbbbbb;
+  border: 0;
+  width: 100%;
+  padding: 14px 0;
+  box-shadow: none;
+  border-bottom: 1px solid #bbbbbb;
+  margin-bottom: 5px; }
+  .Inpt:focus, .usr-registration__item-pole .usr-registration__item-inpt:focus, .usr-login-form__item-pole .usr-login-form__item-inpt:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #bbbbbb;
+    outline: none; }
+
+.usr-registration .usr-registration__form {
+  position: relative; }
+
+.usr-registration__form .usr-registration__condition-project {
+  font-size: 12px;
+  font-size: 0.75rem;
+  color: #bbb; }
+
+.usr-registration__form .usr-registration__submit-btn {
+  text-align: center;
+  line-height: 25px;
+  background-color: #20E8C6; }
+  .usr-registration__form .usr-registration__submit-btn:hover {
+    background-color: #37eacc;
+    box-shadow: 0px 2px 1px 0px #0f937c; }
+  .usr-registration__form .usr-registration__submit-btn:active {
+    background-color: #0f937c;
+    box-shadow: none; }
+
+.usr-registration__form .usr-registration__submit-btn_disable {
+  cursor: default;
+  background-color: #4eedd2; }
+  .usr-registration__form .usr-registration__submit-btn_disable:hover {
+    background-color: #4eedd2;
+    box-shadow: 0px 0px 0px 0px #0f937c; }
+
+.usr-registration .usr-registration__social {
+  position: relative; }
+
+.usr-registration__social .usr-registration__social-title {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 600;
+  position: relative;
+  color: #7a8099;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem; }
+
+.usr-registration__social .usr-registration__social-icons {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #bbb; }
+
+.usr-registration__send-user-block, .usr-login-form__registration-user {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-top: 1.25rem;
+  padding-bottom: 60px;
+  padding-bottom: 3.75rem; }
+
+.usr-registration__send-user-block .usr-registration__send-user-text, .usr-login-form__registration-user .usr-registration__send-user-text {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.91); }
+
+.usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light {
+  box-sizing: border-box;
+  border: 2px solid #20E8C6;
+  padding: 9.5px 27px;
+  color: rgba(0, 0, 0, 0.91); }
+  .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover {
+    color: #fff;
+    border-color: #37eacc;
+    background-color: #37eacc;
+    box-shadow: 0px 2px 1px 0px #0f937c; }
+  .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active {
+    border-color: #0f937c;
+    background-color: #0f937c;
+    box-shadow: none;
+    color: #fff; }
+
+.usr-registration__item-error-helper, .usr-login__error-b {
+  position: relative;
+  color: #ff4c67;
+  font-size: 12px;
+  text-align: left;
+  font-weight: 400; }
+
+.usr-registration__confirmation-email-b {
+  position: absolute;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 102;
+  background-color: #fff;
+  padding: 60px;
+  text-align: left; }
+  .usr-registration__confirmation-email-b .usr-registration__confirmation-email-header-title {
+    position: relative;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.22;
+    color: #202020;
+    margin-bottom: 57px; }
+
+.usr-registration__confirmation-email-b .usr-registration__confirmation-email-content {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.31;
+  color: #232121;
+  margin-bottom: 33px; }
+
+.usr-registration__confirmation-email-b {
+  margin-top: 20px;
+  margin-top: 1.25rem; }
+  .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b {
+    border-radius: 5px;
+    background-color: #20E8C6;
+    text-align: center;
+    line-height: 55px; }
+    .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover {
+      background-color: #37eacc;
+      box-shadow: 0px 2px 1px 0px #0f937c; }
+    .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active {
+      background-color: #0f937c;
+      box-shadow: none; }
+    .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b .usr-registration__confirmation-email-link {
+      color: #fff;
+      text-decoration: none; }
+
+.usr-registration__confirmation-email-b .usr-registration__confirmation-email-settings-profile-b {
+  position: relative;
+  margin-top: 268px; }
+
+.usr-registration__confirmation-email-close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer; }
+  .usr-registration__confirmation-email-close-btn::before, .usr-registration__confirmation-email-close-btn::after {
+    transition: all 300ms;
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #979797; }
+  .usr-registration__confirmation-email-close-btn::before {
+    transform: rotate(45deg); }
+  .usr-registration__confirmation-email-close-btn::after {
+    transform: rotate(-45deg); }
+  .usr-registration__confirmation-email-close-btn:hover::before, .usr-registration__confirmation-email-close-btn:hover::after {
+    background: #646464; }
+
+.usr-login__error-b {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem; }
+
+.usr-login-form__item-pole .usr-login-form__submit-btn {
+  text-align: center;
+  line-height: 55px;
+  background-color: #2461FC; }
+  .usr-login-form__item-pole .usr-login-form__submit-btn:hover {
+    background-color: #3d73fc;
+    box-shadow: 0px 2px 1px 0px #0336b7; }
+  .usr-login-form__item-pole .usr-login-form__submit-btn:active {
+    background-color: #0336b7;
+    box-shadow: none; }
+
+.usr-login-form__registration-user .usr-login-form__registration-user-btn {
+  position: relative;
+  margin-top: 20px;
+  margin-top: 1.25rem; }
+  .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link {
+    box-sizing: border-box;
+    border: 2px solid #2461FC;
+    padding: 9.5px 27px;
+    color: rgba(0, 0, 0, 0.91); }
+    .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover {
+      color: #fff;
+      border-color: #3d73fc;
+      background-color: #3d73fc;
+      box-shadow: 0px 2px 1px 0px #0336b7; }
+    .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active {
+      border-color: #0336b7;
+      background-color: #0336b7;
+      box-shadow: none;
+      color: #fff; }
+
+.usr-login-form__item-pole .usr-login__submit-btn_disable {
+  cursor: default;
+  background-color: #5685fd; }
+  .usr-login-form__item-pole .usr-login__submit-btn_disable:hover {
+    background-color: #5685fd;
+    box-shadow: 0px 0px 0px 0px #2461fc; }
+
+.top-menu {
+  font-family: "Roboto", sans-serif;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding-top: 30px;
+  line-height: 35px;
+  background-color: transparent;
+  background-color: #2461fc; }
+  .top-menu .top-menu_wrapper {
+    background-color: transparent; }
+
+.top-menu_cabinet {
+  position: relative;
+  background-color: #2461fc;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.7); }
+
+.top-menu-scroll {
+  animation-name: topmenu-scroll;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.02, 0.37, 0.92, 0.7); }
+
+.top-menu .top-menu__logo-link {
+  color: #fff;
+  font-size: 24px; }
+
+.top-menu .top-menu__search-b {
+  position: relative;
+  max-width: 270px; }
+  .top-menu .top-menu__search-b .top-menu__search-inpt {
+    border-radius: 20px;
+    padding: 14px;
+    border: none; }
+  .top-menu .top-menu__search-b .top-menu__search-btn-b {
+    position: absolute;
+    top: 10px;
+    top: 0.625rem;
+    right: 20px;
+    right: 1.25rem;
+    width: 15px;
+    height: 30px;
+    cursor: pointer; }
+    .top-menu .top-menu__search-b .top-menu__search-btn-b .top-menu__search-btn_circle {
+      transition: all 300ms;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 2px solid #ddd; }
+    .top-menu .top-menu__search-b .top-menu__search-btn-b .top-menu__search-btn_line {
+      transition: all 300ms;
+      position: relative;
+      width: 2px;
+      height: 10px;
+      background-color: #ddd;
+      top: -5px;
+      right: -14px;
+      transform: rotate(-42deg); }
+
+.top-menu .top-menu__msg-b {
+  position: relative; }
+  .top-menu .top-menu__msg-b .top-menu__msg-link {
+    text-decoration: none;
+    color: #fff; }
+
+.top-menu__msg-b .top-menu__msg_hide-b {
+  float: right; }
+
+.top-menu__msg-link .top-menu__item-msg-text {
+  color: #fff; }
+
+.top-menu__msg-link .top-menu__item-msg-img {
+  position: relative;
+  top: 10px;
+  top: 0.625rem; }
+
+.top-menu .top-menu__user-menu {
+  text-align: right;
+  position: relative; }
+  .top-menu .top-menu__user-menu .top-menu__user-acaunt-link {
+    transition: all 300ms;
+    position: relative;
+    color: #fff;
+    text-decoration: none; }
+    .top-menu .top-menu__user-menu .top-menu__user-acaunt-link:hover {
+      color: #cccccc; }
+
+.top-menu__user-menu:hover .drop-down-menu {
+  display: block; }
+
+.top-menu__user-menu .drop-down-menu {
+  line-height: 34px;
+  text-align: left;
+  position: absolute;
+  display: none;
+  z-index: 101;
+  background-color: #2461fc;
+  padding: 35px 0 20px;
+  width: 100%; }
+  .top-menu__user-menu .drop-down-menu:hover {
+    display: block; }
+  .top-menu__user-menu .drop-down-menu .drop-down-menu__item-link {
+    transition: all 100ms;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding-right: 10px;
+    padding-left: 10px; }
+    .top-menu__user-menu .drop-down-menu .drop-down-menu__item-link:hover {
+      background-color: #1a5afc; }
+
+.top-menu__user-menu {
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-size: 1rem; }
+  .top-menu__user-menu .top-menu__login-user {
+    transition: all 300ms;
+    margin-right: 15px;
+    cursor: pointer; }
+    .top-menu__user-menu .top-menu__login-user:hover {
+      color: #2461fc; }
+  .top-menu__user-menu .top-menu__registration-user {
+    transition: all 300ms;
+    cursor: pointer; }
+    .top-menu__user-menu .top-menu__registration-user:hover {
+      color: #2461fc; }
+
+.Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .header .header__btn-b, .hero-content .hero__btn, .begin-use .begin-use__btn, .main-page__header .main-page__btn-more-info {
+  transition: all 300ms;
+  transition-timing-function: ease-in;
+  position: relative;
+  height: 55px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-size: 1rem;
+  outline: none;
+  font-weight: 400; }
+  .Btn:hover, .usr-registration__form .usr-registration__submit-btn:hover, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover, .usr-login-form__item-pole .usr-login-form__submit-btn:hover, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover, .header .header__btn-b:hover, .hero-content .hero__btn:hover, .begin-use .begin-use__btn:hover, .main-page__header .main-page__btn-more-info:hover {
+    background-color: inherit;
+    box-shadow: 0px 2px 1px 0px #0f937c; }
+  .Btn:active, .usr-registration__form .usr-registration__submit-btn:active, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active, .usr-login-form__item-pole .usr-login-form__submit-btn:active, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active, .header .header__btn-b:active, .hero-content .hero__btn:active, .begin-use .begin-use__btn:active, .main-page__header .main-page__btn-more-info:active {
+    background-color: inherit;
+    box-shadow: none; }
+
+.Form-Wrapper, .usr-registration-wrapper, .usr-login-wrapper {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-transform: translate3d(0, 0, 0);
+  background-color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; }
+
+.Form-Block, .usr-registration, .usr-login-form {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  position: relative;
+  max-width: 460px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 1px 1.5px 3px 0 rgba(43, 43, 47, 0.5);
+  padding-left: 60px;
+  padding-left: 3.75rem;
+  padding-right: 60px;
+  padding-right: 3.75rem;
+  margin: 60px auto; }
+
+.Form-Title, .usr-registration .usr-registration__header-title, .usr-login-form .usr-login-form__header-title {
+  font-size: 32px;
+  font-size: 2rem;
+  padding-top: 60px;
+  padding-top: 3.75rem;
+  padding-bottom: 60px;
+  padding-bottom: 3.75rem;
+  text-align: left;
+  line-height: 0.7;
+  color: rgba(0, 0, 0, 0.91); }
+
+.Label, .usr-registration__form .usr-registration__item-pole, .usr-login-form .usr-login-form__item-pole {
+  position: relative;
+  display: block;
+  margin-bottom: 22px;
+  margin-bottom: 1.375rem;
+  border: 0; }
+
+.Inpt, .usr-registration__item-pole .usr-registration__item-inpt, .usr-login-form__item-pole .usr-login-form__item-inpt {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #bbbbbb;
+  border: 0;
+  width: 100%;
+  padding: 14px 0;
+  box-shadow: none;
+  border-bottom: 1px solid #bbbbbb;
+  margin-bottom: 5px; }
+  .Inpt:focus, .usr-registration__item-pole .usr-registration__item-inpt:focus, .usr-login-form__item-pole .usr-login-form__item-inpt:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #bbbbbb;
+    outline: none; }
+
+.usr-registration .usr-registration__form {
+  position: relative; }
+
+.usr-registration__form .usr-registration__condition-project {
+  font-size: 12px;
+  font-size: 0.75rem;
+  color: #bbb; }
+
+.usr-registration__form .usr-registration__submit-btn {
+  text-align: center;
+  line-height: 25px;
+  background-color: #20E8C6; }
+  .usr-registration__form .usr-registration__submit-btn:hover {
+    background-color: #37eacc;
+    box-shadow: 0px 2px 1px 0px #0f937c; }
+  .usr-registration__form .usr-registration__submit-btn:active {
+    background-color: #0f937c;
+    box-shadow: none; }
+
+.usr-registration__form .usr-registration__submit-btn_disable {
+  cursor: default;
+  background-color: #4eedd2; }
+  .usr-registration__form .usr-registration__submit-btn_disable:hover {
+    background-color: #4eedd2;
+    box-shadow: 0px 0px 0px 0px #0f937c; }
+
+.usr-registration .usr-registration__social {
+  position: relative; }
+
+.usr-registration__social .usr-registration__social-title {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 600;
+  position: relative;
+  color: #7a8099;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem; }
+
+.usr-registration__social .usr-registration__social-icons {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #bbb; }
+
+.usr-registration__send-user-block, .usr-login-form__registration-user {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-top: 1.25rem;
+  padding-bottom: 60px;
+  padding-bottom: 3.75rem; }
+
+.usr-registration__send-user-block .usr-registration__send-user-text, .usr-login-form__registration-user .usr-registration__send-user-text {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.91); }
+
+.usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light {
+  box-sizing: border-box;
+  border: 2px solid #20E8C6;
+  padding: 9.5px 27px;
+  color: rgba(0, 0, 0, 0.91); }
+  .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover {
+    color: #fff;
+    border-color: #37eacc;
+    background-color: #37eacc;
+    box-shadow: 0px 2px 1px 0px #0f937c; }
+  .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active {
+    border-color: #0f937c;
+    background-color: #0f937c;
+    box-shadow: none;
+    color: #fff; }
+
+.usr-registration__item-error-helper, .usr-login__error-b {
+  position: relative;
+  color: #ff4c67;
+  font-size: 12px;
+  text-align: left;
+  font-weight: 400; }
+
+.usr-registration__confirmation-email-b {
+  position: absolute;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 102;
+  background-color: #fff;
+  padding: 60px;
+  text-align: left; }
+  .usr-registration__confirmation-email-b .usr-registration__confirmation-email-header-title {
+    position: relative;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.22;
+    color: #202020;
+    margin-bottom: 57px; }
+
+.usr-registration__confirmation-email-b .usr-registration__confirmation-email-content {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.31;
+  color: #232121;
+  margin-bottom: 33px; }
+
+.usr-registration__confirmation-email-b {
+  margin-top: 20px;
+  margin-top: 1.25rem; }
+  .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b {
+    border-radius: 5px;
+    background-color: #20E8C6;
+    text-align: center;
+    line-height: 55px; }
+    .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover {
+      background-color: #37eacc;
+      box-shadow: 0px 2px 1px 0px #0f937c; }
+    .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active {
+      background-color: #0f937c;
+      box-shadow: none; }
+    .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b .usr-registration__confirmation-email-link {
+      color: #fff;
+      text-decoration: none; }
+
+.usr-registration__confirmation-email-b .usr-registration__confirmation-email-settings-profile-b {
+  position: relative;
+  margin-top: 268px; }
+
+.usr-registration__confirmation-email-close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer; }
+  .usr-registration__confirmation-email-close-btn::before, .usr-registration__confirmation-email-close-btn::after {
+    transition: all 300ms;
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #979797; }
+  .usr-registration__confirmation-email-close-btn::before {
+    transform: rotate(45deg); }
+  .usr-registration__confirmation-email-close-btn::after {
+    transform: rotate(-45deg); }
+  .usr-registration__confirmation-email-close-btn:hover::before, .usr-registration__confirmation-email-close-btn:hover::after {
+    background: #646464; }
+
+.usr-login__error-b {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem; }
+
+.usr-login-form__item-pole .usr-login-form__submit-btn {
+  text-align: center;
+  line-height: 55px;
+  background-color: #2461FC; }
+  .usr-login-form__item-pole .usr-login-form__submit-btn:hover {
+    background-color: #3d73fc;
+    box-shadow: 0px 2px 1px 0px #0336b7; }
+  .usr-login-form__item-pole .usr-login-form__submit-btn:active {
+    background-color: #0336b7;
+    box-shadow: none; }
+
+.usr-login-form__registration-user .usr-login-form__registration-user-btn {
+  position: relative;
+  margin-top: 20px;
+  margin-top: 1.25rem; }
+  .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link {
+    box-sizing: border-box;
+    border: 2px solid #2461FC;
+    padding: 9.5px 27px;
+    color: rgba(0, 0, 0, 0.91); }
+    .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover {
+      color: #fff;
+      border-color: #3d73fc;
+      background-color: #3d73fc;
+      box-shadow: 0px 2px 1px 0px #0336b7; }
+    .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active {
+      border-color: #0336b7;
+      background-color: #0336b7;
+      box-shadow: none;
+      color: #fff; }
+
+.usr-login-form__item-pole .usr-login__submit-btn_disable {
+  cursor: default;
+  background-color: #5685fd; }
+  .usr-login-form__item-pole .usr-login__submit-btn_disable:hover {
+    background-color: #5685fd;
+    box-shadow: 0px 0px 0px 0px #2461fc; }
+
+.main {
+  position: relative; }
+  .main .header {
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    background-image: url("../images/pages/main/header_background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh; }
+
+.header .main__container-h {
+  width: 100%;
+  height: 100%;
+  display: table;
+  position: relative; }
+  .header .main__container-h .middle {
+    vertical-align: middle;
+    display: table-cell;
+    box-sizing: border-box; }
+    .header .main__container-h .middle .header__title {
+      margin: 0;
+      text-align: center;
+      color: #ffffff;
+      font-family: "Roboto", sans-serif;
+      font-weight: 800;
+      line-height: 20px; }
+
+.header .header__btn-b {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: #5de895;
+  max-width: 203px;
+  margin: 0 auto;
+  line-height: 54px; }
+  .header .header__btn-b:hover {
+    background-color: #5de895;
+    box-shadow: 0px 2px 1px 0px #30e278; }
+  .header .header__btn-b:active {
+    background-color: #1cc35f;
+    box-shadow: none; }
+  .header .header__btn-b .main-page__btn-more-info-link {
+    color: #fff; }
+  .header .header__btn-b .header__btn-link {
+    color: inherit; }
+
+.search-section {
+  background-color: #e6e6e6;
+  height: 76px; }
+
+.hero-section {
+  background-color: #f5f5f5;
+  background-image: url("../images/pages/main/main_page__background_strit.png");
+  background-repeat: no-repeat;
+  background-position: left 20px;
+  background-size: contain;
+  min-height: 300px;
+  -moz-box-align: center;
+  align-items: center; }
+
+.hero-section .hero-content {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px; }
+
+.hero-content .hero-content__tile {
+  color: #ffffff;
+  font-size: 34px;
+  font-size: 2.125rem;
+  font-weight: 400;
+  line-height: 20px;
+  margin-top: 30px; }
+
+.hero-content .hero__btn {
+  position: relative;
+  text-align: center;
+  background-color: #f961f7;
+  max-width: 203px;
+  line-height: 54px;
+  margin-top: 20px;
+  margin-top: 1.25rem; }
+  .hero-content .hero__btn:hover {
+    background-color: #f961f7;
+    box-shadow: 0px 2px 1px 0px #f730f5; }
+  .hero-content .hero__btn:active {
+    background-color: #eb09e8;
+    box-shadow: none; }
+  .hero-content .hero__btn a {
+    color: #fff; }
+  .hero-content .hero__btn .header__btn-link {
+    color: inherit; }
+
+.hero-card {
+  position: relative;
+  margin: 0 auto;
+  padding: 10px 20px;
+  max-width: 88%;
+  background-color: #ffffff;
+  background-image: url("../images/pages/main/main_page__card1.png");
+  background-position: top top;
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.hero-card .hero-card__title {
+  text-align: center;
+  font-size: 22px;
+  font-size: 1.375rem;
+  color: #323232;
+  margin-top: 20px;
+  margin-bottom: 30px; }
+
+.hero-card .hero-card__people {
+  position: relative; }
+
+.hero-card__people .hero-card__people-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .hero-card__people .hero-card__people-media .hero-card__people-media_item {
+    text-align: center; }
+    .hero-card__people .hero-card__people-media .hero-card__people-media_item .hero-images {
+      display: inline-block;
+      max-width: 88px;
+      max-height: 88px;
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      border: 2px solid #c0c0c0; }
+
+.hero-card .hero-card__people-text {
+  font-family: "Roboto", sans-serif;
+  text-align: center; }
+
+.use-diagram {
+  position: relative;
+  background-color: #2562fa;
+  min-height: 300px;
+  padding-top: 30px; }
+  .use-diagram .use-diagram__header-title {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 34px;
+    margin: 0; }
+
+.begin-use {
+  position: relative;
+  background-image: url("../images/pages/main/main_page__background_lviv.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  -webkit-box-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal; }
+  .begin-use .begin-use__content {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 20px;
+    width: 100%; }
+
+.begin-use .begin-use__title {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  font-size: 1.375rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
+  padding: 0 10px; }
+
+.begin-use .begin-use__btn {
+  position: relative;
+  text-align: center;
+  background-color: #330367;
+  max-width: 203px;
+  line-height: 54px;
+  margin: 0 auto; }
+  .begin-use .begin-use__btn:hover {
+    background-color: #330367;
+    box-shadow: 0px 2px 1px 0px #1a0235; }
+  .begin-use .begin-use__btn:active {
+    background-color: #6406ca;
+    box-shadow: none; }
+  .begin-use .begin-use__btn a {
+    color: #fff; }
+  .begin-use .begin-use__btn .header__btn-link {
+    color: inherit; }
+
+.main-page-center-section {
+  max-width: 1700px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.main-page__header {
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  padding-bottom: 120px;
+  background-image: url("../images/pages/main/header_background.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+.main-page__header .main-page__header-title {
+  margin-top: 230px;
+  margin-top: 14.375rem;
+  margin-bottom: 370px;
+  margin-bottom: 23.125rem;
+  text-align: center;
+  font-weight: 800;
+  font-family: "Roboto", sans-serif;
+  font-size: 56px;
+  font-size: 3.5rem;
+  color: #fff; }
+
+.main-page__header .main-page__btn-more-info {
+  position: relative;
+  text-align: center;
+  background-color: #5de895;
+  max-width: 203px;
+  margin: 0 auto;
+  line-height: 54px; }
+  .main-page__header .main-page__btn-more-info:hover {
+    background-color: #5de895;
+    box-shadow: 0px 2px 1px 0px #30e278; }
+  .main-page__header .main-page__btn-more-info:active {
+    background-color: #1cc35f;
+    box-shadow: none; }
+  .main-page__header .main-page__btn-more-info .main-page__btn-more-info-link {
+    color: #fff; }
+
+.main-page-support-b {
+  position: relative;
+  font-family: "Roboto", sans-serif; }
+  .main-page-support-b .main-page-support__title {
+    padding: 50px 0;
+    padding: 3.125rem 0;
+    font-size: 56px;
+    font-size: 56;
+    color: #3a3b3a;
+    text-align: center;
+    font-weight: 700; }
+
+.main-page-support-b__top-space {
+  margin-top: 120px;
+  margin-top: 7.5rem; }
+
+.main-page-support-b .main-page-support__body-b {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-height: 784px; }
+
+.main-page-support-b .main-page-support__body_people-img {
+  background-image: url("../images/pages/main/main_page_background_people.png"); }
+
+.main-page-support-b .main-page-support__body_street-img {
+  background-image: url("../images/pages/main/main_page__background_strit.png"); }
+
+.main-page-support__body-b .body-hero-wrapper {
+  position: relative;
+  padding-left: 230px;
+  padding-left: 14.375rem; }
+  .main-page-support__body-b .body-hero-wrapper .body-hero-title {
+    position: relative;
+    margin-top: 278px;
+    margin-top: 17.375rem;
+    margin-bottom: 197px;
+    margin-bottom: 12.3125rem;
+    font-weight: 500;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    text-align: left;
+    font-size: 56px;
+    font-size: 3.5rem; }
+
+.body-hero-wrapper .body-hero__btn-more-info {
+  position: relative;
+  text-align: center;
+  background-color: #1a5afc;
+  max-width: 203px;
+  line-height: 54px;
+  margin-bottom: 204px;
+  margin-bottom: 12.75rem; }
+  .body-hero-wrapper .body-hero__btn-more-info:hover {
+    background-color: #4c7efd; }
+  .body-hero-wrapper .body-hero__btn-more-info:active {
+    background-color: #0233ae; }
+  .body-hero-wrapper .body-hero__btn-more-info .body-hero__btn-more-info-link {
+    color: #fff; }
+
+.main-page-support__body-b .body-hero-content-wrapper {
+  position: relative;
+  top: 62px;
+  z-index: 2;
+  background-color: #f7f7f7;
+  background-image: url("../images/pages/main/main_page__card1.png");
+  background-position: top top;
+  background-size: auto;
+  background-repeat: no-repeat;
+  box-shadow: 0px 3px 10px 0px #a8a8a8; }
+
+.body-hero-content-wrapper .body-hero-content__title_header {
+  font-family: "Roboto", sans-serif;
+  color: #666666;
+  font-size: 30px;
+  font-size: 1.875rem;
+  text-align: center;
+  font-weight: 500;
+  padding-top: 90px;
+  padding-top: 5.625rem;
+  padding-bottom: 130px;
+  padding-bottom: 8.125rem; }
+
+.body-hero-content-wrapper .body-hero-content__user-photo {
+  position: relative;
+  text-align: center; }
+  .body-hero-content-wrapper .body-hero-content__user-photo .body-hero-content__user-photo-img {
+    display: inline-block;
+    border: 4px solid #9a9a9a;
+    border-radius: 50%;
+    max-width: 128px;
+    max-height: 128px;
+    width: 100%;
+    height: auto; }
+
+.body-hero-content-wrapper .body-hero-content__user-name {
+  position: relative;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-size: 1.25rem;
+  color: #333333;
+  font-weight: 500;
+  margin-top: 30px;
+  margin-top: 1.875rem;
+  margin-bottom: 30px;
+  margin-bottom: 1.875rem; }
+
+.body-hero-content-wrapper .body-hero-content__user-text {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  text-align: left;
+  color: #3d3d3d;
+  font-weight: 300;
+  line-height: 23px;
+  padding-bottom: 30px; }
+
+.body-hero-title_lead {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  padding: 10px; }
+
+.main-page-ready-go {
+  position: relative;
+  margin-top: 156px;
+  margin-top: 9.75rem;
+  background-image: url("../images/pages/main/main_page__background_lviv.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 167px;
+  padding-top: 10.4375rem; }
+  .main-page-ready-go:before {
+    display: block;
+    content: "";
+    clear: both; }
+
+.main-page-ready-go .main-page-ready-go__title {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-size: 72px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 143px;
+  margin-bottom: 8.9375rem; }
+
 .header {
   position: relative;
   top: 0;
@@ -6462,9 +7558,81 @@ th.hide-for-touch {
       .social .social-b .social__item:last-child {
         margin-right: 0; }
 
-.admin-wrapper {
+.admin-wrapper__login {
   padding: 10px;
   margin: 80px auto;
   position: relative;
-  max-width: 400px;
+  max-width: 300px;
   box-shadow: 0px 0px 19px 0px #a19fa1; }
+
+.admin-body__header {
+  position: relative;
+  text-align: left;
+  padding: 20px 20px;
+  font-size: 18px;
+  line-height: 20px;
+  border-bottom: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3;
+  margin: 0; }
+  .admin-body__header:last-child {
+    border-right: 0px solid #d3d3d3; }
+
+.admin-header {
+  position: relative;
+  padding: 0;
+  box-shadow: 0px 4px 7px 0px #bababa; }
+  .admin-header .admin-header_admin-messages {
+    padding: 5px 20px;
+    background-color: #ffffff;
+    color: #989898;
+    font-weight: 800;
+    font-size: 24px; }
+
+.admin-nav-top {
+  position: relative;
+  background-color: #f7f7f7;
+  padding: 0 20px; }
+  .admin-nav-top ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; }
+  .admin-nav-top .admin-nav-top__item {
+    display: inline-block;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 6px;
+    border-bottom: 4px solid #f7f7f7; }
+    .admin-nav-top .admin-nav-top__item .admin-nav-top__item-link {
+      transition: all 300ms;
+      color: #656565;
+      text-transform: capitalize; }
+    .admin-nav-top .admin-nav-top__item:hover .admin-nav-top__item-link {
+      color: #323232; }
+
+.admin-body {
+  position: relative;
+  padding: 10px 20px; }
+
+.admin-navigation {
+  position: relative;
+  padding-top: 10px; }
+  .admin-navigation .admin-navigation-panel {
+    position: relative;
+    margin: 0; }
+    .admin-navigation .admin-navigation-panel .admin-navigation-panel__item {
+      transition: all 300ms;
+      transition-timing-function: ease-in;
+      background-color: #3051a0;
+      display: block;
+      line-height: 34px;
+      cursor: pointer;
+      border-bottom: 1px solid #3255a8; }
+      .admin-navigation .admin-navigation-panel .admin-navigation-panel__item .admin-navigation-panel__item-link {
+        padding: 5px 20px;
+        color: #ffffff;
+        font-size: 14px;
+        display: block; }
+      .admin-navigation .admin-navigation-panel .admin-navigation-panel__item:hover {
+        background-color: #3e66c5; }

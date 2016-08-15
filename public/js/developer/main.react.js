@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import App from './containers/App';
+import App from 'react/containers/App';
 
-import configStore from './store/configStore';
+import configStore from 'react/store/configStore';
 
 const store = configStore();
 

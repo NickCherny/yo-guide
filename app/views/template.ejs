@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="mainApp">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%- title %></title>
   <link rel="stylesheet" href="/css/main.css">
   <% if (ENV_DEVELOPMENT) { %>
@@ -10,22 +10,6 @@
   <% } %>
 </head>
 <body>
-<div id="main"></div>
-<header class="header">
-  <div class="row row-fix">
-    <div class="header__logo"><a href="#" class="header__logo-link large-1 small-1 columns">logo</a></div>
-    <nav class="top-menu large-11 small-11 columns">
-      <ul class="top-menu-b">
-        <li class="top-menu__item"><a href="#" class="top-menu__item-link">Blog</a></li>
-        <li class="top-menu__item"><a href="#" class="top-menu__item-link">Exclusives</a></li>
-        <li class="top-menu__item"><a href="#" class="top-menu__item-link">Our Story</a></li>
-        <li class="top-menu__item"><a href="#" class="top-menu__item-link">Contact</a></li>
-        <li class="top-menu__item"><a href="#" class="top-menu__item-link">Login</a></li>
-        <li class="top-menu__item"><a href="#" class="top-menu__item-link">Registration</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
 
 <%-body%>
 

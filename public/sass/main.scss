@@ -2,6 +2,10 @@
 @import "../components/foundation-sass/scss/foundation";
 @import "fixs";
 
+@import "design.patterns/forms.patterns";
+
+@import "./components/topmenu";
+@import "./components/mainPage";
 @import "./components/header";
 @import "./components/footer";
 

@@ -20,7 +20,8 @@ gulp.task('watch', function() {
 gulp.task('develop', function () {
   gulp.src('./public/js/developer/**/*.js')
     .pipe(webpack({
-      entry: './public/js/developer/main.js',
+      // entry: './public/js/developer/main.react.js',
+      entry: './public/js/developer/main.angular.js',
       output: {
         filename: '[name].js'
       },

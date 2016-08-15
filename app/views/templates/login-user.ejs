@@ -1,0 +1,57 @@
+<div className="login-user-wrapper">
+  <form action="/api/v1/login/user"
+        className="login-user__form"
+        method="post"
+        enctype="application/x-www-form-urlencoded">
+
+    <h2 className="login-user__header-title">Войти</h2>
+    <div class="login-form-box">
+      <span class="row-focus"></span>
+      <input type="text" class="login-form__item-input">
+    </div>
+    <div class="login-form-box">
+      <span class="row-focus"></span>
+      <input type="text" class="login-form__item-input">
+    </div>
+    <div class="login-form-box login-form__dop-control">
+      <div class="box">
+        <input type="checkbox" name="remember" id="remember">
+        <label for="remember">Запомнить меня</label>
+      </div>
+      <div class="box">
+        <a href="#">Забыли пароль?</a>
+      </div>
+    </div>
+    <div class="login-form-box">
+      <input type="button" value="Войти">
+    </div>
+    <div class="login-form-box login-form-social">
+      <div class="login-form-social__title">Войти с помощью</div>
+      <ul class="login-form-social__icons">
+        <li class="login-form-social__item-icon">
+          <a href="#" class="login-form-social__item-link"></a>
+        </li>
+        <li class="login-form-social__item-icon">
+          <a href="#" class="login-form-social__item-link"></a>
+        </li>
+        <li class="login-form-social__item-icon">
+          <a href="#" class="login-form-social__item-link"></a>
+        </li>
+        <li class="login-form-social__item-icon">
+          <a href="#" class="login-form-social__item-link"></a>
+        </li>
+      </ul>
+    </div>
+    <div class="login-form-box">
+      <div class="box">
+        <p>
+          Еще нет <br>
+          аккаунта?
+        </p>
+      </div>
+      <div class="box">
+        <input type="button" value="Зарегистрироваться">
+      </div>
+    </div>
+  </form>
+</div>

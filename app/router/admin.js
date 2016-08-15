@@ -8,23 +8,33 @@ module.exports = function (app) {
   app.use('/', router);
 };
 
+// GET login/*
 router.get('/login/admin', function(req, res){
-  res.render('admin', {title: 'Войти в кабинет'});
-  res.end();
-});
-router.get('/admin', function(req, res){
-  res.render('admin_home', {title: 'Кабинет', user: req.user.username});
+  res.render('admin/login_admin', {title: 'Войти в кабинет'});
   res.end();
 });
 router.get('/logout/admin', function(req, res){
   req.logout();
   res.redirect('/');
 });
+
+// GET admin/home
+router.get('/admin', function(req, res){
+  res.render('admin/admin_home', {title: 'Кабинет', user: req.user.username, typePage: 'Главная страница'});
+  res.end();
+});
+
+// GET control/*
+router.get('/admin/control/projects', function(req, res){
+  res.render('admin/projects/admin_projects', {title: 'Управление проектами', user: req.user.username, typePage: 'Проекты'});
+  res.end();
+});
+
 function isFormData(req){
   let type = req.headers['content-type'] || '';
   return 0 == type.indexOf('multipart/form-data');
 }
-router.post('/admin/project/new', function(req, res){
+router.post('/admin/project/add', function(req, res){
   if(!isFormData(req)){
     res.status(400);
     res.send('Bad Request');
@@ -33,7 +43,6 @@ router.post('/admin/project/new', function(req, res){
     controllers.project.addProject(req, res);
   }
 });
-
 
 
 
