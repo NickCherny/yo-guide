@@ -1,83 +1,89 @@
-<div class="usr-registration-wrapper" data-RegistrationFormHidden>
+<div class="usr-registration-wrapper">
   <div class="usr-registration">
     <h3 class="usr-registration__header-title">Зарегистрироваться</h3>
     <form action="/registration-user"
           method="post"
-          name="reg"
+          name="registrationUser"
           novalidate
           class="usr-registration__form">
-      <label for="fname"
-             class="usr-registration__item-pole">
+      <label for="firstName"
+             class="usr-registration__item-pole" show-row>
         <input type="text"
-               name="fname"
+               name="firstName"
                required
-               id="fname"
+               id="firstName"
+               ng-model="r.registrationUser.firstName"
+               ng-pattern="r.validate.nameTpl"
                placeholder="Введите ваше имя"
-               data-ng-model="rf.userInfo.fname"
-               data-ng-class="{'ng-form-error': reg.fname.$invalid && reg.fname.$dirty}"
-               class="usr-registration__item-inpt usr-registration__item-inpt_error">
+               data-ng-class="{'ng-form-error': registrationUser.firstName.$invalid && registrationUser.firstName.$dirty,'ng-form-valid': registrationUser.firstName.$valid}"
+               class="usr-registration__item-inpt">
 
         <div class="usr-registration__item-error-helper"
-             data-ng-hide="reg.fname.$valid || reg.fname.$pristine">{{ rf.error.empty }}</div>
+             data-ng-show="registrationUser.firstName.$invalid && registrationUser.firstName.$dirty">{{r.err.empty}}</div>
+
+        <div class="form__row-inpt_registration"></div>
       </label>
 
-      <label for="lname"
-             class="usr-registration__item-pole">
+      <label for="lastName"
+             class="usr-registration__item-pole" show-row>
         <input type="text"
-               name="lname"
+               name="lastName"
                required
-               id="lname"
+               id="lastName"
+               ng-pattern="r.validate.nameTpl"
+               ng-model="r.registrationUser.lastName"
                placeholder="Введите вашу Фамилию"
-               data-ng-model="rf.usrInfo.lname"
-               data-ng-class="{'ng-form-error': reg.lname.$invalid && reg.lname.$dirty}"
-               class="usr-registration__item-inpt usr-registration__item-inpt_error">
+               data-ng-class="{'ng-form-error': registrationUser.lastName.$invalid && registrationUser.lastName.$dirty, 'ng-form-valid': registrationUser.lastName.$valid}"
+               class="usr-registration__item-inpt">
 
         <div class="usr-registration__item-error-helper"
-             data-ng-hide="reg.lname.$valid || reg.lname.$pristine">{{ rf.error.empty }}</div>
+             data-ng-show="registrationUser.lastName.$invalid && registrationUser.lastName.$dirty">{{r.err.empty}}</div>
+        <div class="form__row-inpt_registration"></div>
       </label>
-      <label for="email" class="usr-registration__item-pole">
+      <label for="email" class="usr-registration__item-pole" show-row>
         <input type="email"
                name="email"
                required
                id="email"
                placeholder="Введите электронную почту"
-               data-ng-model="rf.usrInfo.email"
-               data-ng-value="rf.usrInfo.email"
-               data-ng-pattern="rf.emailTpl"
-               data-ng-class="{'ng-form-error': reg.email.$invalid && reg.email.$dirty}"
+               ng-model="r.registrationUser.email"
+               ng-pattern="r.validate.emailTpl"
+               data-ng-class="{'ng-form-error': registrationUser.email.$invalid && registrationUser.email.$dirty,'ng-form-valid': registrationUser.email.$valid}"
                class="usr-registration__item-inpt">
         <div class="usr-registration__item-error-helper"
-             data-ng-hide="reg.email.$valid || reg.email.$pristine">{{ rf.error.email }}</div>
+             data-ng-show="registrationUser.email.$invalid && registrationUser.email.$dirty">{{r.err.email}}</div>
+        <div class="form__row-inpt_registration"></div>
       </label>
 
-      <label for="pwd1" class="usr-registration__item-pole">
+      <label for="password" class="usr-registration__item-pole" show-row>
         <input type="password"
-               name="pwd1"
+               name="password"
                required
-               id="pwd1"
+               id="password"
                placeholder="Введите пароль"
-               data-ng-model="rf.usrInfo.pwd1"
-               data-ng-value="rf.usrInfo.pwd1"
-               data-ng-class="{'ng-form-error': !(rf.checkPwd(rf.usrInfo.pwd1)) && reg.pwd1.$dirty}"
+               ng-model="r.registrationUser.password"
+               ng-pattern="r.validate.passwordTpl"
+               data-ng-class="{'ng-form-error': registrationUser.password.$invalid && registrationUser.password.$dirty,'ng-form-valid': registrationUser.password.$valid}"
                class="usr-registration__item-inpt">
         <div class="usr-registration__item-error-helper"
-             data-ng-hide="rf.checkPwd(rf.usrInfo.pwd1) || reg.pwd1.$pristine">{{ rf.error.password }}</div>
+             data-ng-show="registrationUser.password.$invalid && registrationUser.password.$dirty">{{r.err.password}}</div>
+        <div class="form__row-inpt_registration"></div>
       </label>
 
-      <label for="pwd2"
-             data-ng-show="rf.checkPwd(rf.usrInfo.pwd1)"
-             class="usr-registration__item-pole">
+      <label for="password2"
+             data-ng-show="registrationUser.password.$dirty && registrationUser.password.$valid"
+             class="usr-registration__item-pole" show-row>
         <input type="password"
-               name="pwd2"
+               name="password2"
                required
-               id="pwd2"
+               id="password2"
                placeholder="Повторите пароль"
-               data-ng-model="rf.usrInfo.pwd2"
-               data-ng-value="rf.usrInfo.pwd2"
-               data-ng-class="{'ng-form-error': !(rf.comparePwds(rf.usrInfo.pwd1, rf.usrInfo.pwd2)) && reg.pwd2.$dirty}"
+               ng-model="r.registrationUser.password2"
+               data-ng-class="{'ng-form-error': r.validate.comparePassword(r.registrationUser.password, r.registrationUser.password2),'ng-form-valid': registrationUser.password2.$valid}"
                class="usr-registration__item-inpt">
         <div class="usr-registration__item-error-helper"
-             data-ng-hide="rf.comparePwds(rf.usrInfo.pwd1, rf.usrInfo.pwd2) || reg.pwd2.$pristine">{{ rf.error.passwordDuble }}</div>
+             data-ng-show="r.validate.comparePassword(r.registrationUser.password, r.registrationUser.password2)">{{r.err.passwordCheck}}</div>
+        <div class="form__row-inpt_registration"></div>
       </label>
       <div class="usr-registration__item-pole usr-registration__condition-project">
         <p class="usr-registration__condition-project_text">Регистрируясь, я соглашаюсь с
@@ -88,8 +94,8 @@
         <button
           type="submit"
           class="usr-registration__submit-btn"
-          data-ng-disabled="rf.registration_usr.$invalid"
-          data-ng-class="{'usr-registration__submit-btn_disable': reg.$invalid}">Создать аккаунт</button>
+          data-ng-disabled="registrationUser.$invalid || (r.validate.comparePassword(r.registrationUser.password, r.registrationUser.password2))"
+          data-ng-class="{'usr-registration__submit-btn_disable': registrationUser.$invalid}">Создать аккаунт</button>
       </div>
     </form>
     <div class="usr-registration__social">
@@ -99,118 +105,25 @@
 
       <ul class="usr-registration__social-icons">
         <li class="usr-registration__social-icon-item">
-          <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-          <svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <!-- Generator: sketchtool 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
-            <title>9EAA8EDD-7958-4A45-B905-A9BB0979C663</title>
-            <desc>Created with sketchtool.</desc>
-            <defs></defs>
-            <g id="sign_up_preclick" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="still" transform="translate(-549.000000, -621.000000)">
-                <g id="google-icon" transform="translate(550.000000, 622.000000)">
-                  <g>
-                    <g id="google" transform="translate(14.166667, 16.666667)" fill="#BBBBBB">
-                      <path d="M12.4425464,10.1851852 C11.7305638,11.8201438 10.1047402,12.962963 8.21343155,12.962963 C5.66515774,12.962963 3.60033631,10.8898148 3.60033631,8.33333333 C3.60033631,5.77685185 5.66515774,3.7037037 8.21343155,3.7037037 C9.25137798,3.7037037 10.1989077,4.04907407 10.9692946,4.62962963 L13.6015268,2 C12.150247,0.755555556 10.270872,0 8.21343155,0 C3.62709226,0 0.000276785714,3.73055556 0.000276785714,8.33333333 C0.000276785714,12.9361111 3.62709226,16.6666667 8.21343155,16.6666667 C12.7988482,16.6666667 16.517003,12.9361111 16.517003,8.33333333 C16.517003,8.31259737 16.5169098,8.29188173 16.5167262,8.27118614 L16.5167262,6.48148148 L8.21315476,6.48148148 L8.21315476,10.1851852 L12.4425464,10.1851852 Z" id="Combined-Shape"></path>
-                      <path d="M21.1298214,9.25925926 L18.3619643,9.25925926 L18.3619643,7.40740741 L21.1298214,7.40740741 L21.1298214,4.62962963 L22.9750595,4.62962963 L22.9750595,7.40740741 L25.7429167,7.40740741 L25.7429167,9.25925926 L22.9750595,9.25925926 L22.9750595,12.037037 L21.1298214,12.037037 L21.1298214,9.25925926 Z" id="Combined-Shape"></path>
-                    </g>
-                    <circle id="Oval-1" stroke="#BBBBBB" stroke-width="2" cx="25" cy="25" r="25"></circle>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
+          SVG
         </li>
         <li class="usr-registration__social-icon-item">
-          <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-          <svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <!-- Generator: sketchtool 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
-            <title>09C0040D-F31D-40D0-8522-431CFF221FB7</title>
-            <desc>Created with sketchtool.</desc>
-            <defs></defs>
-            <g id="sign_up_preclick" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="still" transform="translate(-642.000000, -621.000000)">
-                <g id="twitter-icon" transform="translate(643.000000, 622.000000)">
-                  <g>
-                    <path d="M35.3883333,18.1616667 C36.3016667,17.4741667 36.7708333,17.24 37.5,15.8333333 C36.5091667,16.4116667 35.5533333,16.3691667 34.3858333,16.595 C33.45,15.6133333 32.1158333,15 30.6425,15 C27.81,15 25.5116667,17.2608333 25.5116667,20.0491667 C25.5116667,20.4441667 25.5575,20.83 25.6458333,21.2 C21.3833333,20.9891667 17.5291667,18.8875 15,15.8333333 C14.5591667,16.5791667 14.3791667,17.5366667 14.3791667,18.4633333 C14.3791667,20.2141667 15.285,21.7591667 16.6625,22.6658333 C15.8208333,22.64 15.0291667,22.4116667 14.3383333,22.0333333 L14.3383333,22.0975 C14.3383333,24.5433333 16.1058333,26.5833333 18.4525,27.0483333 C18.0216667,27.1641667 17.5691667,27.2258333 17.1016667,27.2258333 C16.77,27.2258333 16.4491667,27.1941667 16.1358333,27.1341667 C16.7883333,29.1408333 18.5891667,30.7925 20.8333333,30.8333333 C18.6458333,33.3075 13.735,32.545 13.3333333,32.5 C15.6041667,33.9325 18.3008333,35 21.1958333,35 C30.63,35 35.7891667,27.3075 35.7891667,20.635 C35.7891667,20.4158333 35.7841667,20.1975 35.775,19.9816667 C36.7758333,19.2708333 37.6458333,18.5141667 38.3333333,17.5 C37.4133333,17.9033333 36.425,18.0408333 35.3883333,18.1616667 Z" id="twitter" fill="#BBBBBB"></path>
-                    <circle id="Oval-1-Copy" stroke="#BBBBBB" stroke-width="2" cx="25" cy="25" r="25"></circle>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
+          SVG
         </li>
         <li class="usr-registration__social-icon-item">
-          <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-          <svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <!-- Generator: sketchtool 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
-            <title>ED77AEB4-0F51-476C-BDDF-EB627C3EA9D3</title>
-            <desc>Created with sketchtool.</desc>
-            <defs></defs>
-            <g id="sign_up_preclick" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="still" transform="translate(-736.000000, -621.000000)">
-                <g id="vk-icon" transform="translate(737.000000, 622.000000)">
-                  <g>
-                    <path d="M33.9617721,27.855 C31.8676054,25.81 32.1492721,26.1416667 34.6709387,22.6066667 C36.2059387,20.4541667 36.8201054,19.14 36.6267721,18.5775 C36.5276054,18.2433333 35.3151054,18.33 35.3151054,18.33 L31.5567721,18.33 C31.5567721,18.33 30.9726054,18.3125 30.7384387,18.7208333 C30.3176054,19.4541667 30.1434387,20.3883333 29.3517721,21.8025 C27.6776054,24.795 27.0076054,24.9491667 26.7351054,24.7641667 C26.0976054,24.3333333 26.2559387,23.0266667 26.2559387,22.0991667 C26.2559387,19.2025 26.6742721,17.995 25.4426054,17.6808333 C25.0342721,17.5791667 24.7917721,17.5483333 23.6884387,17.5 C22.2917721,17.5308333 21.2117721,17.5041667 20.5684387,17.835 C20.1426054,18.0541667 19.8109387,18.5441667 20.0134387,18.5758333 C20.2626054,18.6083333 20.8226054,18.7341667 21.1209387,19.1608333 C21.5067721,19.7125 21.4934387,20.9491667 21.4934387,20.9491667 C21.4934387,20.9491667 21.7151054,24.3575 20.9759387,24.7816667 C20.4701054,25.0725 19.7751054,24.4791667 18.2826054,21.7675 C17.5192721,20.3791667 17.4409387,19.4741667 16.9409387,18.845 C16.6142721,18.4341667 16.0526054,18.33 16.0526054,18.33 L12.4817721,18.33 C12.4817721,18.33 11.8751054,18.2775 11.7492721,18.4425 C11.5726054,18.6608333 11.7342721,19.1141667 11.7342721,19.1141667 C11.7342721,19.1141667 14.5309387,25.9933333 17.6967721,29.4616667 C20.6026054,32.64 23.8984387,32.4966667 23.8984387,32.4966667 C23.8984387,32.4966667 25.8159387,32.5833333 26.0759387,32.1183333 C26.2676054,31.9233333 26.2801054,31.4291667 26.2801054,31.4291667 C26.2801054,31.4291667 26.2517721,29.3183333 27.1817721,29.01 C28.0984387,28.705 29.2767721,31.045 30.5259387,31.9483333 C31.4842721,32.5841667 31.7501054,32.4966667 32.1867721,32.4966667 L35.5251054,32.4966667 C35.5251054,32.4966667 37.2717721,32.3166667 36.4442721,30.8733333 C36.3751054,30.7558333 35.9617721,29.8066667 33.9617721,27.855 Z" id="vk" fill="#BBBBBB"></path>
-                    <circle id="Oval-1-Copy-2" stroke="#BBBBBB" stroke-width="2" cx="25" cy="25" r="25"></circle>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
+          SVG
         </li>
         <li class="usr-registration__social-icon-item">
-          <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-          <svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <!-- Generator: sketchtool 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
-            <title>9A90694A-6DBB-49DC-ABD7-60D899009D14</title>
-            <desc>Created with sketchtool.</desc>
-            <defs></defs>
-            <g id="sign_up_preclick" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="still" transform="translate(-829.000000, -621.000000)">
-                <g id="fb-icon" transform="translate(830.000000, 622.000000)">
-                  <g>
-                    <path d="M26.76,37.5 L26.76,26.0966667 L30.5875,26.0966667 L31.1608333,21.6525 L26.76,21.6525 L26.76,18.815 C26.76,17.5275 27.1175,16.6508333 28.9625,16.6508333 L31.3158333,16.65 L31.3158333,12.675 C30.9091667,12.6208333 29.5116667,12.5 27.8866667,12.5 C24.4933333,12.5 22.1708333,14.5708333 22.1708333,18.375 L22.1708333,21.6525 L18.3333333,21.6525 L18.3333333,26.0966667 L22.1708333,26.0966667 L22.1708333,37.5 L26.76,37.5 Z" id="fb" fill="#BBBBBB"></path>
-                    <circle id="Oval-1-Copy-3" stroke="#BBBBBB" stroke-width="2" cx="25" cy="25" r="25"></circle>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
+          SVG
         </li>
       </ul>
     </div>
 
-    <div class="usr-registration__confirmation-email-close-btn"
-         data-RegistrationFormHidden
-         data-registration-clear ></div>
+    <div class="usr-registration__confirmation-email-close-btn" ng-click="r.closeForm(event); r.clearForm(event)"></div>
 
     <div class="usr-registration__send-user-block">
       <div class="usr-registration__send-user-btn">
-        <a href="#" class="send-user-btn_light" data-jumping-login >Войти</a>
-      </div>
-    </div>
-
-    <div class="usr-registration__confirmation-email-b" data-ng-hide="!formValidate">
-      <div class="usr-registration__confirmation-email-close-btn"></div>
-      <h3 class="usr-registration__confirmation-email-header-title">
-        Почти готово!
-      </h3>
-      <div class="usr-registration__confirmation-email-content">
-        Чтобы завершить процесс регистрации,
-        подтвердите свой адрес электронной почты,
-        открыв ссылку из сообщения, которое
-        мы вам отправили.
-      </div>
-      <div class="usr-registration__confirmation-email-link-b">
-        <a ng-href="{{ emailAgent }}"
-           class="usr-registration__confirmation-email-link"
-           target="_blank">
-          Подтвердить
-        </a>
-      </div>
-      <div class="usr-registration__confirmation-email-settings-profile-b">
-        Так же вы можете перейти на страницу <br>
-        <a href="#">редактирования профиля</a>.
+        <a href="#" class="send-user-btn_light" ng-click="r.jumpLoginForm(); r.clearForm()">Войти</a>
       </div>
     </div>
   </div>

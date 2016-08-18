@@ -1,0 +1,274 @@
+//@section cabinet (begin)
+@import "../design.patterns/style.settings";
+
+.center-block {
+  max-width: 1284px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-b {
+  @extend .center-block;
+}
+.cabinet-body {
+  background-color: #ececec;
+  padding-top: 15px;
+  padding-bottom: 27px;
+}
+.cabinet-b {
+  position: relative;
+  padding: 10px;
+  padding: rem-calc(10);
+  padding-bottom: 20px;
+  padding-bottom: rem-calc(20);
+  background-color: #fff;
+}
+.cabinet-title {
+  font-family: $ff;
+  font-size: 22px;
+  font-size: rem-calc(22);
+  color: $Color1;
+  font-weight: 500;
+  padding-bottom: 8px;
+  padding-bottom: rem-calc(8);
+  border-bottom: 1px solid #bbbbbb;
+}
+.cabinet-title_regular{
+  font-family: "Roboto";
+  font-size: 22px;
+  color: #232121;
+  font-weight: 500;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #bbbbbb;
+  margin-bottom: 20px;
+}
+.box {
+  background-color: #fff;
+  position: relative;
+  padding: 20px 20px;
+  padding: rem-calc(20) rem-calc(20);
+}
+.box_border {
+  @extend .box;
+  border-bottom: 2px solid #bfcad2;
+}
+.cabinet-media {
+  @extend .cabinet-b;
+  .cabinet-media__photo-img {
+    position: relative;
+    margin-bottom: 15px;
+    margin-bottom: rem-calc(15);
+    .cabinet-media__photo-img-link {
+      text-decoration: none;
+      .cabinet-media__photo-img-images {
+        max-width: 184px;
+        max-height: 184px;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+.cabinet-media {
+  .cabinet-media__user-name {
+    position: relative;
+    font-size: 22px;
+    font-size: rem-calc(22);
+    font-family: "Roboto";
+    font-weight: 500;
+    text-align: center;
+    color: #232121;
+    margin-bottom: 50px;
+    margin-bottom: rem-calc(50);
+  }
+}
+.cabinet-media {
+  .cabinet-media__user-links-b {
+    position: relative;
+  }
+}
+.cabinet-media__user-links-b {
+  .cabinet-media__user-link-item {
+    transition: all 300ms;
+    display: block;
+    font-family: "Roboto";
+    font-size: 14px;
+    text-align: center;
+    color: $link_color;
+    line-height: 20px;
+    &:hover{
+      color: darken($link_color, 20%);
+    }
+  }
+}
+
+.cabinet-guests__title {
+  @extend .cabinet-title;
+  margin-bottom: 17px;
+  margin-bottom: rem-calc(17);
+}
+.cabinet-guests__collections-b {
+  position: relative;
+  .cabinet-guests__item-guest-b {
+    position: relative;
+    overflow: hidden;
+    font-family: "Roboto";
+    line-height: 20px;
+  }
+}
+.cabinet-guests__item-guest-b {
+  .cabinet-guests__item-guest-link {
+    text-decoration: none;
+    .cabinet-guests__item-guest-photo {
+      max-width: 100px;
+      max-height: 100px;
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+  }
+}
+.cabinet-guests__item-guest-b {
+  .cabinet-guests__item-guest-name {
+    position: relative;
+    a {
+      transition: all 300ms;
+      color: #232121;
+      text-decoration: none;
+      font-size: 16px;
+      font-size: rem-calc(16);
+      font-weight: 500;
+      &:hover {
+        color: lighten(#232121, 20%);
+      }
+    }
+  }
+}
+.cabinet-guests__item-guest-b {
+  .cabinet-guests__item-guest-home {
+    font-size: 13px;
+    color: #232121;
+  }
+}
+.cabinet-guests__item-guest-b {
+  .cabinet-guests__item-guest-date {
+    transition: all 300ms;
+    font-size: 13px;
+    color: $action_color;
+  }
+}
+
+.cabinet-travels__title {
+  @extend .cabinet-title;
+}
+
+
+.cabinet-travels__collections-b {
+  position: relative;
+  font-family: $ff;
+}
+
+.cabinet-travels__collections-b {
+  .cabinet-travels__item {
+    position: relative;
+    overflow: hidden;
+  }
+}
+.cabinet-travels__item {
+  .cabinet-travels__item-title {
+    font-size: 16px;
+    font-size: rem-calc(16);
+    font-weight: 500;
+    color: #232121;
+    margin-top: 17px;
+    margin-top: rem-calc(17);
+    margin-bottom: 10px;
+    margin-bottom: rem-calc(10);
+    .cabinet-travels__item-title_active {
+      color: $action_color;
+    }
+  }
+}
+.cabinet-travels__item {
+  .cabinet-travels__item-place-photo {
+    max-width: 370px;
+    max-height: 128px;
+    width: 100%;
+    float: left;
+  }
+}
+.cabinet-travels__item {
+  .cabinet-travels__item-guide-info-b {
+    float: left;
+    width: 200px;
+    width: 32.75862068965517%;/*190x580*/
+  }
+}
+.cabinet-travels__item-guide-photo {
+  display: inline-block;
+  position: relative;
+  top: 28px;
+  left: -36px;
+  img {
+    width: 71px;
+    height: 71px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+  }
+}
+.cabinet-travels__item-guide-info-text {
+  display: inline-block;
+  position: relative;
+  left: -30px;
+  font-size: 16px;
+  font-size: rem-calc(16);
+  font-weight: 700;
+  color: #232121;
+}
+.cabinet-travels__item {
+  .cabinet-travels__item-more-info {
+    position: relative;
+    padding-bottom: 12px;
+    padding-bottom: rem-calc(12);
+    border-bottom: 2px solid #bbbbbb;
+  }
+}
+.cabinet-travels__item-more-info {
+  .cabinet-travels__item-more-info-link {
+    transition: all 300ms;
+    display: block;
+    text-align: right;
+    color: $link_color;
+    font-size: 13px;
+    font-size: rem-calc(13);
+    &:hover {
+      color: darken($link_color, 20%);
+    }
+  }
+}
+.cabinet-guests__item-b {
+  position: relative;
+  .cabinet-guests__item-title {
+    font-size: 16px;
+    font-size: rem-calc(16);
+    font-weight: 500;
+    color: #232121;
+    margin-bottom: 10px;
+    margin-bottom: rem-calc(10);
+  }
+}
+.cabinet-guests__item-b {
+  @extend .cabinet-guests__item-b;
+  .cabinet-travels__item-title {
+    @extend .cabinet-guests__item-title;
+  }
+}
+.box__wrapper {
+  margin-bottom: 20px;
+  margin-bottom: rem-calc(20);
+}
+.profile-settings__item-inpt {
+  .settings__pwd-b{
+    margin-bottom: 15px;
+  }
+}
+//@section cabinet (end)

@@ -1,15 +1,14 @@
-class topmenuCtrl{
-  constructor($location){
-    this.$location = $location
-  }
-  getActiveLink(path){
-    return (this.$location.path().substr(0, path.length) === path) ? 'cabinet-navigation__item-link_active' : '';
-  }
-}
+import topmenuCtrl from './topmenu.controller';
+
 const topmenuDefinition = {
-  binding: {},
+  binding: {
+    user: '='
+  },
   templateUrl: '/js/developer/angular/views/templates/navigation/topmenu.html',
   controller: topmenuCtrl,
   controllerAs: 'topmenu'
 };
 export default topmenuDefinition;
+
+
+

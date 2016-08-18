@@ -1,0 +1,238 @@
+<section class="cabinet-body">
+  <div class="center-b">
+    <div class="row row-fix">
+      <div class="large-2 small-12 columns hide-for-small coll-fix-right">
+        <aside class="profile-settings__ctrl-panel-b">
+          <ul>
+            <li>
+              <a href="#" class="ctrl-panel__item-link">Основное</a>
+            </li>
+            <li>
+              <a href="#" class="ctrl-panel__item-link">Контакты</a>
+            </li>
+            <li>
+              <a href="#" class="ctrl-panel__item-link">Места проживания</a>
+            </li>
+            <li>
+              <a href="#" class="ctrl-panel__item-link">О себе</a>
+            </li>
+            <li>
+              <a href="#" class="ctrl-panel__item-link">Безопастность</a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <div class="large-7 small-12 columns end">
+        <article class="profile-settings-wrapper">
+          <div class="box_border box__wrapper">
+            <div class="profile-settings__header" id="settings_main">
+              <h2 class="profile-settings__header-title">Детали профиля</h2>
+              <div>{{ps.settingsTest}}</div>
+            </div>
+            <fieldset class="profile-settings__body" form="profile_settings">
+              <dl class="profile-settings__item row row-fix">
+                <dt class="large-3 columns coll-fix">
+                  <label for="fname2" class="profile-settings__item-inpt-description">Имя</label>
+                </dt>
+                <dd class="yo-item-element-box large-9 columns coll-fix">
+                  <input type="text"
+                         name="fname2"
+                         id="fname2"
+                         placeholder="Ваше имя" class="yo-item-input">
+                </dd>
+              </dl>
+              <dl class="profile-settings__item row row-fix">
+                <dt class="large-3 columns coll-fix">
+                  <label for="lname2" class="profile-settings__item-inpt-description">Фамилия</label>
+                </dt>
+                <dd class="yo-item-element-box large-9 columns coll-fix">
+                  <input type="text"
+                         name="lname2"
+                         id="lname2"
+                         placeholder="Ваша фамилия"
+                         class="yo-item-input">
+                </dd>
+              </dl>
+              <dl class="profile-settings__item row row-fix">
+                <dt class="large-3 columns coll-fix">
+                  <label for="birthday" class="profile-settings__item-inpt-description">Дата рождения</label>
+                </dt>
+                <dd class="yo-item-element-box large-9 columns coll-fix">
+                  <input type="date"
+                         name="birthday"
+                         id="birthday"
+                         placeholder="Дата рождения"
+                         class="yo-item-input">
+                </dd>
+              </dl>
+              <dl class="profile-settings__item row row-fix">
+                <dt class="large-3 columns coll-fix">
+                  <label for="gender" class="profile-settings__item-inpt-description">Пол</label>
+                </dt>
+                <dd class="yo-item-element-box large-9 columns coll-fix">
+                  <select name="gender" id="gender" class="yo-item-input">
+                    <option value="0">Не показывать</option>
+                    <option value="1">Мужской</option>
+                    <option value="2">Женский</option>
+                  </select>
+                </dd>
+              </dl>
+            </fieldset>
+          </div>
+
+          <div class="box_border box__wrapper">
+            <div class="profile-settings__header" id="settings_contacts">
+              <h2 class="profile-settings__header-title">Контакты</h2>
+            </div>
+            <fieldset class="profile-settings__body" form="profile_settings">
+              <dl class="profile-settings__item row row-fix">
+                <dt class="large-3 columns coll-fix">
+                  <label for="email2" class="profile-settings__item-inpt-description">Электронная почта</label>
+                </dt>
+                <dd class="yo-item-element-box large-9 columns coll-fix">
+                  <input type="email"
+                         name="email2"
+                         id="email2"
+                         placeholder="Сменить электронную почту"
+                         class="yo-item-input">
+                </dd>
+              </dl>
+              <dl class="profile-settings__item row row-fix">
+                <dt class="large-3 columns coll-fix">
+                  <label for="phone" class="profile-settings__item-inpt-description">Телефон</label>
+                </dt>
+                <dd class="yo-item-element-box large-9 columns coll-fix">
+                  <input type="text"
+                         name="phone"
+                         id="phone"
+                         placeholder="Телефон"
+                         class="yo-item-input">
+                </dd>
+              </dl>
+            </fieldset>
+          </div>
+
+          <div class="box_border box__wrapper">
+            <div class="profile-settings__header" id="settings_location">
+              <h2 class="profile-settings__header-title">Локация</h2>
+            </div>
+            <fieldset class="profile-settings__body" form="profile_settings">
+              <dl class="profile-settings__item row row-fix">
+                <dt class="large-3 columns coll-fix">
+                  <label for="country" class="profile-settings__item-inpt-description">Страна</label>
+                </dt>
+                <dd class="yo-item-element-box large-9 columns coll-fix">
+                  <input type="text"
+                         name="country"
+                         id="country"
+                         placeholder="Страна"
+                         class="yo-item-input">
+                </dd>
+              </dl>
+              <dl class="profile-settings__item row row-fix">
+                <dt class="large-3 columns coll-fix">
+                  <label for="city" class="profile-settings__item-inpt-description">Город</label>
+                </dt>
+                <dd class="yo-item-element-box large-9 columns coll-fix">
+                  <input type="text"
+                         name="city"
+                         id="city"
+                         placeholder="Город"
+                         class="yo-item-input">
+                </dd>
+              </dl>
+            </fieldset>
+          </div>
+
+          <div class="box_border box__wrapper">
+            <div class="profile-settings__header" id="settings_about">
+              <h2 class="profile-settings__header-title">О себе</h2>
+            </div>
+            <fieldset class="profile-settings__body" form="profile_settings">
+              <dl class="profile-settings__item row row-fix">
+                <dt class="large-3 columns coll-fix">
+                  <label for="interests" class="profile-settings__item-inpt-description">Интересы</label>
+                </dt>
+                <dd class="yo-item-element-box large-9 columns coll-fix">
+                  <div class="profile-settings__intrests-b">
+                    <div class="intrests__add">
+                      <input type="text"
+                             id="interests"
+                             name="interests"
+                             placeholder="Интересы"
+                             class="yo-item-input">
+                    </div>
+                    <div class="interests__list">
+                      футбол <span class="interests__list-del"></span>
+                    </div>
+                  </div>
+                </dd>
+              </dl>
+
+              <dl class="profile-settings__item row row-fix">
+                <dt class="large-3 columns coll-fix">
+                  <label for="about" class="profile-settings__item-inpt-description">О себе</label>
+                </dt>
+                <dd class="profile-settings__item-inpt large-9 columns coll-fix">
+                  <div class="profile-settings__intrests-b">
+                    <div class="intrests__add">
+                                            <textarea
+                                              name="about"
+                                              id="about"
+                                              cols="30"
+                                              rows="10"
+                                              placeholder="О себе"
+                                              class="yo-item-input settings__item-inpt_about-text"></textarea>
+                    </div>
+                  </div>
+                </dd>
+              </dl>
+            </fieldset>
+          </div>
+
+          <div class="box_border box__wrapper">
+            <div class="profile-settings__header" id="settings_private">
+              <h2 class="profile-settings__header-title">Безопастность</h2>
+            </div>
+            <fieldset class="profile-settings__body">
+              <dl class="profile-settings__item row row-fix">
+                <dt class="large-3 columns coll-fix">
+                  <label for="pwdOld" class="profile-settings__item-inpt-description">Сменить пароль</label>
+                </dt>
+                <dd class="profile-settings__item-inpt large-9 columns coll-fix">
+                  <div class="settings__pwd-b">
+                    <input type="password"
+                           name="pwdOld"
+                           id="pwdOld"
+                           placeholder="Старый пароль"
+                           class="yo-item-input">
+                  </div>
+                  <div class="settings__pwd-b">
+                    <input type="password"
+                           name="pwdNew"
+                           id="pwdNew"
+                           placeholder="Новый пароль"
+                           class="yo-item-input">
+                  </div>
+                </dd>
+              </dl>
+            </fieldset>
+
+            <div class="profile-settings__form">
+              <form action="/user/profile/settings/action-form" method="post" novalidate name="profile_settings" id="profile_settings">
+                <div class="row row-fix">
+                  <div class="large-6 columns coll-fix_left">
+                    <button type="button" class="yo-send-btn_full_destroy">Отменить</button>
+                  </div>
+                  <div class="large-6 columns coll-fix_right">
+                    <button type="button" class="yo-send-btn_full_responsibility">Сохранить</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

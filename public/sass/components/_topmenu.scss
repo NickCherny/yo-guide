@@ -2,7 +2,7 @@
 @import "../design.patterns/style.settings";
 .top-menu {
   font-family: $ff;
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
   z-index: 100;
@@ -29,6 +29,9 @@
   .top-menu__logo-link {
     color: #fff;
     font-size: 24px;
+    &:hover{
+      color: $Color2;
+    }
   }
 }
 .top-menu {
@@ -151,14 +154,14 @@
     margin-right: 15px;
     cursor: pointer;
     &:hover {
-      color: #2461fc;
+      color: $Color2;
     }
   }
   .top-menu__registration-user {
     transition: all 300ms;
     cursor: pointer;
     &:hover {
-      color: #2461fc;
+      color: $Color2;
     }
   }
 }

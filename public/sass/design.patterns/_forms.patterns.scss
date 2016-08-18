@@ -73,7 +73,9 @@
   margin-bottom: rem-calc(22);
   border: 0;
 }
-.Inpt {
+.Inpt{
+  position: relative;
+  z-index: 1;
   font-size: 16px;
   font-size: rem-calc(16);
   line-height: 1.4;
@@ -82,6 +84,7 @@
   width: 100%;
   padding: 14px 0;
   box-shadow: none;
+  background-color: #ffffff;
   border-bottom: 1px solid #bbbbbb;
   margin-bottom: 5px;
   &:focus {
@@ -346,7 +349,6 @@
   .usr-login-form__submit-btn {
     @extend .Btn;
     text-align: center;
-    line-height: 55px;
     background-color: $login_user_color;
     &:hover {
       background-color: lighten($login_user_color, 5%);
@@ -393,6 +395,41 @@
       background-color: lighten($login_user_color, 10%);
       box-shadow: 0px 0px 0px 0px darken($login_user_color, 0%);
     }
+  }
+}
+.form__row-inpt{
+  transition: all 200ms;
+  opacity: 0;
+  position: absolute;
+  z-index: 0;
+  top: 12px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-left: 10px solid $Color1;
+  border-bottom: 6px solid transparent;
+}
+.form__row-inpt_registration{
+  @extend .form__row-inpt;
+  border-left: 10px solid $reg_user_color;
+}
+.form__row-inpt_show{
+  left: -22px;
+  opacity: 100;
+}
+.login-form__remember-b{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.default-link{
+  transition: all 300ms;
+  color: $link_color;
+  text-decoration: none;
+  font-size: $fs_small;
+  &:hover{
+    color: darken($link_color, 20%);
   }
 }
 //@subsection login user (end)

@@ -1,0 +1,135 @@
+<% layout('../template') %>
+<div>
+  <nav class="top-menu">
+    <div class="top-menu_wrapper">
+      <div class="row row-fix">
+        <div class="large-1 columns">
+          <a href="/" class="top-menu__logo-link" ng-class="topmenu.getActiveLink('/')">
+            LOGO
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+  <div class="usr-registration">
+    <h3 class="usr-registration__header-title">Зарегистрироваться</h3>
+    <form action="/registration-user"
+          method="post"
+          name="reg"
+          novalidate
+          class="usr-registration__form">
+      <label for="fname"
+             class="usr-registration__item-pole">
+        <input type="text"
+               name="fname"
+               required
+               id="fname"
+               placeholder="Введите ваше имя"
+               data-ng-model="rf.userInfo.fname"
+               data-ng-class="{'ng-form-error': true}"
+               class="usr-registration__item-inpt usr-registration__item-inpt_error">
+
+        <div class="usr-registration__item-error-helper"
+             data-ng-hide="reg.fname.$valid || reg.fname.$pristine"></div>
+        <div class="form__row-inpt_registration" ng-class="{'form__row-inpt_show': true}"></div>
+      </label>
+
+      <label for="lname"
+             class="usr-registration__item-pole">
+        <input type="text"
+               name="lname"
+               required
+               id="lname"
+               placeholder="Введите вашу Фамилию"
+               data-ng-model="rf.usrInfo.lname"
+               data-ng-class="{'ng-form-error': true}"
+               class="usr-registration__item-inpt usr-registration__item-inpt_error">
+
+        <div class="usr-registration__item-error-helper"
+             data-ng-hide="true"></div>
+        <div class="form__row-inpt_registration" ng-class="{'form__row-inpt_show': true}"></div>
+      </label>
+      <label for="email" class="usr-registration__item-pole">
+        <input type="email"
+               name="email"
+               required
+               id="email"
+               placeholder="Введите электронную почту"
+               data-ng-class="{'ng-form-error': true}"
+               class="usr-registration__item-inpt">
+        <div class="usr-registration__item-error-helper"
+             data-ng-hide="true"></div>
+        <div class="form__row-inpt_registration" ng-class="{'form__row-inpt_show': true}"></div>
+      </label>
+
+      <label for="pwd1" class="usr-registration__item-pole">
+        <input type="password"
+               name="pwd1"
+               required
+               id="pwd1"
+               placeholder="Введите пароль"
+               data-ng-class="{'ng-form-error': true}"
+               class="usr-registration__item-inpt">
+        <div class="usr-registration__item-error-helper"
+             data-ng-hide="true"></div>
+        <div class="form__row-inpt_registration" ng-class="{'form__row-inpt_show': true}"></div>
+      </label>
+
+      <label for="pwd2"
+             data-ng-show="rf.checkPwd(rf.usrInfo.pwd1)"
+             class="usr-registration__item-pole">
+        <input type="password"
+               name="pwd2"
+               required
+               id="pwd2"
+               placeholder="Повторите пароль"
+               data-ng-class="{'ng-form-error': true}"
+               class="usr-registration__item-inpt">
+        <div class="usr-registration__item-error-helper"
+             data-ng-hide="true"></div>
+        <div class="form__row-inpt_registration" ng-class="{'form__row-inpt_show': true}"></div>
+      </label>
+      <div class="usr-registration__item-pole usr-registration__condition-project">
+        <p class="usr-registration__condition-project_text">Регистрируясь, я соглашаюсь с
+          <a href="/" class="usr-registration__condition-project_link">правилами использования.</a>
+        </p>
+      </div>
+      <div class="usr-registration__item-pole">
+        <button
+          type="submit"
+          class="usr-registration__submit-btn"
+          data-ng-disabled="true"
+          data-ng-class="{'usr-registration__submit-btn_disable': true}">Создать аккаунт</button>
+      </div>
+    </form>
+    <div class="usr-registration__social">
+      <h3 class="usr-registration__social-title">
+        Зарегистрироваться с помощью
+      </h3>
+
+      <ul class="usr-registration__social-icons">
+        <li class="usr-registration__social-icon-item">
+          SVG
+        </li>
+        <li class="usr-registration__social-icon-item">
+          SVG
+        </li>
+        <li class="usr-registration__social-icon-item">
+          SVG
+        </li>
+        <li class="usr-registration__social-icon-item">
+          SVG
+        </li>
+      </ul>
+    </div>
+
+    <div class="usr-registration__confirmation-email-close-btn" ng-click="r.closeForm(event)"></div>
+
+    <div class="usr-registration__send-user-block">
+      <div class="usr-registration__send-user-btn">
+        <a href="#" class="send-user-btn_light" ng-click="r.jumpLoginForm()">Войти</a>
+      </div>
+    </div>
+  </div>

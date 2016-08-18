@@ -1,1 +1,1 @@
-import './angular/models/mainApp.model';
+import './angular/modules/mainApp.module.js';

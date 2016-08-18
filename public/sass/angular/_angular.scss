@@ -1,0 +1,13 @@
+//@section angular style (begin)
+@import "../design.patterns/style.settings";
+.overflow-hidden{
+  overflow-y: hidden;
+}
+.ng-form-valid{
+  border-color: $Color2!important;
+}
+.ng-form-error{
+  border-color: $errorColor!important;
+}
+
+//@section angular style (end)

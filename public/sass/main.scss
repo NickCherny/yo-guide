@@ -4,9 +4,12 @@
 
 @import "design.patterns/forms.patterns";
 
+@import "./angular/angular";
+
 @import "./components/topmenu";
 @import "./components/mainPage";
 @import "./components/header";
 @import "./components/footer";
+@import "./components/navigationCabinet";
 
 @import "./components/admin";

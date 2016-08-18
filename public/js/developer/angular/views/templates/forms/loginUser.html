@@ -1,0 +1,86 @@
+<div class="usr-login-wrapper">
+  <div class="usr-login-form">
+    <h3 class="usr-login-form__header-title">Войти</h3>
+    <form action="/api/v1/login/user"
+          method="post"
+          name="login"
+          novalidate
+          data-ng-keyup=""
+          class="usr-login-form__form">
+
+      <label for="email"
+             class="usr-login-form__item-pole" show-row>
+        <input type="text"
+               name="email"
+               id="email"
+               required
+               placeholder="Адрес электронной почты"
+               ng-model="lform.login.email"
+               ng-pattern="lform.emailTpl"
+               data-ng-class="{'ng-form-error': login.email.$invalid && login.email.$dirty, 'ng-form-valid': login.email.$valid}"
+               class="usr-login-form__item-inpt usr-login-form__item-inpt_error">
+        <div class="form__row-inpt"></div>
+      </label>
+      <label for="password"
+             class="usr-login-form__item-pole" show-row>
+
+        <input type="password"
+               name="password"
+               id="password"
+               required
+               ng-model="lform.login.password"
+               ng-pattern="lform.passwordTpl"
+               placeholder="Введите пароль"
+               data-ng-class="{'ng-form-error': login.password.$dirty && login.password.$invalid, 'ng-form-valid': login.password.$valid}"
+               class="usr-login-form__item-inpt usr-login-form__item-inpt_error">
+        <div class="form__row-inpt"></div>
+      </label>
+
+      <div class="usr-login__error-b"
+           ng-show="login.$submitted && login.$invalid">{{lform.errorMessages}}</div>
+      <div class="login-form__remember-b">
+        <div>
+          <input type="checkbox" name="remember" id="remember"><label for="remember" class="remember-b">Запомнить меня</label>
+        </div>
+        <div>
+          <a href="#" class="default-link">Забыли пароль?</a>
+        </div>
+      </div>
+      <div class="usr-login-form__item-pole">
+        <button type="submit" class="usr-login-form__submit-btn"
+                ng-disabled="login.$invalid"
+                data-ng-class="{'usr-login__submit-btn_disable': login.$invalid}">
+          Войти
+        </button>
+      </div>
+    </form>
+    <div class="usr-registration__social">
+      <h3 class="usr-registration__social-title">
+        Войти с помощью
+      </h3>
+
+      <ul class="usr-registration__social-icons">
+        <li class="usr-registration__social-icon-item">
+          SVG
+        </li>
+        <li class="usr-registration__social-icon-item">
+          SVG
+        </li>
+        <li class="usr-registration__social-icon-item">
+          SVG
+        </li>
+        <li class="usr-registration__social-icon-item">
+          SVG
+        </li>
+      </ul>
+    </div>
+
+    <div class="usr-registration__confirmation-email-close-btn" ng-click="lform.closeLoginForm(event)"></div>
+
+    <div class="usr-login-form__registration-user">
+      <div class="usr-login-form__registration-user-btn">
+        <a href="#" class="usr-login-form__registration-user-link" ng-click="lform.jumpRegistrationForm()">Зарегистрироваться</a>
+      </div>
+    </div>
+  </div>
+</div>

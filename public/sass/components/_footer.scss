@@ -1,12 +1,15 @@
 //@section footer (begin)
 .footer{
-  position: relative;
   width: 100%;
   background-color: #1f1f1f;
+  display: table;
+  position: relative;
   .footer-b{
     position: relative;
-    padding: 40px;
-    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 .footer{
@@ -24,9 +27,11 @@
   ul{
     margin-left: 0;
   }
-  .card-site{
-    border-bottom: 1px solid #616161;
-  }
+}
+.card-site{
+  margin-top: 30px;
+  position: relative;
+  border-bottom: 1px solid #616161;
 }
 .card-site{
   .card-site__item{

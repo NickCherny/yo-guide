@@ -37,18 +37,19 @@ module.exports = (app, config) => {
   const strategy = require('../app/service/').Strategy;
   passport.use(strategy.adminLogin());
 
-  let admin = passport.authenticate('local', {
-    successRedirect: '/admin',
-    failureRedirect: '/login/admin'
+  let user = passport.authenticate('local', {
+    successRedirect: '/cabinet',
+    failureRedirect: '/login/cabinet'
   });
 
-  app.post('/login/admin', admin);
+
+  app.post('/api/v1/login/user', user);
 
   let mustBeAuthenticated = function(req, res, next){
-    req.isAuthenticated() ? next() : res.redirect('/login/admin');
+    req.isAuthenticated() ? next() : res.redirect('/login/cabinet');
   };
-  app.all('/admin', mustBeAuthenticated);
-  app.all('/admin/*', mustBeAuthenticated);
+  app.all('/cabinet', mustBeAuthenticated);
+  app.all('/cabinet/*', mustBeAuthenticated);
 
   passport.serializeUser(function(data, done){
     done(null, data.username);

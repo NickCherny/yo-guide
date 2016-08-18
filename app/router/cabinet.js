@@ -8,8 +8,8 @@ const guest = require('../controllers').guest;
 module.exports = function (app) {
   app.use('/', router);
 };
-//
-// router.get('/api/v1/cabinet/home/:id', cabinet.home);
+router.get('/cabinet', cabinet.home);
+
 // router.get('/api/v1/cabinet/profile/:id', cabinet.profile);
 // router.get('/api/v1/cabinet/settings/:id', cabinet.settings);
 // router.post('/api/v1/cabinet/settings/update', cabinet.settings);

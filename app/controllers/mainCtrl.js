@@ -1,11 +1,17 @@
 class Main{
   load(req, res, next){
     let self = this;
-    if(req.session.user){
+    console.log(req.session.passport.username);
+    if(req.session.passport.username){
       console.log('Главная для залогиненного пользователя')
+      res.redirect('/cabinet');
     }else {
       console.dir(req.ip);
-      res.render('pages/mainPage', {title: 'Гиды, туры по всему миру'}, function(err, html){
+      res.render('pages/mainPage', {
+        title: 'Гиды, туры по всему миру',
+        user: req.session.passport
+      },
+        function(err, html){
         if(err){
           console.error(err)
         }else {
