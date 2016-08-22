@@ -11,7 +11,7 @@ class AppStrateges{
       usernameField: 'email',
       passwordField: 'password'
     },function(username, password, done){
-      if(username !== 'nick@tut.by' && password !== '123') {
+      if(username !== 'nick@tut.by' || password !== '123') {
         return done(null, false, {message: 'Неверный логин или пароль'})
       }
       return done(null, {username: username})
