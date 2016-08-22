@@ -10,6 +10,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -6389,7 +6395,13 @@ th.hide-for-touch {
 .columns-fix {
   padding: 0; }
 
-.Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .header .header__btn-b, .hero-content .hero__btn, .begin-use .begin-use__btn {
+.columns-fix_left {
+  padding-left: 0; }
+
+.columns-fix_right {
+  padding-right: 0; }
+
+.Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .yo-btn_full, .header .header__btn-b, .hero-content .hero__btn, .begin-use .begin-use__btn {
   transition: all 300ms;
   transition-timing-function: ease-in;
   position: relative;
@@ -6404,10 +6416,10 @@ th.hide-for-touch {
   font-size: 1rem;
   outline: none;
   font-weight: 400; }
-  .Btn:hover, .usr-registration__form .usr-registration__submit-btn:hover, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover, .usr-login-form__item-pole .usr-login-form__submit-btn:hover, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover, .header .header__btn-b:hover, .hero-content .hero__btn:hover, .begin-use .begin-use__btn:hover {
+  .Btn:hover, .usr-registration__form .usr-registration__submit-btn:hover, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover, .usr-login-form__item-pole .usr-login-form__submit-btn:hover, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover, .yo-btn_full:hover, .header .header__btn-b:hover, .hero-content .hero__btn:hover, .begin-use .begin-use__btn:hover {
     background-color: inherit;
     box-shadow: 0px 2px 1px 0px #0f937c; }
-  .Btn:active, .usr-registration__form .usr-registration__submit-btn:active, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active, .usr-login-form__item-pole .usr-login-form__submit-btn:active, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active, .header .header__btn-b:active, .hero-content .hero__btn:active, .begin-use .begin-use__btn:active {
+  .Btn:active, .usr-registration__form .usr-registration__submit-btn:active, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active, .usr-login-form__item-pole .usr-login-form__submit-btn:active, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active, .yo-btn_full:active, .header .header__btn-b:active, .hero-content .hero__btn:active, .begin-use .begin-use__btn:active {
     background-color: inherit;
     box-shadow: none; }
 
@@ -6725,7 +6737,7 @@ th.hide-for-touch {
   top: 0;
   width: 100%;
   z-index: 100;
-  padding-top: 30px;
+  padding-top: 15px;
   line-height: 35px;
   background-color: transparent;
   background-color: #2461fc; }
@@ -6750,8 +6762,7 @@ th.hide-for-touch {
     color: #5de895; }
 
 .top-menu .top-menu__search-b {
-  position: relative;
-  max-width: 270px; }
+  position: relative; }
   .top-menu .top-menu__search-b .top-menu__search-inpt {
     border-radius: 20px;
     padding: 14px;
@@ -6850,7 +6861,7 @@ th.hide-for-touch {
     .top-menu__user-menu .top-menu__registration-user:hover {
       color: #5de895; }
 
-.Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .header .header__btn-b, .hero-content .hero__btn, .begin-use .begin-use__btn {
+.Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .yo-btn_full, .header .header__btn-b, .hero-content .hero__btn, .begin-use .begin-use__btn {
   transition: all 300ms;
   transition-timing-function: ease-in;
   position: relative;
@@ -6865,10 +6876,10 @@ th.hide-for-touch {
   font-size: 1rem;
   outline: none;
   font-weight: 400; }
-  .Btn:hover, .usr-registration__form .usr-registration__submit-btn:hover, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover, .usr-login-form__item-pole .usr-login-form__submit-btn:hover, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover, .header .header__btn-b:hover, .hero-content .hero__btn:hover, .begin-use .begin-use__btn:hover {
+  .Btn:hover, .usr-registration__form .usr-registration__submit-btn:hover, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover, .usr-login-form__item-pole .usr-login-form__submit-btn:hover, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover, .yo-btn_full:hover, .header .header__btn-b:hover, .hero-content .hero__btn:hover, .begin-use .begin-use__btn:hover {
     background-color: inherit;
     box-shadow: 0px 2px 1px 0px #0f937c; }
-  .Btn:active, .usr-registration__form .usr-registration__submit-btn:active, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active, .usr-login-form__item-pole .usr-login-form__submit-btn:active, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active, .header .header__btn-b:active, .hero-content .hero__btn:active, .begin-use .begin-use__btn:active {
+  .Btn:active, .usr-registration__form .usr-registration__submit-btn:active, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active, .usr-login-form__item-pole .usr-login-form__submit-btn:active, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active, .yo-btn_full:active, .header .header__btn-b:active, .hero-content .hero__btn:active, .begin-use .begin-use__btn:active {
     background-color: inherit;
     box-shadow: none; }
 
@@ -7502,11 +7513,10 @@ th.hide-for-touch {
 .cabinet__cntrl-panel {
   font-family: "Roboto", sans-serif;
   position: relative;
-  background-color: #474747;
-  padding-top: 20px;
-  padding-bottom: 20px; }
+  background-color: #474747; }
   .cabinet__cntrl-panel .cabinet__cntrl-panel-b {
     position: relative;
+    margin: 0;
     padding-left: 15px;
     padding-right: 15px; }
 
@@ -7516,10 +7526,821 @@ th.hide-for-touch {
 
 .cabinet__cntrl-panel-item .cabinet__cntrl-panel-item-link {
   transition: all 300ms;
+  display: inline-block;
   font-size: 14px;
-  color: #fff; }
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 16px;
+  border-bottom: 4px solid transparent; }
   .cabinet__cntrl-panel-item .cabinet__cntrl-panel-item-link:hover {
-    color: #ecf2ff; }
+    color: #5de895; }
+
+.cabinet__cntrl-panel-item .cabinet-navigation__item-link_active {
+  color: #fff;
+  border-bottom-color: #5de895; }
+
+.cabinet-media {
+  max-width: 1284px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff; }
+  .cabinet-media .cabinet-media__photo-img {
+    position: relative;
+    margin-bottom: 15px;
+    margin-bottom: 0.9375rem; }
+    .cabinet-media .cabinet-media__photo-img .cabinet-media__photo-img-link {
+      text-decoration: none; }
+      .cabinet-media .cabinet-media__photo-img .cabinet-media__photo-img-link .cabinet-media__photo-img-images {
+        max-width: 184px;
+        max-height: 184px;
+        width: 100%;
+        height: auto; }
+
+.cabinet-media .cabinet-media__user-name {
+  position: relative;
+  font-size: 22px;
+  font-size: 1.375rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  color: #232121;
+  line-height: 24px;
+  margin-bottom: 50px;
+  margin-bottom: 3.125rem; }
+
+.cabinet-media .cabinet-media__user-links-b {
+  position: relative; }
+
+.cabinet-media__user-links-b .cabinet-media__user-link-item {
+  transition: all 300ms;
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+  text-align: center;
+  color: #7094a8;
+  line-height: 20px; }
+  .cabinet-media__user-links-b .cabinet-media__user-link-item:hover {
+    color: #435f6f; }
+
+.cabinet-guests__title {
+  margin-bottom: 17px;
+  margin-bottom: 1.0625rem; }
+
+.cabinet-guests__collections-b {
+  position: relative;
+  margin: 0; }
+  .cabinet-guests__collections-b .cabinet-guests__item-guest-b {
+    position: relative;
+    overflow: hidden;
+    font-family: "Roboto", sans-serif;
+    line-height: 20px; }
+
+.cabinet-guests__item-guest-b .cabinet-guests__item-guest-link {
+  text-decoration: none; }
+  .cabinet-guests__item-guest-b .cabinet-guests__item-guest-link .cabinet-guests__item-guest-photo {
+    max-width: 100px;
+    max-height: 100px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%; }
+
+.cabinet-guests__item-guest-b .cabinet-guests__item-guest-name {
+  position: relative;
+  margin: 0;
+  line-height: 20px; }
+  .cabinet-guests__item-guest-b .cabinet-guests__item-guest-name a {
+    transition: all 300ms;
+    color: #232121;
+    text-decoration: none;
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: 500; }
+    .cabinet-guests__item-guest-b .cabinet-guests__item-guest-name a:hover {
+      color: #585353; }
+
+.cabinet-guests__item-guest-b .cabinet-guests__item-guest-home {
+  font-size: 13px;
+  color: #232121; }
+
+.cabinet-guests__item-guest-b .cabinet-guests__item-guest-date {
+  transition: all 300ms;
+  font-size: 13px;
+  color: #f8a500; }
+
+.cabinet-travels__collections-b {
+  position: relative;
+  font-family: "Roboto", sans-serif; }
+
+.cabinet-travels__collections-b .cabinet-travels__item {
+  position: relative;
+  overflow: hidden; }
+
+.cabinet-travels__item .cabinet-travels__item-title {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #232121;
+  margin-top: 17px;
+  margin-top: 1.0625rem;
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem; }
+  .cabinet-travels__item .cabinet-travels__item-title .cabinet-travels__item-title_active {
+    color: #f8a500; }
+
+.cabinet-travels__item .cabinet-travels__item-place-photo {
+  max-width: 370px;
+  max-height: 128px;
+  width: 100%;
+  float: left; }
+
+.item-guide-info {
+  position: relative;
+  left: -38px; }
+
+.cabinet-travels__item .cabinet-travels__item-guide-info-b {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  float: left;
+  width: 200px;
+  width: 32.75862068965517%;
+  /*190x580*/ }
+
+.cabinet-travels__item-guide-photo {
+  display: inline-block;
+  position: relative;
+  top: 28px;
+  left: -36px; }
+  .cabinet-travels__item-guide-photo img {
+    width: 71px;
+    height: 71px;
+    border: 2px solid #fff;
+    border-radius: 50%; }
+
+.cabinet-travels__item-guide-info-text {
+  display: inline-block;
+  position: relative;
+  top: 40px;
+  left: -30px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #232121; }
+
+.cabinet-travels__item .cabinet-travels__item-more-info {
+  position: relative;
+  padding-bottom: 12px;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #bbbbbb; }
+
+.cabinet-travels__item-more-info .cabinet-travels__item-more-info-link {
+  transition: all 300ms;
+  display: block;
+  text-align: right;
+  color: #7094a8;
+  font-size: 13px;
+  font-size: 0.8125rem; }
+  .cabinet-travels__item-more-info .cabinet-travels__item-more-info-link:hover {
+    color: #435f6f; }
+
+.cabinet-travel-guides-wrapper {
+  margin: 0;
+  position: absolute;
+  bottom: 13px;
+  left: 10px;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+  .cabinet-travel-guides-wrapper .cabinet-travel__item-guide {
+    border-radius: 50%;
+    margin-right: 10px;
+    list-style-type: none; }
+
+.cabinet-travel__item-guide-link {
+  text-decoration: none;
+  color: transparent;
+  text-align: center; }
+  .cabinet-travel__item-guide-link .item-guide__fullName {
+    transition: all 300ms ease-in-out;
+    opacity: 0;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    display: inline-block;
+    position: absolute;
+    width: 50px;
+    overflow: hidden;
+    bottom: -10px;
+    color: #7094a8;
+    line-height: 16px; }
+  .cabinet-travel__item-guide-link:hover .item-guide__media .item-guide__img {
+    transform: translateY(-25px); }
+  .cabinet-travel__item-guide-link:hover .item-guide__fullName {
+    opacity: 100; }
+  .cabinet-travel__item-guide-link .item-guide__media {
+    margin: 0; }
+    .cabinet-travel__item-guide-link .item-guide__media .item-guide__img {
+      transition: all 300ms ease-in-out;
+      max-width: 48px;
+      max-height: 48px;
+      border-radius: 50%;
+      border: 2px solid #dddddd; }
+
+.cabinet__header {
+  position: relative; }
+  .cabinet__header .cabinet-travel__create-button {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0; }
+    .cabinet__header .cabinet-travel__create-button .btn-icon {
+      transition: all 300ms;
+      fill: #BBBBBB; }
+      .cabinet__header .cabinet-travel__create-button .btn-icon:hover {
+        fill: #888888; }
+
+.center-block, .center-b {
+  max-width: 1284px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.cabinet-body {
+  background-color: #ececec;
+  padding-top: 15px;
+  padding-bottom: 27px; }
+
+.cabinet-b {
+  position: relative;
+  padding: 10px;
+  padding: 0.625rem;
+  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
+  background-color: #fff; }
+
+.cabinet-title, .cabinet-travels__title {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  font-size: 1.375rem;
+  color: #2562fa;
+  font-weight: 500;
+  padding-bottom: 8px;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #bbbbbb; }
+
+.cabinet-title_regular {
+  font-family: "Roboto";
+  font-size: 22px;
+  color: #232121;
+  font-weight: 500;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #bbbbbb;
+  margin-bottom: 20px; }
+
+.box, .box_border {
+  background-color: #fff;
+  position: relative;
+  padding: 20px 20px;
+  padding: 1.25rem 1.25rem; }
+
+.box_border {
+  border-bottom: 2px solid #bfcad2; }
+
+.cabinet-guests__item-b {
+  position: relative; }
+  .cabinet-guests__item-b .cabinet-guests__item-title, .cabinet-guests__item-b .cabinet-travels__item-title {
+    font-size: 16px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #232121;
+    margin-bottom: 10px;
+    margin-bottom: 0.625rem; }
+
+.box__wrapper {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem; }
+
+.profile-settings__item-inpt .settings__pwd-b {
+  margin-bottom: 15px; }
+
+.Box, .profile-wrapper .profile-transparent-b, .profile-info-box {
+  background-color: #fff;
+  border-bottom: 2px solid #bfcad2;
+  margin: 10px auto;
+  margin: 1.25rem auto;
+  position: relative;
+  padding: 20px;
+  padding: 1.25rem; }
+
+.profile-wrapper {
+  position: relative;
+  overflow: hidden;
+  font-family: "Roboto"; }
+  .profile-wrapper .profile-transparent-b {
+    margin-top: 0;
+    height: 176px;
+    height: 11rem;
+    border-bottom: none; }
+
+.profile-transparent-b .profile-transparent__header-title {
+  font-family: "Roboto";
+  font-size: 18px;
+  color: #3d3a3a;
+  font-weight: 500;
+  padding-bottom: 8px; }
+
+.profile-info-box {
+  line-height: 26px; }
+
+.profile-info-box .profile-info__title {
+  font-family: "Roboto";
+  font-size: 22px;
+  color: #232121;
+  font-weight: 500;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #bbbbbb;
+  margin-bottom: 20px; }
+
+.profile-info-box .profile-info__item {
+  list-style: none; }
+
+.profile-info__interests-list {
+  position: relative; }
+  .profile-info__interests-list .profile-info__interests-list-item {
+    display: inline-block;
+    margin-right: 10px; }
+    .profile-info__interests-list .profile-info__interests-list-item .profile-info__interests-list-item-link {
+      transition: all 300ms;
+      display: block;
+      font-family: "Roboto";
+      font-size: 14px;
+      text-align: center;
+      color: #7094a8; }
+      .profile-info__interests-list .profile-info__interests-list-item .profile-info__interests-list-item-link:hover {
+        color: #435f6f; }
+
+.profile-info__about-text {
+  position: relative; }
+
+.Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .yo-btn_full, .header .header__btn-b, .hero-content .hero__btn, .begin-use .begin-use__btn {
+  transition: all 300ms;
+  transition-timing-function: ease-in;
+  position: relative;
+  height: 55px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-size: 1rem;
+  outline: none;
+  font-weight: 400; }
+  .Btn:hover, .usr-registration__form .usr-registration__submit-btn:hover, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover, .usr-login-form__item-pole .usr-login-form__submit-btn:hover, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover, .yo-btn_full:hover, .header .header__btn-b:hover, .hero-content .hero__btn:hover, .begin-use .begin-use__btn:hover {
+    background-color: inherit;
+    box-shadow: 0px 2px 1px 0px #0f937c; }
+  .Btn:active, .usr-registration__form .usr-registration__submit-btn:active, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active, .usr-login-form__item-pole .usr-login-form__submit-btn:active, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active, .yo-btn_full:active, .header .header__btn-b:active, .hero-content .hero__btn:active, .begin-use .begin-use__btn:active {
+    background-color: inherit;
+    box-shadow: none; }
+
+.Form-Wrapper, .usr-registration-wrapper, .usr-login-wrapper {
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-transform: translate3d(0, 0, 0);
+  background-color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; }
+
+.Form-Block, .usr-registration, .usr-login-form {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  position: relative;
+  max-width: 460px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 1px 1.5px 3px 0 rgba(43, 43, 47, 0.5);
+  padding-left: 60px;
+  padding-left: 3.75rem;
+  padding-right: 60px;
+  padding-right: 3.75rem;
+  margin: 60px auto; }
+
+.Form-Title, .usr-registration .usr-registration__header-title, .usr-login-form .usr-login-form__header-title {
+  font-size: 32px;
+  font-size: 2rem;
+  padding-top: 60px;
+  padding-top: 3.75rem;
+  padding-bottom: 60px;
+  padding-bottom: 3.75rem;
+  text-align: left;
+  line-height: 0.7;
+  color: rgba(0, 0, 0, 0.91); }
+
+.Label, .usr-registration__form .usr-registration__item-pole, .usr-login-form .usr-login-form__item-pole {
+  position: relative;
+  display: block;
+  margin-bottom: 22px;
+  margin-bottom: 1.375rem;
+  border: 0; }
+
+.Inpt, .usr-registration__item-pole .usr-registration__item-inpt, .usr-login-form__item-pole .usr-login-form__item-inpt {
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #bbbbbb;
+  border: 0;
+  width: 100%;
+  padding: 14px 0;
+  box-shadow: none;
+  background-color: #ffffff;
+  border-bottom: 1px solid #bbbbbb;
+  margin-bottom: 5px; }
+  .Inpt:focus, .usr-registration__item-pole .usr-registration__item-inpt:focus, .usr-login-form__item-pole .usr-login-form__item-inpt:focus {
+    background-color: #fff;
+    border-bottom: 2px solid #bbbbbb;
+    outline: none; }
+
+.usr-registration .usr-registration__form {
+  position: relative; }
+
+.usr-registration__form .usr-registration__condition-project {
+  font-size: 12px;
+  font-size: 0.75rem;
+  color: #bbb; }
+
+.usr-registration__form .usr-registration__submit-btn {
+  text-align: center;
+  line-height: 25px;
+  background-color: #20E8C6; }
+  .usr-registration__form .usr-registration__submit-btn:hover {
+    background-color: #37eacc;
+    box-shadow: 0px 2px 1px 0px #0f937c; }
+  .usr-registration__form .usr-registration__submit-btn:active {
+    background-color: #0f937c;
+    box-shadow: none; }
+
+.usr-registration__form .usr-registration__submit-btn_disable {
+  cursor: default;
+  background-color: #4eedd2; }
+  .usr-registration__form .usr-registration__submit-btn_disable:hover {
+    background-color: #4eedd2;
+    box-shadow: 0px 0px 0px 0px #0f937c; }
+
+.usr-registration .usr-registration__social {
+  position: relative; }
+
+.usr-registration__social .usr-registration__social-title {
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: 600;
+  position: relative;
+  color: #7a8099;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem; }
+
+.usr-registration__social .usr-registration__social-icons {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 20px;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #bbb; }
+
+.usr-registration__send-user-block, .usr-login-form__registration-user {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-top: 1.25rem;
+  padding-bottom: 60px;
+  padding-bottom: 3.75rem; }
+
+.usr-registration__send-user-block .usr-registration__send-user-text, .usr-login-form__registration-user .usr-registration__send-user-text {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.91); }
+
+.usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light {
+  box-sizing: border-box;
+  border: 2px solid #20E8C6;
+  padding: 9.5px 27px;
+  color: rgba(0, 0, 0, 0.91); }
+  .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover {
+    color: #fff;
+    border-color: #37eacc;
+    background-color: #37eacc;
+    box-shadow: 0px 2px 1px 0px #0f937c; }
+  .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active {
+    border-color: #0f937c;
+    background-color: #0f937c;
+    box-shadow: none;
+    color: #fff; }
+
+.usr-registration__item-error-helper, .usr-login__error-b {
+  position: relative;
+  color: #ff4c67;
+  font-size: 12px;
+  text-align: left;
+  font-weight: 400; }
+
+.usr-registration__confirmation-email-b {
+  position: absolute;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 102;
+  background-color: #fff;
+  padding: 60px;
+  text-align: left; }
+  .usr-registration__confirmation-email-b .usr-registration__confirmation-email-header-title {
+    position: relative;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.22;
+    color: #202020;
+    margin-bottom: 57px; }
+
+.usr-registration__confirmation-email-b .usr-registration__confirmation-email-content {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.31;
+  color: #232121;
+  margin-bottom: 33px; }
+
+.usr-registration__confirmation-email-b {
+  margin-top: 20px;
+  margin-top: 1.25rem; }
+  .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b {
+    border-radius: 5px;
+    background-color: #20E8C6;
+    text-align: center;
+    line-height: 55px; }
+    .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover {
+      background-color: #37eacc;
+      box-shadow: 0px 2px 1px 0px #0f937c; }
+    .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active {
+      background-color: #0f937c;
+      box-shadow: none; }
+    .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b .usr-registration__confirmation-email-link {
+      color: #fff;
+      text-decoration: none; }
+
+.usr-registration__confirmation-email-b .usr-registration__confirmation-email-settings-profile-b {
+  position: relative;
+  margin-top: 268px; }
+
+.usr-registration__confirmation-email-close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer; }
+  .usr-registration__confirmation-email-close-btn::before, .usr-registration__confirmation-email-close-btn::after {
+    transition: all 300ms;
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #979797; }
+  .usr-registration__confirmation-email-close-btn::before {
+    transform: rotate(45deg); }
+  .usr-registration__confirmation-email-close-btn::after {
+    transform: rotate(-45deg); }
+  .usr-registration__confirmation-email-close-btn:hover::before, .usr-registration__confirmation-email-close-btn:hover::after {
+    background: #646464; }
+
+.usr-login__error-b {
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem; }
+
+.usr-login-form__item-pole .usr-login-form__submit-btn {
+  text-align: center;
+  background-color: #2461FC; }
+  .usr-login-form__item-pole .usr-login-form__submit-btn:hover {
+    background-color: #3d73fc;
+    box-shadow: 0px 2px 1px 0px #0336b7; }
+  .usr-login-form__item-pole .usr-login-form__submit-btn:active {
+    background-color: #0336b7;
+    box-shadow: none; }
+
+.usr-login-form__registration-user .usr-login-form__registration-user-btn {
+  position: relative;
+  margin-top: 20px;
+  margin-top: 1.25rem; }
+  .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link {
+    box-sizing: border-box;
+    border: 2px solid #2461FC;
+    padding: 9.5px 27px;
+    color: rgba(0, 0, 0, 0.91); }
+    .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover {
+      color: #fff;
+      border-color: #3d73fc;
+      background-color: #3d73fc;
+      box-shadow: 0px 2px 1px 0px #0336b7; }
+    .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active {
+      border-color: #0336b7;
+      background-color: #0336b7;
+      box-shadow: none;
+      color: #fff; }
+
+.usr-login-form__item-pole .usr-login__submit-btn_disable {
+  cursor: default;
+  background-color: #5685fd; }
+  .usr-login-form__item-pole .usr-login__submit-btn_disable:hover {
+    background-color: #5685fd;
+    box-shadow: 0px 0px 0px 0px #2461fc; }
+
+.form__row-inpt, .form__row-inpt_registration {
+  transition: all 200ms;
+  opacity: 0;
+  position: absolute;
+  z-index: 0;
+  top: 12px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-left: 10px solid #2562fa;
+  border-bottom: 6px solid transparent; }
+
+.form__row-inpt_registration {
+  border-left: 10px solid #20E8C6; }
+
+.form__row-inpt_show {
+  left: -22px;
+  opacity: 100; }
+
+.login-form__remember-b {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.default-link {
+  transition: all 300ms;
+  color: #7094a8;
+  text-decoration: none;
+  font-size: 16; }
+  .default-link:hover {
+    color: #435f6f; }
+
+.profile-settings__ctrl-panel-b {
+  position: relative;
+  line-height: 32px; }
+  .profile-settings__ctrl-panel-b .ctrl-panel__item-link {
+    transition: all 300ms;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: #232121;
+    font-weight: 500; }
+    .profile-settings__ctrl-panel-b .ctrl-panel__item-link:hover {
+      color: #585353; }
+
+.profile-settings-wrapper {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: #232121;
+  font-weight: 500; }
+
+.profile-settings-wrapper .profile-settings__item-inpt-description {
+  line-height: 25px;
+  color: #585353; }
+
+.profile-settings__header {
+  position: relative;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px; }
+  .profile-settings__header .profile-settings__header-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-size: 1.125rem;
+    color: #4b4b4b;
+    text-align: left; }
+
+.profile-settings__item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; }
+  .profile-settings__item .profile-settings__item-label {
+    width: 20%; }
+    .profile-settings__item .profile-settings__item-label label {
+      padding-top: 10px;
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 22px; }
+  .profile-settings__item .profile-settings__item-pole {
+    width: 80%; }
+    .profile-settings__item .profile-settings__item-pole input, .profile-settings__item .profile-settings__item-pole select {
+      font-family: "Roboto", sans-serif;
+      font-size: 16px;
+      font-size: 1rem;
+      border-radius: 5px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      height: 46px;
+      height: 2.875rem; }
+
+.profile-settings__body {
+  position: relative;
+  border: none;
+  margin: 0;
+  padding: 0; }
+
+.interests__list {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  color: #6e6e6e;
+  border-radius: 15px;
+  text-transform: lowercase; }
+  .interests__list .interests__list-del {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    width: 10px;
+    height: 11px;
+    cursor: pointer; }
+    .interests__list .interests__list-del:hover:before, .interests__list .interests__list-del:hover:after {
+      background-color: #2562fa; }
+    .interests__list .interests__list-del:before, .interests__list .interests__list-del:after {
+      transition: all 300ms;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      content: "";
+      display: block;
+      height: 10px;
+      width: 2px;
+      background-color: #7094a8;
+      border-radius: 5px; }
+    .interests__list .interests__list-del:before {
+      transform: rotate(40deg); }
+    .interests__list .interests__list-del:after {
+      transform: rotate(-40deg); }
+
+.settings__item-inpt_about-text {
+  resize: none; }
+
+.profile-settings__form {
+  position: relative;
+  margin-top: 60px; }
+  .profile-settings__form .profile-settings__send-form {
+    max-width: 200px;
+    border: 0; }
+
+.profile-settings__form .profile-settings-btn_destroy {
+  background-color: transparent;
+  border: 2px solid #2562fa;
+  color: #2562fa; }
+  .profile-settings__form .profile-settings-btn_destroy:hover {
+    color: #ffffff;
+    background-color: #2562fa;
+    border: 2px solid #2562fa;
+    box-shadow: 0px 2px 1px 0px #0437b5; }
+  .profile-settings__form .profile-settings-btn_destroy:active {
+    border-color: #0437b5;
+    background-color: #0437b5;
+    box-shadow: none;
+    color: #fff; }
+
+.profile-settings__form .profile-settings-btn_save {
+  background-color: #1cc35f; }
+  .profile-settings__form .profile-settings-btn_save:hover {
+    color: #ffffff;
+    box-shadow: 0px 2px 1px 0px #0f6a34; }
+  .profile-settings__form .profile-settings-btn_save:active {
+    background-color: #0f6a34;
+    box-shadow: none;
+    color: #fff; }
 
 .admin-wrapper__login {
   padding: 10px;

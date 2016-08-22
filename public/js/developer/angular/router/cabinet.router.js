@@ -29,4 +29,8 @@ export default function($stateProvider, $utlRouterProvider){
       url: '/messages',
       templateUrl: `${templateUrl}cabinet/messages/messages.template.html`
     })
+    .state(ROUTER_URL.travelCreate, {
+      url: '/travel/create',
+      templateUrl: `${templateUrl}cabinet/travel/travel.create.html`
+    })
 }

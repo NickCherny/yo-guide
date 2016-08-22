@@ -1,16 +1,19 @@
 <div class="cabinet__cntrl-panel">
   <ul class="cabinet__cntrl-panel-b">
     <li class="cabinet__cntrl-panel-item">
-      <a ui-sref="/travel" class="cabinet__cntrl-panel-item-link">Поездки</a>
+      <a ui-sref="/" class="cabinet__cntrl-panel-item-link" ng-class="cN.getActiveLink('/')">Дом</a>
     </li>
     <li class="cabinet__cntrl-panel-item">
-      <a ui-sref="/tour" class="cabinet__cntrl-panel-item-link">Туры</a>
+      <a ui-sref="/travel" class="cabinet__cntrl-panel-item-link" ng-class="cN.getActiveLink('/travel')">Поездки</a>
     </li>
     <li class="cabinet__cntrl-panel-item">
-      <a ui-sref="/profile" class="cabinet__cntrl-panel-item-link">Профиль</a>
+      <a ui-sref="/tour" class="cabinet__cntrl-panel-item-link" ng-class="cN.getActiveLink('/tour')">Туры</a>
     </li>
     <li class="cabinet__cntrl-panel-item">
-      <a ui-sref="/profile/settings" class="cabinet__cntrl-panel-item-link">Настройки</a>
+      <a ui-sref="/profile" class="cabinet__cntrl-panel-item-link" ng-class="cN.getActiveLink('/profile')">Профиль</a>
+    </li>
+    <li class="cabinet__cntrl-panel-item">
+      <a ui-sref="/profile/settings" class="cabinet__cntrl-panel-item-link" ng-class="cN.getActiveLink('/profile/settings')">Настройки</a>
     </li>
   </ul>
 </div>

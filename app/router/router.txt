@@ -32,3 +32,5 @@
 [GET]  /api/v1/admin/home
 [GET]  /api/v1/admin/users
 [POST] /api/v1/admin/users/:id/delete
+***
+[GET]  /api/v1/user/:id/profile

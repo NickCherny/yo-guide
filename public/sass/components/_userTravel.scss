@@ -1,0 +1,166 @@
+//@section user travel (begin)
+@import "../design.patterns/style.settings";
+.cabinet-travels__collections-b {
+  position: relative;
+  font-family: $ff;
+}
+
+.cabinet-travels__collections-b {
+  .cabinet-travels__item {
+    position: relative;
+    overflow: hidden;
+  }
+}
+.cabinet-travels__item {
+  .cabinet-travels__item-title {
+    font-size: 16px;
+    font-size: rem-calc(16);
+    font-weight: 500;
+    color: #232121;
+    margin-top: 17px;
+    margin-top: rem-calc(17);
+    margin-bottom: 10px;
+    margin-bottom: rem-calc(10);
+    .cabinet-travels__item-title_active {
+      color: $action_color;
+    }
+  }
+}
+.cabinet-travels__item {
+  .cabinet-travels__item-place-photo {
+    max-width: 370px;
+    max-height: 128px;
+    width: 100%;
+    float: left;
+  }
+}
+.item-guide-info{
+  position: relative;
+  left: -38px;
+}
+.cabinet-travels__item {
+  .cabinet-travels__item-guide-info-b {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    float: left;
+    width: 200px;
+    width: 32.75862068965517%;/*190x580*/
+  }
+}
+.cabinet-travels__item-guide-photo {
+  display: inline-block;
+  position: relative;
+  top: 28px;
+  left: -36px;
+  img {
+    width: 71px;
+    height: 71px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+  }
+}
+.cabinet-travels__item-guide-info-text {
+  display: inline-block;
+  position: relative;
+  top: 40px;
+  left: -30px;
+  font-family: $ff;
+  font-size: 16px;
+  font-size: rem-calc(16);
+  font-weight: 700;
+  color: #232121;
+}
+.cabinet-travels__item {
+  .cabinet-travels__item-more-info {
+    position: relative;
+    padding-bottom: 12px;
+    padding-bottom: rem-calc(12);
+    border-bottom: 2px solid #bbbbbb;
+  }
+}
+.cabinet-travels__item-more-info {
+  .cabinet-travels__item-more-info-link {
+    transition: all 300ms;
+    display: block;
+    text-align: right;
+    color: $link_color;
+    font-size: 13px;
+    font-size: rem-calc(13);
+    &:hover {
+      color: darken($link_color, 20%);
+    }
+  }
+}
+// guides > 1
+.cabinet-travel-guides-wrapper{
+  margin: 0;
+  position: absolute;
+  bottom: 13px;
+  left: 10px;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .cabinet-travel__item-guide{
+    border-radius: 50%;
+    margin-right: 10px;
+    list-style-type: none;
+  }
+}
+.cabinet-travel__item-guide-link{
+  text-decoration: none;
+  color: transparent;
+  text-align: center;
+  .item-guide__fullName{
+    transition: all 300ms ease-in-out;
+    opacity: 0;
+    text-align: center;
+    font-family: $ff;
+    font-size: 14px;
+    display: inline-block;
+    position: absolute;
+    width: 50px;
+    overflow: hidden;
+    bottom: -10px;
+    color: $link_color;
+    line-height: 16px;
+  }
+  &:hover{
+    .item-guide__media{
+      .item-guide__img{
+        transform: translateY(-25px);
+      }
+    }
+    .item-guide__fullName{
+      opacity: 100;
+    }
+  }
+  .item-guide__media{
+    margin: 0;
+    .item-guide__img{
+      transition: all 300ms ease-in-out;
+      max-width: 48px;
+      max-height: 48px;
+      border-radius: 50%;
+      border: 2px solid #dddddd;
+    }
+  }
+}
+.cabinet__header{
+  position: relative;
+  .cabinet-travel__create-button{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    .btn-icon{
+      transition: all 300ms;
+      fill: #BBBBBB;
+      &:hover{
+        fill: darken(#BBBBBB, 20%);
+      }
+    }
+  }
+}
+//@section user travel (end)

@@ -3,7 +3,7 @@
     <div class="top-menu_wrapper">
       <div class="row row-fix">
         <div class="large-1 columns">
-          <a href="/" class="top-menu__logo-link" ng-class="topmenu.getActiveLink('/')">
+          <a ui-sref="/" class="top-menu__logo-link" ng-class="topmenu.getActiveLink('/')">
             LOGO
           </a>
         </div>
@@ -51,7 +51,7 @@
             </a>
             <div class="drop-down-menu">
               <a ui-sref="/profile" class="drop-down-menu__item-link">Профиль</a>
-              <a ui-sref="/travels" class="drop-down-menu__item-link">Поездки</a>
+              <a ui-sref="/travel" class="drop-down-menu__item-link">Поездки</a>
               <a ui-sref="/tour" class="drop-down-menu__item-link">Туры</a>
               <a ui-sref="/profile/settings" class="drop-down-menu__item-link">Настройки</a>
               <a href="/api/v1/logout/user" class="drop-down-menu__item-link">Выйти</a>

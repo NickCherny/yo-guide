@@ -4,11 +4,9 @@
   font-family: $ff;
   position: relative;
   background-color: #474747;
-  padding-top: 20px;
-  padding-bottom: 20px;
-
   .cabinet__cntrl-panel-b {
     position: relative;
+    margin: 0;
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -22,11 +20,19 @@
 .cabinet__cntrl-panel-item {
   .cabinet__cntrl-panel-item-link {
     transition: all 300ms;
+    display: inline-block;
     font-size: 14px;
     color: #fff;
+    padding-top: 20px;
+    padding-bottom: 16px;
+    border-bottom: 4px solid transparent;
     &:hover {
-      color: lighten($Color1, 40%);
+      color: $Color2;
     }
+  }
+  .cabinet-navigation__item-link_active{
+    color: #fff;
+    border-bottom-color: $Color2;
   }
 }
 //@section navigation cabinet (end)

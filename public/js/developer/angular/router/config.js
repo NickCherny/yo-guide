@@ -4,6 +4,7 @@ const ROUTER_URL = {
   tour: '/tour',
   profile: '/profile',
   settings: '/profile/settings',
-  message: '/messages'
+  message: '/messages',
+  travelCreate: '/travel/create'
 };
 export default ROUTER_URL;

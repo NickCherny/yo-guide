@@ -1,0 +1,198 @@
+<article class="profile-settings-wrapper">
+  <div class="box_border box__wrapper">
+    <div class="profile-settings__header" id="settings_main">
+      <h2 class="profile-settings__header-title">Детали профиля</h2>
+    </div>
+    <fieldset class="profile-settings__body" form="profile_settings">
+      <dl class="profile-settings__item">
+        <dt class="profile-settings__item-label">
+          <label for="fname2">Имя</label>
+        </dt>
+        <dd class="profile-settings__item-pole">
+          <input type="text"
+                 name="fname2"
+                 id="fname2"
+                 placeholder="Ваше имя">
+        </dd>
+      </dl>
+      <dl class="profile-settings__item">
+        <dt class="profile-settings__item-label">
+          <label for="lname2">Фамилия</label>
+        </dt>
+        <dd class="profile-settings__item-pole">
+          <input type="text"
+                 name="lname2"
+                 id="lname2"
+                 placeholder="Ваша фамилия">
+        </dd>
+      </dl>
+      <dl class="profile-settings__item">
+        <dt class="profile-settings__item-label">
+          <label for="birthday">Дата рождения</label>
+        </dt>
+        <dd class="profile-settings__item-pole">
+          <input type="date"
+                 name="birthday"
+                 id="birthday"
+                 placeholder="Дата рождения">
+        </dd>
+      </dl>
+      <dl class="profile-settings__item">
+        <dt class="profile-settings__item-label">
+          <label for="gender">Пол</label>
+        </dt>
+        <dd class="profile-settings__item-pole">
+          <select name="gender" id="gender">
+            <option value="0">Не показывать</option>
+            <option value="1">Мужской</option>
+            <option value="2">Женский</option>
+          </select>
+        </dd>
+      </dl>
+    </fieldset>
+  </div>
+
+  <div class="box_border box__wrapper">
+    <div class="profile-settings__header" id="settings_contacts">
+      <h2 class="profile-settings__header-title">Контакты</h2>
+    </div>
+    <fieldset class="profile-settings__body" form="profile_settings">
+      <dl class="profile-settings__item">
+        <dt class="profile-settings__item-label">
+          <label for="email2">Электронная почта</label>
+        </dt>
+        <dd class="profile-settings__item-pole">
+          <input type="email"
+                 name="email2"
+                 id="email2"
+                 placeholder="Сменить электронную почту">
+        </dd>
+      </dl>
+      <dl class="profile-settings__item">
+        <dt class="profile-settings__item-label">
+          <label for="phone">Телефон</label>
+        </dt>
+        <dd class="profile-settings__item-pole">
+          <input type="text"
+                 name="phone"
+                 id="phone"
+                 placeholder="Телефон">
+        </dd>
+      </dl>
+    </fieldset>
+  </div>
+
+  <div class="box_border box__wrapper">
+    <div class="profile-settings__header" id="settings_location">
+      <h2 class="profile-settings__header-title">Локация</h2>
+    </div>
+    <fieldset class="profile-settings__body" form="profile_settings">
+      <dl class="profile-settings__item">
+        <dt class="profile-settings__item-label">
+          <label for="country" class="profile-settings__item-inpt-description">Страна</label>
+        </dt>
+        <dd class="profile-settings__item-pole">
+          <input type="text"
+                 name="country"
+                 id="country"
+                 placeholder="Страна">
+        </dd>
+      </dl>
+      <dl class="profile-settings__item">
+        <dt class="profile-settings__item-label">
+          <label for="city">Город</label>
+        </dt>
+        <dd class="profile-settings__item-pole">
+          <input type="text"
+                 name="city"
+                 id="city"
+                 placeholder="Город">
+        </dd>
+      </dl>
+    </fieldset>
+  </div>
+
+  <div class="box_border box__wrapper">
+    <div class="profile-settings__header" id="settings_about">
+      <h2 class="profile-settings__header-title">О себе</h2>
+    </div>
+    <fieldset class="profile-settings__body" form="profile_settings">
+      <dl class="profile-settings__item">
+        <dt class="profile-settings__item-label">
+          <label for="interests">Интересы</label>
+        </dt>
+        <dd class="profile-settings__item-pole">
+          <div class="profile-settings__intrests-b">
+            <div class="intrests__add">
+              <input type="text"
+                     id="interests"
+                     name="interests"
+                     placeholder="Интересы">
+            </div>
+            <div class="interests__list">
+              футбол <span class="interests__list-del"></span>
+            </div>
+          </div>
+        </dd>
+      </dl>
+
+      <dl class="profile-settings__item">
+        <dt class="profile-settings__item-label">
+          <label for="about">О себе</label>
+        </dt>
+        <dd class="profile-settings__item-pole">
+          <div class="profile-settings__intrests-b">
+            <div class="intrests__add">
+              <textarea
+                name="about"
+                id="about"
+                cols="30"
+                rows="10"
+                placeholder="О себе"></textarea>
+            </div>
+          </div>
+        </dd>
+      </dl>
+    </fieldset>
+  </div>
+
+  <div class="box_border box__wrapper">
+    <div class="profile-settings__header" id="settings_private">
+      <h2 class="profile-settings__header-title">Безопастность</h2>
+    </div>
+    <fieldset class="profile-settings__body">
+      <dl class="profile-settings__item">
+        <dt class="profile-settings__item-label">
+          <label for="pwdOld">Сменить пароль</label>
+        </dt>
+        <dd class="profile-settings__item-pole">
+          <div class="settings__pwd-b">
+            <input type="password"
+                   name="pwdOld"
+                   id="pwdOld"
+                   placeholder="Старый пароль">
+          </div>
+          <div class="settings__pwd-b">
+            <input type="password"
+                   name="pwdNew"
+                   id="pwdNew"
+                   placeholder="Новый пароль">
+          </div>
+        </dd>
+      </dl>
+    </fieldset>
+
+    <div class="profile-settings__form">
+      <form action="/user/profile/settings/action-form" method="post" novalidate name="profile_settings" id="profile_settings">
+        <div class="row row-fix">
+          <div class="large-6 columns columns-fix_left">
+            <button type="button" class="yo-btn_full profile-settings-btn_destroy">Отменить</button>
+          </div>
+          <div class="large-6 columns columns-fix_right">
+            <button type="button" class="yo-btn_full profile-settings-btn_save">Сохранить</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</article>

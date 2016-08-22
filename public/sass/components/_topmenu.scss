@@ -6,7 +6,7 @@
   top: 0;
   width: 100%;
   z-index: 100;
-  padding-top: 30px;
+  padding-top: 15px;
   line-height: 35px;
   background-color: transparent;
   background-color: #2461fc;
@@ -37,7 +37,6 @@
 .top-menu {
   .top-menu__search-b {
     position: relative;
-    max-width: 270px;
     .top-menu__search-inpt {
       border-radius: 20px;
       padding: 14px;

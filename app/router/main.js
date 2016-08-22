@@ -15,4 +15,4 @@ router.get('/login/cabinet', controllers.user.registrationUser);
 // router.get('/api/v1/logout/user', controllers.user.logoutUser);
 // router.get('/api/v1/logout/admin', controllers.user.logoutAdmin);
 //
-// router.post('/api/v1/registration/user', controllers.user.registrationUser);
+router.post('/api/v1/registration/user', controllers.user.registrationUser);

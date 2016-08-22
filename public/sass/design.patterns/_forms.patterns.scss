@@ -433,7 +433,9 @@
   }
 }
 //@subsection login user (end)
-
+.yo-btn_full{
+  @extend .Btn;
+}
 
 
 

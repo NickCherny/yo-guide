@@ -1,0 +1,21 @@
+<aside>
+  <div class="cabinet-media cabinet-b">
+    <div class="cabinet-media__photo-img">
+      <a ui-sref="/home">
+        <img ng-src="{{media.photo.src}}" ng-alt="{{media.photo.alt}}">
+      </a>
+    </div>
+    <div class="cabinet-media__user-name" ng-bind="media.fullName">
+      Имя
+    </div>
+    <div class="cabinet-media__user-links-b">
+      <div>
+        <a ui-sref="/profile" class="cabinet-media__user-link-item">Просмотреть профиль</a>
+      </div>
+      <div>
+        <a ui-sref="/profile/settings" class="cabinet-media__user-link-item">Редактировать профиль</a>
+      </div>
+    </div>
+  </div>
+
+</aside>

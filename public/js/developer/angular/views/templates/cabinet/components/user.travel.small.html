@@ -1,0 +1,88 @@
+<article>
+  <div class="box cabinet-b" data-ng-if="travelSmall.travels.length > 0">
+    <div class="cabinet__header">
+      <h2 class="cabinet-travels__title">Предстоящие поездки</h2>
+      <a ui-sref="/travel/create" class="cabinet-travel__create-button" id="cabinetCreateNewTravel">
+        <svg width="31px" height="30px" viewBox="0 0 31 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="menu_still" transform="translate(-1260.000000, -190.000000)" fill="#BBBBBB">
+              <g id="poezdki" transform="translate(731.000000, 170.000000)">
+                <g id="plus" transform="translate(529.000000, 20.000000)">
+                  <path d="M15.3940171,27.9051724 C8.10769231,27.9051724 2.17264957,22.112069 2.17264957,15 C2.17264957,7.88793103 8.10769231,2.09482759 15.3940171,2.09482759 C22.6803419,2.09482759 28.6153846,7.88793103 28.6153846,15 C28.6153846,22.112069 22.6803419,27.9051724 15.3940171,27.9051724 M15.3940171,0 C6.91538462,0 0,6.72413793 0,15 C0,23.2758621 6.88888889,30 15.3940171,30 C23.8726496,30 30.7615385,23.2758621 30.7615385,15 C30.7615385,6.72413793 23.8726496,0 15.3940171,0" id="Fill-1"></path>
+                  <path d="M22.4683761,13.8103448 L16.4803419,13.8103448 L16.4803419,7.93965517 C16.4803419,7.34482759 16.0034188,6.87931034 15.3940171,6.87931034 C14.7846154,6.87931034 14.3076923,7.34482759 14.3076923,7.93965517 L14.3076923,13.7844828 L8.31965812,13.7844828 C7.71025641,13.7844828 7.23333333,14.25 7.23333333,14.8448276 C7.23333333,15.4396552 7.71025641,15.9051724 8.31965812,15.9051724 L14.3076923,15.9051724 L14.3076923,21.75 C14.3076923,22.3448276 14.7846154,22.8103448 15.3940171,22.8103448 C16.0034188,22.8103448 16.4803419,22.3448276 16.4803419,21.75 L16.4803419,15.9051724 L22.4683761,15.9051724 C23.0777778,15.9051724 23.5547009,15.4396552 23.5547009,14.8448276 C23.5547009,14.25 23.0777778,13.8103448 22.4683761,13.8103448" id="Fill-3"></path>
+                </g>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </div>
+    <ul class="cabinet-travels__collections-b">
+      <li class="cabinet-travels__item" data-ng-repeat="travel in travelSmall.travels">
+        <h3 class="cabinet-travels__item-title">
+          <span>{{travel.location.city + ', ' + travel.location.country}}</span>
+          <span class="cabinet-travels__item-title_active">{{travel.dates.start + ' - ' + travel.dates.stop}}</span>
+        </h3>
+        <div class="row row-fix">
+          <a ng-href="{{travel.link}}">
+            <img ng-src="{{ travel.photo.src }}"
+                 ng-alt="{{ travel.photo.alt }}"
+                 class="cabinet-travels__item-place-photo">
+          </a>
+          <div ng-switch="travel.guides.length">
+            <div ng-switch-when="1">
+              <div class="cabinet-travels__item-guide-info-b">
+                <div class="item-guide-info">
+                  <div class="cabinet-travels__item-guide-photo">
+                    <img ng-src="{{ travel.guides[0].photo.src }}"
+                         ng-alt="{{ travel.guides[0].photo.alt }}">
+                  </div>
+                  <div class="cabinet-travels__item-guide-info-text">
+                    <span>{{ travel.guides[0].firstName }}</span> <br>
+                    <span>{{ travel.guides[0].lastName }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div ng-switch-when="0">
+            </div>
+              <ul class="cabinet-travel-guides-wrapper" ng-switch-default>
+                <li class="cabinet-travel__item-guide" ng-repeat="guide in travel.guides">
+                  <a href="" class="cabinet-travel__item-guide-link">
+                    <figure class="item-guide__media">
+                      <img ng-src="{{guide.photo.src}}" ng-alt="{{guide.photo.alt}}" class="item-guide__img">
+                    </figure>
+                    <span class="item-guide__fullName">{{guide.firstName}}</span>
+                  </a>
+                </li>
+              </ul>
+          </div>
+        </div>
+        <div class="cabinet-travels__item-more-info">
+          <a ng-href="{{ travel.link }}" class="cabinet-travels__item-more-info-link">подробнее</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="cabinet-travels-b cabinet-b" ng-if="!travelSmall.travels">
+    <h2 class="cabinet-travels__title">Предстоящие поездки</h2>
+    <a ui-sref="/travel/create" class="cabinet-travel__create-button" id="cabinetCreateNewTravel">
+      <svg width="31px" height="30px" viewBox="0 0 31 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="menu_still" transform="translate(-1260.000000, -190.000000)" fill="#BBBBBB">
+            <g id="poezdki" transform="translate(731.000000, 170.000000)">
+              <g id="plus" transform="translate(529.000000, 20.000000)">
+                <path d="M15.3940171,27.9051724 C8.10769231,27.9051724 2.17264957,22.112069 2.17264957,15 C2.17264957,7.88793103 8.10769231,2.09482759 15.3940171,2.09482759 C22.6803419,2.09482759 28.6153846,7.88793103 28.6153846,15 C28.6153846,22.112069 22.6803419,27.9051724 15.3940171,27.9051724 M15.3940171,0 C6.91538462,0 0,6.72413793 0,15 C0,23.2758621 6.88888889,30 15.3940171,30 C23.8726496,30 30.7615385,23.2758621 30.7615385,15 C30.7615385,6.72413793 23.8726496,0 15.3940171,0" id="Fill-1"></path>
+                <path d="M22.4683761,13.8103448 L16.4803419,13.8103448 L16.4803419,7.93965517 C16.4803419,7.34482759 16.0034188,6.87931034 15.3940171,6.87931034 C14.7846154,6.87931034 14.3076923,7.34482759 14.3076923,7.93965517 L14.3076923,13.7844828 L8.31965812,13.7844828 C7.71025641,13.7844828 7.23333333,14.25 7.23333333,14.8448276 C7.23333333,15.4396552 7.71025641,15.9051724 8.31965812,15.9051724 L14.3076923,15.9051724 L14.3076923,21.75 C14.3076923,22.3448276 14.7846154,22.8103448 15.3940171,22.8103448 C16.0034188,22.8103448 16.4803419,22.3448276 16.4803419,21.75 L16.4803419,15.9051724 L22.4683761,15.9051724 C23.0777778,15.9051724 23.5547009,15.4396552 23.5547009,14.8448276 C23.5547009,14.25 23.0777778,13.8103448 22.4683761,13.8103448" id="Fill-3"></path>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </a>
+    <div class="cabinet-guests__item-b">
+      <div class="cabinet-travels__item-title">У вас пока незапланированно поездок</div>
+      <a ui-sref="/guests/search" class="cabinet-travels__btn-link">Заплонировать поездку</a>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,73 @@
+//section profile (begin)
+.Box {
+  background-color: #fff;
+  border-bottom: 2px solid #bfcad2;
+  margin: 10px auto;
+  margin: rem-calc(20) auto;
+  position: relative;
+  padding: 20px;
+  padding: rem-calc(20);
+}
+.profile-wrapper {
+  position: relative;
+  overflow: hidden;
+  font-family: "Roboto";
+  .profile-transparent-b {
+    @extend .Box;
+    margin-top: 0;
+    height: 176px;
+    height: rem-calc(176);
+    border-bottom: none;
+  }
+}
+.profile-transparent-b {
+  .profile-transparent__header-title {
+    font-family: "Roboto";
+    font-size: 18px;
+    color: lighten(#232121, 10%);
+    font-weight: 500;
+    padding-bottom: 8px;
+  }
+}
+.profile-info-box {
+  @extend .Box;
+  line-height: 26px;
+}
+.profile-info-box {
+  .profile-info__title {
+    font-family: "Roboto";
+    font-size: 22px;
+    color: #232121;
+    font-weight: 500;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #bbbbbb;
+    margin-bottom: 20px;
+  }
+}
+.profile-info-box {
+  .profile-info__item {
+    list-style: none;
+  }
+}
+.profile-info__interests-list {
+  position: relative;
+  .profile-info__interests-list-item {
+    display: inline-block;
+    margin-right: 10px;
+    .profile-info__interests-list-item-link {
+      transition: all 300ms;
+      display: block;
+      font-family: "Roboto";
+      font-size: 14px;
+      text-align: center;
+      color: #7094a8;
+      &:hover {
+        color: #435f6f;
+      }
+    }
+  }
+}
+.profile-info__about-text {
+  position: relative;
+}
+//section profile (end)
