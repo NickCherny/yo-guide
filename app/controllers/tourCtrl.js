@@ -1,3 +1,5 @@
+"use strict";
+
 class Tour{
   allTours(req, res, next){};
   showCreateTourPage(req, res, next){};

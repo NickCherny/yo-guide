@@ -1,3 +1,5 @@
+"use strict";
+
 class Guest{
   getAllGuest(req, res, next){};
   addNewGuest(req, res, next){};

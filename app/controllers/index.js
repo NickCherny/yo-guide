@@ -1,3 +1,5 @@
+"use strict";
+
 const Main = require('./mainCtrl');
 const Admin = require('./adminCtrl');
 const User = require('./userCtrl');

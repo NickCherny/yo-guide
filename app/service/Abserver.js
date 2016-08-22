@@ -1,3 +1,5 @@
+"use strict";
+
 const EventEmitter = require('events').EventEmitter;
 
 class Abserver extends EventEmitter{

@@ -1,3 +1,5 @@
+"use strict";
+
 // Create passport strategy
 const LoacalStrategy = require('passport-local').Strategy;
 const BasicStrategy = require('passport-http').BasicStrategy;

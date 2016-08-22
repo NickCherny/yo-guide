@@ -1,3 +1,5 @@
+"use strict";
+
 const path = require('path');
 const services = require('../service');
 const models = require('../models');

@@ -1,3 +1,5 @@
+"use strict";
+
 class Cabinet{
   home(req, res, next){
     res.render('cabinet/cabinet', {

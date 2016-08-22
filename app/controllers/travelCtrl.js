@@ -1,3 +1,5 @@
+"use strict";
+
 class Travel{
   allTravels(req, res, next){};
   addTravel(req, res, next){};

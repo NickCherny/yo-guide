@@ -1,3 +1,5 @@
+"use strict";
+
 class Main{
   load(req, res, next){
     let self = this;

@@ -1,3 +1,5 @@
+"use strict";
+
 const Form = require('./Form.ext');
 const File = require('./File.ext');
 const Strategy = require('./Passport.Strategy.ext');
