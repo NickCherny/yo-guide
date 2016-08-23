@@ -4,6 +4,7 @@ const webpack = require('gulp-webpack');
 const livereload = require('gulp-livereload');
 const sass = require('gulp-sass');
 const path = require('path');
+const imagemin = require('gulp-imagemin');
 
 gulp.task('sass', function () {
   gulp.src('./public/sass/**/*.scss')
@@ -11,6 +12,11 @@ gulp.task('sass', function () {
     .pipe(sass())
     .pipe(gulp.dest('./public/css'))
     .pipe(livereload());
+});
+gulp.task('images', function(){
+  gulp.src('./public/images/**/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./public/images-bundle'))
 });
 
 gulp.task('watch', function() {
