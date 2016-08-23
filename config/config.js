@@ -12,10 +12,10 @@ var config = {
     port: process.env.PORT || 3000,
     db: {
       connectionLimit: 20,
-      host: 'localhost',
+      host: '127.0.0.1',
       user: 'root',
-      password: '',
-      database: 'yo_web',
+      password: '3150061Asd',
+      database: 'yo_db',
       queueLimit: 10,
       acquireTimeout: 10000
     },
@@ -33,10 +33,10 @@ var config = {
     port: process.env.PORT || 3000,
     db: {
       connectionLimit: 20,
-      host: 'localhost',
+      host: '127.0.0.1',
       user: 'root',
-      password: '',
-      database: 'yo_web',
+      password: '3150061Asd',
+      database: 'yo_db',
       queueLimit: 10,
       acquireTimeout: 10000
     },
@@ -54,10 +54,10 @@ var config = {
     port: process.env.PORT || 3000,
     db: {
       connectionLimit: 40,
-      host: 'localhost',
+      host: '127.0.0.1',
       user: 'root',
-      password: '',
-      database: 'yo_web',
+      password: '3150061Asd',
+      database: 'yo_db',
       queueLimit: 20,
       acquireTimeout: 20000
     },

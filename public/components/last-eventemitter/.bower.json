@@ -1,0 +1,42 @@
+{
+  "name": "last-eventemitter",
+  "main": "EventEmitter.js",
+  "version": "1.2.0",
+  "homepage": "https://github.com/TuurDutoit/EventEmitter",
+  "authors": [
+    "Tuur Dutoit <me@tuurdutoit.be>"
+  ],
+  "description": "For once and for all: a small, fast and full-featured EventEmitter, for node.js and the browser.",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "EventEmitter",
+    "event",
+    "emitter",
+    "wildcard",
+    "namespace",
+    "handleEvent",
+    "browser",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.2.0",
+    "commit": "bf8803f7be67253258423eb09595642efa8ac54c"
+  },
+  "_source": "git://github.com/TuurDutoit/EventEmitter.git",
+  "_target": "^1.2.0",
+  "_originalSource": "TuurDutoit/EventEmitter"
+}
