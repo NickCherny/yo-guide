@@ -1,3 +1,4 @@
+"use strict"
 const pool = require('./connect');
 const md5 = require('md5');
 
