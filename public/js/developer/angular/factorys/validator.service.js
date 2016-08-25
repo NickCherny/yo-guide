@@ -1,7 +1,7 @@
 export default function(){
   return {
     emailTpl: /([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}/,
-    nameTpl: /^\w{3,}/,
+    nameTpl: /.{3,}/,
     passwordTpl: /^\w{8,}/,
     checkEmpty: (value)=>{
       let res = false;

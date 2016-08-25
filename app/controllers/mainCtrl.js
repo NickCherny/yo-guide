@@ -1,4 +1,5 @@
 "use strict";
+const db = require('../models');
 
 class Main{
   load(req, res, next){
@@ -7,6 +8,13 @@ class Main{
       console.log('Главная для залогиненного пользователя')
       res.redirect('/cabinet');
     }else {
+      db.user.getTest(function(err, result){
+        if(err){
+          console.log(err)
+        }else{
+          console.log(result)
+        }
+      });
       res.render('pages/mainPage', {
         title: 'Гиды, туры по всему миру'
       },

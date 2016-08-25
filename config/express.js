@@ -46,7 +46,7 @@ module.exports = (app, config) => {
   app.post('/api/v1/login/user', user);
 
   let mustBeAuthenticated = function(req, res, next){
-    req.isAuthenticated() ? next() : res.redirect('/login/cabinet');
+    req.isAuthenticated() ? next() : res.redirect('/');
   };
   app.all('/cabinet', mustBeAuthenticated);
   app.all('/cabinet/*', mustBeAuthenticated);

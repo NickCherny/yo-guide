@@ -1,5 +1,7 @@
-import {$http} from 'angular'
-class ServerRequests extends $http{
-  constructor(){}
+export default function($http){
+  return {
+    getUserFullName: id => {
+      return $http.get(`/api/v1/cabinet/user/${id}/fullName`)
+    }
+  }
 }
-export default ServerRequests;

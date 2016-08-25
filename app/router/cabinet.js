@@ -7,10 +7,29 @@ const travel = require('../controllers').travel;
 const tour = require('../controllers').tour;
 const guest = require('../controllers').guest;
 
+const db = require('../models/connect');
+
 module.exports = function (app) {
   app.use('/', router);
 };
 router.get('/cabinet', cabinet.home);
+
+
+router.get('/api/v1/cabinet/user/:id/fullName', function(req, res){
+  if(req.params.id){
+    let id = Math.round(req.params.id);
+    let sql = 'SELECT user_fullName FROM user WHERE user_id = ?';
+    db.query(sql, id, function(err, rows){
+      if(rows){
+        let fullName = rows[0]['user_fullName'].split(':');
+        fullName = [fullName[0],[' '], [fullName[1]]].join('');
+        res.json({fullName: fullName});
+        res.end();
+      }
+    })
+  }
+
+});
 
 // router.get('/api/v1/cabinet/profile/:id', cabinet.profile);
 // router.get('/api/v1/cabinet/settings/:id', cabinet.settings);

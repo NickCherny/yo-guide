@@ -1,4 +1,5 @@
 "use strict";
+const db = require('../models');
 
 class User{
   loginUser(req, res, next){
@@ -8,19 +9,24 @@ class User{
   };
   logoutUser(req, res, next){
     req.logout();
+    res.clearCookie('userId');
     res.redirect('/');
   };
   registrationUser(req, res, next){
     if(req.body.email && req.body.password){
-      console.log(req.body.firstName, req.body.lastName, req.body.email, req.body.password)
-      res.redirect('/');
-    }else {
-      res.render('pages/registration', {title: 'Регистрация профиля'}, function(err, html){
+      db.user.registrationUser(req.body, function(err, result){
         if(err){
-          console.error(err)
-        }else {
-          res.send(html);
-          res.end();
+          return err;
+        }
+        if(result.affectedRows === 1){
+          db.user.getUserId(req.body, function(err, rows){
+            if(err) return err;
+            if(rows[0]['user_id']){
+              res.location('/cabinet');
+              res.cookie('userId', rows[0]['user_id'], {maxAge: 600 * 1000});
+              res.render('cabinet/cabinet', {title: 'Добро пожаловать в личный кабинет', user: rows[0]['user_id']});
+            }
+          });
         }
       })
     }

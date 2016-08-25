@@ -11,10 +11,17 @@ class AppStrateges{
       usernameField: 'email',
       passwordField: 'password'
     },function(username, password, done){
-      if(username !== 'nick@tut.by' || password !== '123') {
-        return done(null, false, {message: 'Неверный логин или пароль'})
-      }
-      return done(null, {username: username})
+      db.user.checkUserLoginPassword({email: username, password: password}, function(err, result){
+        if(err){
+          // ошибка запроса
+          console.error(err);
+
+          return done(null, false, {message: 'Неверный логин или пароль'})
+        }else {
+          console.log(result[0]);
+          return done(null, {username: result, userId: result[0]['user_id']})
+        }
+      });
     })
   };
 }

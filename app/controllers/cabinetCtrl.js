@@ -2,6 +2,10 @@
 
 class Cabinet{
   home(req, res, next){
+
+    if(req.session.passport.user[0].user_id){
+      res.cookie('userId', req.session.passport.user[0].user_id)
+    }
     res.render('cabinet/cabinet', {
       title: 'Кабинет пользователя',
       user: req.session.body

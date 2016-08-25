@@ -22,13 +22,13 @@ router.get('/logout/admin', function(req, res){
 
 // GET admin/home
 router.get('/admin', function(req, res){
-  res.render('admin/admin_home', {title: 'Кабинет', user: req.user.username, typePage: 'Главная страница'});
+  res.render('admin/admin_home', {title: 'Кабинет', typePage: 'Главная страница'});
   res.end();
 });
 
 // GET control/*
 router.get('/admin/control/projects', function(req, res){
-  res.render('admin/projects/admin_projects', {title: 'Управление проектами', user: req.user.username, typePage: 'Проекты'});
+  res.render('admin/projects/admin_projects', {title: 'Управление проектами', typePage: 'Проекты'});
   res.end();
 });
 

@@ -12,9 +12,9 @@ var config = {
     port: process.env.PORT || 3000,
     db: {
       connectionLimit: 20,
-      host: '127.0.0.1',
-      user: 'root',
-      password: '3150061Asd',
+      host: 'localhost',
+      user: 'nick',
+      password: '',
       database: 'yo_db',
       queueLimit: 10,
       acquireTimeout: 10000
