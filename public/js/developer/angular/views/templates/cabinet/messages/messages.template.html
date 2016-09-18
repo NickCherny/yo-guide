@@ -1,93 +1,72 @@
 <section class="cabinet-body">
   <div class="center-b">
     <div class="row row-fix">
+
       <div class="large-4 small-12 columns coll-fix-right">
         <div class="box">
-          <div class="cabinet-msg__header">
-            <h1 class="cabinet-msg__header-title">Сообщения</h1> </div>
-          <div class="msg-container" id="contact">
-            <ul class="msg-user__lists">
-              <li class="list-item list-item_mini">
-                <aside class="row row-fix">
-                  <figure class="large-2 small-2 columns coll-fix-right">
-                    <a href="#"> <img src="/design/img/oval-5.png" alt=""> </a>
-                  </figure>
-                  <div class="large-10 small-10 columns">
-                    <h3 class="msg-item__header-title">
-                      Сергей Петров
-                    </h3>
-                    <div class="msg-item__body-text_mini"> Привет, ман! Это Ричи. Хочу качнуть твои два микса, но скачка их закрыта... </div>
-                  </div>
-                  <div class="msg-item__last-time">13 минут</div>
-                </aside>
+          <h2 class="title title__messages">Сообщения</h2>
+
+          <div class="btn btn__new-message">Новое сообщение</div>
+
+          <div class="wrapper wrapper__messages-contact">
+            <ul>
+              <li class="list-item messages-contact__item" ng-repeat="test in [1, 2, 3]">
+                <div>
+                  <a href="#" class="link">
+                    <img src="/design/img/oval-5.png" alt="" class="images">
+                  </a>
+                </div>
+
+                <div class="wrapper">
+                  <h3 class="messages-contact__name">Имя</h3>
+                  <div class="messages-contact__message_small">аыаы а ыа ыюю...</div>
+                  <div class="messages-contact__message-time">14.01</div>
+                </div>
               </li>
-              <li class="list-item list-item_mini">
-                <aside class="row row-fix">
-                  <figure class="large-2 small-2 columns coll-fix-right"> <img src="/design/img/oval-5.png" alt=""> </figure>
-                  <div class="large-10 small-10 columns">
-                    <h3 class="msg-item__header-title">Сергей Петров</h3>
-                    <div class="msg-item__body-text_mini"> Привет, ман! Это Ричи. Хочу качнуть твои два микса, но скачка их закрыта... </div>
-                  </div>
-                  <div class="msg-item__last-time">13 минут</div>
-                </aside>
-              </li>
+
             </ul>
           </div>
         </div>
       </div>
+
       <div class="large-8 small-12 columns">
         <div class="box">
-          <div class="conversations-msg-b">
-            <div class="conversations-msg__header">
-              <h2 class="conversations-msg__header-title">Василий Иванов</h2>
-            </div>
-            <ul class="msg-user__lists">
-              <li class="list-item">
-                <aside class="row row-fix">
-                  <figure class="large-1 small-1 columns coll-fix">
-                    <a href="#"> <img src="/design/img/oval-5.png" alt=""> </a>
-                  </figure>
-                  <div class="large-11 small-11 columns">
-                    <h3 class="msg-item__header-title">
-                      Сергей Петров
-                    </h3>
-                    <div class="msg-item__body-text_mini"> Привет, ман! Это Ричи. Хочу качнуть твои два микса, но скачка их закрыта... </div>
-                  </div>
-                  <div class="msg-item__last-time">2 дня</div>
-                </aside>
-              </li>
-              <li class="list-item">
-                <aside class="row row-fix">
-                  <figure class="large-1 small-1 columns coll-fix">
-                    <a href="#"> <img src="/design/img/oval-5.png" alt=""> </a>
-                  </figure>
-                  <div class="large-11 small-11 columns">
-                    <h3 class="msg-item__header-title">
 
-                    </h3>
-                    <div class="msg-item__body-text_mini"> Привет, ман! Это Ричи. Хочу качнуть твои два микса, но скачка их закрыта... </div>
+          <h2 class="title title__messages">Чёрный Николай</h2>
+
+          <div class="wrapper wrapper__messages">
+            <ul>
+              <li class="list-item item-message-box" ng-repeat="test in [1,2,3]">
+                <div class="item-message__media">
+                  <a href="#" class="link item-message__auth-media">
+                    <img src="###" alt="" class="images">
+                  </a>
+                </div>
+                <div class="item-message__content">
+                  <div class="title title__item-message">Lumina Records</div>
+                  <div class="text text__item-message">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus aliquid aperiam at commodi cum cumque dolore dolores, maiores minus obcaecati omnis quaerat quidem quis rem saepe sunt unde vero?
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid atque debitis esse eum, neque optio quae quas reiciendis sunt voluptatum? At dignissimos dolores facilis officiis porro quas tempora ullam veniam.
+                    </p>
                   </div>
-                  <div class="msg-item__last-time">13 минут</div>
-                </aside>
+                </div>
               </li>
             </ul>
-            <div class="row row-fix msg-footer-b">
-              <div class="large-1 small-1 columns"></div>
-              <div class="large-11 small-11 columns">
-                <aside class="msg-footer__control-panel">
-                  <h3 class="msg-footer__title">Напишите сообщение</h3>
-                  <form action="#" method="post" class="msg-footer__form-msg">
-                    <div class="form-msg__item-pole">
-                      <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </div>
-                    <div class="form-msg__send-b">
-                      <button type="button" class="form-msg__btn-send" id="msg-send">Отправить</button>
-                    </div>
-                  </form>
-                </aside>
+          </div>
+
+          <div class="wrapper wrapper__message-panel">
+            <div>
+              <div class="title title__message-panel">Написать сообщение</div>
+
+              <textarea name="" cols="30" rows="10" class="textarea"></textarea>
+
+              <div class="wrapper">
+                <button class="btn btn__send-message">Отправить</button>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>

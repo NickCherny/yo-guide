@@ -9,5 +9,7 @@
 .ng-form-error{
   border-color: $errorColor!important;
 }
-
+.toggle-container_show{
+  display: block!important;
+}
 //@section angular style (end)

@@ -18,6 +18,10 @@ module.exports = (app, config) => {
   app.locals.ENV = env;
   app.locals.ENV_DEVELOPMENT = env == 'development';
 
+  app.locals.title = 'Гиды, туры, путешествия';
+  app.locals.auth = false;
+  app.locals.imagesDir = (env === 'development') ? '/images' : '/images-bundle';
+  
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
   app.use(logger('dev'));
   app.use(bodyParser.json());
@@ -66,10 +70,8 @@ module.exports = (app, config) => {
   app.set('views', config.root + '/app/views');
   app.set('view engine', 'ejs');
 
-  let routers = glob.sync(config.root + '/app/router/*.js');
-  routers.forEach(function (routers) {
-    require(routers)(app);
-  });
+  const ROUTER = require('../app/router');
+  app.use('/', ROUTER);
 
   app.use(function (req, res, next) {
     let err = new Error('Not Found');

@@ -1,25 +1,32 @@
 "use strict";
-const db = require('../models');
-
-class User{
-  loginUser(req, res, next){
+const UserModels = require('../models/User');
+class UserCtrl{
+  static loginUser(req, res, next){
     if(req.body.email && req.body.password){
       res.redirect('/cabinet');
     }
   };
-  logoutUser(req, res, next){
+  static logoutUser(req, res, next){
     req.logout();
     res.clearCookie('userId');
     res.redirect('/');
   };
-  registrationUser(req, res, next){
+  static registrationUser(req, res, next){
     if(req.body.email && req.body.password){
-      db.user.registrationUser(req.body, function(err, result){
+      let data = {
+        firstName: req.body.firstName || '',
+        lastName: req.body.lastName || '',
+        email: req.body.email || '',
+        password: req.body.password || ''
+      };
+
+      UserModels.registrationUser(data, (err, result)=>{
         if(err){
           return err;
         }
+
         if(result.affectedRows === 1){
-          db.user.getUserId(req.body, function(err, rows){
+          UserModels.selectUIdUEmailUPassword(req.body, (err, rows)=>{
             if(err) return err;
             if(rows[0]['user_id']){
               res.location('/cabinet');
@@ -28,12 +35,14 @@ class User{
             }
           });
         }
-      })
+      });
+    }else {
+      res.redirect('/');
     }
   };
-  getUserProfile(req, res, next){
+  static getUserProfile(req, res, next){
     console.log(req.params.id);
     res.redirect('/cabinet');
   }
 }
-module.exports = User;
+module.exports = UserCtrl;

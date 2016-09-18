@@ -6,6 +6,10 @@
 
 @import "./angular/angular";
 
+@import "./components/mainStyles";
+@import "./components/messages";
+@import "./components/about";
+
 @import "./components/topmenu";
 @import "./components/mainPage";
 @import "./components/header";
@@ -17,5 +21,10 @@
 @import "./components/cabinet";
 @import "./components/profile";
 @import "./components/profileSettings";
+@import "./components/regulations";
+
+@import "components/guide-search";
+@import "./components/guide-board";
+
 
 @import "./components/admin";

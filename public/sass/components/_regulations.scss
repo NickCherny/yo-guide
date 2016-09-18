@@ -1,0 +1,51 @@
+@import "../design.patterns/style.settings";
+//@section regulations (begin)
+.header__regulations{
+  border-bottom: 1px solid #c7c7c7;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+}
+.regulations-body{
+  max-width: 1000px;
+  margin: 0 auto;
+  .ul{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .flex-element{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #8c8c8c;
+    &:last-child{
+      border-bottom: none;
+    }
+    .icon{
+      flex-grow: 1;
+      margin-right: 10px;
+      .icon__paper{
+        height: 24px;
+        width: 24px;
+        fill: lighten($Color5, 40%);
+      }
+    }
+    .regular-item__link{
+      flex-grow: 3;
+    }
+  }
+}
+.text__regular-item{
+  font-family: $ff;
+  font-size: 14px;
+  font-weight: 100;
+  color: lighten($Color5, 10%);
+  text-align: left;
+  &:hover{
+    color: $Color5
+  }
+}
+//@section regulations (begin)

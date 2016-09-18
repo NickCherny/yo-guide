@@ -1,0 +1,148 @@
+@import "../design.patterns/style.settings";
+//@section about style (begin)
+.wrapper__about{
+  background-color: #f4ecec;
+}
+.header__about{
+  background-image: url(/images/pages/about/about_bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  text-align: center;
+  padding: 0 10px;
+}
+.header__about{
+  .title_small{
+    margin: 60px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+  }
+}
+.header__about {
+  .text__big {
+    display: inline-block;
+    font-size: 46px;
+    max-width: 600px;
+    text-align: center;
+    line-height: 54px;
+    font-weight: 900;
+    margin-bottom: 280px;
+    color: #fff;
+  }
+}
+.wrapper__history_move-up{
+  top: -200px;
+}
+
+.about-history{
+  margin: 0 auto 180px;
+  max-width: 1000px;
+  background-color: darken($Color3, 25%);
+  border-radius: 3px;
+  text-align: center;
+  color: #fff;
+  padding: 40px 40px;
+}
+.about-history{
+  .title_medium{
+    font-size: 30px;
+    font-weight: 900;
+    color: lighten(#fff, 20%);
+    margin-bottom: 40px;
+  }
+}
+.about-history{
+  .text_lead{
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 28px;
+    color: lighten(#fff, 10%);
+    margin-bottom: 20px;
+  }
+}
+.about-history{
+  .text__about{
+    color: #fff;
+    line-height: 21px;
+  }
+}
+.wrapper__family{
+  text-align: center;
+}
+.wrapper__family{
+  .title_big{
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 900;
+    margin: 0 0 15px;
+    color: $Color5;
+  }
+}
+.wrapper__family{
+  .title_medium{
+    font-size: 26px;
+    font-weight: 300;
+    color: lighten($Color5, 40%)
+  }
+}
+.wrapper__family-builder{
+  margin-top: 30px;
+}
+.wrapper__family-builder{
+  .family-builder__item-box{
+    display: block;
+    background-color: #fff;
+    padding: 40px 20px;
+    max-width: 500px;
+    border-bottom: 2px solid #95999a;
+    margin: 0 auto;
+  }
+}
+.family-builder__item-box{
+  .wrapper__media{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+.wrapper__media{
+  .images__family-builder{
+    display: inline-block;
+    max-width: 120px;
+    max-height: 120px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+}
+.family-builder__item-box{
+  .title_big{
+    font-size: 24px;
+    color: $Color5;
+    text-align: center;
+    margin: 0 0 3px;
+    text-transform: none;
+    font-weight: 700;
+    line-height: 12px;
+  }
+}
+.family-builder__item-box{
+  .title_medium{
+    font-size: 18px;
+    margin: 0 0 20px;
+    text-align: center;
+    color: lighten($Color5, 40%);
+    text-transform: none;
+    font-weight: 300;
+  }
+}
+.family-builder__item-box{
+  .text__family-builder{
+    line-height: 21px;
+    font-size: 16px;
+    color: lighten($Color5, 10%);
+    text-align: center;
+  }
+}
+//@section about style (end)

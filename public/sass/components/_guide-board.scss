@@ -1,0 +1,110 @@
+@import "../design.patterns/style.settings";
+//@section guide board (begin)
+.wrapper__guide-board{
+  padding: 60px 0 80px;
+}
+.title__guide-board{
+  text-align: center;
+  font-size: 28px;
+  font-weight: 300;
+  color: lighten($Color5, 20%);
+  margin-bottom: 80px;
+  .text_lead{
+    color: $Color5;
+    font-weight: 800;
+  }
+}
+// component styles
+.guide-board__item-link{
+
+}
+.wrapper__guide-board-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #bfcad2;
+}
+.guide-board__media{
+  flex-grow: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  .images__guide-board{
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+  }
+}
+.guide-board__info{
+  flex-grow: 3;
+  padding: 10px;
+}
+.guide-board__info-item{
+  margin-bottom: 5px;
+  &:last-child{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+.title__guide-info{
+  font-size: 16px;
+  line-height: 14px;
+  font-weight: 600;
+  text-align: left;
+  color: $Color5;
+}
+.title__guide-location{
+  font-size: 14px;
+  font-weight: 100;
+  color: lighten($Color5, 30%)
+}
+.guide-board__info-item{
+  .decor:first-child{
+    line-height: 8px;
+  }
+  .decor:last-child{
+    line-height: 8px;
+    text-align: right;
+  }
+}
+.text__guide{
+  font-size: 14px;
+  color: lighten($Color5, 20%);
+}
+.guide-info__chart{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.guide-info__chart-result{
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.guide-info__reviews, .guide-info__chart{
+  text-align: center;
+  .title_small{
+    font-size: 14px;
+    font-weight: 100;
+    color: lighten($Color5, 40%);
+  }
+}
+.guide-info__reviews{
+  .text_lead{
+    font-size: 14px;
+    color: $Color5;
+    font-weight: 900;
+  }
+}
+.guide-info__chart{
+  .star{
+    width: 18px;
+    height: 18px;
+    fill: #dee13f;
+  }
+}
+//@section guide board (end)

@@ -1,14 +1,14 @@
 "use strict";
-
 class Cabinet{
-  home(req, res, next){
-
+  static home(req, res, next){
+    console.log(req.session.passport);
     if(req.session.passport.user[0].user_id){
       res.cookie('userId', req.session.passport.user[0].user_id)
     }
     res.render('cabinet/cabinet', {
       title: 'Кабинет пользователя',
-      user: req.session.body
+      user: req.session.body,
+      auth: req.isAuthenticated()
     },
       function(err, html){
       if(err){
@@ -19,8 +19,6 @@ class Cabinet{
         res.end();
       }
     })
-  };
-  profile(req, res, next){};
-  settings(req, res, next){};
+  }
 }
 module.exports = Cabinet;

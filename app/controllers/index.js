@@ -1,6 +1,6 @@
 "use strict";
 
-const Main = require('./mainCtrl');
+const Main = require('./staticPagesCtrl');
 const Admin = require('./adminCtrl');
 const User = require('./userCtrl');
 const Cabinet = require('./cabinetCtrl');
