@@ -1,6 +1,5 @@
 "use strict";
 
-const Main = require('./staticPagesCtrl');
 const Admin = require('./adminCtrl');
 const User = require('./userCtrl');
 const Cabinet = require('./cabinetCtrl');
@@ -10,7 +9,6 @@ const Guest = require('./guestCtrl');
 const ProjectCtrl = require('./projectCtrl');
 
 const controllers = {
-  main: new Main(),
   admin: new Admin(),
   user: new User(),
   cabinet: new Cabinet(),

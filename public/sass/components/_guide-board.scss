@@ -1,7 +1,12 @@
 @import "../design.patterns/style.settings";
 //@section guide board (begin)
+.wrapper__guide{
+  background-color: lighten($Color5, 70%);
+}
 .wrapper__guide-board{
   padding: 60px 0 80px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 .title__guide-board{
   text-align: center;
@@ -25,13 +30,15 @@
   background-color: #fff;
   margin-bottom: 20px;
   border-bottom: 2px solid #bfcad2;
+  height: 200px;
+  overflow: hidden;
 }
 .guide-board__media{
   flex-grow: 1;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
   .images__guide-board{
     max-width: 100px;
     max-height: 100px;
@@ -40,7 +47,7 @@
 }
 .guide-board__info{
   flex-grow: 3;
-  padding: 10px;
+  padding: 20px;
 }
 .guide-board__info-item{
   margin-bottom: 5px;
@@ -60,7 +67,8 @@
 .title__guide-location{
   font-size: 14px;
   font-weight: 100;
-  color: lighten($Color5, 30%)
+  color: lighten($Color5, 30%);
+  text-align: left;
 }
 .guide-board__info-item{
   .decor:first-child{

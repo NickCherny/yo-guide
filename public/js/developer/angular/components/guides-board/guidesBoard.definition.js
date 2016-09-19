@@ -1,5 +1,5 @@
 const guidesBoardDefinition = {
-  template:`
+  template: `
     <a href="#" class="guide-board__item-link">
       <div class="wrapper wrapper__guide-board-item">
         <div class="guide-board__media">
@@ -18,7 +18,7 @@ const guidesBoardDefinition = {
               </svg>
             </div>
             <div class="text text__guide">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias architecto cum debitis deleniti doloribus, est expedita facere fuga illum nobis numquam obcaecati quia quod repellat repellendus repudiandae, saepe, voluptatibus.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             </div>
             <div class="decor">
               <svg fill="#000000" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
@@ -48,5 +48,5 @@ const guidesBoardDefinition = {
       </div>
     </a>
   `
-};
-export default guidesBoardDefinition;
+}
+export default guidesBoardDefinition
