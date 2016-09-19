@@ -8,8 +8,14 @@ import userGuestDefinition from '../components/user-guest/userGuest.component'
 import userTraveSmallDefinition from '../components/user-travel/userTravelSmall.component'
 import profileSettingsFormDefinition from '../components/profile-settings/profileSettings.component'
 
+// Services
+import ServerRequests from '../factorys/server.requests'
+
 const cabinetApp = module('cabinetApp', ['ui.router'])
   .config(['$stateProvider', '$urlRouterProvider', cabinetRouter])
+
+module('cabinetApp')
+  .factory('ServerRequests', ServerRequests)
 
 module('cabinetApp')
   .component('cabinetNavigation', cabinetNavigationDefintion)

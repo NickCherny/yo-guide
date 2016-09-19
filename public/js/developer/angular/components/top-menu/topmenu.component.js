@@ -1,14 +1,49 @@
-import topmenuCtrl from './topmenu.controller';
+import topmenuCtrl from './topmenu.controller'
 
 const topmenuDefinition = {
   binding: {
     user: '='
   },
-  templateUrl: '/js/developer/angular/views/templates/navigation/topmenu.html',
+  template: `
+  <div>
+    <nav class="top-menu">
+      <div class="top-menu_wrapper">
+        <div class="row row-fix">
+          <div class="large-1 columns">
+            <a href="/" class="top-menu__logo-link" ng-class="topmenu.getActiveLink('/')">
+              LOGO
+            </a>
+          </div>
+          <div class="large-4 columns ">
+            <div class="top-menu__search-b">
+              <input type="text"
+                     name="guide_info"
+                     placeholder="Куда вы планируете отправиться?"
+                     data-ng-model="tMenu.search"
+                     data-ng-keyup="tMenu.searchGuideKey($event)"
+                     class="top-menu__search-inpt">
+
+              <div class="top-menu__search-btn-b">
+                <div class="top-menu__search-btn_circle" data-search-guide></div>
+                <div class="top-menu__search-btn_line" data-search-guide></div>
+              </div>
+            </div>
+          </div>
+          <div class="large-2 columns">
+            <div class="top-menu__user-menu" ng-if="!topmenu.user">
+              <span class="top-menu__login-user" ng-click="topmenu.showLoginForm(event)">Войти</span>
+              <span class="top-menu__registration-user" ng-click="topmenu.showRegistrationForm(event)">Регистрация</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+    <login-user ng-show="topmenu.loginFormVisible"></login-user>
+    <registration-user ng-show="topmenu.registrationFormVisible"></registration-user>
+  </div>
+  `,
   controller: topmenuCtrl,
   controllerAs: 'topmenu'
-};
-export default topmenuDefinition;
-
-
-
+}
+export default topmenuDefinition

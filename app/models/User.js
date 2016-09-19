@@ -146,7 +146,7 @@ class User {
         this.getProfilePhoto(id, (err, result) => {
           if (err) callback(err)
           if (result) {
-            rows[0]['photo'] = result[0]['photo_src'] || '/images/users/photoProfileDefault.png'
+            rows[0]['photo'] = result[0] || '/images/users/photoProfileDefault.png'
             this.getUserLocation(id, (err, result) => {
               if (err) callback(err)
               if (result) {

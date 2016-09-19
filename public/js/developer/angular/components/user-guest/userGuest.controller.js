@@ -1,7 +1,6 @@
 class userGuestCtrl {
   constructor ($cookies, ServerRequests) {
     this.id = $cookies.get('userId')
-    ServerRequests
     this.guests = [
       {
         fullName: 'Celia Collins',

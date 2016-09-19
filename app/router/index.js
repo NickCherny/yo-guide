@@ -47,6 +47,5 @@ router.get('/guides', facade.guides.guidesBoard)
  */
 router.get('/api/v1/regulations/regular/:name', facade.api.regulationsController)
 router.get('/api/v1/user/:id/profile', facade.api.userInfo)
-router.get('/api/v1/user/:id/guests/all', facade.api.getGuests)
 
 module.exports = router
