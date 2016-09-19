@@ -3,6 +3,9 @@ const express = require('express')
 const router = express.Router()
 const facade = require('../facade')
 
+/**
+* @url /
+*/
 router.all('/', facade.main.main)
 router.all('*', (req, res, next) => {
   res.locals.auth = req.isAuthenticated()
@@ -10,19 +13,19 @@ router.all('*', (req, res, next) => {
 })
 
 /**
- * @router /about
+ * @url /about
  */
 router.get('/about', facade.main.aboutUs)
 router.get('/about/about-us', facade.main.aboutUs)
 router.get('/about/founders', facade.main.aboutFounders)
 
 /**
- * @router /regulations
+ * @url /regulations
  */
 router.get('/regulations', facade.main.regulations)
 
 /**
- * @router /
+ * @url /
  */
 router.post('/api/v1/login/user', facade.user.loginUser)
 router.get('/api/v1/logout/user', facade.user.logoutUser)
@@ -30,18 +33,20 @@ router.get('/login/cabinet', facade.user.registrationUser)
 router.post('/api/v1/registration/user', facade.user.registrationUser)
 
 /**
- * @router /cabinet/*
+ * @url /cabinet/*
  */
 router.get('/cabinet', facade.cabinet.home)
 
 /**
- * @router /guides/*
+ * @url /guides/*
  */
 router.get('/guides', facade.guides.guidesBoard)
 
 /**
- * @router /api
+ * @url /api
  */
 router.get('/api/v1/regulations/regular/:name', facade.api.regulationsController)
+router.get('/api/v1/user/:id/profile', facade.api.userInfo)
+router.get('/api/v1/user/:id/guests/all', facade.api.getGuests)
 
 module.exports = router

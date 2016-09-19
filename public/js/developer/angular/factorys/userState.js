@@ -1,5 +1,5 @@
-export default function($cookies, serverRequests){
-  let id = $cookies.get('userId');
+export default function ($http, $cookies, serverRequests) {
+  let id = $cookies.get('userId')
   return {
     id: id || '',
     fullName: serverRequests.getFullName(id),
@@ -8,6 +8,9 @@ export default function($cookies, serverRequests){
       alt: ''
     },
     guests: [],
-    travels: []
+    travels: [],
+    getUserProfile: (id) => {
+      return $http.get(`/api/v1/user/${id}/profile`)
+    }
   }
 }

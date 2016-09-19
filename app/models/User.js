@@ -53,12 +53,11 @@ class User {
      */
   static registrationUser (data, callback) {
     this.isUser(data, function (err) {
-      if (err) return callback(err)
-
+      if (err) callback(err)
       let sql = `
-        INSERT INTO user
-        (user_fullName, user_email, user_password)
-        VALUES(?, ?, ?);
+      INSERT INTO user
+      (user_fullName, user_email, user_password)
+      VALUES(?, ?, ?);
       `
 
       let inserts = [
@@ -73,11 +72,11 @@ class User {
   * @param {string} id - table user_id
   * @param {function} callback - callback function
   */
-  static getProfilePhoto (id, callback) {
+  static getProfilePhoto (id = '', callback) {
     let sql = `
-    SELECT photo_src
+    SELECT photo_src, photo_alt
     FROM photo
-    WHERE user_user_id = ?;
+    WHERE photo_type = 'profile' AND photo_user_id = ?;
     `
     pool.query(sql, id, callback)
   }
@@ -86,7 +85,7 @@ class User {
   * @param {string} id - user_id
   * @param {function} callback - callback function
   */
-  static getGuest (id, callback) {
+  static getGuest (id = '', callback) {
     let sql = `
     SELECT *
     FROM guest
@@ -99,7 +98,7 @@ class User {
   * @param {string} location - user_location
   * @param {function} callback - callback function
   */
-  static searchUserForLocation (location, callback) {
+  static searchUserForLocation (location = '', callback) {
     let sql = `
     SELECT user_id, user_fullName, user_location, user_status
     FROM user
@@ -113,6 +112,79 @@ class User {
         })
         this.getGuest(result[0]['user_id'], (err, rows) => {
           if (err) callback(err)
+        })
+      }
+    })
+  }
+  /**
+  *
+  * @param {string} id - user_id
+  * @param {Object} callback - callback (err, rows)
+  */
+  static getUserLocation (id = '', callback) {
+    let sql = `
+    SELECT location_country, location_city
+    FROM location
+    WHERE location_user_id = ?;
+    `
+    pool.query(sql, id, callback)
+  }
+  /**
+  *
+  * @param {string} id - user_id
+  * @param {Object} callback - callback (err, rows)
+  */
+  static getUserProfile (id = '', callback) {
+    let sql = `
+    SELECT user_fullName, user_status, user_level
+    FROM user
+    WHERE user_id = ?;
+    `
+    pool.query(sql, id, (err, rows) => {
+      if (err) callback(err)
+      if (rows[0]) {
+        this.getProfilePhoto(id, (err, result) => {
+          if (err) callback(err)
+          if (result) {
+            rows[0]['photo'] = result[0]['photo_src'] || '/images/users/photoProfileDefault.png'
+            this.getUserLocation(id, (err, result) => {
+              if (err) callback(err)
+              if (result) {
+                rows[0]['location'] = result[0] || 'Город Страна'
+                callback(null, rows[0])
+              }
+            })
+          }
+        })
+      }
+    })
+  }
+  /**
+  *
+  * @param {string} id - user_id
+  * @param {Object} callback - callback (err, rows)
+  */
+  static getGuests (id = '', callback) {
+    let sql = `
+    SELECT travel_user_id, travel_date
+    FROM travel
+    WHERE travel_guide_id = ?
+    ORDER BY travel_id
+    DESC;
+    `
+    pool.query(sql, id, (err, result) => {
+      if (err) callback(err)
+      if (result.length > 1) {
+        result.forEach(guest => {
+          this.getProfilePhoto(guest['travel_user_id'], (err, rows) => {
+            if (err) callback(err)
+            guest['photo'] = rows[0]['photo_src'] || '/images/users/photoProfileDefault.png'
+          })
+        })
+      } else {
+        this.getProfilePhoto(result[0]['travel_user_id'], (err, rows) => {
+          if (err) callback(err)
+          result[0]['photo'] = rows[0]['photo_src'] || '/images/users/photoProfileDefault.png'
         })
       }
     })

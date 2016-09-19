@@ -1,12 +1,13 @@
 const join = require('path').join
+const User = require('../models/User')
 
-class restAPI {
+class API {
   /**
-   *
-   * @param req
-   * @param res
-   * @param next
-     */
+  *
+  * @param {Object} req - Express HTTP Request
+  * @param {Object} res - Express HTPP Response
+  * @param {Object} next - Express function
+  */
   static regulationsController (req, res, next) {
     const _DIR = '/docs/regulations/'
     let name = req.params.name || ''
@@ -29,5 +30,38 @@ class restAPI {
         break
     }
   }
+  /**
+  *
+  * @param {Object} req - Express HTTP Request
+  * @param {Object} res - Express HTPP Response
+  * @param {Object} next - Express function
+  */
+  static userInfo (req, res, next) {
+    console.log(req.params.id)
+    if (req.params.id) {
+      User.getUserProfile(req.params.id, (err, row) => {
+        if (err) next(err)
+        let data = {}
+        data['fullName'] = row['user_fullName'].replace(':', ' ')
+        data['status'] = row['user_status']
+        data['level'] = row['user_level']
+        data['photo'] = row['photo']
+        data['location'] = row['location']
+        res.json(data)
+        res.end()
+      })
+    }
+  }
+  /**
+  *
+  * @param {Object} req - Express HTTP Request
+  * @param {Object} res - Express HTPP Response
+  * @param {Object} next - Express function
+  */
+  static userGuests (req, res, next) {
+    if (req.params.id) {
+      
+    }
+  }
 }
-module.exports = restAPI
+module.exports = API

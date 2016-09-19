@@ -1,5 +1,7 @@
-class userGuestCtrl{
-  constructor(){
+class userGuestCtrl {
+  constructor ($cookies, ServerRequests) {
+    this.id = $cookies.get('userId')
+    ServerRequests
     this.guests = [
       {
         fullName: 'Celia Collins',
@@ -17,4 +19,4 @@ class userGuestCtrl{
     ]
   }
 }
-export default userGuestCtrl;
+export default userGuestCtrl

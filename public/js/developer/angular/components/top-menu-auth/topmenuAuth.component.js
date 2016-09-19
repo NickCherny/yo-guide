@@ -1,4 +1,4 @@
-import topmenuCtrl from './topmenuAuth.controller.js';
+import topmenuCtrl from './topmenuAuth.controller.js'
 
 const topmenuAuthDefinition = {
   binding: {
@@ -7,5 +7,5 @@ const topmenuAuthDefinition = {
   templateUrl: '/js/developer/angular/views/templates/navigation/topmenuAuth.html',
   controller: topmenuCtrl,
   controllerAs: 'topmenu'
-};
-export default topmenuAuthDefinition;
+}
+export default topmenuAuthDefinition
