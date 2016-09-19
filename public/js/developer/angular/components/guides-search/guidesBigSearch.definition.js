@@ -1,6 +1,6 @@
 const guidesSearchDefinition = {
   binding: {},
-  template: `
+  template: ` 
     <form class="form form__search" toggle-control>
       <div class="wrapper wrapper__search">
         <div class="container container__search">
