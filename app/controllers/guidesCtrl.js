@@ -1,5 +1,5 @@
-class GuideCtrl{
-  static guidesBoard(req, res, next){
+class GuideCtrl {
+  static guidesBoard (req, res, next) {
     let data = {
       title: 'Гиды',
       auth: req.isAuthenticated(),
@@ -7,13 +7,13 @@ class GuideCtrl{
         src: 'minsk.jpg',
         alt: 'Minsk'
       }
-    };
-    res.render('guides', data, (err, html)=>{
-      if(err) next(err);
+    }
+    res.render('guides', data, (err, html) => {
+      if (err) next(err)
 
-      res.send(html);
-      res.end();
+      res.send(html)
+      res.end()
     })
   }
 }
-module.exports = GuideCtrl;
+module.exports = GuideCtrl

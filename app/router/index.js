@@ -3,8 +3,6 @@ const express = require('express')
 const router = express.Router()
 const facade = require('../facade')
 
-const restAPI = require('../controllers/restAPI')
-
 router.all('/', facade.main.main)
 router.all('*', (req, res, next) => {
   res.locals.auth = req.isAuthenticated()
@@ -44,6 +42,6 @@ router.get('/guides', facade.guides.guidesBoard)
 /**
  * @router /api
  */
-router.get('/api/v1/regulations/regular/:name', restAPI.regulationsController)
+router.get('/api/v1/regulations/regular/:name', facade.api.regulationsController)
 
 module.exports = router

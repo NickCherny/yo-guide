@@ -8883,8 +8883,13 @@ ul {
     background-color: #323232;
     box-shadow: none; }
 
+.wrapper__guide {
+  background-color: #e5e5e5; }
+
 .wrapper__guide-board {
-  padding: 60px 0 80px; }
+  padding: 60px 0 80px;
+  max-width: 1000px;
+  margin: 0 auto; }
 
 .title__guide-board {
   text-align: center;
@@ -8902,14 +8907,16 @@ ul {
   justify-content: flex-start;
   background-color: #fff;
   margin-bottom: 20px;
-  border-bottom: 2px solid #bfcad2; }
+  border-bottom: 2px solid #bfcad2;
+  height: 200px;
+  overflow: hidden; }
 
 .guide-board__media {
   flex-grow: 1;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 10px; }
+  padding: 20px; }
   .guide-board__media .images__guide-board {
     max-width: 100px;
     max-height: 100px;
@@ -8917,7 +8924,7 @@ ul {
 
 .guide-board__info {
   flex-grow: 3;
-  padding: 10px; }
+  padding: 20px; }
 
 .guide-board__info-item {
   margin-bottom: 5px; }
@@ -8936,7 +8943,8 @@ ul {
 .title__guide-location {
   font-size: 14px;
   font-weight: 100;
-  color: #7f7f7f; }
+  color: #7f7f7f;
+  text-align: left; }
 
 .guide-board__info-item .decor:first-child {
   line-height: 8px; }
