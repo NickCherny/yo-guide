@@ -1,5 +1,19 @@
-class userTravelCtrl{
-  constructor(){
+class userTravelCtrl {
+  constructor ($cookies, ServerRequests) {
+    this.id = $cookies.get('userId')
+    ServerRequests.getTravels(this.id)
+      .then(
+        res => {
+          if (res.status === 200) {
+            console.log(res.data)
+            this.travels = res.data
+          }
+        },
+        err => {
+          console.log(err)
+          this.travels = []
+        }
+      )
     this.travels = [
       {
         link: '',
@@ -27,8 +41,8 @@ class userTravelCtrl{
           }
         ]
       }
-    ];
-    this.user = null;
+    ]
+    this.user = null
   }
 }
-export default userTravelCtrl;
+export default userTravelCtrl

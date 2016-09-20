@@ -191,5 +191,36 @@ class User {
       }
     })
   }
+  /**
+  *
+  * @param {string} id - user_id
+  * @param {Object} callback - callback (err, rows)
+  */
+  static getTravels (id = '', callback) {
+    let sql = `
+    SELECT travel_id, travel_guide_id, travel_date
+    FROM travel
+    WHERE travel_user_id = ? AND travel_date > CURRENT_DATE()
+    ORDER BY travel_date;
+    `
+    pool.query(sql, id, (err, result) => {
+      if (err) callback(err)
+      if (result.length > 1) {
+        result.forEach(item => {
+          this.getUserProfile(item['travel_guide_id'], (err, guide) => {
+            if (err) callback(err)
+            item['guide'] = guide[0]
+          })
+        })
+      } else if (result.length === 1) {
+        this.getUserProfile(result[0]['travel_guide_id'], (err, guide) => {
+          if (err) callback(err)
+          result[0]['guide'] = guide[0]
+        })
+      } else {
+        callback(null, [])
+      }
+    })
+  }
 }
 module.exports = User

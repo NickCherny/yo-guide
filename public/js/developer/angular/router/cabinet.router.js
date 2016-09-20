@@ -1,7 +1,7 @@
 import ROUTER_URL from './config'
 let templateUrl = '/js/developer/angular/views/templates/'
 
-export default function($stateProvider, $utlRouterProvider) {
+export default function ($stateProvider, $utlRouterProvider) {
 
   $utlRouterProvider.otherwise('')
   $stateProvider

@@ -1,0 +1,15 @@
+// @section media query (begin)
+@media only screen and (max-width: 635px){
+  .cabinet__cntrl-panel-b{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .cabinet__cntrl-panel-item{
+      margin-right: 0;
+    }
+  }
+  .cabinet-b{
+    margin-bottom: 30px;
+  }
+}
+// @section media query (end)

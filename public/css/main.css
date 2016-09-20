@@ -7140,6 +7140,11 @@ ul {
     padding-left: 10px; }
     .top-menu__user-menu .drop-down-menu .drop-down-menu__item-link:hover {
       background-color: #1a5afc; }
+  .top-menu__user-menu .drop-down-menu .drop-down-menu__item-link_active {
+    transition: all 300ms;
+    transition-delay: 100ms;
+    transition-timing-function: ease-in-out;
+    background-color: #0344ea; }
 
 .top-menu__user-menu {
   color: #fff;
@@ -7157,6 +7162,31 @@ ul {
     cursor: pointer; }
     .top-menu__user-menu .top-menu__registration-user:hover {
       color: #5de895; }
+
+.icon__top-nav-message {
+  width: 24px;
+  height: 24px;
+  fill: #fff; }
+
+@keyframes topMenu__active_animation {
+  0% {
+    width: 0; }
+  100% {
+    width: 100%; } }
+
+.top-menu_active {
+  position: relative; }
+  .top-menu_active:after {
+    animation-name: topMenu__active_animation;
+    animation-fill-mode: both;
+    animation-duration: 600ms;
+    animation-timing-function: ease-in;
+    animation-delay: 400ms;
+    content: "";
+    display: block;
+    position: absolute;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3); }
 
 .Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .yo-btn_full, .header .header__btn-b, .hero-content .hero__btn, .begin-use .begin-use__btn {
   transition: all 300ms;
@@ -7836,6 +7866,14 @@ ul {
   color: #fff;
   border-bottom-color: #5de895; }
 
+.mobile-icon__cabinet-navigation {
+  transition: all 300ms;
+  height: 24px;
+  width: 24px;
+  fill: #fff; }
+  .mobile-icon__cabinet-navigation:hover {
+    fill: #5de895; }
+
 .cabinet-media {
   max-width: 1284px;
   margin-left: auto;
@@ -8065,6 +8103,30 @@ ul {
       fill: #BBBBBB; }
       .cabinet__header .cabinet-travel__create-button .btn-icon:hover {
         fill: #888888; }
+
+.title_cabinet-header {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 300;
+  color: #656565;
+  margin-top: 17px; }
+
+.icon__cabinet-create-travel {
+  height: 30px;
+  width: 30px; }
+  .icon__cabinet-create-travel #menu_still {
+    transform-origin: 50% 50%;
+    transition: all 300ms;
+    transition-timing-function: ease-in-out;
+    fill: #BBBBBB;
+    transform: translate(-1260, -190); }
+  .icon__cabinet-create-travel #poezdki {
+    transform: translate(731, 170); }
+  .icon__cabinet-create-travel #plus {
+    transform: translate(529, 20); }
+  .icon__cabinet-create-travel:hover #menu_still {
+    fill: #6f6f6f;
+    transform: rotate(180deg); }
 
 .center-block, .center-b {
   max-width: 1284px;
@@ -9069,3 +9131,13 @@ ul {
         display: block; }
       .admin-navigation .admin-navigation-panel .admin-navigation-panel__item:hover {
         background-color: #3e66c5; }
+
+@media only screen and (max-width: 635px) {
+  .cabinet__cntrl-panel-b {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+    .cabinet__cntrl-panel-b .cabinet__cntrl-panel-item {
+      margin-right: 0; }
+  .cabinet-b {
+    margin-bottom: 30px; } }

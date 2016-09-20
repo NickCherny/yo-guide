@@ -35,4 +35,13 @@
     border-bottom-color: $Color2;
   }
 }
+.mobile-icon__cabinet-navigation{
+  transition: all 300ms;
+  height: 24px;
+  width: 24px;
+  fill: #fff;
+  &:hover{
+    fill: $Color2;
+  }
+}
 //@section navigation cabinet (end)

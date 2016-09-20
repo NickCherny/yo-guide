@@ -3,7 +3,7 @@ const userGuestDefinition = {
   controller: userGusetCtrl,
   controllerAs: 'guest',
   template: `
-  <article>
+  <article class="cabinet-b">
     <div class="box" data-ng-if="guest.guests.length > 0">
       <h2 class="cabinet-guests__title cabinet-title">Ожидаемые гости</h2>
       <ul class="cabinet-guests__collections-b">
@@ -36,7 +36,7 @@ const userGuestDefinition = {
     <div class="box" data-ng-if="guest.guests.length === 0">
       <h2 class="cabinet-guests__title cabinet-title">Ожидаемые гости</h2>
       <div class="cabinet-guests__item-b">
-        <div class="title title_small">У вас пока нет гостей</div>
+        <div class="title title_cabinet-header">У вас пока нет гостей</div>
 
         <!-- todo: --process development -->
         <!-- begin -->

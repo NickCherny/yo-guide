@@ -67,5 +67,21 @@ class API {
       })
     }
   }
+  /**
+  *
+  * @param {Object} req - Express HTTP Request
+  * @param {Object} res - Express HTPP Response
+  * @param {Object} next - Express function
+  */
+  static userTravels (req, res, next) {
+    if (req.params.id) {
+      User.getTravels(req.params.id, (err, result) => {
+        if (err) next(err)
+        console.log(result)
+        res.json(result)
+        res.end()
+      })
+    }
+  }
 }
 module.exports = API

@@ -11,6 +11,9 @@ export default function ($http) {
     },
     getGuests: id => {
       return $http.get(`/api/v1/user/${id}/guest/all`)
+    },
+    getTravels: id => {
+      return $http.get(`/api/v1/user/${id}/travel/all`)
     }
   }
 }

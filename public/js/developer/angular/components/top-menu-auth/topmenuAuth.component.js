@@ -10,7 +10,7 @@ const topmenuAuthDefinition = {
       <div class="top-menu_wrapper">
         <div class="row row-fix">
           <div class="large-1 columns">
-            <a href="/" class="top-menu__logo-link" ng-class="topmenu.getActiveLink('/')">
+            <a href="/" class="top-menu__logo-link">
               LOGO
             </a>
           </div>
@@ -32,12 +32,11 @@ const topmenuAuthDefinition = {
           <div class="large-5 columns">
             <div class="top-menu__msg-b">
               <div class="top-menu__msg_hide-b">
-                <a ui-sref="/messages"
-                   class="top-menu__msg-link"
-                   ng-class="topmenu.getActiveLink('/user/messages')">
-                  <span class="top-menu__item-msg-text">Сообщения</span>
+                <a ui-sref="/messages" ui-sref-active="top-menu_active"
+                   class="top-menu__msg-link">
+                  <span class="top-menu__item-msg-text hide-for-small-only">Сообщения</span>
                   <span class="top-menu__item-msg-img">
-                    <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <svg viewBox="0 0 24 24" class="icon__top-nav-message">
                         <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
                         <path d="M0 0h24v24H0z" fill="none"/>
                     </svg>
@@ -49,9 +48,8 @@ const topmenuAuthDefinition = {
 
           <div class="large-2 columns">
             <div class="top-menu__user-menu top-menu__user-menu_acaunt">
-              <a ui-sref="/cabinet/home"
-                 class="top-menu__user-acaunt-link"
-                 ng-class="topmenu.getActiveLink('/cabinet/home')">
+              <a ui-sref="/"
+                 class="top-menu__user-acaunt-link">
                 <span class="top-menu__usr-logo-name">User</span>
 
                 <img data-ng-src=""
@@ -60,11 +58,11 @@ const topmenuAuthDefinition = {
                      id="top_menu__ava_ltl">
               </a>
               <div class="drop-down-menu">
-                <a ui-sref="/profile" class="drop-down-menu__item-link">Профиль</a>
-                <a ui-sref="/travel" class="drop-down-menu__item-link">Поездки</a>
-                <a ui-sref="/tour" class="drop-down-menu__item-link">Туры</a>
-                <a ui-sref="/profile/settings" class="drop-down-menu__item-link">Настройки</a>
-                <a href="/api/v1/logout/user" class="drop-down-menu__item-link">Выйти</a>
+                <a ui-sref="/profile" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Профиль</a>
+                <a ui-sref="/travel" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Поездки</a>
+                <a ui-sref="/tour" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Туры</a>
+                <a ui-sref="/profile/settings" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Настройки</a>
+                <a href="/api/v1/logout/user" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Выйти</a>
               </div>
             </div>
           </div>
