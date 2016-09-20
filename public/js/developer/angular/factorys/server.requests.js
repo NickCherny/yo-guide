@@ -10,7 +10,7 @@ export default function ($http) {
       return $http.get(`/api/v1/user/${id}/profile`)
     },
     getGuests: id => {
-      return $http.get('/api/v1/user/${id}/guests/all')
+      return $http.get(`/api/v1/user/${id}/guest/all`)
     }
   }
 }

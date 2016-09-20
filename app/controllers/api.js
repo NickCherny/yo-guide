@@ -60,7 +60,11 @@ class API {
   */
   static userGuests (req, res, next) {
     if (req.params.id) {
-      
+      User.getGuests(req.params.id, (err, result) => {
+        if (err) next(err)
+        res.json(result)
+        res.end()
+      })
     }
   }
 }

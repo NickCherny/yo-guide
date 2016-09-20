@@ -1,6 +1,19 @@
 class userGuestCtrl {
   constructor ($cookies, ServerRequests) {
     this.id = $cookies.get('userId')
+    ServerRequests.getGuests(this.id)
+      .then(
+        res => {
+          if (res.status === 200) {
+            console.log(res.data)
+            this.guests = res.data
+          }
+        },
+        err => {
+          console.log(err)
+          this.guests = []
+        }
+      )
     this.guests = [
       {
         fullName: 'Celia Collins',

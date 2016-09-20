@@ -7925,6 +7925,13 @@ ul {
   font-size: 13px;
   color: #f8a500; }
 
+.cabinet-guests__item-b .title_small {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 300;
+  color: #323232;
+  margin-top: 17px; }
+
 .cabinet-travels__collections-b {
   position: relative;
   font-family: "Roboto", sans-serif; }

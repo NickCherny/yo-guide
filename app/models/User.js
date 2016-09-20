@@ -181,11 +181,13 @@ class User {
             guest['photo'] = rows[0]['photo_src'] || '/images/users/photoProfileDefault.png'
           })
         })
-      } else {
+      } else if (result[0]) {
         this.getProfilePhoto(result[0]['travel_user_id'], (err, rows) => {
           if (err) callback(err)
           result[0]['photo'] = rows[0]['photo_src'] || '/images/users/photoProfileDefault.png'
         })
+      } else {
+        callback(null, [])
       }
     })
   }

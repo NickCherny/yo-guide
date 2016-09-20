@@ -1,6 +1,7 @@
 import userGusetCtrl from './userGuest.controller'
 const userGuestDefinition = {
-  binding: {},
+  controller: userGusetCtrl,
+  controllerAs: 'guest',
   template: `
   <article>
     <div class="box" data-ng-if="guest.guests.length > 0">
@@ -32,16 +33,18 @@ const userGuestDefinition = {
         </li>
       </ul>
     </div>
-    <div class="cabinet-guests-b" data-ng-if="guest.guests.length == 0">
-      <h2 class="cabinet-guests__title">Ожидаемые гости</h2>
+    <div class="box" data-ng-if="guest.guests.length === 0">
+      <h2 class="cabinet-guests__title cabinet-title">Ожидаемые гости</h2>
       <div class="cabinet-guests__item-b">
-        <div class="cabinet-guests__item-title">У вас пока нет гостей</div>
-        <a ui-sref="/guests/search" class="cabinet-guests__btn-link">Найти гостей</a>
+        <div class="title title_small">У вас пока нет гостей</div>
+
+        <!-- todo: --process development -->
+        <!-- begin -->
+        <a ui-sref="/guests/search" class="cabinet-guests__btn-link" ng-show="false">Найти гостей</a>
+        <!-- end -->
       </div>
     </div>
   </article>
-  `,
-  controller: userGusetCtrl,
-  controllerAs: 'guest'
+  `
 }
 export default userGuestDefinition
