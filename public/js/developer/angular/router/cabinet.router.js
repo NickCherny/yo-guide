@@ -23,6 +23,8 @@ export default function ($stateProvider, $utlRouterProvider) {
     })
     .state(ROUTER_URL.settings, {
       url: '/profile/settings',
+      controller: 'cabinetSettingsCtrl',
+      controllerAs: 'cs',
       templateUrl: `${templateUrl}cabinet/settings.html`
     })
     .state(ROUTER_URL.message, {

@@ -21,7 +21,7 @@ module.exports = (app, config) => {
   app.locals.title = 'Гиды, туры, путешествия';
   app.locals.auth = false;
   app.locals.imagesDir = (env === 'development') ? '/images' : '/images-bundle';
-  
+
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
   app.use(logger('dev'));
   app.use(bodyParser.json());
@@ -43,7 +43,7 @@ module.exports = (app, config) => {
 
   let user = passport.authenticate('local', {
     successRedirect: '/cabinet',
-    failureRedirect: '/login/cabinet'
+    failureRedirect: '/'
   });
 
 

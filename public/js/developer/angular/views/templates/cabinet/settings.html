@@ -5,25 +5,229 @@
         <aside class="profile-settings__ctrl-panel-b">
           <ul>
             <li>
-              <a href="#" class="ctrl-panel__item-link">Основное</a>
+              <a href="#details" class="ctrl-panel__item-link">Основное</a>
             </li>
             <li>
-              <a href="#" class="ctrl-panel__item-link">Контакты</a>
+              <a href="#contacts" class="ctrl-panel__item-link">Контакты</a>
             </li>
             <li>
-              <a href="#" class="ctrl-panel__item-link">Места проживания</a>
+              <a href="#location" class="ctrl-panel__item-link">Места проживания</a>
             </li>
             <li>
-              <a href="#" class="ctrl-panel__item-link">О себе</a>
+              <a href="#aboutS" class="ctrl-panel__item-link">О себе</a>
             </li>
             <li>
-              <a href="#" class="ctrl-panel__item-link">Безопастность</a>
+              <a href="#security" class="ctrl-panel__item-link">Безопастность</a>
             </li>
           </ul>
         </aside>
       </div>
       <div class="large-7 small-12 columns end">
-        <settings-form-component>Настройки...</settings-form-component>
+        <article class="profile-settings-wrapper">
+          <div class="box_border box__wrapper">
+            <div class="profile-settings__header">
+              <h2 class="profile-settings__header-title" id="details">Детали профиля</h2>
+            </div>
+
+            <fieldset class="profile-settings__body" form="cabinetSettings">
+              <div class="wrapper wrapper__settings flex-container__settings">
+                <div class="flex-element">
+                  <label for="fn2" class="label">Имя</label>
+                </div>
+                <div class="flex-element">
+                  <input type="text" class="input"
+                         name="cabinetSettings[firstName]"
+                         id="fn2"
+                         placeholder="Ваше имя">
+                </div>
+              </div>
+
+              <div class="wrapper wrapper__settings flex-container__settings">
+                <div class="flex-element">
+                  <label for="ln2" class="label">Фамилия</label>
+                </div>
+                <div class="flex-element">
+                  <input type="text" class="input"
+                         name="cabinetSettings[lastName]"
+                         id="ln2"
+                         placeholder="Ваша фамилия">
+                </div>
+              </div>
+              <div class="wrapper wrapper__settings flex-container__settings">
+                <div class="flex-element">
+                  <label for="bDay" class="label">Дата рождения</label>
+                </div>
+                <div class="flex-element">
+                  <input type="date" class="input"
+                         name="cabinetSettings[birthday]"
+                         id="bDay"
+                         placeholder="Дата рождения">
+                </div>
+              </div>
+
+              <div class="wrapper wrapper__settings flex-container__settings">
+                <div class="flex-element">
+                  <label for="gender" class="label">Пол</label>
+                </div>
+                <div class="flex-element">
+                  <select name="cabinetSettings[gender]" id="gender" class="select">
+                    <option value="0">Скрыть</option>
+                    <option value="1">Мужской</option>
+                    <option value="2">Женский</option>
+                  </select>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="box_border box__wrapper">
+            <div class="profile-settings__header">
+              <h2 class="profile-settings__header-title" id="contacts">Контакты</h2>
+            </div>
+            <fieldset class="profile-settings__body" form="cabinetSettings">
+
+              <div class="wrapper wrapper__settings flex-container__settings">
+                <div class="flex-element">
+                  <label for="email" class="label">Электронная почта</label>
+                </div>
+                <div class="flex-element">
+                  <input type="email" class="input"
+                         name="cabinetSettings[email]"
+                         id="email"
+                         placeholder="Сменить электронную почту">
+                </div>
+              </div>
+
+              <div class="wrapper wrapper__settings flex-container__settings">
+                <div class="flex-element">
+                  <label for="phone" class="label">Телефон</label>
+                </div>
+                <div class="flex-element">
+                  <input type="text" class="input"
+                         name="cabinetSettings[phone]"
+                         id="phone"
+                         placeholder="Телефон">
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="box_border box__wrapper">
+            <div class="profile-settings__header">
+              <h2 class="profile-settings__header-title" id="location">Локация</h2>
+            </div>
+            <fieldset class="profile-settings__body" form="cabinetSettings">
+
+              <div class="wrapper wrapper__settings flex-container__settings">
+                <div class="flex-element">
+                  <label for="country" class="label">Страна</label>
+                </div>
+                <div class="flex-element">
+                  <input type="text" class="input"
+                         name="cabinetSettings[country]"
+                         id="country"
+                         placeholder="Страна">
+                </div>
+              </div>
+
+              <div class="wrapper wrapper__settings flex-container__settings">
+                <div class="flex-element">
+                  <label for="city" class="label">Город</label>
+                </div>
+                <div class="flex-element">
+                  <input type="text"
+                         name="cabinetSettings[city]"
+                         id="city"
+                         placeholder="Город">
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="box_border box__wrapper">
+            <div class="profile-settings__header">
+              <h2 class="profile-settings__header-title" id="aboutS">О себе</h2>
+            </div>
+            <fieldset class="profile-settings__body" form="cabinetSettings">
+
+              <div class="wrapper wrapper__settings flex-container__settings">
+                <div class="flex-element">
+                  <label for="interests" class="label">Интересы</label>
+                </div>
+                <div class="flex-element">
+                  <input type="text" class="input"
+                         id="interests"
+                         name="cabinetSettings[interests]"
+                         placeholder="Интересы">
+                </div>
+              </div>
+
+              <div class="wrapper wrapper__settings flex-container__settings">
+                <div class="flex-element flex-element_top">
+                  <label for="about" class="label">О себе</label>
+                </div>
+                <div class="flex-element">
+                  <textarea class="textarea"
+                    name="cabinetSettings[about]"
+                    id="about"
+                    cols="30"
+                    rows="10"
+                    placeholder="Введите текст"></textarea>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="box_border box__wrapper">
+            <div class="profile-settings__header">
+              <h2 class="profile-settings__header-title" id="security">Безопастность</h2>
+            </div>
+            <fieldset class="profile-settings__body">
+
+              <div class="wrapper wrapper__settings flex-container__settings">
+                <div class="flex-element flex-element_top">
+                  <label for="password" class="label">Сменить пароль</label>
+                </div>
+                <div class="flex-element">
+                  <div class="settings__pwd-b">
+                    <input type="password"
+                           name="cabinetSettings[password]"
+                           id="password"
+                           placeholder="Старый пароль">
+                  </div>
+                  <div class="settings__pwd-b">
+                    <input type="password"
+                           name="cabinetSettings[passwordNew]"
+                           placeholder="Новый пароль">
+                  </div>
+                </div>
+              </div>
+
+            </fieldset>
+
+            <div class="profile-settings__form">
+              <form action="/user/profile/settings/action-form"
+                    method="post"
+                    enctype="multipart/form-data"
+                    novalidate
+                    id="cabinetSettings"
+                    name="cabinetSettings" id="profile_settings">
+                <div class="row row-fix">
+                  <div class="large-6 columns columns-fix_left">
+                    <button type="button" class="yo-btn_full profile-settings-btn_destroy">Отменить</button>
+                  </div>
+                  <div class="large-6 columns columns-fix_right">
+                    <button type="button" class="yo-btn_full profile-settings-btn_save">Сохранить</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </div>

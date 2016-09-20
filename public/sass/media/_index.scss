@@ -11,5 +11,17 @@
   .cabinet-b{
     margin-bottom: 30px;
   }
+  .top-menu__msg-b{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;;
+  }
+  .top-menu{
+    .top-menu__user-menu{
+      float: left;
+      width: 100%;
+      text-align: left;
+    }
+  }
 }
 // @section media query (end)

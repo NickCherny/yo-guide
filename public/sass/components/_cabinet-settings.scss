@@ -1,6 +1,68 @@
 @import "../design.patterns/style.settings";
 @import "../design.patterns/forms.patterns";
 //@section@ settings profile (begin)
+.wrapper__settings{
+  font-family: $ff;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.flex-container__settings{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  .flex-element{
+    &:first-child{
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      flex-basis: 140px;
+    }
+    &:last-child{
+      flex-grow: 4;
+    }
+  }
+  .flex-element_top{
+    padding-top: 9px;
+    align-items: baseline!important;
+  }
+}
+.wrapper__settings{
+  .label{
+    background-color: transparent;
+    font-size: 14px;
+    color: lighten($Color5, 40%);
+    font-weight: 100;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+  }
+  .input{
+    font-size: 14px;
+    margin: 0;
+    border-radius: 3px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .profile-settings__ctrl-panel-b {
   position: relative;
   line-height: 32px;
@@ -62,11 +124,11 @@
       font-family: $ff;
       font-size: $fs_small+px;
       font-size: rem-calc($fs_small);
-      border-radius: 5px;
+      border-radius: 3px;
       padding-top: 10px;
       padding-bottom: 10px;
-      height: 46px;
-      height: rem-calc(46);
+      height: 36px;
+      height: rem-calc(36);
     }
   }
 }

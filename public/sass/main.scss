@@ -4,30 +4,30 @@
 
 @import "design.patterns/forms.patterns";
 
-@import "./angular/angular";
+@import "angular/angular";
 
-@import "./components/mainStyles";
-@import "./components/messages";
-@import "./components/about";
+@import "components/mainStyles";
+@import "components/messages";
+@import "components/about";
 
-@import "./components/topmenu";
-@import "./components/mainPage";
-@import "./components/header";
-@import "./components/footer";
-@import "./components/navigationCabinet";
-@import "./components/userMedia";
-@import "./components/userGuest";
-@import "./components/userTravel";
-@import "./components/cabinet";
-@import "./components/profile";
-@import "./components/profileSettings";
-@import "./components/regulations";
+@import "components/topmenu";
+@import "components/mainPage";
+@import "components/header";
+@import "components/footer";
+@import "components/cabinet-navigation";
+@import "components/userMedia";
+@import "components/userGuest";
+@import "components/userTravel";
+@import "components/cabinet";
+@import "components/profile";
+@import "components/cabinet-settings";
+@import "components/regulations";
 
 @import "components/guide-search";
 @import "components/guide-board";
 @import "components/guide-form";
 
 
-@import "./components/admin";
+@import "components/admin";
 
-@import "media/media";
+@import "media/index";
