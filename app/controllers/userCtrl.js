@@ -42,6 +42,10 @@ class UserCtrl {
 
       UserModels.registrationUser(data, (err, result) => {
         if (err) console.error(err)
+        if (result.status !== 200) {
+          res.local('registrationError', result.message || 'Не получилось создать акаунт')
+          res.redirect('/user/registration')
+        }
         if (result && result.affectedRows === 1) {
           UserModels.selectUIdUEmailUPassword(req.body, (err, rows) => {
             if (err) return err

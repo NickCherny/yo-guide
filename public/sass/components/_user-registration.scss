@@ -1,0 +1,22 @@
+@import "../design.patterns/style.settings";
+//@section registration (begin)
+.box__logo{
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 26px;
+  color: $Color5;
+}
+.title__registration{
+  margin: 40px 0 80px;
+  text-align: center;
+  font-family: $ff;
+  font-size: 36px;
+}
+.wrapper__registration-form{
+  max-width: 600px;
+  margin: 0 auto 80px;
+  padding: 80px 40px;
+  border: 1px solid lighten($Color5, 40%);
+}
+//@section registration (end)

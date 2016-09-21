@@ -43,7 +43,7 @@ module.exports = (app, config) => {
 
   let user = passport.authenticate('local', {
     successRedirect: '/cabinet',
-    failureRedirect: '/'
+    failureRedirect: '/user/registration'
   });
 
 

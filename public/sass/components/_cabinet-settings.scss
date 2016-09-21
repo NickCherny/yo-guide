@@ -43,7 +43,13 @@
     border-radius: 3px;
   }
 }
-
+.btn-box__settings{
+  .flex-element{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
 
 
 

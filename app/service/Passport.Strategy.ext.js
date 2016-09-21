@@ -11,14 +11,13 @@ class AppStrateges{
       usernameField: 'email',
       passwordField: 'password'
     },function(username, password, done){
-      console.log(username, password);
+      if (process.env === 'development') console.log(username, password)
       User.selectUIdUEmailUPassword({email: username, password: password}, (err, result)=>{
         if(err){
-          if(process.env === 'development') console.error(err);
+          if(process.env === 'development') console.error(err)
           return done(null, false, {message: 'Неверный логин или пароль'})
         }
         if(result[0] && result[0]['user_id']){
-          console.log('passport 2')
           return done(null, {username: result, userId: result[0]['user_id']})
         }
         return done(null, false, {message: 'Неверный логин или пароль'})

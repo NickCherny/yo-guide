@@ -18,6 +18,7 @@ router.all('*', (req, res, next) => {
 router.get('/about', facade.main.aboutUs)
 router.get('/about/about-us', facade.main.aboutUs)
 router.get('/about/founders', facade.main.aboutFounders)
+router.get('/user/registration', facade.main.showRegistrationForm)
 
 /**
  * @url /regulations

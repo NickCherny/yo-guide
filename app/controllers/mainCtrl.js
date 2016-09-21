@@ -98,5 +98,21 @@ class Main{
       res.end();
     });
   }
+  /**
+   *
+   * @param {Object} req - Express HTTP Request
+   * @param {Object} res - Express HTPP Response
+   * @param {Object} next - Express function
+   */
+  static showRegistrationForm (req, res, next) {
+    let data = {
+      title: 'Регистрация пользователя'
+    }
+    res.render('user/registration', data, (err, html) => {
+      if(err) next(err)
+      res.send(html)
+      res.end()
+    })
+  }
 }
 module.exports = Main;

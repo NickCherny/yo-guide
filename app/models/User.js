@@ -41,7 +41,11 @@ class User {
       if (result[0]['u'] === 0) {
         callback(null)
       } else {
-        callback('пользователь существует')
+        let registrationError = {
+          message: 'Пользователь с данной электронной почтой существует',
+          status: 404
+        }
+        callback(null, registrationError)
       }
     })
   }
@@ -52,8 +56,9 @@ class User {
    * @param {function} callback - callback function
      */
   static registrationUser (data, callback) {
-    this.isUser(data, function (err) {
+    this.isUser(data, function (err, iUserResult) {
       if (err) callback(err)
+      if (iUserResult) callback(null, iUserResult)
       let sql = `
       INSERT INTO user
       (user_fullName, user_email, user_password)

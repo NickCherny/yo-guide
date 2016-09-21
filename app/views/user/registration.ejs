@@ -1,6 +1,19 @@
-<div class="usr-registration-wrapper">
-  <div class="usr-registration">
-    <h3 class="usr-registration__header-title">Зарегистрироваться</h3>
+<% layout('../template') %>
+
+<div class="box box__logo">
+  <a href="/">LOGO</a>
+</div>
+
+<section class="wrapper wrapper__registration">
+  <h1 class="title title_big title__registration">Зарегестрироваться</h1>
+
+  <% if(settings.registrationError){ %>
+    <h3 class="title title__registration-error">
+      <%=settings.registrationError%>
+    </h3>
+  <% } %>
+
+  <div class="wrapper wrapper__registration-form">
     <form action="/api/v1/registration/user"
           method="post"
           name="registrationUser"
@@ -98,33 +111,5 @@
           data-ng-class="{'usr-registration__submit-btn_disable': registrationUser.$invalid}">Создать аккаунт</button>
       </div>
     </form>
-    <!--<div class="usr-registration__social">-->
-      <!--<h3 class="usr-registration__social-title">-->
-        <!--Зарегистрироваться с помощью-->
-      <!--</h3>-->
-
-      <!--<ul class="usr-registration__social-icons">-->
-        <!--<li class="usr-registration__social-icon-item">-->
-          <!--SVG-->
-        <!--</li>-->
-        <!--<li class="usr-registration__social-icon-item">-->
-          <!--SVG-->
-        <!--</li>-->
-        <!--<li class="usr-registration__social-icon-item">-->
-          <!--SVG-->
-        <!--</li>-->
-        <!--<li class="usr-registration__social-icon-item">-->
-          <!--SVG-->
-        <!--</li>-->
-      <!--</ul>-->
-    <!--</div>-->
-
-    <div class="usr-registration__confirmation-email-close-btn" ng-click="r.closeForm(event); r.clearForm(event)"></div>
-
-    <div class="usr-registration__send-user-block">
-      <div class="usr-registration__send-user-btn">
-        <a href="#" class="send-user-btn_light" ng-click="r.jumpLoginForm(); r.clearForm()">Войти</a>
-      </div>
-    </div>
   </div>
-</div>
+</section>
