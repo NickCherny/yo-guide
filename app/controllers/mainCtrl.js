@@ -15,7 +15,7 @@ class Main{
           console.log(result)
         }
       });
-      res.render('pages/mainPage', {
+      res.render('partial/pages/mainPage', {
         title: 'Гиды, туры по всему миру'
       },
         function(err, html){
@@ -39,7 +39,7 @@ class Main{
     let data = {
       title: 'Создатели проекта yo-guide'
     };
-    res.render('pages/about/founders', data, (err, html)=>{
+    res.render('partial/pages/about/founders', data, (err, html)=>{
       if(err) next(err);
       res.send(html);
       res.end();
@@ -55,7 +55,7 @@ class Main{
     let data = {
       title: 'Как работают сервисы'
     };
-    res.render('pages/about/index', data, (err, html)=>{
+    res.render('partial/pages/about/index', data, (err, html)=>{
       if(err){
         next(err);
       }else {
@@ -75,7 +75,7 @@ class Main{
     let data = {
       title: 'Как приложение работает'
     };
-    res.render('pages/howItsWork', data, (err, html)=>{
+    res.render('partial/pages/howItsWork', data, (err, html)=>{
       if(err) next(err);
       res.send(html);
       res.end();
@@ -92,7 +92,7 @@ class Main{
     let data = {
       title: 'Правила взаимо комфортного использования'
     };
-    res.render('pages/regulations/index', data, (err, html)=>{
+    res.render('partial/pages/regulations/index', data, (err, html)=>{
       if(err) next(err);
       res.send(html);
       res.end();
@@ -108,11 +108,40 @@ class Main{
     let data = {
       title: 'Регистрация пользователя'
     }
-    res.render('user/registration', data, (err, html) => {
+    res.render('partial/user/registration', data, (err, html) => {
       if(err) next(err)
       res.send(html)
       res.end()
     })
+  }
+  /**
+   *
+   * @param {Object} req - Express HTTP Request
+   * @param {Object} res - Express HTPP Response
+   * @param {Object} next - Express function
+   */
+  static contact (req, res, next) {
+    if(req.method === 'GET'){
+      res.render('partial/pages/contact/index', {title: 'Связаться с нами'}, (err, html) => {
+        if (err) next(err)
+        res.send(html)
+        res.end()
+      })
+    } else {
+      if (req.body.contact) {
+        res.render('partial/pages/contact/success', {title: 'Спасибо за ваше сообщение'}, (err, html) => {
+          if (err) next(err)
+          res.send(html)
+          res.end()
+        })
+      } else {
+        res.render('partial/pages/contact/fail', {title: 'Что та пошло не так'}, (err, html) => {
+          if (err) next(err)
+          res.send(html)
+          res.end()
+        })
+      }
+    }
   }
 }
 module.exports = Main;

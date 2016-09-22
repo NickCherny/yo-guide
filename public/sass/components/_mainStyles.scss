@@ -54,6 +54,18 @@ ul{
     box-shadow: none;
   }
 }
+
+.btn_origin, .btn_origin:focus{
+  background-color: $Color1;
+  &:hover {
+    background-color: $Color1;
+    box-shadow: 0px 2px 1px 0px darken($Color1, 20%);
+  }
+  &:active {
+    background-color: darken($Color1, 20%);
+    box-shadow: none;
+  }
+}
 .list-item{
   position: relative;
   list-style-type: none;

@@ -1,0 +1,36 @@
+<% layout('../../../layout/template') %>
+
+<% if(auth){ %>
+<top-menu-auth>Загрузка...</top-menu-auth>
+<% }else {%>
+<top-menu>Загрузка...</top-menu>
+<% } %>
+
+<section class="wrapper wrapper__contacts">
+  <div class="wrapper body__contact">
+
+    <header class="header header__contact">
+      <p class="text text__header-contact">
+        Вы можете задать все интересующие вас вопросы прямо сейчас
+      </p>
+    </header>
+
+    <form action="/contact/send" method="post" class="form form__contact flex-container" name="contact" novalidate>
+      <div class="flex-element">
+        <label for="e" class="label">Ваша почта</label>
+      </div>
+      <div class="flex-element">
+        <input type="text" id="e" class="input" name="contact[email]" placeholder="Электронная почта">
+      </div>
+      <div class="flex-element">
+        <label for="t" class="label">Текст сообщения</label>
+      </div>
+      <div class="flex-element">
+        <textarea name="contact[text]" id="t" cols="30" rows="10" class="textarea" placeholder="Сообщение"></textarea>
+      </div>
+      <div class="flex-element btn-box__contact">
+        <button type="submit" class="btn btn_origin">Отправить</button>
+      </div>
+    </form>
+  </div>
+</section>

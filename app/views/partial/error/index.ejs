@@ -1,0 +1,26 @@
+<% layout('../../layout/template') %>
+
+<% if(auth){ %>
+<top-menu-auth>Загрузка...</top-menu-auth>
+<% }else {%>
+<top-menu>Загрузка...</top-menu>
+<% } %>
+
+<section class="wrapper wrapper__error">
+
+  <% if(ENV === 'development'){ %>
+    <ul class="ul wrapper ul__error">
+      <li class="flex-element error-info__item"><%- message %></li>
+      <li class="flex-element error-info__item"><%- error.status %></li>
+      <li class="flex-element error-info__item"><%- error.stack %></li>
+    </ul>
+  <% } else { %>
+    <div class="error-box">
+      <h1 class="title title__error">
+        <%- message || 'Страница не найдена' %>
+      </h1>
+      <a href="/" class="btn btn__error">Вернуться на главную</a>
+    </div>
+  <% } %>
+
+</section>

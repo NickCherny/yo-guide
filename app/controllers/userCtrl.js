@@ -52,7 +52,7 @@ class UserCtrl {
             if (rows[0]['user_id']) {
               res.location('/cabinet')
               res.cookie('userId', rows[0]['user_id'], {maxAge: 600 * 1000})
-              res.render('cabinet/cabinet', {title: 'Добро пожаловать в личный кабинет', user: rows[0]['user_id']})
+              res.render('partial/cabinet/index', {title: 'Добро пожаловать в личный кабинет', user: rows[0]['user_id']})
             }
           })
         }

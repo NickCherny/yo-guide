@@ -1,0 +1,41 @@
+@import "../design.patterns/style.settings";
+//@section error (begin)
+.wrapper__error{
+  height: 100vh;
+  background-color: #f0f0f0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ul__error{
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
+}
+.error-info__item{
+  text-align: center;
+  list-style: none;
+}
+.error-box{
+  text-align: center;
+  .title__error{
+    margin-bottom: 80px;
+  }
+}
+.btn__error{
+  display: inline-block;
+  padding: 20px 40px;
+  background-color: $Color1;
+  &:hover{
+    color: #fff;
+    background-color: $Color1;
+    box-shadow: 0px 2px 1px 0px darken($Color1, 20%);
+  }
+  &:active{
+    color: #fff;
+    background-color: darken($Color1, 20%);
+    box-shadow: none;
+  }
+}
+//@section error (end)

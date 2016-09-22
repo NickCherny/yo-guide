@@ -23,6 +23,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -6408,7 +6410,7 @@ th.hide-for-touch {
 .columns-fix_right {
   padding-right: 0; }
 
-.Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .yo-btn_full, .header .header__btn-b, .hero-content .hero__btn, .begin-use .begin-use__btn {
+.Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .yo-btn_full {
   transition: all 300ms;
   transition-timing-function: ease-in;
   position: relative;
@@ -6423,10 +6425,10 @@ th.hide-for-touch {
   font-size: 1rem;
   outline: none;
   font-weight: 400; }
-  .Btn:hover, .usr-registration__form .usr-registration__submit-btn:hover, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover, .usr-login-form__item-pole .usr-login-form__submit-btn:hover, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover, .yo-btn_full:hover, .header .header__btn-b:hover, .hero-content .hero__btn:hover, .begin-use .begin-use__btn:hover {
+  .Btn:hover, .usr-registration__form .usr-registration__submit-btn:hover, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover, .usr-login-form__item-pole .usr-login-form__submit-btn:hover, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover, .yo-btn_full:hover {
     background-color: inherit;
     box-shadow: 0px 2px 1px 0px #0f937c; }
-  .Btn:active, .usr-registration__form .usr-registration__submit-btn:active, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active, .usr-login-form__item-pole .usr-login-form__submit-btn:active, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active, .yo-btn_full:active, .header .header__btn-b:active, .hero-content .hero__btn:active, .begin-use .begin-use__btn:active {
+  .Btn:active, .usr-registration__form .usr-registration__submit-btn:active, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active, .usr-login-form__item-pole .usr-login-form__submit-btn:active, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active, .yo-btn_full:active {
     background-color: inherit;
     box-shadow: none; }
 
@@ -6790,6 +6792,15 @@ ul {
     background-color: inherit;
     box-shadow: none; }
 
+.btn_origin, .btn_origin:focus {
+  background-color: #2562fa; }
+  .btn_origin:hover, .btn_origin:focus:hover {
+    background-color: #2562fa;
+    box-shadow: 0px 2px 1px 0px #0437b5; }
+  .btn_origin:active, .btn_origin:focus:active {
+    background-color: #0437b5;
+    box-shadow: none; }
+
 .list-item {
   position: relative;
   list-style-type: none; }
@@ -7029,6 +7040,40 @@ ul {
   color: #4c4c4c;
   text-align: center; }
 
+.wrapper__error {
+  height: 100vh;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.ul__error {
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto; }
+
+.error-info__item {
+  text-align: center;
+  list-style: none; }
+
+.error-box {
+  text-align: center; }
+  .error-box .title__error {
+    margin-bottom: 80px; }
+
+.btn__error {
+  display: inline-block;
+  padding: 20px 40px;
+  background-color: #2562fa; }
+  .btn__error:hover {
+    color: #fff;
+    background-color: #2562fa;
+    box-shadow: 0px 2px 1px 0px #0437b5; }
+  .btn__error:active {
+    color: #fff;
+    background-color: #0437b5;
+    box-shadow: none; }
+
 .top-menu {
   font-family: "Roboto", sans-serif;
   position: relative;
@@ -7211,7 +7256,7 @@ ul {
   padding: 80px 40px;
   border: 1px solid #989898; }
 
-.Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .yo-btn_full, .header .header__btn-b, .hero-content .hero__btn, .begin-use .begin-use__btn {
+.Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .yo-btn_full {
   transition: all 300ms;
   transition-timing-function: ease-in;
   position: relative;
@@ -7226,10 +7271,10 @@ ul {
   font-size: 1rem;
   outline: none;
   font-weight: 400; }
-  .Btn:hover, .usr-registration__form .usr-registration__submit-btn:hover, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover, .usr-login-form__item-pole .usr-login-form__submit-btn:hover, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover, .yo-btn_full:hover, .header .header__btn-b:hover, .hero-content .hero__btn:hover, .begin-use .begin-use__btn:hover {
+  .Btn:hover, .usr-registration__form .usr-registration__submit-btn:hover, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover, .usr-login-form__item-pole .usr-login-form__submit-btn:hover, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover, .yo-btn_full:hover {
     background-color: inherit;
     box-shadow: 0px 2px 1px 0px #0f937c; }
-  .Btn:active, .usr-registration__form .usr-registration__submit-btn:active, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active, .usr-login-form__item-pole .usr-login-form__submit-btn:active, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active, .yo-btn_full:active, .header .header__btn-b:active, .hero-content .hero__btn:active, .begin-use .begin-use__btn:active {
+  .Btn:active, .usr-registration__form .usr-registration__submit-btn:active, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active, .usr-login-form__item-pole .usr-login-form__submit-btn:active, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active, .yo-btn_full:active {
     background-color: inherit;
     box-shadow: none; }
 
@@ -7561,26 +7606,26 @@ ul {
       line-height: 20px;
       font-size: 16; }
 
-.header .header__btn-b {
+.box__header-btn {
   position: absolute;
-  bottom: 30px;
-  left: 0;
-  right: 0;
   text-align: center;
-  background-color: #5de895;
-  max-width: 203px;
-  margin: 0 auto;
-  line-height: 54px; }
-  .header .header__btn-b:hover {
+  bottom: 80px;
+  left: 0;
+  right: 0; }
+
+.btn__new, .btn__new:focus {
+  display: inline-block;
+  padding: 10px 30px;
+  color: #fff;
+  background-color: #5de895; }
+  .btn__new:hover, .btn__new:focus:hover {
+    color: #fff;
     background-color: #5de895;
-    box-shadow: 0px 2px 1px 0px #30e278; }
-  .header .header__btn-b:active {
+    box-shadow: 0px 2px 1px 0px #1cc35f; }
+  .btn__new:active, .btn__new:focus:active {
+    color: #fff;
     background-color: #1cc35f;
     box-shadow: none; }
-  .header .header__btn-b .main-page__btn-more-info-link {
-    color: #fff; }
-  .header .header__btn-b .header__btn-link {
-    color: inherit; }
 
 .search-section {
   background-color: #e6e6e6;
@@ -7609,24 +7654,23 @@ ul {
   line-height: 24px;
   margin-top: 30px; }
 
-.hero-content .hero__btn {
+.hero-content .box__hero-btn {
   position: relative;
   text-align: center;
-  background-color: #f961f7;
   max-width: 203px;
-  line-height: 54px;
-  margin-top: 20px;
-  margin-top: 1.25rem; }
-  .hero-content .hero__btn:hover {
+  margin-top: 20px; }
+
+.box__hero-btn .btn__new_ping {
+  color: #fff;
+  background-color: #f961f7; }
+  .box__hero-btn .btn__new_ping:hover {
+    color: #fff;
     background-color: #f961f7;
     box-shadow: 0px 2px 1px 0px #f730f5; }
-  .hero-content .hero__btn:active {
+  .box__hero-btn .btn__new_ping:active {
+    color: #fff;
     background-color: #eb09e8;
     box-shadow: none; }
-  .hero-content .hero__btn a {
-    color: #fff; }
-  .hero-content .hero__btn .header__btn-link {
-    color: inherit; }
 
 .hero-card {
   position: relative;
@@ -7724,25 +7768,21 @@ ul {
   margin-bottom: 1.875rem;
   padding: 0 10px; }
 
-.begin-use .begin-use__btn {
-  position: relative;
-  text-align: center;
-  background-color: #330367;
-  max-width: 203px;
-  line-height: 54px;
-  margin: 0 auto;
-  font-size: 16px;
-  font-size: 1rem; }
-  .begin-use .begin-use__btn:hover {
+.box__begin-use-btn {
+  text-align: center; }
+  .box__begin-use-btn .btn__begin-use {
+    display: inline-block;
     background-color: #330367;
-    box-shadow: 0px 2px 1px 0px #1a0235; }
-  .begin-use .begin-use__btn:active {
-    background-color: #6406ca;
-    box-shadow: none; }
-  .begin-use .begin-use__btn a {
+    padding: 12px 50px;
     color: #fff; }
-  .begin-use .begin-use__btn .header__btn-link {
-    color: inherit; }
+    .box__begin-use-btn .btn__begin-use:hover {
+      color: #fff;
+      background-color: #330367;
+      box-shadow: 0px 2px 1px 0px #1a0235; }
+    .box__begin-use-btn .btn__begin-use:active {
+      color: #fff;
+      background-color: #6406ca;
+      box-shadow: none; }
 
 @media only screen and (min-width: 768px) {
   .header .main__container-h .middle .header__title {
@@ -8274,7 +8314,7 @@ ul {
 .profile-info__about-text {
   position: relative; }
 
-.Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .yo-btn_full, .header .header__btn-b, .hero-content .hero__btn, .begin-use .begin-use__btn {
+.Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .yo-btn_full {
   transition: all 300ms;
   transition-timing-function: ease-in;
   position: relative;
@@ -8289,10 +8329,10 @@ ul {
   font-size: 1rem;
   outline: none;
   font-weight: 400; }
-  .Btn:hover, .usr-registration__form .usr-registration__submit-btn:hover, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover, .usr-login-form__item-pole .usr-login-form__submit-btn:hover, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover, .yo-btn_full:hover, .header .header__btn-b:hover, .hero-content .hero__btn:hover, .begin-use .begin-use__btn:hover {
+  .Btn:hover, .usr-registration__form .usr-registration__submit-btn:hover, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:hover, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:hover, .usr-login-form__item-pole .usr-login-form__submit-btn:hover, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:hover, .yo-btn_full:hover {
     background-color: inherit;
     box-shadow: 0px 2px 1px 0px #0f937c; }
-  .Btn:active, .usr-registration__form .usr-registration__submit-btn:active, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active, .usr-login-form__item-pole .usr-login-form__submit-btn:active, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active, .yo-btn_full:active, .header .header__btn-b:active, .hero-content .hero__btn:active, .begin-use .begin-use__btn:active {
+  .Btn:active, .usr-registration__form .usr-registration__submit-btn:active, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light:active, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light:active, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b:active, .usr-login-form__item-pole .usr-login-form__submit-btn:active, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link:active, .yo-btn_full:active {
     background-color: inherit;
     box-shadow: none; }
 
@@ -8811,6 +8851,52 @@ ul {
   text-align: left; }
   .text__regular-item:hover {
     color: #323232; }
+
+.wrapper__contacts {
+  background-color: #f7f7ef;
+  text-align: center;
+  padding: 40px 0 80px; }
+
+.header__contact, .text__header-contact {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #5b5b5b;
+  text-align: left;
+  padding: 0; }
+
+.body__contact {
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0px 1px 12px 0px #a3a3a3; }
+
+.form__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+  .form__contact .flex-element {
+    width: 100%;
+    text-align: left; }
+    .form__contact .flex-element:nth-child(even) {
+      margin-bottom: 20px; }
+    .form__contact .flex-element:nth-child(odd) {
+      margin-bottom: 10px; }
+    .form__contact .flex-element .input {
+      margin: 0; }
+    .form__contact .flex-element .label {
+      text-align: left;
+      background-color: transparent;
+      color: #747474;
+      font-size: 16px;
+      font-weight: 100;
+      padding: 0; }
+
+.form__contact .btn-box__contact {
+  padding-top: 40px;
+  text-align: right; }
 
 .header__guides-board {
   padding: 80px 20px; }

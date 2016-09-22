@@ -92,10 +92,10 @@ module.exports = (app, config) => {
 
   app.use(function (err, req, res, next) {
     res.status(err.status || 500);
-      res.render('error', {
+      res.render('partial/error/index', {
         message: err.message,
         error: {},
-        title: 'error'
+        title: 'Страница не найдена'
       });
   });
 

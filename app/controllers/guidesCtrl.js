@@ -8,7 +8,7 @@ class GuideCtrl {
         alt: 'Minsk'
       }
     }
-    res.render('guides', data, (err, html) => {
+    res.render('partial/guides/index', data, (err, html) => {
       if (err) next(err)
 
       res.send(html)

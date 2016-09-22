@@ -26,6 +26,12 @@ router.get('/user/registration', facade.main.showRegistrationForm)
 router.get('/regulations', facade.main.regulations)
 
 /**
+ * @url /contact
+ */
+router.get('/contact', facade.main.contact)
+router.post('/contact/send', facade.main.contact)
+
+/**
  * @url /
  */
 router.post('/api/v1/login/user', facade.user.loginUser)

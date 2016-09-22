@@ -5,7 +5,7 @@ class Cabinet{
     if(req.session.passport.user[0].user_id){
       res.cookie('userId', req.session.passport.user[0].user_id)
     }
-    res.render('cabinet/cabinet', {
+    res.render('partial/cabinet/index', {
       title: 'Кабинет пользователя',
       user: req.session.body,
       auth: req.isAuthenticated()
