@@ -1,5 +1,6 @@
 const md5 = require('md5')
 const pool = require('./connect')
+const GE = require('../service/GuideEvents')
 
 class User {
 
@@ -40,11 +41,13 @@ class User {
 
       if (result[0]['u'] === 0) {
         callback(null)
+        GE.emit('isUser', false)
       } else {
         let registrationError = {
           message: 'Пользователь с данной электронной почтой существует',
           status: 404
         }
+        GE.emit('isUser', registrationError)
         callback(null, registrationError)
       }
     })

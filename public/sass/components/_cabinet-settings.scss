@@ -50,7 +50,21 @@
     justify-content: center;
   }
 }
-
+.helper__settings{
+  display: none;
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  font-family: $ff;
+  font-size: 10px;
+  color: lighten($Color5, 70%);
+  padding: 3px 10px;
+  text-align: left;
+  background-color: rgba($Color5, .8);
+}
+.helper__settings_show{
+  display: block;
+}
 
 
 
