@@ -1,6 +1,5 @@
 const md5 = require('md5')
 const pool = require('./connect')
-const GE = require('../service/GuideEvents')
 
 class User {
 
@@ -19,7 +18,12 @@ class User {
       data.email,
       md5(data.password)
     ]
-    pool.query(sql, inserts, callback)
+    return new Promise((resolve, reject) => {
+      pool.query(sql, inserts, (err, rows) => {
+        if (err) reject(err)
+        resolve(rows)
+      })
+    })
   }
 
   /**
@@ -27,7 +31,7 @@ class User {
    * @param {object} data - user data => email
    * @param {function} callback - callback function
    */
-  static isUser (data, callback) {
+  static isUser (data) {
     let sql = `
       SELECT COUNT(*) as u
       FROM yo_db.user
@@ -36,20 +40,11 @@ class User {
     let inserts = [
       data.email || ''
     ]
-    pool.query(sql, inserts, (err, result) => {
-      if (err) return callback(err)
-
-      if (result[0]['u'] === 0) {
-        callback(null)
-        GE.emit('isUser', false)
-      } else {
-        let registrationError = {
-          message: 'Пользователь с данной электронной почтой существует',
-          status: 404
-        }
-        GE.emit('isUser', registrationError)
-        callback(null, registrationError)
-      }
+    return new Promise((resolve, reject) => {
+      pool.query(sql, inserts, (err, result) => {
+        if (err) reject(err)
+        resolve(result[0])
+      })
     })
   }
 
@@ -59,21 +54,21 @@ class User {
    * @param {function} callback - callback function
      */
   static registrationUser (data, callback) {
-    this.isUser(data, function (err, iUserResult) {
-      if (err) callback(err)
-      if (iUserResult) callback(null, iUserResult)
-      let sql = `
-      INSERT INTO user
-      (user_fullName, user_email, user_password)
-      VALUES(?, ?, ?);
-      `
-
-      let inserts = [
-        `${data.firstName || ''}:${data.lastName || ''}`,
-        data.email || '',
-        md5(data.password || '')
-      ]
-      pool.query(sql, inserts, callback)
+    let sql = `
+    INSERT INTO user
+    (user_fullName, user_email, user_password)
+    VALUES(?, ?, ?);
+    `
+    let inserts = [
+      `${data.firstName || ''}:${data.lastName || ''}`,
+      data.email || '',
+      md5(data.password || '')
+    ]
+    return new Promise((resolve, reject) => {
+      pool.query(sql, inserts, (err, result) => {
+        if (err) reject(err)
+        resolve(result)
+      })
     })
   }
   /**

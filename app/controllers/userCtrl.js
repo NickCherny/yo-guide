@@ -1,5 +1,6 @@
 'use strict'
 const UserModels = require('../models/User')
+const GE = require('../service/GuideEvents')
 class UserCtrl {
 
   /**
@@ -39,22 +40,49 @@ class UserCtrl {
         email: req.body.email || '',
         password: req.body.password || ''
       }
-
-      UserModels.registrationUser(data, (err, result) => {
-        if (err) console.error(err)
-        if (result.status !== 200) {
-          res.local('registrationError', result.message || 'Не получилось создать акаунт')
+      UserModels.isUser(data)
+        .then(
+          result => {
+            GE.emit('isUser', result)
+          },
+          err => {
+            res.next(err)
+          }
+        )
+      GE.on('isUser', (user) => {
+        if (user['u'] === 0) {
+          UserModels.registrationUser(data)
+            .then(
+              result => {
+                return result
+              },
+              err => {
+                res.next(err)
+              }
+            )
+            .then(
+              result => {
+                if (result.affectedRows === 1) {
+                  return UserModels.selectUIdUEmailUPassword(data)
+                }
+                // todo: Нужно реализовать ответ на случей ошибки от СУБД
+              }
+            )
+            .then(
+              rows => {
+                if (rows[0]['user_id']) {
+                  res.location('/cabinet')
+                  res.cookie('userId', rows[0]['user_id'], {maxAge: 600 * 1000})
+                  res.render('partial/cabinet/index', {title: 'Добро пожаловать в личный кабинет', user: rows[0]['user_id']})
+                }
+              },
+              err => {
+                res.next(err)
+              }
+            )
+        } else {
+          res.locals.registrationError = 'Не получилось создать акаунт'
           res.redirect('/user/registration')
-        }
-        if (result && result.affectedRows === 1) {
-          UserModels.selectUIdUEmailUPassword(req.body, (err, rows) => {
-            if (err) return err
-            if (rows[0]['user_id']) {
-              res.location('/cabinet')
-              res.cookie('userId', rows[0]['user_id'], {maxAge: 600 * 1000})
-              res.render('partial/cabinet/index', {title: 'Добро пожаловать в личный кабинет', user: rows[0]['user_id']})
-            }
-          })
         }
       })
     } else {
