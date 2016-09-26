@@ -1,35 +1,34 @@
 <section class="cabinet-body">
   <div class="center-b">
     <div class="row row-fix">
-      <div class="large-2 small-12 columns hide-for-small coll-fix-right">
+      <div class="large-2 small-12 columns hide-for-small coll-fix-right hide-for-small-only hide-for-medium">
         <aside class="profile-settings__ctrl-panel-b">
-          <ul>
-            <li>
-              <a href="#details" class="ctrl-panel__item-link">Основное</a>
+          <ul class="ul flex-box__ctrl-panel">
+            <li class="li">
+              <a class="link link__ctrl-panel" ng-click="cs.scrollTo('details')">Основное</a>
             </li>
-            <li>
-              <a href="#contacts" class="ctrl-panel__item-link">Контакты</a>
+            <li class="li">
+              <a class="link link__ctrl-panel" ng-click="cs.scrollTo('contacts')">Контакты</a>
             </li>
-            <li>
-              <a href="#location" class="ctrl-panel__item-link">Места проживания</a>
+            <li class="li">
+              <a class="link link__ctrl-panel" ng-click="cs.scrollTo('location')">Места проживания</a>
             </li>
-            <li>
-              <a href="#aboutS" class="ctrl-panel__item-link">О себе</a>
+            <li class="li">
+              <a class="link link__ctrl-panel" ng-click="cs.scrollTo('aboutS')">О себе</a>
             </li>
-            <li>
-              <a href="#security" class="ctrl-panel__item-link">Безопастность</a>
+            <li class="li">
+              <a class="link link__ctrl-panel" ng-click="cs.scrollTo('security')">Безопастность</a>
             </li>
           </ul>
         </aside>
       </div>
       <div class="large-7 small-12 columns end">
         <article class="profile-settings-wrapper">
-          <div class="box_border box__wrapper">
-            <div class="profile-settings__header">
-              <h2 class="profile-settings__header-title" id="details">Детали профиля</h2>
-            </div>
-
-            <fieldset class="profile-settings__body" form="cabinetSettings">
+          <form class="" action="index.html" method="post" novalidate name="cabinetSettings" ng-submit="cs.sendForm">
+            <div class="box_border box__wrapper">
+              <div class="profile-settings__header">
+                <h2 class="profile-settings__header-title" id="details">Детали профиля</h2>
+              </div>
               <div class="wrapper wrapper__settings flex-container__settings">
                 <div class="flex-element">
                   <label for="fn2" class="label">Имя</label>
@@ -43,10 +42,16 @@
                     Другим пользователям важно знать как вас зовут
                   </div>
                   <input type="text" class="input"
-                         name="cabinetSettings[firstName]"
+                         name="firstName"
                          id="fn2"
                          data-focus-element
+                         ng-model="cs.cabinetSettings.firstName"
+                         ng-minlength="3"
+                         ng-maxlength="20"
                          placeholder="Ваше имя">
+                  <div class="helper__settings-error" ng-show="cabinetSettings.firstName.$invalid">
+                    {{(cabinetSettings.firstName.$viewValue.length < 3) ? 'Поле не может содержать менее 3-х символов' : 'Поле не может содержать более 20-и символов'}}
+                  </div>
                 </div>
               </div>
 
@@ -63,13 +68,19 @@
                     Стоит укозать настоящию данные
                   </div>
                   <input type="text" class="input"
-                         name="cabinetSettings[lastName]"
+                         name="lastName"
                          id="ln2"
                          data-focus-element
+                         ng-minlength="3"
+                         ng-maxlength="20"
+                         ng-model="cs.cabinetSettings.lastName"
                          placeholder="Ваша фамилия">
+                  <div class="helper__settings-error" ng-show="cabinetSettings.lastName.$invalid">
+                    {{(cabinetSettings.lastName.$viewValue.length < 3) ? 'Поле не может содержать менее 3-х символов' : 'Поле не может содержать более 20-и символов'}}
+                  </div>
                 </div>
               </div>
-              <div class="wrapper wrapper__settings flex-container__settings">
+              <!-- <div class="wrapper wrapper__settings flex-container__settings">
                 <div class="flex-element">
                   <label for="bDay" class="label">Дата рождения</label>
                 </div>
@@ -85,11 +96,12 @@
                          name="cabinetSettings[birthday]"
                          id="bDay"
                          data-focus-element
+                         ng-model="cs.cabinetSettings.birthday"
                          placeholder="Дата рождения">
                 </div>
-              </div>
+              </div> -->
 
-              <div class="wrapper wrapper__settings flex-container__settings">
+              <!-- <div class="wrapper wrapper__settings flex-container__settings">
                 <div class="flex-element">
                   <label for="gender" class="label">Пол</label>
                 </div>
@@ -101,23 +113,24 @@
                   <div class="helper__settings" data-helper-settings>
                     Не стоит скрывать свой пол
                   </div>
-                  <select name="cabinetSettings[gender]" id="gender" class="select" data-focus-element>
+                  <select
+                  name="cabinetSettings[gender]"
+                  id="gender"
+                  class="select"
+                  data-focus-element
+                  ng-model="cs.cabinetSettings.gender">
                     <option value="0">Скрыть</option>
                     <option value="1">Мужской</option>
                     <option value="2">Женский</option>
                   </select>
                 </div>
-              </div>
-
-            </fieldset>
-          </div>
-
-          <div class="box_border box__wrapper">
-            <div class="profile-settings__header">
-              <h2 class="profile-settings__header-title" id="contacts">Контакты</h2>
+              </div> -->
             </div>
-            <fieldset class="profile-settings__body" form="cabinetSettings">
 
+            <div class="box_border box__wrapper">
+              <div class="profile-settings__header">
+                <h2 class="profile-settings__header-title" id="contacts">Контакты</h2>
+              </div>
               <div class="wrapper wrapper__settings flex-container__settings">
                 <div class="flex-element">
                   <label for="email" class="label">Электронная почта</label>
@@ -131,14 +144,21 @@
                     Самые свежие новости приходят на указанную почту
                   </div>
                   <input type="email" class="input"
-                         name="cabinetSettings[email]"
+                         name="email"
                          id="email"
                          data-focus-element
+                         ng-minlength="4"
+                         ng-maxlength="45"
+                         ng-pattern="cs.emailTpl"
+                         ng-model="cs.cabinetSettings.email"
                          placeholder="Сменить электронную почту">
+                  <div class="helper__settings-error" ng-show="cabinetSettings.email.$invalid">
+                    {{cs.helpers.email}}
+                  </div>
                 </div>
               </div>
 
-              <div class="wrapper wrapper__settings flex-container__settings">
+              <!-- <div class="wrapper wrapper__settings flex-container__settings">
                 <div class="flex-element">
                   <label for="phone" class="label">Телефон</label>
                 </div>
@@ -152,19 +172,18 @@
                          name="cabinetSettings[phone]"
                          id="phone"
                          data-focus-element
+                         ng-minlength="7"
+                         ng-maxlength="12"
+                         ng-pattern=""
+                         ng-model="cs.cabinetSettings.phone"
                          placeholder="Телефон">
                 </div>
-              </div>
-
-            </fieldset>
-          </div>
-
-          <div class="box_border box__wrapper">
-            <div class="profile-settings__header">
-              <h2 class="profile-settings__header-title" id="location">Локация</h2>
+              </div> -->
             </div>
-            <fieldset class="profile-settings__body" form="cabinetSettings">
-
+            <div class="box_border box__wrapper">
+              <div class="profile-settings__header">
+                <h2 class="profile-settings__header-title" id="location">Локация</h2>
+              </div>
               <div class="wrapper wrapper__settings flex-container__settings">
                 <div class="flex-element">
                   <label for="country" class="label">Страна</label>
@@ -176,10 +195,16 @@
                      data-focus-element="data-focus-element">
                   <div class="helper__settings" data-helper-settings></div>
                   <input type="text" class="input"
-                         name="cabinetSettings[country]"
+                         name="country"
                          id="country"
                          data-focus-element
+                         ng-minlength="4"
+                         ng-maxlength="45"
+                         ng-model="cs.cabinetSettings.country"
                          placeholder="Страна">
+                  <div class="helper__settings-error" ng-show="cabinetSettings.country.$invalid">
+                    {{(cabinetSettings.country.$viewValue.length < 4) ? 'Поле не может содержать менее 4-х символов' : 'Поле не может содержать более 45-и символов'}}
+                  </div>
                 </div>
               </div>
 
@@ -194,22 +219,24 @@
                      data-focus-element="data-focus-element">
                   <div class="helper__settings" data-helper-settings></div>
                   <input type="text"
-                         name="cabinetSettings[city]"
+                         name="city"
                          id="city"
                          data-focus-element
+                         ng-minlength="4"
+                         ng-maxlength="45"
+                         ng-model="cs.cabinetSettings.city"
                          placeholder="Город">
+                  <div class="helper__settings-error" ng-show="cabinetSettings.city.$invalid">
+                    {{(cabinetSettings.city.$viewValue.length < 4) ? 'Поле не может содержать менее 4-х символов' : 'Поле не может содержать более 45-и символов'}}
+                  </div>
                 </div>
               </div>
-
-            </fieldset>
-          </div>
-
-          <div class="box_border box__wrapper">
-            <div class="profile-settings__header">
-              <h2 class="profile-settings__header-title" id="aboutS">О себе</h2>
             </div>
-            <fieldset class="profile-settings__body" form="cabinetSettings">
 
+            <div class="box_border box__wrapper">
+              <div class="profile-settings__header">
+                <h2 class="profile-settings__header-title" id="aboutS">О себе</h2>
+              </div>
               <div class="wrapper wrapper__settings flex-container__settings">
                 <div class="flex-element">
                   <label for="interests" class="label">Интересы</label>
@@ -219,12 +246,18 @@
                      data-set-class="helper__settings_show"
                      data-hide-element="data-helper-settings"
                      data-focus-element="data-focus-element">
-                  <div class="helper__settings" data-helper-settings></div>
+                  <div class="helper__settings" data-helper-settings>Вводите по одному слову через запятую</div>
                   <input type="text" class="input"
                          id="interests"
-                         name="cabinetSettings[interests]"
+                         name="interests"
                          data-focus-element
+                         ng-minlength="3"
+                         ng-maxlength="80"
+                         ng-model="cs.cabinetSettings.interests"
                          placeholder="Интересы">
+                  <div class="helper__settings-error" ng-show="cabinetSettings.interests.$invalid">
+                    {{(cabinetSettings.interests.$viewValue.length < 3) ? 'Поле не может содержать менее 3-х символов' : 'Поле не может содержать более 80-и символов'}}
+                  </div>
                 </div>
               </div>
 
@@ -238,24 +271,26 @@
                      data-hide-element="data-helper-settings"
                      data-focus-element="data-focus-element">
                   <textarea class="textarea"
-                    name="cabinetSettings[about]"
+                    name="about"
                     id="about"
                     cols="30"
                     rows="10"
                     data-focus-element
+                    ng-minlength="10"
+                    ng-maxlength="100"
+                    ng-model="cs.cabinetSettings.about"
                     placeholder="Введите текст"></textarea>
+                    <div class="helper__settings-error" ng-show="cabinetSettings.about.$invalid">
+                      {{(cabinetSettings.about.$viewValue.length < 10) ? 'Поле не может содержать менее 10-х символов' : 'Поле не может содержать более 100-и символов'}}
+                    </div>
                 </div>
               </div>
-
-            </fieldset>
-          </div>
-
-          <div class="box_border box__wrapper">
-            <div class="profile-settings__header">
-              <h2 class="profile-settings__header-title" id="security">Безопастность</h2>
             </div>
-            <fieldset class="profile-settings__body">
 
+            <div class="box_border box__wrapper">
+              <div class="profile-settings__header">
+                <h2 class="profile-settings__header-title" id="security">Безопастность</h2>
+              </div>
               <div class="wrapper wrapper__settings flex-container__settings">
                 <div class="flex-element flex-element_top">
                   <label for="password" class="label">Сменить пароль</label>
@@ -268,39 +303,41 @@
                   <div class="settings__pwd-b">
                     <div class="helper__settings" data-helper-settings></div>
                     <input type="password"
-                           name="cabinetSettings[password]"
+                           name="password"
                            id="password"
                            data-focus-element
+                           ng-minlength="1"
+                           ng-model="cs.cabinetSettings.password"
                            placeholder="Старый пароль">
+                    <div class="helper__settings-error" ng-show="cabinetSettings.password.$invalid">
+                      Укажите старый пароль
+                    </div>
                   </div>
                   <div class="settings__pwd-b">
                     <input type="password"
-                           name="cabinetSettings[passwordNew]"
+                           name="passwordNew"
+                           ng-minlength="8"
+                           ng-pattern="cs.passwordTpl"
+                           ng-model="cs.cabinetSettings.passwordNew"
                            placeholder="Новый пароль">
+                    <div class="helper__settings-error" ng-show="cabinetSettings.passwordNew.$invalid">
+                      {{cs.helpers.password}}
+                    </div>
                   </div>
                 </div>
               </div>
-
-            </fieldset>
-
-            <div class="profile-settings__form">
-              <form action="/user/profile/settings/action-form"
-                    method="post"
-                    enctype="multipart/form-data"
-                    novalidate
-                    id="cabinetSettings"
-                    name="cabinetSettings" id="profile_settings">
+              <div class="profile-settings__form">
                 <div class="wrapper wrapper__settings flex-container__settings btn-box__settings">
                   <div class="flex-element">
-                    <button class="btn btn__settings btn__settings-save">Сохронить</button>
+                    <button class="btn btn__settings" type="button" ng-click="cs.sendForm($event)">Сохронить</button>
                   </div>
                   <div class="flex-element">
-                    <button class="btn btn__settings btn__settings-cancel">Отменить</button>
+                    <button class="btn btn__settings btn__settings-cancel" type="button" ng-click="cs.clearForm($event)">Отменить</button>
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
-          </div>
+          </form>
         </article>
       </div>
     </div>

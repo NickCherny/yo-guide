@@ -1,7 +1,7 @@
 import {module} from 'angular'
 import 'angular-ui-router'
 import cabinetRouter from '../router/cabinet.router'
-import setClassNameFocus from '../directives/setClassNameFocus';
+import setClassNameFocus from '../directives/setClassNameFocus'
 import cabinetNavigationDefintion from '../components/cabinet-naviagation/cabinetnav.component'
 import topmenuAuthDefinition from '../components/top-menu-auth/topmenuAuth.component'
 import userMediaDefinition from '../components/user-media/userMedia.component.js'

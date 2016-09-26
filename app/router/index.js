@@ -43,6 +43,7 @@ router.post('/api/v1/registration/user', facade.user.registrationUser)
  * @url /cabinet/*
  */
 router.get('/cabinet', facade.cabinet.home)
+router.post('/cabinet/user/:id/settings/update', facade.cabinet.updateProfile)
 
 /**
  * @url /guides/*

@@ -225,5 +225,119 @@ class User {
       }
     })
   }
+  /**
+  *
+  * @param {String} id - user id
+  * @return Promise Object
+   */
+  static getLocationUser (id) {
+    let sql = `
+    SELECT location_country, location_city, location_id
+    FROM location
+    WHERE location_user_id = ?;
+    `
+    return new Promise((resolve, reject) => {
+      pool.query(sql, id, (err, rows) => {
+        if (err) reject(err)
+        resolve(rows)
+      })
+    })
+  }
+  /**
+  *
+  * @param {String} id - user id
+  * @param {Object} data - firstName{String} or lastName{String}
+  * @return Promise Object
+   */
+  static uploadUserName (id = '', data) {
+    let sql = `
+    UPDATE user
+    SET user_fullName = ?
+    WHERE user_id = ?;
+    `
+    return new Promise((resolve, reject) => {
+      pool.query('SELECT user_fullName FROM user WHERE user_id = ?', id, (err, rows) => {
+        if (err) reject(err)
+        resolve(rows[0])
+      })
+    })
+    .then(
+      row => {
+        if (row['user_fullName']) {
+          let [firstName, lastName] = row['user_fullName'].split(':')
+          let newFullName = null
+          firstName = data.firstName || firstName
+          lastName = data.lastName || lastName
+          newFullName = `${firstName}:${lastName}`
+          if (newFullName) {
+            return new Promise((resolve, reject) => {
+              pool.query(sql, [newFullName, id], (err, result) => {
+                if (err) reject(err)
+                resolve(result)
+              })
+            })
+          }
+        }
+      },
+      err => {
+        console.error(err)
+      }
+    )
+  }
+  /**
+  *
+  * @param {String} id - user id
+  * @param {Object} data - country{String} or city{String}
+  * @return Promise Object
+   */
+  static uploadUserLocation (id = '', data) {
+    return this.getLocationUser(id)
+      .then(
+      // обрабатываем ответ СУБД
+      rows => {
+        if (rows.length === 0) { // если у данного пользователя ещё не настроина локация
+          let sql = `
+          INSERT INTO location
+          (location_country, location_city, location_user_id)
+          VALUES (?, ?, ?);
+          `
+          let inserts = [
+            data.country || '',
+            data.city || '',
+            id
+          ]
+          return new Promise((resolve, reject) => {
+            pool.query(sql, inserts, (err, result) => {
+              if (err) reject(err)
+              resolve(result)
+            })
+          })
+        } else { // если у пользователя уже есть данные по локации, заменяем их
+          let sql = `
+          UPDATE location
+          SET location_country = ?, location_city = ?
+          WHERE location_user_id = ?;
+          `
+          let nCountry = (data.country !== undefined) ? data.country : rows[0]['location_country']
+          let nCity = (data.city !== undefined) ? data.city : rows[0]['location_city']
+          let inserts = [
+            nCountry,
+            nCity,
+            id
+          ]
+          return new Promise((resolve, reject) => {
+            pool.query(sql, inserts, (err, result) => {
+              if (err) reject(err)
+              resolve(result)
+            })
+          })
+        }
+      },
+      // Обработка ошибки
+      err => {
+        console.error(err)
+      }
+    )
+  }
 }
 module.exports = User

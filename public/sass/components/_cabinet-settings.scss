@@ -65,38 +65,78 @@
 .helper__settings_show{
   display: block;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.profile-settings__ctrl-panel-b {
+.helper__settings-error{
+  font-size: 12px;
+  font-weight: 100;
+  color: $errorColor;
+  text-align: left;
+}
+.profile-settings__ctrl-panel-b{
   position: relative;
-  line-height: 32px;
-  .ctrl-panel__item-link {
-    transition: all 300ms;
-    font-family: $ff;
-    font-size: 16px;
-    color: #232121;
-    font-weight: 500;
-    &:hover {
-      color: lighten(#232121, 20%);
+  height: 200px;
+  width: 200px;
+  &::after, &::before{
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .flex-box__ctrl-panel{
+    position: fixed;
+  }
+}
+.flex-box__ctrl-panel{
+  .li{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    .link__ctrl-panel{
+      transition: all 300ms;
+      padding: 10px 0;
+      color: $Color5;
+      font-size: 16px;
+      font-weight: 500;
+      &:hover{
+        color: lighten($Color5, 20%);
+      }
     }
   }
 }
+.wrapper__settings{
+  .btn__settings, .btn__settings:focus{
+    background-color: $Color1;
+    &:hover{
+      background-color: $Color1;
+      box-shadow: 0px 2px 1px 0px darken($Color1, 20%);
+    }
+    &:active{
+      background-color: darken($Color1, 20%);
+      box-shadow: none;
+    }
+  }
+}
+.wrapper__settings{
+  .btn__settings-cancel, .btn__settings-cancel:focus{
+    background-color: $Color3;
+    &:hover{
+      background-color: $Color3;
+      box-shadow: 0px 2px 1px 0px darken($Color3, 20%);
+    }
+    &:active{
+      background-color: darken($Color3, 20%);
+      box-shadow: none;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
 .profile-settings-wrapper {
   position: relative;
   font-family: $ff;

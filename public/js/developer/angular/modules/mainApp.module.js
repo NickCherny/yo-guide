@@ -1,7 +1,6 @@
 // connect modules
 import angular, {module} from 'angular'
 import 'angular-cookies'
-import ValidateFactory from '../factorys/validator.service.js'
 import './cabinetApp.module'
 import ROUTER_URL from '../router/config'
 
@@ -22,6 +21,7 @@ import guidesBoardDefinition from '../components/guides-board/guidesBoard.defini
 
 // connect factory
 import ServerRequests from '../factorys/server.requests'
+import ValidateFactory from '../factorys/validator.service.js'
 
 let mainApp = module('mainApp', ['ui.router', 'ngCookies', 'cabinetApp'])
   .constant('ROUTER_URL', ROUTER_URL)

@@ -7927,7 +7927,7 @@ ul {
 
 .cabinet__cntrl-panel-item .cabinet-navigation__item-link_active {
   color: #fff;
-  border-bottom-color: #5de895; }
+  border-bottom-color: #fff; }
 
 .mobile-icon__cabinet-navigation {
   transition: all 300ms;
@@ -8690,17 +8690,53 @@ ul {
 .helper__settings_show {
   display: block; }
 
+.helper__settings-error {
+  font-size: 12px;
+  font-weight: 100;
+  color: #ff6c80;
+  text-align: left; }
+
 .profile-settings__ctrl-panel-b {
   position: relative;
-  line-height: 32px; }
-  .profile-settings__ctrl-panel-b .ctrl-panel__item-link {
+  height: 200px;
+  width: 200px; }
+  .profile-settings__ctrl-panel-b::after, .profile-settings__ctrl-panel-b::before {
+    content: "";
+    display: table;
+    clear: both; }
+  .profile-settings__ctrl-panel-b .flex-box__ctrl-panel {
+    position: fixed; }
+
+.flex-box__ctrl-panel .li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; }
+  .flex-box__ctrl-panel .li .link__ctrl-panel {
     transition: all 300ms;
-    font-family: "Roboto", sans-serif;
+    padding: 10px 0;
+    color: #323232;
     font-size: 16px;
-    color: #232121;
     font-weight: 500; }
-    .profile-settings__ctrl-panel-b .ctrl-panel__item-link:hover {
-      color: #585353; }
+    .flex-box__ctrl-panel .li .link__ctrl-panel:hover {
+      color: #656565; }
+
+.wrapper__settings .btn__settings, .wrapper__settings .btn__settings:focus {
+  background-color: #2562fa; }
+  .wrapper__settings .btn__settings:hover, .wrapper__settings .btn__settings:focus:hover {
+    background-color: #2562fa;
+    box-shadow: 0px 2px 1px 0px #0437b5; }
+  .wrapper__settings .btn__settings:active, .wrapper__settings .btn__settings:focus:active {
+    background-color: #0437b5;
+    box-shadow: none; }
+
+.wrapper__settings .btn__settings-cancel, .wrapper__settings .btn__settings-cancel:focus {
+  background-color: #f961f7; }
+  .wrapper__settings .btn__settings-cancel:hover, .wrapper__settings .btn__settings-cancel:focus:hover {
+    background-color: #f961f7;
+    box-shadow: 0px 2px 1px 0px #eb09e8; }
+  .wrapper__settings .btn__settings-cancel:active, .wrapper__settings .btn__settings-cancel:focus:active {
+    background-color: #eb09e8;
+    box-shadow: none; }
 
 .profile-settings-wrapper {
   position: relative;

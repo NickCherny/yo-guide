@@ -14,6 +14,9 @@ export default function ($http) {
     },
     getTravels: id => {
       return $http.get(`/api/v1/user/${id}/travel/all`)
+    },
+    updateProfile: (id, data) => {
+      return $http.post(`/cabinet/user/${id}/settings/update`, data)
     }
   }
 }
