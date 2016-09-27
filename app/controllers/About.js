@@ -14,9 +14,9 @@ class About {
       title: 'Как работают сервисы'
     };
     res.render('partial/pages/about/index', data, (err, html)=>{
-      if(err){
+      if (err) {
         next(err);
-      }else {
+      } else {
         res.send(html);
         res.end();
       }

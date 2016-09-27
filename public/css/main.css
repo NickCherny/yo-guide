@@ -25,6 +25,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -7955,11 +7956,11 @@ ul {
       display: inline-flex;
       flex-direction: row;
       justify-content: center; }
-      .cabinet-media .cabinet-media__photo-img .cabinet-media__photo-img-link .cabinet-media__photo-img-images {
-        max-width: 184px;
-        max-height: 184px;
-        width: 100%;
-        height: auto; }
+
+.cabinet-media .images__cabinet-media {
+  max-width: 200px;
+  width: 100%;
+  height: auto; }
 
 .cabinet-media .cabinet-media__user-name {
   position: relative;
@@ -8173,6 +8174,30 @@ ul {
       fill: #BBBBBB; }
       .cabinet__header .cabinet-travel__create-button .btn-icon:hover {
         fill: #888888; }
+
+.box__profile {
+  padding: 20px;
+  padding: 1.25rem;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  background-color: #fff;
+  border-bottom: 2px solid #bfcad2; }
+
+.title__transparent {
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #323232;
+  margin: 0 0 60px;
+  text-align: left; }
+
+.title__regular {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #585858;
+  text-align: left;
+  margin-bottom: 16px; }
 
 .title_cabinet-header {
   text-align: left;

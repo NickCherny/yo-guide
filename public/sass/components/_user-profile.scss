@@ -1,0 +1,30 @@
+@import "../design.patterns/style.settings";
+//@section profile (begin)
+.box__profile{
+  padding: 20px;
+  padding: rem-calc(20);
+  margin-bottom: 20px;
+  margin-bottom: rem-calc(20);
+  background-color: #fff;
+  border-bottom: 2px solid #bfcad2;
+}
+.title__transparent{
+  font-size: 22px;
+  font-family: $ff;
+  font-weight: 300;
+  color: $Color5;
+  margin: 0 0 60px;
+  text-align: left;
+}
+.title__regular{
+  font-family: $ff;
+  font-size: 16px;
+  font-weight: 300;
+  color: lighten($Color5, 15%);
+  text-align: left;
+  margin-bottom: 16px;
+}
+.item__regular-info{
+
+}
+//@section profile (end)

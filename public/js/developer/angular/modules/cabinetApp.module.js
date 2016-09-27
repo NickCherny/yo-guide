@@ -10,6 +10,7 @@ import userMediaDefinition from '../components/user-media/userMedia.component.js
 import userGuestDefinition from '../components/user-guest/userGuest.component'
 import userTraveSmallDefinition from '../components/user-travel/userTravelSmall.component'
 import footerDefinition from '../components/footer-main/footer.definition'
+import profileDefinition from '../components/user-profile/profile.definition'
 
 // Services
 import ServerRequests from '../factorys/server.requests'
@@ -36,5 +37,6 @@ module('cabinetApp')
   .component('userGuestComponent', userGuestDefinition)
   .component('userTravelSmallComponent', userTraveSmallDefinition)
   .component('footerComponent', footerDefinition)
+  .component('profileComponent', profileDefinition)
 
 export default cabinetApp

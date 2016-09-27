@@ -5,6 +5,18 @@ const User = require('../models/User')
  * @Class Cabinet - Обрабатывает все запросы связанные с Кабинетом пользователя
  */
 class Cabinet {
+  /**
+   *
+   * @constructor
+   * @param {Number} userId - user id
+   * @param {String} userFullName - user full name
+   * @param {String} userPhoto - profile photo src
+   * @param {Array String} userLocation - user country and user city
+     */
+  constructor (userId, userFullName, userPhoto, userLocation) {
+    this.userId = userId
+    this.userFullName = userFullName
+  }
   static home (req, res, next) {
     console.log(req.session.passport)
     if (req.session.passport.user[0].user_id) {

@@ -6,7 +6,7 @@ const userMediaDefinition = {
     <div class="cabinet-media cabinet-b">
       <div class="cabinet-media__photo-img">
         <a ui-sref="/">
-          <img ng-src="{{media.data.photo}}" ng-alt="{{media.data.photo.alt}}">
+          <img ng-src="{{media.data.photo}}" ng-alt="{{media.data.photo.alt}}" class="images__cabinet-media">
         </a>
       </div>
       <div class="cabinet-media__user-name" ng-bind="media.data.fullName">

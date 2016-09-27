@@ -7,6 +7,15 @@ const GE = require('../service/GuideEvents')
  * @Class Account - Класс для обработки запросов связонных с авторизацией пользователя
  */
 class Account {
+
+  /**
+   *
+   * @constructor
+   * @param id - user id
+     */
+  constructor (id) {
+    this._id = id
+  }
   /**
    *
    * @param {Object} req - Express HTTP Request

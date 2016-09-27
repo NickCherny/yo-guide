@@ -50,6 +50,62 @@ class User {
 
   /**
    *
+   * @param {String} name - interes name
+   * @return Promise Object
+     */
+  static getInterests(name){
+    let sql = `
+    SELECT COUNT(*) AS count
+    FROM interests
+    WHERE interests_name = ?;
+    `
+    return new Promise((resolve, reject) => {
+      pool.query(sql, name.toLowerCase(), (err, result) => {
+        if (err) reject(err)
+        resolve(result)
+      })
+    })
+  }
+
+  /**
+   *
+   * @param {String} id - user id
+   * @param {String} interes - interes name
+   * @return Promise Object
+     */
+  static updateUserInterests(id = '', interes = ''){
+    this.getInterests(interes)
+      .then(
+        result => {
+          if(result['count'].length === 0){
+
+          }
+        },
+        err => {}
+      )
+  }
+
+  /**
+   *
+   * @param {String} id - user id
+   * @return Promise Object
+     */
+  static getUserInterests(id = ''){
+    let sql = `
+    SELECT intresting.itresting_name
+    FROM intresting
+    JOIN iu
+    ON(intresting.intresting_id = iu.iu_intresting_id AND iu.iu_user_id = ?);
+    `
+    return new Promise((resolve, reject) => {
+      pool.query(sql, id, (err, rows) => {
+        if (err) reject(err)
+        resolve(rows)
+      })
+    })
+  }
+  /**
+   *
    * @param {object} data - user data => fullName, email, password
    * @param {function} callback - callback function
      */
