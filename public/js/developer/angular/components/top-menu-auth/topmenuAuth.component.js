@@ -62,7 +62,7 @@ const topmenuAuthDefinition = {
                 <a ui-sref="/travel" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Поездки</a>
                 <a ui-sref="/tour" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Туры</a>
                 <a ui-sref="/profile/settings" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Настройки</a>
-                <a href="/api/v1/logout/user" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Выйти</a>
+                <a href="/user/logout" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Выйти</a>
               </div>
             </div>
           </div>

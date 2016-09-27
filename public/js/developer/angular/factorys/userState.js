@@ -10,7 +10,7 @@ export default function ($http, $cookies, serverRequests) {
     guests: [],
     travels: [],
     getUserProfile: (id) => {
-      return $http.get(`/api/v1/user/${id}/profile`)
+      return $http.get(`/cabinet/user/${id}/profile`)
     }
   }
 }

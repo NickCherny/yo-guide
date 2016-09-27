@@ -1,12 +1,12 @@
 'use strict'
 class Facade {
   constructor () {
-    this.subscribers = {}
+    this.account = require('../controllers/Account')
+    this.about = require('../controllers/About')
     this.main = require('../controllers/mainCtrl')
     this.user = require('../controllers/userCtrl')
-    this.cabinet = require('../controllers/cabinetCtrl')
+    this.cabinet = require('../controllers/Cabinet')
     this.guides = require('../controllers/guidesCtrl')
-    this.api = require('../controllers/api')
   }
   get DispatcherEvents () {
     return this._DispetcherEvents

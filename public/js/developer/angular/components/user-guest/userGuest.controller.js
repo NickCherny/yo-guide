@@ -26,7 +26,7 @@ class userGuestCtrl {
           src: '/images/users/01/profile/user_profile.png',
           alt: 'New Damian'
         },
-        link: '/api/v1/user/1/profile'
+        link: '/cabinet/user/1/profile'
       }
     ]
   }

@@ -1,5 +1,5 @@
-const md5 = require('md5')
-const pool = require('./connect')
+const md5 = require("md5");
+const pool = require("./connect")
 
 class User {
 
@@ -71,96 +71,99 @@ class User {
       })
     })
   }
+
   /**
   * @param {string} id - table user_id
-  * @param {function} callback - callback function
+  * @return Promise Object
   */
-  static getProfilePhoto (id = '', callback) {
+  static getProfilePhoto (id = '') {
     let sql = `
     SELECT photo_src, photo_alt
     FROM photo
     WHERE photo_type = 'profile' AND photo_user_id = ?;
     `
-    pool.query(sql, id, callback)
-  }
-  /**
-  *
-  * @param {string} id - user_id
-  * @param {function} callback - callback function
-  */
-  static getGuest (id = '', callback) {
-    let sql = `
-    SELECT *
-    FROM guest
-    WHERE user_user_id = ?;
-    `
-    pool.query(sql, id, callback)
-  }
-  /**
-  *
-  * @param {string} location - user_location
-  * @param {function} callback - callback function
-  */
-  static searchUserForLocation (location = '', callback) {
-    let sql = `
-    SELECT user_id, user_fullName, user_location, user_status
-    FROM user
-    WHERE user_location = ?;
-    `
-    pool.query(sql, location, (err, result) => {
-      if (err) callback(err)
-      if (result[0]['user_id']) {
-        this.getProfilePhoto(result[0]['user_id'], (err, rows) => {
-          if (err) callback(err)
-        })
-        this.getGuest(result[0]['user_id'], (err, rows) => {
-          if (err) callback(err)
-        })
-      }
+    return new Promise((resolve, reject) => {
+      pool.query(sql, id, (err, rows) => {
+        if (err) reject(err)
+        resolve(rows)
+      })
     })
   }
+
   /**
-  *
-  * @param {string} id - user_id
-  * @param {Object} callback - callback (err, rows)
-  */
-  static getUserLocation (id = '', callback) {
+   *
+   * @param {String} id - user id
+   * @return Promise Object
+   */
+  static getFullName (id) {
     let sql = `
-    SELECT location_country, location_city
+    SELECT user_fullName
+    FROM user
+    WHERE user_id = ?;
+    `
+    return new Promise((resolve, reject) => {
+      pool.query(sql, id, (err, rows) => {
+        if (err) reject(err)
+        resolve(rows)
+      })
+    })
+  }
+
+  /**
+   *
+   * @param {String} id - user id
+   * @return Promise Object
+   */
+  static getLocationUser (id) {
+    let sql = `
+    SELECT location_country, location_city, location_id
     FROM location
     WHERE location_user_id = ?;
     `
-    pool.query(sql, id, callback)
+    return new Promise((resolve, reject) => {
+      pool.query(sql, id, (err, rows) => {
+        if (err) reject(err)
+        resolve(rows)
+      })
+    })
   }
+
   /**
   *
   * @param {string} id - user_id
   * @param {Object} callback - callback (err, rows)
   */
   static getUserProfile (id = '', callback) {
-    let sql = `
-    SELECT user_fullName, user_status, user_level
-    FROM user
-    WHERE user_id = ?;
-    `
-    pool.query(sql, id, (err, rows) => {
-      if (err) callback(err)
-      if (rows[0]) {
-        this.getProfilePhoto(id, (err, result) => {
-          if (err) callback(err)
-          if (result) {
-            rows[0]['photo'] = result[0] || '/images/users/photoProfileDefault.png'
-            this.getUserLocation(id, (err, result) => {
-              if (err) callback(err)
-              if (result) {
-                rows[0]['location'] = result[0] || 'Город Страна'
-                callback(null, rows[0])
-              }
-            })
-          }
-        })
-      }
-    })
+    let responseData = {}
+    return this.getFullName(id)
+      .then(
+        rows => {
+          return rows[0]
+        },
+        err => {
+          console.error(err)
+        }
+      )
+      .then(
+        fullName => {
+          responseData['user_fullName'] = fullName['user_fullName'] || ''
+          return this.getProfilePhoto(id)
+        }
+      )
+      .then(
+        rows => {
+          return rows[0]
+        },
+        err => {
+          console.error(err)
+        }
+      )
+      .then(
+        photo => {
+          responseData['photo'] = photo
+          return responseData
+        }
+      )
   }
   /**
   *
@@ -225,24 +228,7 @@ class User {
       }
     })
   }
-  /**
-  *
-  * @param {String} id - user id
-  * @return Promise Object
-   */
-  static getLocationUser (id) {
-    let sql = `
-    SELECT location_country, location_city, location_id
-    FROM location
-    WHERE location_user_id = ?;
-    `
-    return new Promise((resolve, reject) => {
-      pool.query(sql, id, (err, rows) => {
-        if (err) reject(err)
-        resolve(rows)
-      })
-    })
-  }
+
   /**
   *
   * @param {String} id - user id

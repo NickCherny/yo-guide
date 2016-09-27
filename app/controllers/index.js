@@ -2,7 +2,7 @@
 
 const Admin = require('./adminCtrl');
 const User = require('./userCtrl');
-const Cabinet = require('./cabinetCtrl');
+const Cabinet = require('./Cabinet');
 const Travel = require('./travelCtrl');
 const Tour = require('./tourCtrl');
 const Guest = require('./guestCtrl');

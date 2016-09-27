@@ -2,11 +2,14 @@ import {module} from 'angular'
 import 'angular-ui-router'
 import cabinetRouter from '../router/cabinet.router'
 import setClassNameFocus from '../directives/setClassNameFocus'
+
+// Components
 import cabinetNavigationDefintion from '../components/cabinet-naviagation/cabinetnav.component'
 import topmenuAuthDefinition from '../components/top-menu-auth/topmenuAuth.component'
 import userMediaDefinition from '../components/user-media/userMedia.component.js'
 import userGuestDefinition from '../components/user-guest/userGuest.component'
 import userTraveSmallDefinition from '../components/user-travel/userTravelSmall.component'
+import footerDefinition from '../components/footer-main/footer.definition'
 
 // Services
 import ServerRequests from '../factorys/server.requests'
@@ -32,5 +35,6 @@ module('cabinetApp')
   .component('userMediaComponent', userMediaDefinition)
   .component('userGuestComponent', userGuestDefinition)
   .component('userTravelSmallComponent', userTraveSmallDefinition)
+  .component('footerComponent', footerDefinition)
 
 export default cabinetApp

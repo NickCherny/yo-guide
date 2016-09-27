@@ -44,7 +44,7 @@ module.exports = (app, config) => {
     failureRedirect: '/user/registration'
   })
 
-  app.post('/api/v1/login/user', user)
+  app.post('/user/login', user)
 
   let mustBeAuthenticated = function (req, res, next) {
     req.isAuthenticated() ? next() : res.redirect('/')
