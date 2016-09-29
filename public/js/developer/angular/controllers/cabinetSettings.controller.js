@@ -8,6 +8,27 @@ class cabinetSettings {
     this.passwordTpl = validate.passwordTpl
     this.helpers = validate.helpers
     this.updateProfile = serverRequests.updateProfile
+    this.activitys = [
+      {
+        text: 'Походу по магазинам',
+        name: 'shop'
+      },{
+        text: 'Рестораны',
+        name: 'restaurants'
+      },{
+        text: 'Спорт и экстрим',
+        name: 'sport'
+      },{
+        text: 'Бары и ночные клубы',
+        name: 'nightClub'
+      },{
+        text: 'Искусство и музеи',
+        name: 'art'
+      },{
+        text: 'Культура и история',
+        name: 'history'
+      }
+    ]
   }
   /**
   *
