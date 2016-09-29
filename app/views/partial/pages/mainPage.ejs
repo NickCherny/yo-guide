@@ -14,36 +14,85 @@
   </header>
 </section>
 
-<section class="search-section">
+<!--@section Секция с популярными напровлениями (begin)-->
+<section class="section section__pop">
+  <h1 class="title title__pop">Популярные направления</h1>
+  <div class="container-center">
+    <ul class="row row-fix">
+      <li class="li large-8 small-12 columns">
+        <a href="" class="link link__pop">
+          <div class="box__pop" style="background-image: url(<%=imagesDir%>/city/rim.jpg)">
+            <h2 class="title title__pop-info">Рим</h2>
+            <div class="text__pop-info">220 Гидов</div>
+          </div>
+        </a>
+      </li>
+      <li class="li large-4 small-12 columns">
+        <a href="" class="link link__pop">
+          <div class="box__pop" style="background-image: url(<%=imagesDir%>/city/wawa.jpg)">
+            <h2 class="title title__pop-info">Варшава</h2>
+            <div class="text__pop-info">220 Гидов</div>
+          </div>
+        </a>
+      </li>
+      <li class="li large-4 small-12 columns">
+        <a href="" class="link link__pop">
+          <div class="box__pop" style="background-image: url(<%=imagesDir%>/city/moscow.jpg)">
+            <h2 class="title title__pop-info">Москва</h2>
+            <div class="text__pop-info"></div>
+          </div>
+        </a>
+      </li>
+      <li class="li large-4 small-12 columns">
+        <a href="" class="link link__pop">
+          <div class="box__pop" style="background-image: url(<%=imagesDir%>/city/praga.jpg)">
+            <h2 class="title title__pop-info">Прага</h2>
+            <div class="text__pop-info"></div>
+          </div>
+        </a>
+      </li>
+      <li class="li large-4 small-12 columns">
+        <a href="" class="link link__pop">
+          <div class="box__pop" style="background-image: url(<%=imagesDir%>/city/kiev.jpg)">
+            <h2 class="title title__pop-info">Киев</h2>
+            <div class="text__pop-info"></div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
 </section>
+<!--@section (end)-->
 
 <section class="hero-section">
-  <div class="row row-fix">
-    <div class="hero-content large-6 small-12 columns">
-      <h1 class="hero-content__tile">Встречи меньющие нас</h1>
-      <div class="box__hero-btn">
-        <a href="/about" class="btn btn__new btn__new_ping">Как это работает</a>
+  <div class="container-center">
+    <div class="row row-fix">
+      <div class="hero-content large-8 small-12 columns">
+        <h1 class="hero-content__tile">Встречи меньющие нас</h1>
+        <div class="box__hero-btn">
+          <a href="/about" class="btn btn__new btn__new_ping">Как это работает</a>
+        </div>
       </div>
-    </div>
 
-    <div class="hero-content large-6 small-12 columns">
-      <div class="hero-card">
-        <h2 class="hero-card__title">RUSSIA, Moscow</h2>
-        <div class="hero-card__people">
-          <div class="hero-card__people-media">
-            <div class="hero-card__people-media_item">
-              <img src="<%=imagesDir%>/pages/main/main_page__turist1.png" alt="" class="hero-images">
-              <h3 class="hero-card__people-name">Vova</h3>
-            </div>
-            <div class="hero-card__people-media_item">
-              <img src="<%=imagesDir%>/pages/main/mian_page_guide1.png" alt="" class="hero-images">
-              <h3 class="hero-card__people-name">Natali</h3>
+      <div class="hero-content large-4 small-12 columns">
+        <div class="hero-card">
+          <h2 class="hero-card__title">RUSSIA, Moscow</h2>
+          <div class="hero-card__people">
+            <div class="hero-card__people-media">
+              <div class="hero-card__people-media_item">
+                <img src="<%=imagesDir%>/pages/main/main_page__turist1.png" alt="" class="hero-images">
+                <h3 class="hero-card__people-name">Vova</h3>
+              </div>
+              <div class="hero-card__people-media_item">
+                <img src="<%=imagesDir%>/pages/main/mian_page_guide1.png" alt="" class="hero-images">
+                <h3 class="hero-card__people-name">Natali</h3>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="hero-card__people-text">
-          When I was traveling solo around Europe this summer, I used YoGuide to meet new people.
-          Mari was at the weekly YoGuide event in Moscow and I feel so lucky to have met his!
+          <div class="hero-card__people-text">
+            When I was traveling solo around Europe this summer, I used YoGuide to meet new people.
+            Mari was at the weekly YoGuide event in Moscow and I feel so lucky to have met his!
+          </div>
         </div>
       </div>
     </div>
@@ -51,7 +100,36 @@
 </section>
 
 <section class="use-diagram">
-  <h1 class="use-diagram__header-title">How It Works</h1>
+  <h1 class="title__use-diagram">How It Works</h1>
+  <div class="container-center">
+    <div class="wrapper wrapper__use-diagram flex-container">
+      <div class="flex-element">
+        <img src="" alt="" class="images">
+        <h3 class="title title__use-diagram">Находим</h3>
+        <div>
+          <p class="text">
+            Начьните использовать yo-guide для поиска гидов в интресующей вас локации.
+          </p>
+        </div>
+      </div>
+      <div class="flex-element"><img src="" alt="" class="images">
+        <h3 class="title title__use-diagram">Выбираем</h3>
+        <div>
+          <p class="text">
+            Просмотрите предложения, и выберете наиболее подходящее вам!
+          </p>
+        </div>
+      </div>
+      <div class="flex-element"><img src="" alt="" class="images">
+        <h3 class="title title__use-diagram">Начните приключения</h3>
+        <div>
+          <p class="text">
+            Отправляйтесь на встречу путешествиям, с индевидуально подобранным гидом.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="begin-use">
