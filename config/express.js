@@ -20,7 +20,7 @@ module.exports = (app, config) => {
   app.locals.auth = false
   app.locals.imagesDir = (env === 'development') ? '/images' : '/images-bundle'
 
-  app.use(favicon(`${config.root}/public/images/favicon.ico`));
+  app.use(favicon(`${config.root}/public/images/favicon32x32.ico`));
   app.use(logger('dev'))
   app.use(bodyParser.json())
   app.use(bodyParser.urlencoded({

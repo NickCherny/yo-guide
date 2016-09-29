@@ -1,15 +1,20 @@
-const gulp = require('gulp')
-const plumber = require('gulp-plumber')
-const webpack = require('gulp-webpack')
-const livereload = require('gulp-livereload')
-const sass = require('gulp-sass')
-const imagemin = require('gulp-imagemin')
-const uglify = require('gulp-uglify')
+const gulp = require('gulp');
+const plumber = require('gulp-plumber');
+const webpack = require('gulp-webpack');
+const livereload = require('gulp-livereload');
+const sass = require('gulp-sass');
+const imagemin = require('gulp-imagemin');
+const uglify = require('gulp-uglify');
+const autoprefix = require('gulp-autoprefixer');
 
 gulp.task('sass', function () {
   gulp.src('./public/sass/**/*.scss')
     .pipe(plumber())
     .pipe(sass())
+    .pipe(autoprefix({
+      browser: ['last 4 versions'],
+      cascade: false
+    }))
     .pipe(gulp.dest('./public/css'))
     .pipe(livereload())
 })
