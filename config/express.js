@@ -28,9 +28,7 @@ module.exports = (app, config) => {
   }));
   // Set cookies parser session
   app.use(cookieParser());
-  app.use(session({
-    keys: ['secret']
-  }));
+  app.use(session({keys: ['secret']}));
 
   // Initialize passport
   app.use(passport.initialize());
@@ -51,14 +49,6 @@ module.exports = (app, config) => {
   };
   app.all('/cabinet', mustBeAuthenticated);
   app.all('/cabinet/*', mustBeAuthenticated);
-
-  app.all('/admin/*', (req, res, next) => {
-    if (req.session.admin) {
-      next();
-    } else {
-      res.redirect('/');
-    }
-  });
 
   passport.serializeUser(function (data, done) {
     done(null, data.username)

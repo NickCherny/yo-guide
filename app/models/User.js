@@ -225,7 +225,7 @@ class User {
       )
       .then(
         rows => {
-          return rows[0]
+          return rows
         },
         err => {
           console.error(err)

@@ -2,12 +2,15 @@ import userGusetCtrl from './userGuest.controller'
 const userGuestDefinition = {
   controller: userGusetCtrl,
   controllerAs: 'guest',
+  bindings: {
+    guestsInfo: '<'
+  },
   template: `
   <article class="cabinet-b">
-    <div class="box" data-ng-if="guest.guests.length > 0">
+    <div class="box" data-ng-if="guest.guestsInfo.length > 0">
       <h2 class="cabinet-guests__title cabinet-title">Ожидаемые гости</h2>
       <ul class="cabinet-guests__collections-b">
-        <li class="cabinet-guests__item-guest-b" ng-repeat="guest in guest.guests">
+        <li class="cabinet-guests__item-guest-b" ng-repeat="guest in guest.guestsInfo">
           <div class="row row-fix">
             <div class="large-3 columns columns-fix_left">
               <a ng-href="{{guest.link}}" class="cabinet-guests__item-guest-link">

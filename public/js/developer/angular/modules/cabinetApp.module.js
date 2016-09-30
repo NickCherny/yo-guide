@@ -11,6 +11,8 @@ import userGuestDefinition from '../components/user-guest/userGuest.component'
 import userTraveSmallDefinition from '../components/user-travel/userTravelSmall.component'
 import footerDefinition from '../components/footer-main/footer.definition'
 import profileDefinition from '../components/user-profile/profile.definition'
+import userProfileInfoDefinition from '../components/user-profile-info/userProfileInfo.component'
+import cabinetHomeComponent from '../components/cabinet-home/cabinetHome.component'
 
 // Services
 import ServerRequests from '../factorys/server.requests'
@@ -19,13 +21,13 @@ import ServerRequests from '../factorys/server.requests'
 import cabinetSettingsCtrl from '../controllers/cabinetSettings.controller'
 
 const cabinetApp = module('cabinetApp', ['ui.router'])
-  .config(['$stateProvider', '$urlRouterProvider', cabinetRouter])
+  .config(['$stateProvider', '$urlRouterProvider', cabinetRouter]);
 
 module('cabinetApp')
-  .controller('cabinetSettingsCtrl', cabinetSettingsCtrl)
+  .controller('cabinetSettingsCtrl', cabinetSettingsCtrl);
 
 module('cabinetApp')
-  .factory('ServerRequests', ServerRequests)
+  .factory('ServerRequests', ServerRequests);
 
 module('cabinetApp')
   .directive('setClassNameFocus', setClassNameFocus)
@@ -33,10 +35,12 @@ module('cabinetApp')
 module('cabinetApp')
   .component('cabinetNavigation', cabinetNavigationDefintion)
   .component('topMenuAuth', topmenuAuthDefinition)
-  .component('userMediaComponent', userMediaDefinition)
   .component('userGuestComponent', userGuestDefinition)
   .component('userTravelSmallComponent', userTraveSmallDefinition)
   .component('footerComponent', footerDefinition)
   .component('profileComponent', profileDefinition)
+  .component('userMediaComponent', userMediaDefinition)
+  .component('userProfileInfoComponents', userProfileInfoDefinition)
+  .component('cabinetHomeComponent', cabinetHomeComponent)
 
 export default cabinetApp

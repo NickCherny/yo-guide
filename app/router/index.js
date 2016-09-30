@@ -68,7 +68,7 @@ router.get('/user/forgot/password', facade.user.forgotPassword);
  * @url /admin
  */
 router.get('/admin', facade.admin.form);
-router.get('admin/login', facade.admin.login);
+router.get('/admin/login', facade.admin.login);
 router.get('/admin/home', facade.admin.home);
 
 

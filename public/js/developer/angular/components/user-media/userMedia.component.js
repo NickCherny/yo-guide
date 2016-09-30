@@ -1,15 +1,19 @@
 import userMediaCtrl from './userMedia.controller'
 const userMediaDefinition = {
-  binding: {},
+  controller: userMediaCtrl,
+  controllerAs: 'media',
+  bindings: {
+    userInfo: '<'
+  },
   template: `
   <aside>
     <div class="cabinet-media cabinet-b">
       <div class="cabinet-media__photo-img">
         <a ui-sref="/">
-          <img ng-src="{{media.data.photo}}" ng-alt="{{media.data.photo.alt}}" class="images__cabinet-media">
+          <img ng-src="{{media.userInfo.photo.src}}" ng-alt="media.userInfo.photo.alt" class="images__cabinet-media">
         </a>
       </div>
-      <div class="cabinet-media__user-name" ng-bind="media.data.fullName">
+      <div class="cabinet-media__user-name" ng-bind="media.userInfo.fullName">
         Имя
       </div>
       <div class="cabinet-media__user-links-b">
@@ -22,8 +26,6 @@ const userMediaDefinition = {
       </div>
     </div>
   </aside>
-  `,
-  controller: userMediaCtrl,
-  controllerAs: 'media'
-}
+  `
+};
 export default userMediaDefinition

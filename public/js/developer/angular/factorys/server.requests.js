@@ -1,9 +1,19 @@
 export default function ($http) {
   return {
-    getUserFullName: id => {
+    /**
+     *
+     * @param {String} id - user id
+     * @returns {*} Promise Object
+       */
+    getUserFullName: (id = 'not') => {
       return $http.get(`/cabinet/user/${id}/fullName`)
     },
-    getUserState: id => {
+    /**
+     *
+     * @param {String} id - user id
+     * @returns {*} Promise Object
+       */
+    getUserState: (id = 'not') => {
       return $http.get(`/cabinet/user/${id}/state`)
     },
     /**
@@ -11,7 +21,7 @@ export default function ($http) {
      * @param {String} id - user id
      * @returns {*} Promise
      */
-    getUserProfile: id => {
+    getUserProfile: (id = 'not') => {
       return $http.get(`/cabinet/user/${id}/profile`)
     },
     /**
@@ -19,7 +29,7 @@ export default function ($http) {
      * @param {String} id - user id
      * @returns {*} Promise
      */
-    getGuests: id => {
+    getGuests: (id = 'not') => {
       return $http.get(`/cabinet/user/${id}/guest/all`)
     },
     /**
@@ -27,7 +37,7 @@ export default function ($http) {
      * @param {String} id - user id
      * @returns {*} Promise
      */
-    getTravels: id => {
+    getTravels: (id = 'not') => {
       return $http.get(`/cabinet/user/${id}/travel/all`)
     },
     /**
@@ -36,7 +46,7 @@ export default function ($http) {
      * @param {Object} data - form data
      * @returns {*} Promise
      */
-    updateProfile: (id, data) => {
+    updateProfile: (id = 'not', data = {}) => {
       return $http.post(`/cabinet/user/${id}/settings/update`, data)
     },
     /**
@@ -44,7 +54,7 @@ export default function ($http) {
      * @param {String} id - user id
      * @returns {*} Promise
      */
-    getUserInfo: (id = '') => {
+    getUserInfo: (id = 'not') => {
       return $http.get(`/user/${id}/profile/info`)
     }
   }

@@ -1,7 +1,7 @@
-class profileCtrl {
+class CabinetHomeCtrl {
   constructor ($cookies, serverRequests) {
     this.id = $cookies.get('userId');
-    this.defaultUserData = {};
+    this._defaultUserData = {};
     serverRequests.getUserInfo(this.id)
       .then(
         response => {
@@ -14,7 +14,7 @@ class profileCtrl {
                 alt: this.user.fullName
               },
               fullName: this.user.fullName
-            }
+            };
             console.log(this.userMedia)
           } else {
             this.user = this._defaultUserData
@@ -27,4 +27,4 @@ class profileCtrl {
       )
   }
 }
-export default profileCtrl
+export default CabinetHomeCtrl;
