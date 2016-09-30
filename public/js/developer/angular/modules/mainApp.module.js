@@ -3,6 +3,7 @@ import angular, {module} from 'angular'
 import 'angular-cookies'
 import './cabinetApp.module'
 import ROUTER_URL from '../router/config'
+import adminApp from './adminApp.module'
 
 // connect controllers
 import ApplicationCtrl from '../controllers/application.controller'
@@ -23,7 +24,7 @@ import guidesBoardDefinition from '../components/guides-board/guidesBoard.defini
 import ServerRequests from '../factorys/server.requests'
 import ValidateFactory from '../factorys/validator.service.js'
 
-let mainApp = module('mainApp', ['ui.router', 'ngCookies', 'cabinetApp'])
+let mainApp = module('mainApp', ['ui.router', 'ngCookies', 'cabinetApp', 'adminApp'])
   .constant('ROUTER_URL', ROUTER_URL)
   .controller('applicationCtrl', ApplicationCtrl)
 

@@ -56,13 +56,20 @@ router.get('/cabinet/user/:id/travel/all', facade.cabinet.userTravels);
  */
 router.get('/guides', facade.guides.guidesBoard);
 router.get('/guide/search/location/not/activity/:activity', facade.guides.searchGuide);
-router.get('/guide/search/location/:country/:city', facade.guides.searchLocation)
+router.get('/guide/search/location/:country/:city', facade.guides.searchLocation);
 
 /**
  * @url /user
  */
 router.get('/user/:id/profile/info', facade.user.getUserProfile);
 router.get('/user/forgot/password', facade.user.forgotPassword);
+
+/**
+ * @url /admin
+ */
+router.get('/admin', facade.admin.form);
+router.get('admin/login', facade.admin.login);
+router.get('/admin/home', facade.admin.home);
 
 
 
@@ -71,4 +78,4 @@ router.get('/user/forgot/password', facade.user.forgotPassword);
 router.get('/success', facade.main.success);
 
 
-module.exports = router
+module.exports = router;

@@ -52,6 +52,14 @@ module.exports = (app, config) => {
   app.all('/cabinet', mustBeAuthenticated);
   app.all('/cabinet/*', mustBeAuthenticated);
 
+  app.all('/admin/*', (req, res, next) => {
+    if (req.session.admin) {
+      next();
+    } else {
+      res.redirect('/');
+    }
+  });
+
   passport.serializeUser(function (data, done) {
     done(null, data.username)
   });

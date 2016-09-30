@@ -1,1 +1,16 @@
-<% layout('template') %>
+<!doctype html>
+<html lang="en" ng-app="mainApp">
+<head>
+  <% include ../templates/meta.ejs %>
+
+  <title><%- title %></title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body overflow-body ng-controller="applicationCtrl as mainCtrl">
+
+<%-body%>
+
+<% include footer.ejs %>
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 'use strict'
 class Facade {
   constructor () {
+    this.admin = require('../controllers/Admin')
     this.account = require('../controllers/Account')
     this.about = require('../controllers/About')
     this.main = require('../controllers/mainCtrl')
