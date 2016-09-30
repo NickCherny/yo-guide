@@ -5,50 +5,45 @@ const profileDefinition = {
   template: `
   <article class="wrapper">
     <div class="box__profile profile-transparent">
-      <h1 class="title title__transparent">Добро пожаловать в Минск!</h1>
+      <h1 class="title title__transparent">{{profile.user.status}}</h1>
+      <ul class="ul box__profile-level">
+        <li class="li item__star" ng-repeat="star in profile.user.level">
+          <svg viewBox="0 0 18 18" class="star">
+            <path d="M9 11.3l3.71 2.7-1.42-4.36L15 7h-4.55L9 2.5 7.55 7H3l3.71 2.64L5.29 14z"/>
+            <path d="M0 0h18v18H0z" fill="none"/>
+          </svg>
+        </li>
+      </ul>
     </div>
-    <div class="box__profile">
+    <div class="box__profile" ng-if="profile.user.location || profile.user.gender">
       <h2 class="title title__regular">Информация</h2>
-      <div class="row row-fix">
-        <ul class="ul large-6 small-12 columns coll-fix">
-          <li class="item item__regular-info">Минск, Беларусь</li>
-          <li class="item item__regular-info">27, муж</li>
-          <li class="item item__regular-info">Рус</li>
-        </ul>
-        <ul class="large-6 small-12 columns coll-fix">
-          <li class="item item__regular-info">
-            <a href="#">+375-29-3123573</a>
-          </li>
-          <li class="item item__regular-info">
-            <a href="#">Туры</a>
-          </li>
-          <li class="item item__regular-info">
-            <a href="#">Отзывы</a>
-          </li>
-        </ul>
-      </div>
+      <ul class="ul flex-container">
+        <li class="li flex-element">
+          <span class="title__regular-info">Страна: </span><span class="text__regular-info">Беларусь</span>
+        </li>
+        <li class="li flex-element">
+          <span class="title__regular-info">Город: </span><span class="text__regular-info">Минск</span>
+        </li>
+        <li class="li flex-element">
+          <span class="title__regular-info">Пол: </span><span class="text__regular-info">мужской</span>
+        </li>
+        <li class="li flex-element">
+          <span class="title__regular-info">Язык: </span><span class="text__regular-info">рус</span>
+        </li>
+      </ul>
     </div>
-    <div class="box__profile">
-      <h2 class="cabinet-title_regular">Интересы</h2>
+    <div class="box__profile" ng-if="profile.user.activity.length > 0">
+      <h2 class="title title__regular">Интересы</h2>
       <ul class="profile-info__interests-list">
-        <li class="profile-info__interests-list-item">
-          <a href="#" class="profile-info__interests-list-item-link">Футбол</a>
-        </li>
-        <li class="profile-info__interests-list-item">
-          <a href="#" class="profile-info__interests-list-item-link">Велосипеды</a>
-        </li>
-        <li class="profile-info__interests-list-item">
-          <a href="#" class="profile-info__interests-list-item-link">Путешествия</a>
+        <li class="profile-info__interests-list-item" ng-repeat="active in profile.user.activity">
+          <a ng-href="{{'/guide/search/location/not/activity/' + active.id}}" class="profile-info__interests-list-item-link">{{active.name}}</a>
         </li>
       </ul>
     </div>
     <div class="box__profile">
-      <h2 class="cabinet-title_regular">Обо мне</h2>
+      <h2 class="title title__regular">Обо мне</h2>
       <div class="profile-info__about-text">
-        Отличное место расположение. Есть свой закрытый дворик.
-        Все новое, хорошое и удобное. Но! Это хостел!!!
-        Поэтому не удивляйтесь, если Вас поселят не совсем так, как
-        Вы заказывали или Вы будете слышать все шаги в коридоре...
+        {{profile.user.about}}
       </div>
     </div>
   </article>

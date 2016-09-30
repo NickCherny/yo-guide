@@ -90,12 +90,12 @@ class User {
    * @param {String} id - user id
    * @return Promise Object
      */
-  static getUserInterests(id = ''){
+  static getUserActivity (id = '') {
     let sql = `
-    SELECT intresting.itresting_name
-    FROM intresting
-    JOIN iu
-    ON(intresting.intresting_id = iu.iu_intresting_id AND iu.iu_user_id = ?);
+    SELECT activity_name, activity_id
+    FROM activity
+    JOIN au
+    ON(activity.activity_id = au.au_activity_id AND au.au_user_id = ?);
     `
     return new Promise((resolve, reject) => {
       pool.query(sql, id, (err, rows) => {
@@ -190,19 +190,36 @@ class User {
   * @param {Object} callback - callback (err, rows)
   */
   static getUserProfile (id = '', callback) {
+    let sql = `
+    SELECT user_fullName AS fullName, user_status AS status, user_level AS level, user_about AS about
+    FROM user
+    WHERE user_id = ?;
+    `
     let responseData = {}
-    return this.getFullName(id)
+    return new Promise((resolve, reject) => {
+      pool.query(sql, id, (err, rows) => {
+        if (err) reject(err);
+        resolve(rows);
+      })
+    })
       .then(
         rows => {
-          return rows[0]
+          if (rows[0]) {
+            return rows[0]
+          }
         },
         err => {
-          console.error(err)
+          return err
         }
       )
       .then(
-        fullName => {
-          responseData['user_fullName'] = fullName['user_fullName'] || ''
+        userResult => {
+          let correctFullName = userResult.fullName || '';
+          if (correctFullName !== '') {
+            correctFullName = correctFullName.replace(':', ' ');
+          }
+          userResult.fullName = correctFullName;
+          responseData = userResult;
           return this.getProfilePhoto(id)
         }
       )
@@ -216,8 +233,23 @@ class User {
       )
       .then(
         photo => {
-          responseData['photo'] = photo
+          responseData['photo'] = photo;
           return responseData
+        }
+      )
+      .then(
+        responseData => {
+          return this.getUserActivity(id);
+        }
+      )
+      .then(
+        rows => {
+          responseData['activity'] = rows[0] || [];
+          return responseData
+        },
+        err => {
+          console.log(err)
+          responseData['activity'] = [];
         }
       )
   }

@@ -1,6 +1,6 @@
-'use strict'
-const UserModels = require('../models/User')
-const GE = require('../service/GuideEvents')
+'use strict';
+const UserModels = require('../models/User');
+const GE = require('../service/GuideEvents');
 
 /**
  *
@@ -25,11 +25,11 @@ class Account {
   static showRegistrationForm (req, res, next) {
     let data = {
       title: 'Регистрация пользователя'
-    }
+    };
     res.render('partial/user/registration', data, (err, html) => {
-      if(err) next(err)
-      res.send(html)
-      res.end()
+      if(err) next(err);
+      res.send(html);
+      res.end();
     })
   }
   /**
@@ -50,9 +50,9 @@ class Account {
    * @param {Object} next - Express function
    */
   static logoutUser (req, res, next) {
-    req.logout()
-    res.clearCookie('userId')
-    res.redirect('/')
+    req.logout();
+    res.clearCookie('userId');
+    res.redirect('/');
   }
   /**
    *
@@ -67,7 +67,7 @@ class Account {
         lastName: req.body.lastName || '',
         email: req.body.email || '',
         password: req.body.password || ''
-      }
+      };
       UserModels.isUser(data)
         .then(
           result => {
@@ -76,7 +76,7 @@ class Account {
           err => {
             res.next(err)
           }
-        )
+        );
       GE.on('isUser', (user) => {
         if (user['u'] === 0) {
           UserModels.registrationUser(data)
@@ -99,9 +99,13 @@ class Account {
             .then(
               rows => {
                 if (rows[0]['user_id']) {
-                  res.location('/cabinet')
-                  res.cookie('userId', rows[0]['user_id'], {maxAge: 600 * 1000})
-                  res.render('partial/cabinet/index', {title: 'Добро пожаловать в личный кабинет', user: rows[0]['user_id']})
+                  res.render('partial/pages/success/registration', {title: 'Успешная регистрация'}, (err, html) => {
+                    if (err) {
+                      next(err)
+                    } else {
+                      res.send(html).end();
+                    }
+                  })
                 }
               },
               err => {

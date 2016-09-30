@@ -7,7 +7,7 @@ const userGuestDefinition = {
     <div class="box" data-ng-if="guest.guests.length > 0">
       <h2 class="cabinet-guests__title cabinet-title">Ожидаемые гости</h2>
       <ul class="cabinet-guests__collections-b">
-        <li class="cabinet-guests__item-guest-b" data-ng-repeat="guest in guest.guests">
+        <li class="cabinet-guests__item-guest-b" ng-repeat="guest in guest.guests">
           <div class="row row-fix">
             <div class="large-3 columns columns-fix_left">
               <a ng-href="{{guest.link}}" class="cabinet-guests__item-guest-link">

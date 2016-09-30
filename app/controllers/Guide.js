@@ -15,5 +15,18 @@ class GuideCtrl {
       res.end()
     })
   }
+  static searchGuide (req, res, next) {};
+
+  /**
+   *
+   * @param {Object} req - request express object
+   * @param {Object} res - response express object
+   * @param {function} next - next function
+   * @status --process
+   */
+  static searchLocation (req, res, next) {
+    console.log(req.path);
+    res.redirect('/');
+  }
 }
 module.exports = GuideCtrl

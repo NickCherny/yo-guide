@@ -9,12 +9,30 @@ $url_img: '';
   .header{
     font-family: $ff;
     position: relative;
-    background-image: url($imagesPath+"pages/main/header_background.png");
+    background-color: $Color1;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
   }
+}
+.logo-element{
+  .logo__top{
+    transition: all 600ms;
+    fill: #fff;
+  }
+  &:hover{
+    .logo-wod-1{fill: $Color2},
+    .logo-wod-2{fill: $Color3},
+    .logo-wod-3{fill: #ff3},
+    .logo-wod-4{fill: #ff6d00},
+    .logo-wod-5{fill: #1bff9e},
+    .logo-wod-6{fill: #8045ff},
+    .logo-wod-7{fill: #ff003f}
+  }
+}
+.header_background-images{
+  background-image: url($imagesPath+"pages/main/header_background.png");
 }
 .header{
   .main__container-h{

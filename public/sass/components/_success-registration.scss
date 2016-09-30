@@ -1,0 +1,41 @@
+@import "../design.patterns/style.settings";
+//@section success registration (begin)
+.header__success{
+  background-image: url($imagesPath + "pages/success/bg.jpg");
+  background-position: left top;
+  background-repeat: repeat-x;
+  background-size: auto;
+  padding: 140px 20px 60px;
+  overflow: hidden;
+}
+.title__success{
+  font-family: $ff;
+  font-size: 63px;
+  color: #fff;
+  text-align: center;
+  font-weight: 900;
+  line-height: 60px;
+  margin: 0 0 12px;
+}
+.title__small{
+  font-family: $ff;
+  font-size: 32px;
+  font-weight: 900;
+  color: lighten($Color5, 80%);
+}
+.body__success{
+  text-align: center;
+  padding: 40px 20px 60px;
+}
+.text__success{
+  font-size: 23px;
+  display: inline-block;
+  font-weight: 900;
+  color: $Color5;
+  margin-bottom: 30px;
+}
+.wrapper__form{
+  max-width: 457px;
+  margin: 0 auto;
+}
+//@section success registration (end)

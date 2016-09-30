@@ -1,20 +1,18 @@
 "use strict";
-const db = require('../models');
 
-class Main{
+class Main {
+  /**
+   *
+   * @param {object} req - HTTP request
+   * @param {object} res - response
+   * @param {function} next
+   */
   static main(req, res, next){
     let self = this;
     if(req.isAuthenticated()){
       console.log('Главная для залогиненного пользователя');
       res.redirect('/cabinet');
     }else {
-      db.user.getTest(function(err, result){
-        if(err){
-          console.log(err)
-        }else{
-          console.log(result)
-        }
-      });
       res.render('partial/pages/mainPage', {
         title: 'Гиды, туры по всему миру'
       },
@@ -28,7 +26,15 @@ class Main{
       })
     }
   };
-
+  static success (req, res, next) {
+    res.render('partial/pages/success/registration', {title: 'Успешная регистрация'}, (err, html) => {
+      if (err) {
+        next(err)
+      } else {
+        res.send(html).end();
+      }
+    })
+  }
 
 
   /**

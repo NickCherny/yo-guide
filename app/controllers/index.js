@@ -1,7 +1,7 @@
 "use strict";
 
 const Admin = require('./adminCtrl');
-const User = require('./userCtrl');
+const User = require('./User');
 const Cabinet = require('./Cabinet');
 const Travel = require('./travelCtrl');
 const Tour = require('./tourCtrl');
