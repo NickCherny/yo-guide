@@ -45,8 +45,8 @@ router.post('/contact', facade.main.contact);
  */
 router.get('/cabinet', facade.cabinet.home);
 router.post('/cabinet/user/:id/settings/update', facade.cabinet.updateProfile);
-
-
+router.post('/cabinet/user/:id/settings/photo/upload', facade.cabinet.uploadPhoto);
+router.post('/cabinet/user/:id/settings/photo/:name/delete', facade.cabinet.deletePhoto)
 router.get('/cabinet/user/:id/profile', facade.cabinet.userInfo);
 router.get('/cabinet/user/:id/guest/all', facade.cabinet.userGuests);
 router.get('/cabinet/user/:id/travel/all', facade.cabinet.userTravels);

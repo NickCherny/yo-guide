@@ -3,7 +3,8 @@ class cabinetSettings {
     this.id = $cookies.get('userId')
     this._location = $location
     this._anchorScroll = $anchorScroll
-    this.cabinetSettings = {}
+    this.cabinetSettings = Object.create(null);
+    this.serverRequests = serverRequests;
     this.emailTpl = validate.emailTpl
     this.passwordTpl = validate.passwordTpl
     this.helpers = validate.helpers
@@ -38,7 +39,7 @@ class cabinetSettings {
     if (typeof this.cabinetSettings.interests === 'string') {
       this.cabinetSettings.interests = this.cabinetSettings.interests.split(',').map(item => String(item).toLowerCase().trim())
     }
-    console.log(this)
+    console.log(this.cabinetSettings);
     if (this.id) {
       this.updateProfile(this.id, this.cabinetSettings)
         .then(
@@ -66,6 +67,23 @@ class cabinetSettings {
   scrollTo (hash) {
     this._location.hash(hash)
     this._anchorScroll()
+  }
+  uploadFile (e) {
+    if (e.target.files[0]) {
+      this.serverRequests.uploadFile(this.id, e.target.files[0]);
+      this.cabinetSettings.photo = e.target.files[0].name;
+    }
+  }
+  cancelPhoto () {
+    this.serverRequests.deletePhoto(this.userId, this.cabinetSettings.photo)
+      .then(
+        response => {
+          console.log(response)
+        },
+        err => {
+          console.error(err)
+        }
+      );
   }
 }
 export default cabinetSettings

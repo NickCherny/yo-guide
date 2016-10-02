@@ -24,10 +24,18 @@
       </div>
       <div class="large-7 small-12 columns end">
         <article class="profile-settings-wrapper">
-          <form class="" action="index.html" method="post" novalidate name="cabinetSettings" ng-submit="cs.sendForm">
+          <form class="" method="post" novalidate name="cabinetSettings" ng-submit="cs.sendForm">
             <div class="box_border box__wrapper">
               <div class="profile-settings__header">
                 <h2 class="profile-settings__header-title" id="details">Детали профиля</h2>
+              </div>
+              <div class="wrapper wrapper__settings flex-container__settings">
+                <div class="flex-element">
+                  <label for="photo" class="label">Фото</label>
+                </div>
+                <div class="flex-element">
+                  <input type="file" class="input" id="photo" ng-model="cs.cabinetSettings.photo" ng-click="cs.uploadFile($event)">
+                </div>
               </div>
               <div class="wrapper wrapper__settings flex-container__settings">
                 <div class="flex-element">
@@ -80,51 +88,6 @@
                   </div>
                 </div>
               </div>
-              <!-- <div class="wrapper wrapper__settings flex-container__settings">
-                <div class="flex-element">
-                  <label for="bDay" class="label">Дата рождения</label>
-                </div>
-                <div class="flex-element"
-                     set-class-name-focus
-                     data-set-class="helper__settings_show"
-                     data-hide-element="data-helper-settings"
-                     data-focus-element="data-focus-element">
-                  <div class="helper__settings" data-helper-settings>
-                    Указываейте настоящую дату
-                  </div>
-                  <input type="date" class="input"
-                         name="cabinetSettings[birthday]"
-                         id="bDay"
-                         data-focus-element
-                         ng-model="cs.cabinetSettings.birthday"
-                         placeholder="Дата рождения">
-                </div>
-              </div> -->
-
-              <!-- <div class="wrapper wrapper__settings flex-container__settings">
-                <div class="flex-element">
-                  <label for="gender" class="label">Пол</label>
-                </div>
-                <div class="flex-element"
-                     set-class-name-focus
-                     data-set-class="helper__settings_show"
-                     data-hide-element="data-helper-settings"
-                     data-focus-element="data-focus-element">
-                  <div class="helper__settings" data-helper-settings>
-                    Не стоит скрывать свой пол
-                  </div>
-                  <select
-                  name="cabinetSettings[gender]"
-                  id="gender"
-                  class="select"
-                  data-focus-element
-                  ng-model="cs.cabinetSettings.gender">
-                    <option value="0">Скрыть</option>
-                    <option value="1">Мужской</option>
-                    <option value="2">Женский</option>
-                  </select>
-                </div>
-              </div> -->
             </div>
 
             <div class="box_border box__wrapper">
@@ -157,28 +120,6 @@
                   </div>
                 </div>
               </div>
-
-              <!-- <div class="wrapper wrapper__settings flex-container__settings">
-                <div class="flex-element">
-                  <label for="phone" class="label">Телефон</label>
-                </div>
-                <div class="flex-element"
-                     set-class-name-focus
-                     data-set-class="helper__settings_show"
-                     data-hide-element="data-helper-settings"
-                     data-focus-element="data-focus-element">
-                  <div class="helper__settings" data-helper-settings></div>
-                  <input type="text" class="input"
-                         name="cabinetSettings[phone]"
-                         id="phone"
-                         data-focus-element
-                         ng-minlength="7"
-                         ng-maxlength="12"
-                         ng-pattern=""
-                         ng-model="cs.cabinetSettings.phone"
-                         placeholder="Телефон">
-                </div>
-              </div> -->
             </div>
             <div class="box_border box__wrapper">
               <div class="profile-settings__header">
@@ -370,7 +311,7 @@
                     <button class="btn btn__settings" type="button" ng-click="cs.sendForm($event)">Сохронить</button>
                   </div>
                   <div class="flex-element">
-                    <button class="btn btn__settings btn__settings-cancel" type="button" ng-click="cs.clearForm($event)">Отменить</button>
+                    <button class="btn btn__settings btn__settings-cancel" type="button" ng-click="cs.clearForm($event); cs.cancelPhoto()">Отменить</button>
                   </div>
                 </div>
               </div>

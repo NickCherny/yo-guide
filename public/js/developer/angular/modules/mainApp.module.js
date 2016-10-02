@@ -12,6 +12,7 @@ import ApplicationCtrl from '../controllers/application.controller'
 import overflowBody from '../directives/overflowBody'
 import showHiddenFormRow from '../directives/showHiddeFormRow'
 import toggleControl from '../directives/toggleControl'
+import uploadFile from '../directives/uploadFile'
 
 // connect components
 import topmenuDefinition from '../components/top-menu/topmenu.component'
@@ -36,6 +37,7 @@ module('mainApp')
   .directive('overflowBody', overflowBody)
   .directive('showRow', showHiddenFormRow)
   .directive('toggleControl', toggleControl)
+  .directive('uploadFile', uploadFile)
 
 module('mainApp')
   .component('topMenu', topmenuDefinition)

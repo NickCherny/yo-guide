@@ -6359,13 +6359,13 @@ th.hide-for-touch {
   max-width: none; }
 
 .columns-fix {
-  padding: 0; }
+  padding: 0 !important; }
 
 .columns-fix_left {
-  padding-left: 0; }
+  padding-left: 0 !important; }
 
 .columns-fix_right {
-  padding-right: 0; }
+  padding-right: 0 !important; }
 
 .Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .yo-btn_full {
   -webkit-transition: all 300ms;

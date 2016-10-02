@@ -1,5 +1,5 @@
 const md5 = require("md5");
-const pool = require("./connect")
+const pool = require("./connect");
 
 class User {
 
@@ -13,14 +13,14 @@ class User {
       SELECT user_id
       FROM user
       WHERE user_email = ? AND user_password = ?;
-    `
+    `;
     let inserts = [
       data.email,
       md5(data.password)
-    ]
+    ];
     return new Promise((resolve, reject) => {
       pool.query(sql, inserts, (err, rows) => {
-        if (err) reject(err)
+        if (err) reject(err);
         resolve(rows)
       })
     })
@@ -36,13 +36,13 @@ class User {
       SELECT COUNT(*) as u
       FROM yo_db.user
       WHERE user_email = ?
-    `
+    `;
     let inserts = [
       data.email || ''
-    ]
+    ];
     return new Promise((resolve, reject) => {
       pool.query(sql, inserts, (err, result) => {
-        if (err) reject(err)
+        if (err) reject(err);
         resolve(result[0])
       })
     })
@@ -58,10 +58,10 @@ class User {
     SELECT COUNT(*) AS count
     FROM interests
     WHERE interests_name = ?;
-    `
+    `;
     return new Promise((resolve, reject) => {
       pool.query(sql, name.toLowerCase(), (err, result) => {
-        if (err) reject(err)
+        if (err) reject(err);
         resolve(result)
       })
     })
@@ -96,11 +96,11 @@ class User {
     FROM activity
     JOIN au
     ON(activity.activity_id = au.au_activity_id AND au.au_user_id = ?);
-    `
+    `;
     return new Promise((resolve, reject) => {
       pool.query(sql, id, (err, rows) => {
-        if (err) reject(err)
-        resolve(rows)
+        if (err) reject(err);
+        resolve(rows);
       })
     })
   }
@@ -114,15 +114,15 @@ class User {
     INSERT INTO user
     (user_fullName, user_email, user_password)
     VALUES(?, ?, ?);
-    `
+    `;
     let inserts = [
       `${data.firstName || ''}:${data.lastName || ''}`,
       data.email || '',
       md5(data.password || '')
-    ]
+    ];
     return new Promise((resolve, reject) => {
       pool.query(sql, inserts, (err, result) => {
-        if (err) reject(err)
+        if (err) reject(err);
         resolve(result)
       })
     })
@@ -137,10 +137,10 @@ class User {
     SELECT photo_src, photo_alt
     FROM photo
     WHERE photo_type = 'profile' AND photo_user_id = ?;
-    `
+    `;
     return new Promise((resolve, reject) => {
       pool.query(sql, id, (err, rows) => {
-        if (err) reject(err)
+        if (err) reject(err);
         resolve(rows)
       })
     })
@@ -156,10 +156,10 @@ class User {
     SELECT user_fullName
     FROM user
     WHERE user_id = ?;
-    `
+    `;
     return new Promise((resolve, reject) => {
       pool.query(sql, id, (err, rows) => {
-        if (err) reject(err)
+        if (err) reject(err);
         resolve(rows)
       })
     })
@@ -175,10 +175,10 @@ class User {
     SELECT location_country, location_city, location_id
     FROM location
     WHERE location_user_id = ?;
-    `
+    `;
     return new Promise((resolve, reject) => {
       pool.query(sql, id, (err, rows) => {
-        if (err) reject(err)
+        if (err) reject(err);
         resolve(rows)
       })
     })
@@ -194,8 +194,8 @@ class User {
     SELECT user_fullName AS fullName, user_status AS status, user_level AS level, user_about AS about
     FROM user
     WHERE user_id = ?;
-    `
-    let responseData = {}
+    `;
+    let responseData = {};
     return new Promise((resolve, reject) => {
       pool.query(sql, id, (err, rows) => {
         if (err) reject(err);
@@ -233,7 +233,11 @@ class User {
       )
       .then(
         photo => {
-          responseData['photo'] = photo;
+          if(photo[0]){
+            responseData['photo'] = photo[0]['photo_src'] || '/images/users/photoProfileDefault.png';
+          } else {
+            responseData['photo'] = '/images/users/photoProfileDefault.png';
+          }
           return responseData
         }
       )
@@ -248,7 +252,7 @@ class User {
           return responseData
         },
         err => {
-          console.log(err)
+          console.log(err);
           responseData['activity'] = [];
         }
       )
@@ -265,19 +269,19 @@ class User {
     WHERE travel_guide_id = ?
     ORDER BY travel_id
     DESC;
-    `
+    `;
     pool.query(sql, id, (err, result) => {
-      if (err) callback(err)
+      if (err) callback(err);
       if (result.length > 1) {
         result.forEach(guest => {
           this.getProfilePhoto(guest['travel_user_id'], (err, rows) => {
-            if (err) callback(err)
+            if (err) callback(err);
             guest['photo'] = rows[0]['photo_src'] || '/images/users/photoProfileDefault.png'
           })
         })
       } else if (result[0]) {
         this.getProfilePhoto(result[0]['travel_user_id'], (err, rows) => {
-          if (err) callback(err)
+          if (err) callback(err);
           result[0]['photo'] = rows[0]['photo_src'] || '/images/users/photoProfileDefault.png'
         })
       } else {
@@ -296,19 +300,19 @@ class User {
     FROM travel
     WHERE travel_user_id = ? AND travel_date > CURRENT_DATE()
     ORDER BY travel_date;
-    `
+    `;
     pool.query(sql, id, (err, result) => {
-      if (err) callback(err)
+      if (err) callback(err);
       if (result.length > 1) {
         result.forEach(item => {
           this.getUserProfile(item['travel_guide_id'], (err, guide) => {
-            if (err) callback(err)
+            if (err) callback(err);
             item['guide'] = guide[0]
           })
         })
       } else if (result.length === 1) {
         this.getUserProfile(result[0]['travel_guide_id'], (err, guide) => {
-          if (err) callback(err)
+          if (err) callback(err);
           result[0]['guide'] = guide[0]
         })
       } else {
@@ -328,25 +332,25 @@ class User {
     UPDATE user
     SET user_fullName = ?
     WHERE user_id = ?;
-    `
+    `;
     return new Promise((resolve, reject) => {
       pool.query('SELECT user_fullName FROM user WHERE user_id = ?', id, (err, rows) => {
-        if (err) reject(err)
+        if (err) reject(err);
         resolve(rows[0])
       })
     })
     .then(
       row => {
         if (row['user_fullName']) {
-          let [firstName, lastName] = row['user_fullName'].split(':')
-          let newFullName = null
-          firstName = data.firstName || firstName
-          lastName = data.lastName || lastName
-          newFullName = `${firstName}:${lastName}`
+          let [firstName, lastName] = row['user_fullName'].split(':');
+          let newFullName = null;
+          firstName = data.firstName || firstName;
+          lastName = data.lastName || lastName;
+          newFullName = `${firstName}:${lastName}`;
           if (newFullName) {
             return new Promise((resolve, reject) => {
               pool.query(sql, [newFullName, id], (err, result) => {
-                if (err) reject(err)
+                if (err) reject(err);
                 resolve(result)
               })
             })
@@ -374,15 +378,15 @@ class User {
           INSERT INTO location
           (location_country, location_city, location_user_id)
           VALUES (?, ?, ?);
-          `
+          `;
           let inserts = [
             data.country || '',
             data.city || '',
             id
-          ]
+          ];
           return new Promise((resolve, reject) => {
             pool.query(sql, inserts, (err, result) => {
-              if (err) reject(err)
+              if (err) reject(err);
               resolve(result)
             })
           })
@@ -391,17 +395,17 @@ class User {
           UPDATE location
           SET location_country = ?, location_city = ?
           WHERE location_user_id = ?;
-          `
-          let nCountry = (data.country !== undefined) ? data.country : rows[0]['location_country']
-          let nCity = (data.city !== undefined) ? data.city : rows[0]['location_city']
+          `;
+          let nCountry = (data.country !== undefined) ? data.country : rows[0]['location_country'];
+          let nCity = (data.city !== undefined) ? data.city : rows[0]['location_city'];
           let inserts = [
             nCountry,
             nCity,
             id
-          ]
+          ];
           return new Promise((resolve, reject) => {
             pool.query(sql, inserts, (err, result) => {
-              if (err) reject(err)
+              if (err) reject(err);
               resolve(result)
             })
           })
@@ -414,4 +418,4 @@ class User {
     )
   }
 }
-module.exports = User
+module.exports = User;

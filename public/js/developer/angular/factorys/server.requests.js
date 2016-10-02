@@ -56,6 +56,20 @@ export default function ($http) {
      */
     getUserInfo: (id = 'not') => {
       return $http.get(`/user/${id}/profile/info`)
+    },
+    uploadFile: (id = 'not', file = 'not') => {
+      if (id === 'not' || file === 'not') return 'Error';
+
+      let form = new FormData();
+      form.append('file', file);
+      form.append('userId', id);
+      return $http.post(`/cabinet/user/${id}/settings/photo/upload`, form, {
+        headers: {'Content-Type': undefined}
+      })
+    },
+    deletePhoto: (id='not', name='not') => {
+      if (id === 'not' || name === 'not') return;
+      return $http.post(`/cabinet/user/${id}/settings/photo/${name}/delete`, {})
     }
   }
 }
