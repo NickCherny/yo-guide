@@ -4,6 +4,9 @@ const formidable = require('formidable');
 const join = require('path').join;
 const fs = require('fs');
 const root = process.cwd();
+const uploadFile = require('../ext/uploadFile.ext');
+
+
 /**
  *
  * @Class Cabinet - Обрабатывает все запросы связанные с Кабинетом пользователя
@@ -140,46 +143,19 @@ class Cabinet {
    * @param {Object} next - Express function
    */
   static uploadPhoto (req, res, next) {
-    const form = new formidable.IncomingForm();
-    const root = process.cwd();
-    const userPath = join(root, `/public/images/users/user_${req.params.id}`);
-
-    new Promise((resolve, reject) => {
-      if (fs.existsSync(userPath)) {
-        resolve(userPath)
-      } else {
-        fs.mkdir(userPath, err => {
-          if (err) reject(err);
-          resolve(userPath)
-        });
-      }
-    })
-      .then(
-        path => {
-          form.uploadDir = path;
-          form.maxFieldsSize = 1024 * 2;
-
-          form.parse(req, (err, fields, files) => {
-            if (err) console.error(err);
-            if (files.file.type.search(/image/i) !== -1) {
-              fs.rename(files.file.path, `${path}/${files.file.name}`, (err) => {
-                if(err) console.error(err);
-                res.json({
-                  name: files.file.name,
-                  src: path + files.file.name
-                });
-                res.end();
-              });
-            } else {
-              fs.unlink(files.file.path);
-              res.end();
-            }
-          });
-        },
-        err => {
-          console.error(err)
-        }
-      )
+    if (req.params.id) {
+      uploadFile(req, req.params.id)
+        .then(
+          data => {
+            res.json(data);
+            res.end()
+          },
+          err => {
+            res.json(err);
+            res.end()
+          }
+        );
+    }
   }
 
   /**

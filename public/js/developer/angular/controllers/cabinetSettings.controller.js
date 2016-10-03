@@ -1,5 +1,5 @@
 class cabinetSettings {
-  constructor ($cookies, $location, $anchorScroll, validate, serverRequests) {
+  constructor ($cookies, $location, $anchorScroll, $scope, validate, serverRequests) {
     this.id = $cookies.get('userId')
     this._location = $location
     this._anchorScroll = $anchorScroll
@@ -30,6 +30,11 @@ class cabinetSettings {
         name: 'history'
       }
     ]
+    this._scope = $scope;
+
+    $scope.$on('uploadFile', (e, data) => {
+      console.log(data)
+    })
   }
   /**
   *
@@ -69,8 +74,21 @@ class cabinetSettings {
     this._anchorScroll()
   }
   uploadFile (e) {
+    console.log(e.target.files)
     if (e.target.files[0]) {
-      this.serverRequests.uploadFile(this.id, e.target.files[0]);
+      this.serverRequests.uploadFile(this.id, e.target.files[0])
+        .then(
+          response => {
+            if (response.status === 200) {
+              console.log(response.data)
+            } else {
+              console.log('No upload')
+            }
+          },
+          err => {
+            console.log(err)
+          }
+        );
       this.cabinetSettings.photo = e.target.files[0].name;
     }
   }
