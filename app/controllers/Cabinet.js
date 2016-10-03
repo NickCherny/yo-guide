@@ -1,10 +1,8 @@
 'use strict';
 const User = require('../models/User');
 const formidable = require('formidable');
-const join = require('path').join;
 const fs = require('fs');
-const root = process.cwd();
-const uploadFile = require('../ext/uploadFile.ext');
+const Files = require('../ext/Files.ext');
 
 
 /**
@@ -62,6 +60,7 @@ class Cabinet {
             next(err)
           }
         )
+        .catch(err => console.error(err))
     }
     if (req.body.country || req.body.city) {
       User.uploadUserLocation(userId, req.body)
@@ -73,6 +72,7 @@ class Cabinet {
             console.error(err)
           }
         )
+        .catch(err => console.error(err))
     }
     res.json({
       profileUpdate: 1
@@ -103,6 +103,7 @@ class Cabinet {
             res.end()
           }
         )
+        .catch(err => console.error(err))
     }
   }
   /**
@@ -144,39 +145,20 @@ class Cabinet {
    */
   static uploadPhoto (req, res, next) {
     if (req.params.id) {
-      uploadFile(req, req.params.id)
+      let photo = new Files(String(req.params.id));
+      photo.uploadPhoto(req)
         .then(
           data => {
             res.json(data);
-            res.end()
+            res.end();
           },
           err => {
-            res.json(err);
-            res.end()
+            console.error(err);
+            res.end();
           }
-        );
+        )
+        .catch(err => console.error(err));
     }
-  }
-
-  /**
-   *
-   * @param {string} id - user id
-   * @param {string} fileName
-   * @param {string} dir - path file dir
-   * @returns {Promise}
-   */
-  static deleteFile (dir='not', id='not', fileName='not') {
-    if (id === 'not' || fileName === 'not') return;
-
-    const userPath = join(root, dir);
-    return new Promise((resolve, reject) => {
-      if(fs.existsSync(userPath)) {
-        fs.unlink(join(userPath, fileName), (err) => {
-          if (err) reject(err);
-          resolve(fileName)
-        })
-      }
-    })
   }
 
   /**
@@ -187,58 +169,22 @@ class Cabinet {
    */
   static deletePhoto (req, res, next) {
     if (req.params.id && req.params.name) {
-      let id = req.params.id;
-      let name = req.params.name;
-      this.deleteFile(`/public/images/users/user_${id}`, id, name)
+      let photo = new Files(String(req.params.id));
+
+      photo.deleteImage(req.params.name)
         .then(
-          result => {
-            console.log(result)
+          res => {
+            console.log(res)
           },
           err => {
             console.error(err)
           }
         )
+        .catch(err => console.error(err))
+    } else {
+      res.sendStatus(400);
+      res.end()
     }
-  }
-  /**
-   *
-   * @description - проверяет наличие директории для хранения картинок пользователя
-   * @param {String} id - user id
-   * @returns {Promise}
-   */
-  existsImagesDir (id = null) {
-    if (id !== id) return;
-    let dirPath = join(root, `/public/images/users/user_${id}`);
-    return new Promise((resolve, reject) => {
-      fs.exists(dirPath, (err) => {
-        if (err) resolve(err);
-        reject(err)
-      })
-    })
-  }
-  /**
-   *
-   * @description - создаёт деректорию для хранения картинок пользователя
-   * @param {String} id - user id
-   * @returns {String} images dir path
-   */
-  createUserImagesDir (id=null) {
-    if (id !== id) return;
-    let dirPath = join(root, `/public/images/users/user_${id}`);
-    return new Promise((resolve, reject) => {
-      fs.mkdir(dirPath, err => {
-        if (err) reject(err);
-        resolve(dirPath)
-      })
-    })
-      .then(
-        dirPath => {
-          return dirPath
-        },
-        err => {
-          console.error(err)
-        }
-      )
   }
 }
 module.exports = Cabinet;

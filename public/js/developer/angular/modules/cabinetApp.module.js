@@ -13,6 +13,7 @@ import footerDefinition from '../components/footer-main/footer.definition'
 import profileDefinition from '../components/user-profile/profile.component'
 import userProfileInfoDefinition from '../components/user-profile-info/userProfileInfo.component'
 import cabinetHomeComponent from '../components/cabinet-components/cabinet-home/cabinetHome.component'
+import uploadPhotoComponent from '../components/upload-photo/uploadPhoto.component'
 
 // Services
 import ServerRequests from '../factorys/server.requests'
@@ -42,6 +43,7 @@ module('cabinetApp')
   .component('userMediaComponent', userMediaDefinition)
   .component('userProfileInfoComponents', userProfileInfoDefinition)
   .component('cabinetHomeComponent', cabinetHomeComponent)
+  .component('uploadPhotoComponent', uploadPhotoComponent)
 
 
 export default cabinetApp
