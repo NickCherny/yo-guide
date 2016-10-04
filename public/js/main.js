@@ -13016,7 +13016,7 @@
 	
 	/**
 	 * LocationHashbangUrl represents url
-	 * This object is exposed as $location service when developer doesn't opt into html5 mode.
+	 * This object is exposed as $location service when src doesn't opt into html5 mode.
 	 * It also serves as the base class for html5 mode fallback on legacy browsers.
 	 *
 	 * @constructor
@@ -28889,7 +28889,7 @@
 	      var ngModelCtrl = ctrls[1];
 	      var multiple = attr.multiple;
 	
-	      // The emptyOption allows the application developer to provide their own custom "empty"
+	      // The emptyOption allows the application src to provide their own custom "empty"
 	      // option when the viewValue does not match any of the option values.
 	      var emptyOption;
 	      for (var i = 0, children = selectElement.children(), ii = children.length; i < ii; i++) {
@@ -36999,7 +36999,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var templateUrl = '/js/developer/angular/views/templates/';
+	var templateUrl = '/js/src/angular/views/templates/';
 
 /***/ },
 /* 10 */
@@ -37290,7 +37290,7 @@
 	
 	var userTraveSmallDefinition = {
 	  binding: {},
-	  templateUrl: '/js/developer/angular/views/templates/cabinet/components/user.travel.small.html',
+	  templateUrl: '/js/src/angular/views/templates/cabinet/components/user.travel.small.html',
 	  controller: _userTravel2.default,
 	  controllerAs: 'travelSmall'
 	};
@@ -38022,7 +38022,7 @@
 	
 	var loginUserDefinition = {
 	  binding: {},
-	  templateUrl: '/js/developer/angular/views/templates/forms/loginUser.html',
+	  templateUrl: '/js/src/angular/views/templates/forms/loginUser.html',
 	  controller: _loginuser2.default,
 	  controllerAs: 'lform'
 	};
@@ -38100,7 +38100,7 @@
 	
 	var registrationDefinition = {
 	  binding: {},
-	  templateUrl: '/js/developer/angular/views/templates/forms/registration.user.html',
+	  templateUrl: '/js/src/angular/views/templates/forms/registration.user.html',
 	  controller: _registration2.default,
 	  controllerAs: 'r'
 	};

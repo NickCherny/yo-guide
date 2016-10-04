@@ -29,11 +29,11 @@ gulp.task('watch', function () {
 })
 
 gulp.task('develop', function () {
-  gulp.src('./public/js/developer/**/*.js')
+  gulp.src('./public/js/src/**/*.js')
     .pipe(webpack({
       entry: {
-        main: './public/js/developer/main.angular.js',
-        admin: './public/js/developer/main.admin.js'
+        main: './public/js/src/main.angular.js',
+        admin: './public/js/src/main.admin.js'
       },
       output: {
         filename: '[name].js'

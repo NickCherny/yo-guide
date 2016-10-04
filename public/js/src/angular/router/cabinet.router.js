@@ -1,5 +1,5 @@
 import ROUTER_URL from './config'
-let templateUrl = '/js/developer/angular/views/templates/'
+let templateUrl = '/js/src/angular/views/templates/'
 
 export default function ($stateProvider, $utlRouterProvider) {
 

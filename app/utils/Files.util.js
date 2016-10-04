@@ -76,7 +76,7 @@ class Files {
     if (fs.existsSync(userDir)) {
       return this.parseForm(req, userDir)
     } else {
-      this.createUserDir(userDir)
+      return this.createUserDir(userDir)
         .then(
           userDir => {
             console.log('create dir');

@@ -2,7 +2,7 @@
 const User = require('../models/User');
 const formidable = require('formidable');
 const fs = require('fs');
-const Files = require('../ext/Files.ext');
+const Files = require('../utils/Files.util.js');
 
 
 /**

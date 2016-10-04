@@ -1,7 +1,7 @@
 import userTravelCtrl from './userTravel.controller'
 const createTravelDefinition = {
   binding: {},
-  templateUrl: '/js/developer/angular/views/templates/cabinet/components/travel/travel.create.html',
+  templateUrl: '/js/src/angular/views/templates/cabinet/components/travel/travel.create.html',
   controller: userTravelCtrl,
   controllerAs: 'userTravel'
 }
