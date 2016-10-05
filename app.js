@@ -10,6 +10,6 @@ if(process.env.NODE_ENV !== 'production'){
   require("babel-core").transform(require('./config/express')(app, config), {
     ignore: ['node_modules']
   });
-}else {
+} else {
   require('./config/express')(app, config)
 }
