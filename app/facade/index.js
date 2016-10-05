@@ -7,7 +7,7 @@ class Facade {
     this.main = require('../controllers/mainCtrl');
     this.user = require('../controllers/User');
     this.cabinet = require('../controllers/Cabinet');
-    this.guides = require('../controllers/Guide');
+    this.guides = require('../controllers/Guides');
   }
 }
 module.exports = new Facade();

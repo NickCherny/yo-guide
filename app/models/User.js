@@ -191,7 +191,7 @@ class User {
   */
   static getUserProfile (id = '', callback) {
     let sql = `
-    SELECT user_fullName AS fullName, user_status AS status, user_level AS level, user_about AS about
+    SELECT user_fullName AS fullName, user_status AS status, user_level AS level, user_about AS about, user_id AS id
     FROM user
     WHERE user_id = ?;
     `;

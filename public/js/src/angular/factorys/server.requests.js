@@ -70,6 +70,9 @@ export default function ($http) {
     deletePhoto: (id='not', name='not') => {
       if (id === 'not' || name === 'not') return;
       return $http.post(`/cabinet/user/${id}/settings/photo/${name}/delete`, {})
+    },
+    searchGuidesLoaction: text => {
+      return $http.get(`/guide/search/location/${text}`)
     }
   }
 }
