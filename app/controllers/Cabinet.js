@@ -64,15 +64,6 @@ class Cabinet {
     }
     if (req.body.country || req.body.city) {
       User.uploadUserLocation(userId, req.body)
-        .then(
-          result => {
-            console.log(result)
-          },
-          err => {
-            console.error(err)
-          }
-        )
-        .catch(err => console.error(err))
     }
     res.json({
       profileUpdate: 1

@@ -19,19 +19,7 @@ const topmenuAuthDefinition = {
             </a>
           </div>
           <div class="large-4 columns ">
-            <div class="top-menu__search-b">
-              <input type="text"
-                     name="guide_info"
-                     placeholder="Найти гида"
-                     data-ng-model="tMenu.search"
-                     data-ng-keyup="tMenu.searchGuideKey($event)"
-                     class="top-menu__search-inpt">
-
-              <div class="top-menu__search-btn-b">
-                <div class="top-menu__search-btn_circle" data-search-guide></div>
-                <div class="top-menu__search-btn_line" data-search-guide></div>
-              </div>
-            </div>
+            <search-guide-component></search-guide-component>
           </div>
           <div class="large-5 columns">
             <div class="top-menu__msg-b">

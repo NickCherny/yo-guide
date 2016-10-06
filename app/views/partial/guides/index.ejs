@@ -6,24 +6,4 @@
   <top-menu></top-menu>
 <% } %>
 
-<section class="wrapper wrapper__guide">
-  <header class="header header__guides-board"
-          style="background-image: url(<%=imagesDir%>/guides/local/<%=image.src%>)
-            ">
-    <div class="wrapper wrapper__search">
-      <guide-big-search-component></guide-big-search-component>
-    </div>
-  </header>
-  <div class="wrapper wrapper__guide-board">
-    <h1 class="title title_big title__guide-board">
-      <span class="text_lead">5</span> гидов, готовы открыть для вас локацию
-    </h1>
-    <article class="container__guides-board">
-      <div class="row row-fix">
-        <div class="large-6 small-12 columns" ng-repeat="i in [1,2,3,4]">
-          <guides-board-component>Loading...</guides-board-component>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
+<guides-board-component>Loading...</guides-board-component>

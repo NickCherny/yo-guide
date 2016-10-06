@@ -35,22 +35,35 @@ class GuideCtrl {
             if (rows.length !== 0) {
               let guides = [];
               let len = rows.length - 1;
-              rows.forEach((item, i) => {
-                GuidesModel.guideInfo(item['location_user_id'])
+              console.log(rows.length);
+              if (rows.length === 1) {
+                GuidesModel.guideInfo(rows[0]['user_id'])
                   .then(
                     rows => {
-                      return rows
+                      res.json(rows).end();
                     },
                     err => {
-                      console.error(err)
+                      console.error(err);
+                      res.end();
                     }
                   )
-                  .then(rows => {
-                    guides.push(rows);
-                    if (i === len) res.json(guides).end();
-                  })
                   .catch(err => console.error(err))
-              });
+              } else {
+                let guidesId = [];
+                // Создаём масив с id гидов
+                rows.forEach((item, i) => {
+                  guidesId.push(item['user_id'])
+                });
+
+                // Делаем паральную выборку информации о гидах
+                Promise.all(guidesId.map(GuidesModel.guideInfo))
+                  .then(result => {
+                    console.log(result)
+                  })
+                  .catch(err => console.error(err));
+
+                res.end()
+              }
             } else {
               res.end();
             }

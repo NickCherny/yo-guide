@@ -9,10 +9,9 @@ class Guides extends User{
      */
   static searchGuidesLocation (text='') {
     let sql = `
-    SELECT location_user_id
-    FROM location
-    WHERE location_country = ? OR location_city = ?
-    ORDER BY location_user_id;
+    SELECT userLocation.userLocation_user_id AS user_id
+    FROM userLocation
+    WHERE userLocation.userLocation_location_id = (SELECT location_id FROM location WHERE location_country = ? OR location_city = ?)
     `;
     let inserts = [text, text];
     return new Promise((resolve, reject) => {

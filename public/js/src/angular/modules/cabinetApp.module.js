@@ -14,7 +14,8 @@ import profileDefinition from '../components/user-profile/profile.component'
 import userProfileInfoDefinition from '../components/user-profile-info/userProfileInfo.component'
 import cabinetHomeComponent from '../components/cabinet-components/cabinet-home/cabinetHome.component'
 import uploadPhotoComponent from '../components/upload-photo/uploadPhoto.component'
-import searchGuideLightComponent from '../components/guides-search-light/guidesSearchLight.component'
+import searchGuideLightComponent from '../components/guides-components/guides-search-light/guidesSearchLight.component'
+import guideCardDefinition from '../components/guides-components/guide-card/guideCard.component';
 
 // Services
 import ServerRequests from '../factorys/server.requests'
@@ -46,6 +47,7 @@ module('cabinetApp')
   .component('cabinetHomeComponent', cabinetHomeComponent)
   .component('uploadPhotoComponent', uploadPhotoComponent)
   .component('searchGuideComponent', searchGuideLightComponent)
+  .component('guideCardComponent', guideCardDefinition)
 
 
 export default cabinetApp

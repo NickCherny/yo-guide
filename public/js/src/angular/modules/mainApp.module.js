@@ -13,13 +13,14 @@ import overflowBody from '../directives/overflowBody'
 import showHiddenFormRow from '../directives/showHiddeFormRow'
 import toggleControl from '../directives/toggleControl'
 import uploadFile from '../directives/uploadFile'
+import repeatElement from '../directives/repeatElement'
 
 // connect components
 import topmenuDefinition from '../components/top-menu/topmenu.component'
 import loginUserDefinition from '../components/login-user/loginuser.component'
 import registrationDefinition from '../components/registration-user/registration.component'
-import guidesBigSearchDefinition from '../components/guides-search/guidesBigSearch.definition'
-import guidesBoardDefinition from '../components/guides-board/guidesBoard.definition'
+import guidesBigSearchDefinition from '../components/guides-components/guides-search/guidesBigSearch.definition'
+import guidesBoardDefinition from '../components/guides-components/guides-board/guidesBoard.definition'
 
 // connect factory
 import ServerRequests from '../factorys/server.requests'
@@ -38,6 +39,7 @@ module('mainApp')
   .directive('showRow', showHiddenFormRow)
   .directive('toggleControl', toggleControl)
   .directive('uploadFile', uploadFile)
+  .directive('repeatElement', repeatElement)
 
 module('mainApp')
   .component('topMenu', topmenuDefinition)
