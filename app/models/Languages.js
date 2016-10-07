@@ -12,7 +12,7 @@ class Laguages {
     let sql = `
     SELECT language_name
     FROM language
-    WHERE language_id = (SELECT lu_language_id FROM lu WHERE lu_user_id = ?)
+    WHERE language_id = (SELECT userLanguage_language_id FROM userLanguage WHERE userLanguage_user_id = ?)
     ORDER BY language_id;
     `;
     return new Promise((resolve, reject) => {

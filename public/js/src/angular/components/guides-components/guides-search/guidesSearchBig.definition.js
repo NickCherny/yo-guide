@@ -1,4 +1,7 @@
-const guidesSearchDefinition = {
+import GuidesSearchBigCtrl from './guidesSearchBig.controller';
+const guidesSearchBigDefinition = {
+  controller: GuidesSearchBigCtrl,
+  controllerAs: 'search',
   binding: {},
   template: ` 
     <form class="form form__search" toggle-control>
@@ -107,8 +110,7 @@ const guidesSearchDefinition = {
           <button class="btn btn__filter-cancel flex-element">Сбросить</button>
         </div>
       </div>
-      
     </form>
   `
 };
-export default guidesSearchDefinition;
+export default guidesSearchBigDefinition;

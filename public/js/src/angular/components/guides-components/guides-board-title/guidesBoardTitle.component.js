@@ -8,7 +8,7 @@ const guidesBoardTitleDefinition = {
   template: `
   <div class="wrapper">
     <h1 class="title title_big title__guide-board">
-      <span class="text_lead">{{gt.guidesLen}}</span> гидов, готовы открыть для вас локацию
+      Было найдено <span class="text_lead">{{ gt.titleInfo }}</span>
     </h1>
   </div>
   `

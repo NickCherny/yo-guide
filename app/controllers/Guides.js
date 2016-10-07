@@ -27,15 +27,15 @@ class GuideCtrl {
    */
   static searchLocation (req, res, next) {
     if (req.params.text) {
-      let location = req.params.text || '';
+      let location = req.params.text;
 
       GuidesModel.searchGuidesLocation(location)
         .then(
           rows => {
+            console.log(rows)
             if (rows.length !== 0) {
               let guides = [];
               let len = rows.length - 1;
-              console.log(rows.length);
               if (rows.length === 1) {
                 GuidesModel.guideInfo(rows[0]['user_id'])
                   .then(
@@ -58,11 +58,10 @@ class GuideCtrl {
                 // Делаем паральную выборку информации о гидах
                 Promise.all(guidesId.map(GuidesModel.guideInfo))
                   .then(result => {
-                    console.log(result)
+                    res.json(result).end()
                   })
                   .catch(err => console.error(err));
 
-                res.end()
               }
             } else {
               res.end();

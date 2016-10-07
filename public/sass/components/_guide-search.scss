@@ -132,6 +132,9 @@
   background-color: darken(#fff, 2%);
   z-index: 203;
   box-shadow: 0 0 1px 1px lighten($Color5, 50%);
+  margin: 0 auto;
+  left: 0;
+  right: 0;
   .filter-box{
     position: relative;
     padding: 0 20px;

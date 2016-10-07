@@ -32,7 +32,7 @@ class User {
   /**
    *
    * @param {object} data - user data => email
-   * @param {function} callback - callback function
+   * @return {Promise}
    */
   static isUser (data) {
     let sql = `
@@ -85,14 +85,6 @@ class User {
   }
 
   /**
-  * @param {String} id - table user_id
-  * @return Promise Object
-  */
-  static getProfilePhoto (id) {
-    return Photos.getPhoto(id, 'profile');
-  }
-
-  /**
    *
    * @param {String} id - user id
    * @return Promise Object
@@ -109,15 +101,6 @@ class User {
         resolve(rows)
       })
     })
-  }
-
-  /**
-   *
-   * @param {String} id - user id
-   * @return Promise Object
-   */
-  static getUserLocation (id) {
-    return Locations.getUserLocation(id)
   }
 
   /**
@@ -156,7 +139,7 @@ class User {
           }
           userResult.fullName = correctFullName;
           responseData = userResult;
-          return this.getProfilePhoto(id)
+          return Photos.getPhoto(id, 'profile');
         }
       )
       .then(
@@ -179,7 +162,7 @@ class User {
       )
       .then(
         responseData => {
-          return this.getUserActivity(id);
+          return Activitys.getUserActivity(id);
         }
       )
       .then(
@@ -195,7 +178,7 @@ class User {
       )
       .then(
         responseData => {
-          return this.getUserLocation(id)
+          return Locations.getUserLocation(id)
         }
       )
       .then(

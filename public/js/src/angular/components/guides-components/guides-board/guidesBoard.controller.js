@@ -2,7 +2,8 @@ class GuidesBoardCtrl {
   constructor (ServerRequests) {
     this.test = 'Гиды!!!';
     this.guides = [];
-    ServerRequests.searchGuidesLoaction('минск')
+    console.log(location)
+    ServerRequests.searchGuidesLoaction('вильнюс')
       .then(
         response => {
           if (response.status === 200) {

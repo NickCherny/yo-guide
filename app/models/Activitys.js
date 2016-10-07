@@ -28,7 +28,7 @@ class Activitys {
     let sql = `
     SELECT activity_name AS name, activity_urlName AS urlName
     FROM activity
-    WHERE activity_id = (SELECT au_activity_id FROM au WHERE au_user_id = ?)
+    WHERE activity_id = (SELECT userActivity_activity_id FROM userActivity WHERE userActivity_user_id = ?)
     ORDER BY activity_id;
     `;
     return new Promise((resolve, reject) => {

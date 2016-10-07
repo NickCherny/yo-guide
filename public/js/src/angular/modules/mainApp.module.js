@@ -19,7 +19,7 @@ import repeatElement from '../directives/repeatElement'
 import topmenuDefinition from '../components/top-menu/topmenu.component'
 import loginUserDefinition from '../components/login-user/loginuser.component'
 import registrationDefinition from '../components/registration-user/registration.component'
-import guidesBigSearchDefinition from '../components/guides-components/guides-search/guidesBigSearch.definition'
+import guidesBigSearchDefinition from '../components/guides-components/guides-search/guidesSearchBig.definition.js'
 import guidesBoardDefinition from '../components/guides-components/guides-board/guidesBoard.definition'
 
 // connect factory

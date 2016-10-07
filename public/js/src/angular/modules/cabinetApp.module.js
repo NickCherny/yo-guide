@@ -16,6 +16,8 @@ import cabinetHomeComponent from '../components/cabinet-components/cabinet-home/
 import uploadPhotoComponent from '../components/upload-photo/uploadPhoto.component'
 import searchGuideLightComponent from '../components/guides-components/guides-search-light/guidesSearchLight.component'
 import guideCardDefinition from '../components/guides-components/guide-card/guideCard.component';
+import guideBoardTitleDefinition from '../components/guides-components/guides-board-title/guidesBoardTitle.component';
+import guidesSearchBigDefinition from '../components/guides-components/guides-search/guidesSearchBig.definition'
 
 // Services
 import ServerRequests from '../factorys/server.requests'
@@ -48,6 +50,8 @@ module('cabinetApp')
   .component('uploadPhotoComponent', uploadPhotoComponent)
   .component('searchGuideComponent', searchGuideLightComponent)
   .component('guideCardComponent', guideCardDefinition)
+  .component('guideBoardTitleComponent', guideBoardTitleDefinition)
+  .component('guidesSearchBigComponent', guidesSearchBigDefinition)
 
 
 export default cabinetApp

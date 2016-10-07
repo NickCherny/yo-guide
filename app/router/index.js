@@ -55,8 +55,9 @@ router.get('/cabinet/user/:id/travel/all', facade.cabinet.userTravels);
  * @url /guides/*
  */
 router.get('/guides', facade.guides.guidesBoard);
+router.get('/guides/search/location/:text', facade.guides.guidesBoard);
+router.get('/guides/api/search/location/:text', facade.guides.searchLocation);
 router.get('/guide/search/location/not/activity/:activity', facade.guides.searchGuide);
-router.get('/guide/search/location/:text', facade.guides.searchLocation);
 
 /**
  * @url /user

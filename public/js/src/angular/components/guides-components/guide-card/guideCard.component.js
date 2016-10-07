@@ -6,7 +6,7 @@ const guideCardDefinition = {
     guidesInfo: '<'
   },
   template: `
-  <aside ng-repeat="guide in g.guidesInfo">
+  <aside ng-repeat="guide in g.guidesInfo[0]" class="large-6 small-12 columns">
     <a href="#" class="guide-board__item-link">
       <div class="wrapper wrapper__guide-board-item">
         <div class="guide-board__media">
@@ -15,7 +15,7 @@ const guideCardDefinition = {
         <div class="guide-board__info">
           <div class="flex-element guide-board__info-item">
             <h2 class="title title__guide-info">{{ guide.fullName }}</h2>
-            <h3 class="title title__guide-location">{{ guide.location }}</h3>
+            <h3 class="title title__guide-location">{{ guide.location.country + ', ' + guide.location.city }}</h3>
           </div>
           <div class="flex-element guide-board__info-item">
             <div class="decor">

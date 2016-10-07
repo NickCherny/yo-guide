@@ -1,6 +1,6 @@
 class GuidesBoardTitle {
   constructor () {
-    this.guidesLen = 0
+    this.guidesLen
   }
 }
 export default GuidesBoardTitle;
