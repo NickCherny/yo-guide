@@ -3,8 +3,9 @@ import topmenuCtrl from './topmenuAuth.controller.js'
 const topmenuAuthDefinition = {
   controller: topmenuCtrl,
   controllerAs: 'topmenu',
-  binding: {
-    user: '='
+  bindings: {
+    user: '=',
+    guideState: '<'
   },
   template: `
   <div>
@@ -20,7 +21,7 @@ const topmenuAuthDefinition = {
               </svg>
             </a>
           </div>
-          <div class="large-4 columns ">
+          <div class="large-4 columns" ng-if="!topmenu.guideState">
             <search-guide-component></search-guide-component>
           </div>
           <div class="large-5 columns">

@@ -8,18 +8,8 @@ class GuideSearchLightCtrl {
   };
   searchGuideKey (e) {
     if (e.keyCode === 13 && this.text.length !== 0) {
-      location.assign(`/guides/search/location/${this.text}`);
-      this.searchGuidesLocation(this.text)
-        .then(
-          response => {
-            if (response.status === 200) {
-
-            }
-          },
-          err => {
-            console.log(err)
-          }
-        );
+      let text = String(this.text.toLowerCase());
+      location.assign(`/guides/search/location/#?text=${this.text}`);
       this.clearValue();
     }
   }

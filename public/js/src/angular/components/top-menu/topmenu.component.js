@@ -1,8 +1,9 @@
 import topmenuCtrl from './topmenu.controller'
 
 const topmenuDefinition = {
-  binding: {
-    user: '='
+  bindings: {
+    user: '=',
+    guideState: '<'
   },
   template: `
   <div>
@@ -18,7 +19,7 @@ const topmenuDefinition = {
               </svg>
             </a>
           </div>
-          <div class="large-4 columns ">
+          <div class="large-4 columns" ng-if="!topmenu.guideState">
             <search-guide-component></search-guide-component>
           </div>
           <div class="large-2 columns">

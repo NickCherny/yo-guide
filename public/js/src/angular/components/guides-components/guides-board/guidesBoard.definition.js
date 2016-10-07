@@ -2,6 +2,9 @@ import GuidesBoardCtrl from './guidesBoard.controller';
 const guidesBoardDefinition = {
   controller: GuidesBoardCtrl,
   controllerAs: 'G',
+  bindings: {
+    guidesLocation: '<'
+  },
   template: `
   <section class="wrapper wrapper__guide">
     <!--guides search filter-->
@@ -10,7 +13,9 @@ const guidesBoardDefinition = {
     </div>
     <div class="wrapper wrapper__guide-board">
       <!--guides-header-->
-      <guide-board-title-component title-info="G.guides[0].length"></guide-board-title-component>
+      <div ng-if="G.guides[0].length !== 0">
+        <guide-board-title-component title-info="G.guides[0].length"></guide-board-title-component>
+      </div>
       <article class="container__guides-board">
         <div class="row row-fix">
           <guide-card-component guides-info="G.guides">Loading...</guide-card-component>

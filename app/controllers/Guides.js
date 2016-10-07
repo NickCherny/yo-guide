@@ -4,6 +4,7 @@ class GuideCtrl {
     let data = {
       title: 'Гиды',
       auth: req.isAuthenticated(),
+      guidesLocation: req.params.text,
       image: {
         src: 'minsk.jpg',
         alt: 'Minsk'

@@ -8016,8 +8016,9 @@ ul {
   width: 100%;
   padding: 20px; }
 
-.header .top-menu {
-  position: relative; }
+.top-menu {
+  position: relative;
+  min-height: 68px; }
 
 .top-menu-b {
   position: relative;

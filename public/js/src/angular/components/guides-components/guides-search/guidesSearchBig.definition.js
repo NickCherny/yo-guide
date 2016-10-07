@@ -2,7 +2,7 @@ import GuidesSearchBigCtrl from './guidesSearchBig.controller';
 const guidesSearchBigDefinition = {
   controller: GuidesSearchBigCtrl,
   controllerAs: 'search',
-  binding: {},
+  bindings: {},
   template: ` 
     <form class="form form__search" toggle-control>
       <div class="wrapper wrapper__search">

@@ -24,8 +24,6 @@ import messageChatComponent from '../components/user-messages/message-chat/messa
 import messageBlockComponent from '../components/user-messages/message-block/messageBlock.component';
 import messageAuthListComponent from '../components/user-messages/message-auth-list/messageAuthList.component';
 
-console.dir(messageAuthListComponent)
-
 // Services
 import ServerRequests from '../factorys/server.requests'
 

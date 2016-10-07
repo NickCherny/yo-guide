@@ -2,6 +2,9 @@ import TopMenuAuthExternalCtrl from './topMenuAuthExternal.controller';
 const topMenuAuthExternalDefinition = {
   controller: TopMenuAuthExternalCtrl,
   controllerAs: 'topmenu',
+  bindings: {
+    guideState: '<'
+  },
   template: `
   <div>
     <nav class="top-menu">
@@ -16,7 +19,7 @@ const topMenuAuthExternalDefinition = {
               </svg>
             </a>
           </div>
-          <div class="large-4 columns ">
+          <div class="large-4 columns" ng-if="!topmenu.guideState">
             <search-guide-component></search-guide-component>
           </div>
           <div class="large-5 columns">

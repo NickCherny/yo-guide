@@ -56,7 +56,7 @@ router.get('/cabinet/user/:id/messages', facade.cabinet.showUserMessages);
  * @url /guides/*
  */
 router.get('/guides', facade.guides.guidesBoard);
-router.get('/guides/search/location/:text', facade.guides.guidesBoard);
+router.get('/guides/search/location/', facade.guides.guidesBoard);
 router.get('/guides/api/search/location/:text', facade.guides.searchLocation);
 router.get('/guide/search/location/not/activity/:activity', facade.guides.searchGuide);
 router.get('/guide/:id/profile', facade.guides.getGuideProfile);

@@ -1,6 +1,7 @@
 class topmenuCtrl {
   constructor ($rootScope, $location, $scope) {
     this.$scope = $scope;
+    this.guideState
     this.loginFormVisible = false;
     this.registrationFormVisible = false;
     this.$scope.$on('closeLogin', data => {

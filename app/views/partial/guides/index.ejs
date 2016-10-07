@@ -1,9 +1,9 @@
 <% layout('../../layout/index') %>
 
 <% if(auth){ %>
-  <top-menu-auth-external-component></top-menu-auth-external-component>
+  <top-menu-auth-external-component guide-state="true"></top-menu-auth-external-component>
 <% }else { %>
-  <top-menu></top-menu>
+  <top-menu guide-state="true"></top-menu>
 <% } %>
 
 <guides-board-component>Loading...</guides-board-component>

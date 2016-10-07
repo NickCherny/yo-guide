@@ -1,9 +1,10 @@
 class GuidesBoardCtrl {
-  constructor (ServerRequests) {
+  constructor ($location, ServerRequests) {
     this.test = 'Гиды!!!';
     this.guides = [];
-    console.log(location)
-    ServerRequests.searchGuidesLoaction('вильнюс')
+    this.searchText = $location.search().text;
+    $location.url('');
+    ServerRequests.searchGuidesLoaction(this.searchText)
       .then(
         response => {
           if (response.status === 200) {
