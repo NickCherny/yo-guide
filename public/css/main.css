@@ -9341,9 +9341,6 @@ ul {
     .regulations-body .flex-element:last-child {
       border-bottom: none; }
     .regulations-body .flex-element .icon {
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1;
       margin-right: 10px; }
       .regulations-body .flex-element .icon .icon__paper {
         height: 24px;
