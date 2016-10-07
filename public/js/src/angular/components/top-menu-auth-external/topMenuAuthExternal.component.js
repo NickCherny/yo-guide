@@ -1,11 +1,7 @@
-import topmenuCtrl from './topmenuAuth.controller.js'
-
-const topmenuAuthDefinition = {
-  controller: topmenuCtrl,
+import TopMenuAuthExternalCtrl from './topMenuAuthExternal.controller';
+const topMenuAuthExternalDefinition = {
+  controller: TopMenuAuthExternalCtrl,
   controllerAs: 'topmenu',
-  binding: {
-    user: '='
-  },
   template: `
   <div>
     <nav class="top-menu">
@@ -42,7 +38,7 @@ const topmenuAuthDefinition = {
 
           <div class="large-2 columns">
             <div class="top-menu__user-menu top-menu__user-menu_acaunt">
-              <a ui-sref="/"
+              <a href="/cabinet"
                  class="top-menu__user-acaunt-link">
                 <span class="top-menu__usr-logo-name">User</span>
 
@@ -51,13 +47,6 @@ const topmenuAuthDefinition = {
                      data-ng-alt="user.photo.alt"
                      id="top_menu__ava_ltl">
               </a>
-              <div class="drop-down-menu">
-                <a ui-sref="/profile" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Профиль</a>
-                <a ui-sref="/travel" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Поездки</a>
-                <a ui-sref="/tour" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Туры</a>
-                <a ui-sref="/profile/settings" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Настройки</a>
-                <a href="/user/logout" ui-sref-active="drop-down-menu__item-link_active" class="drop-down-menu__item-link">Выйти</a>
-              </div>
             </div>
           </div>
         </div>
@@ -66,4 +55,4 @@ const topmenuAuthDefinition = {
   </div>
   `
 };
-export default topmenuAuthDefinition
+export default topMenuAuthExternalDefinition;

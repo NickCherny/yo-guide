@@ -75,5 +75,20 @@ class GuideCtrl {
         .catch(err => console.error(err))
     }
   }
+
+  /**
+   *
+   * @param req
+   * @param res
+   * @param next
+     */
+  static getGuideProfile (req, res, next) {
+    let data = {title: 'Профиль гида', userId: req.params.id};
+
+    res.render('partial/user/profile', data, (err, html) => {
+      if (err) next(err);
+      res.send(html).end();
+    })
+  }
 }
 module.exports = GuideCtrl;

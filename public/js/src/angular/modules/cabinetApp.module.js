@@ -17,7 +17,14 @@ import uploadPhotoComponent from '../components/upload-photo/uploadPhoto.compone
 import searchGuideLightComponent from '../components/guides-components/guides-search-light/guidesSearchLight.component'
 import guideCardDefinition from '../components/guides-components/guide-card/guideCard.component';
 import guideBoardTitleDefinition from '../components/guides-components/guides-board-title/guidesBoardTitle.component';
-import guidesSearchBigDefinition from '../components/guides-components/guides-search/guidesSearchBig.definition'
+import guidesSearchBigDefinition from '../components/guides-components/guides-search/guidesSearchBig.definition';
+import topMenuAuthExternalDefinition from '../components/top-menu-auth-external/topMenuAuthExternal.component';
+import messageHeaderDefinition from '../components/user-messages/message-header/messageHeader.component';
+import messageChatComponent from '../components/user-messages/message-chat/messageChat.component';
+import messageBlockComponent from '../components/user-messages/message-block/messageBlock.component';
+import messageAuthListComponent from '../components/user-messages/message-auth-list/messageAuthList.component';
+
+console.dir(messageAuthListComponent)
 
 // Services
 import ServerRequests from '../factorys/server.requests'
@@ -52,6 +59,10 @@ module('cabinetApp')
   .component('guideCardComponent', guideCardDefinition)
   .component('guideBoardTitleComponent', guideBoardTitleDefinition)
   .component('guidesSearchBigComponent', guidesSearchBigDefinition)
-
+  .component('topMenuAuthExternalComponent', topMenuAuthExternalDefinition)
+  .component('messageHeaderComponent', messageHeaderDefinition)
+  .component('messageChatComponent', messageChatComponent)
+  .component('messageBlockComponent', messageBlockComponent)
+  .component('messageAuthListComponent', messageAuthListComponent)
 
 export default cabinetApp

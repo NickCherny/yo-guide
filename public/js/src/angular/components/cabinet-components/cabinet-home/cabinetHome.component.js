@@ -2,11 +2,13 @@ import CabinetHomeCtrl from './cabinetHome.controller';
 const cabinetHomeDefinition = {
   controller: CabinetHomeCtrl,
   controllerAs: 'cabinet',
-  bindings: {},
+  bindings: {
+    cabinetState: '<'
+  },
   template: `
   <div class="row row-fix">
     <div class="large-2 columns coll-fix-right">
-      <user-media-component user-info="cabinet.userMedia">Профиль...</user-media-component>
+      <user-media-component user-info="cabinet.userMedia" cabinet-state="cabinet.cabinetState">Профиль...</user-media-component>
     </div>
     <div class="large-3 columns">
       <user-guest-component>Гости...</user-guest-component>

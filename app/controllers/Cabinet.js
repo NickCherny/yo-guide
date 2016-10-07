@@ -177,5 +177,18 @@ class Cabinet {
       res.end()
     }
   }
+
+  /**
+   *
+   * @param {object} req - HTTP Request
+   * @param {object} res - HTTP Response
+   * @param {function} next
+   */
+  static showUserMessages (req, res, next) {
+    res.render('partial/user/message', {title: 'Сообщения'}, (err, html) => {
+      if (err) next(err);
+      res.send(html).end();
+    })
+  }
 }
 module.exports = Cabinet;

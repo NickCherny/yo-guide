@@ -2,6 +2,7 @@ class CabinetHomeCtrl {
   constructor ($cookies, serverRequests) {
     this.id = $cookies.get('userId');
     this._defaultUserData = {};
+    this.cabinetState
     serverRequests.getUserInfo(this.id)
       .then(
         response => {

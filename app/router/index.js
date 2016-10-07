@@ -46,10 +46,11 @@ router.post('/contact', facade.main.contact);
 router.get('/cabinet', facade.cabinet.home);
 router.post('/cabinet/user/:id/settings/update', facade.cabinet.updateProfile);
 router.post('/cabinet/user/:id/settings/photo/upload', facade.cabinet.uploadPhoto);
-router.post('/cabinet/user/:id/settings/photo/:name/delete', facade.cabinet.deletePhoto)
+router.post('/cabinet/user/:id/settings/photo/:name/delete', facade.cabinet.deletePhoto);
 router.get('/cabinet/user/:id/profile', facade.cabinet.userInfo);
 router.get('/cabinet/user/:id/guest/all', facade.cabinet.userGuests);
 router.get('/cabinet/user/:id/travel/all', facade.cabinet.userTravels);
+router.get('/cabinet/user/:id/messages', facade.cabinet.showUserMessages);
 
 /**
  * @url /guides/*
@@ -58,10 +59,12 @@ router.get('/guides', facade.guides.guidesBoard);
 router.get('/guides/search/location/:text', facade.guides.guidesBoard);
 router.get('/guides/api/search/location/:text', facade.guides.searchLocation);
 router.get('/guide/search/location/not/activity/:activity', facade.guides.searchGuide);
+router.get('/guide/:id/profile', facade.guides.getGuideProfile);
 
 /**
  * @url /user
  */
+router.get('/user/:id/profile', facade.guides.getGuideProfile);
 router.get('/user/:id/profile/info', facade.user.getUserProfile);
 router.get('/user/forgot/password', facade.user.forgotPassword);
 

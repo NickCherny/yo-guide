@@ -1,13 +1,14 @@
 class profileCtrl {
   constructor ($cookies, serverRequests) {
     this.id = $cookies.get('userId');
+    this.userId;
+    this.cabinetState
     this.defaultUserData = {};
-    serverRequests.getUserInfo(this.id)
+    serverRequests.getUserInfo(this.userId || this.id)
       .then(
         response => {
           if (response.status === 200) {
             this.user = response.data;
-            console.log(this.user)
             this.userMedia = {
               photo: {
                 src: this.user.photo,
