@@ -65,16 +65,21 @@ class User {
    * @param {object} data - user data => fullName, email, password
    * @param {function} callback - callback function
      */
-  static registrationUser (data, callback) {
+  static registrationUser (data) {
+    let firstName = data.firstName.toLowerCase() || '';
+    let lastName = data.lastName.toLowerCase() || '';
+    let email = data.email.toLowerCase() || '';
+    let password = md5(data.password || '');
+
     let sql = `
     INSERT INTO user
     (user_fullName, user_email, user_password)
     VALUES(?, ?, ?);
     `;
     let inserts = [
-      `${data.firstName || ''}:${data.lastName || ''}`,
-      data.email || '',
-      md5(data.password || '')
+      `${firstName}:${lastName}`,
+      email,
+      password
     ];
     return new Promise((resolve, reject) => {
       pool.query(sql, inserts, (err, result) => {

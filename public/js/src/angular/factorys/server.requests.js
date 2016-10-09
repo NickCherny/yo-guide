@@ -72,7 +72,7 @@ export default function ($http) {
       return $http.post(`/cabinet/user/${id}/settings/photo/${name}/delete`, {})
     },
     searchGuidesLoaction: text => {
-      return $http.get(`/guides/api/search/location/${text.toLowerCase()}`)
+      return $http.get(`/guides/api/search/location/${text}`)
     }
   }
 }

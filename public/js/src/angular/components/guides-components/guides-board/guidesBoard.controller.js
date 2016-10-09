@@ -1,19 +1,22 @@
 class GuidesBoardCtrl {
-  constructor ($location, ServerRequests) {
+  constructor ($location, $scope, ServerRequests) {
     this.test = 'Гиды!!!';
     this.guides = [];
     this.searchText = $location.search().text;
-    $location.url('');
     ServerRequests.searchGuidesLoaction(this.searchText)
       .then(
         response => {
           if (response.status === 200) {
-            this.guides.push(response.data);
+            this.guides = response.data;
             console.log(this.guides)
           }
         },
         err => {}
       )
+
+    $scope.$on('resultSearchGuide', (e, data) => {
+      this.guides = data;
+    })
   }
 }
 export default GuidesBoardCtrl;

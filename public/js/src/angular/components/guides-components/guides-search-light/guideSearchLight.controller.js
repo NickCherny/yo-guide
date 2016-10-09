@@ -13,5 +13,11 @@ class GuideSearchLightCtrl {
       this.clearValue();
     }
   }
+  searchGuide (e) {
+    if (this.text.length > 0) {
+      location.assign(`/guides/search/location/#?text=${this.text}`);
+      this.clearValue();
+    }
+  }
 }
 export default GuideSearchLightCtrl;

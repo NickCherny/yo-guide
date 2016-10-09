@@ -145,4 +145,63 @@
     text-align: center;
   }
 }
+.title__about{
+  margin-bottom: 60px;
+}
+.body__about{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.body__about{
+  .text{
+    font-size: 16px;
+    font-family: lighten($Color5,20%);
+    font-weight: normal;
+    line-height: 26px;
+    margin-bottom: 130px;
+  }
+}
+.diagrama__about{
+  .flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.diagrama__about{
+  .icon{
+    .icon__about-diagram{
+      fill: darken($Color2, 30%);
+      width: 120px;
+      height: 120px;
+    }
+  }
+}
+.wrapper__item-diagram{
+  display: inline-flex;
+  padding: 20px;
+  border: 1px solid #fff;
+}
+.diagrama__about{
+  .flex-element{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.diagrama__about{
+  .title__small{
+    font-size: 18px;
+    font-weight: 800;
+    color: lighten($Color5, 40%);
+    line-height: 22px;
+    margin: 0;
+  }
+}
+.diagrama__about{
+  .text_lead{
+    font-size: 36px;
+    font-weight: 900;
+  }
+}
 //@section about style (end)

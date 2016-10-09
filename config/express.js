@@ -78,7 +78,7 @@ module.exports = (app, config) => {
   if (app.get('env') === 'development') {
     app.use(function (err, req, res, next) {
       res.status(err.status || 500);
-      res.render('error', {
+      res.render('partial/error/development', {
         message: err.message,
         error: err,
         title: 'error'
@@ -87,9 +87,10 @@ module.exports = (app, config) => {
   }
 
   app.use(function (err, req, res, next) {
+    if (env === 'development') console.error(err);
     res.status(err.status || 500);
       res.render('partial/error/index', {
-        message: err.message,
+        message: 'На сервере видутся технические работы',
         error: {},
         title: 'Страница не найдена'
       })

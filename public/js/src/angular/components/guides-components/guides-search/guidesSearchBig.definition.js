@@ -1,10 +1,10 @@
 import GuidesSearchBigCtrl from './guidesSearchBig.controller';
 const guidesSearchBigDefinition = {
   controller: GuidesSearchBigCtrl,
-  controllerAs: 'search',
+  controllerAs: 'sg',
   bindings: {},
   template: ` 
-    <form class="form form__search" toggle-control>
+    <form class="form form__search" toggle-control ng-click="search.searchLocation($event)">
       <div class="wrapper wrapper__search">
         <div class="container container__search">
           <div class="flex-element">
@@ -14,7 +14,15 @@ const guidesSearchBigDefinition = {
             </svg>
           </div>
           <div class="flex-element">
-            <input type="text" class="input" name="search[text]" placeholder="Куда дальше?">
+            <!--@section main input (begin)-->
+            <input type="text" 
+            class="input" 
+            name="search[text]" 
+            placeholder="Куда дальше?" 
+            ng-maxlength="25"
+            ng-minlength="3"
+            ng-model="sg.locationText">
+            <!--@section main input (end)-->
           </div>
           <div class="flex-element" data-toggle-btn>
             <div class="search__filter">
@@ -28,88 +36,12 @@ const guidesSearchBigDefinition = {
             </div>
           </div>
           <div class="flex-element">
-            <button class="btn btn__search">Найти</button>
+            <button class="btn btn__search" ng-click="sg.searchGuideLocation($event)">Найти</button>
           </div>
         </div>
       </div>
       
-      <div class="wrapper wrapper__search wrapper__search_toggle" data-toggle-container>
-        <div class="filter-box">
-          <div class="wrapper filter-item">
-            <div class="filter-item__title">Язык</div>
-            <div class="filter-item__box">
-              <ul class="ul ul__filter-item">
-                <li class="filter__element">
-                  <input type="checkbox" class="input" hidden id="en">
-                  <label for="en" class="label">English</label>
-                </li>
-                <li class="filter__element">
-                  <input type="checkbox" class="input" hidden id="rus">
-                  <label for="rus" class="label">Русский</label>
-                </li>
-                <li class="filter__element">
-                  <input type="checkbox" class="input" hidden id="by">
-                  <label for="by" class="label">Беларуский</label>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="wrapper filter-item">
-            <div class="filter-item__title">Интересы</div>
-            <div class="filter-item__box">
-            <ul class="ul ul__filter-item">
-              <li class="filter__element">
-                <input type="checkbox" class="input" hidden id="bar">
-                <label for="bar" class="label">Бары</label>
-              </li>
-              <li class="filter__element">
-                <input type="checkbox" class="input" hidden id="history">
-                <label for="history" class="label">История</label>
-              </li>
-              <li class="filter__element">
-                <input type="checkbox" class="input" hidden id="arch">
-                <label for="arch" class="label">Город</label>
-              </li>
-              <li class="filter__element">
-                <input type="checkbox" class="input" hidden id="water">
-                <label for="water" class="label">Вода</label>
-              </li>
-              <li class="filter__element">
-                <input type="checkbox" class="input" hidden id="casino">
-                <label for="casino" class="label">Казино</label>
-              </li>
-              <li class="filter__element">
-                <input type="checkbox" class="input" hidden id="club">
-                <label for="club" class="label">Клубы</label>
-              </li>
-            </ul>
-            </div>
-          </div>
-          <div class="wrapper filter-item">
-            <div class="filter-item__title">Пол</div>
-            <div class="filter-item__box">
-              <ul class="ul ul__filter-item">
-                <li class="filter__element">
-                  <input type="checkbox" class="input" hidden id="man">
-                  <label for="man" class="label">Мужской</label>
-                </li>
-                <li class="filter__element">
-                  <input type="checkbox" class="input" hidden id="women">
-                  <label for="women" class="label">Женский</label>
-                </li>
-                <li class="filter__element">
-                  <input type="checkbox" class="input" hidden id="non">
-                  <label for="non" class="label">Любой</label>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="filter-box__send">
-          <button class="btn btn__filter-send flex-element">Применить</button>
-          <button class="btn btn__filter-cancel flex-element">Сбросить</button>
-        </div>
-      </div>
+      <guides-filter-component></guides-filter-component>
     </form>
   `
 };

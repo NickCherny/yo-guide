@@ -21,6 +21,7 @@ import loginUserDefinition from '../components/login-user/loginuser.component'
 import registrationDefinition from '../components/registration-user/registration.component'
 import guidesBigSearchDefinition from '../components/guides-components/guides-search/guidesSearchBig.definition.js'
 import guidesBoardDefinition from '../components/guides-components/guides-board/guidesBoard.definition'
+import yoLogoDefinition from '../components/yo-logo/yoLogo.component';
 
 // connect factory
 import ServerRequests from '../factorys/server.requests'
@@ -47,5 +48,6 @@ module('mainApp')
   .component('registrationUser', registrationDefinition)
   .component('guideBigSearchComponent', guidesBigSearchDefinition)
   .component('guidesBoardComponent', guidesBoardDefinition)
+  .component('yoLogoComponent', yoLogoDefinition)
 
 export default mainApp

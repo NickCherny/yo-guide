@@ -9,7 +9,7 @@ const guideSearchLight = {
                      data-ng-keyup="search.searchGuideKey($event)"
                      class="top-menu__search-inpt">
 
-    <div class="top-menu__search-btn-b">
+    <div class="top-menu__search-btn-b" ng-click="search.searchGuide($event)">
       <div class="top-menu__search-btn_circle" data-search-guide></div>
       <div class="top-menu__search-btn_line" data-search-guide></div>
     </div>

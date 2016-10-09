@@ -12,9 +12,44 @@
   max-width: 1000px;
   padding: 20px;
   margin: 0 auto;
+  text-align: left;
 }
 .error-info__item{
-  text-align: center;
+  .flex-element{
+    display: inline-block;
+    float: left;
+    &:first-child{
+      width: 10%;
+    }
+    &:last-child{
+      width: 90%;
+    }
+  }
+}
+.text_lead__error-message{
+  color: darken($errorColor, 30%);
+  font-weight: 900;
+}
+.text_lead__error-status{
+  color: darken($Color2, 40%);
+  font-weight: 900;
+}
+.text__error-stack{
+  font-size: 14px;
+  font-weight: normal;
+  color: lighten($Color5, 20%);
+  line-height: 21px;
+}
+.ul__error{
+  .text_lead{
+    font-family: $ff;
+    font-size: 16px;
+    font-weight: 800;
+    color: $Color5;
+  }
+}
+.error-info__item{
+  text-align: left;
   list-style: none;
 }
 .error-box{

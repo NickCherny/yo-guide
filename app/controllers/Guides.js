@@ -1,4 +1,6 @@
 const GuidesModel = require('../models/Guides');
+const _ = require('lodash');
+
 class GuideCtrl {
   static guidesBoard (req, res, next) {
     let data = {
@@ -28,15 +30,12 @@ class GuideCtrl {
    */
   static searchLocation (req, res, next) {
     if (req.params.text) {
-      let location = req.params.text;
 
+      let location = _.trim(_.escape(req.params.text));
       GuidesModel.searchGuidesLocation(location)
         .then(
           rows => {
-            console.log(rows)
             if (rows.length !== 0) {
-              let guides = [];
-              let len = rows.length - 1;
               if (rows.length === 1) {
                 GuidesModel.guideInfo(rows[0]['user_id'])
                   .then(
@@ -52,7 +51,7 @@ class GuideCtrl {
               } else {
                 let guidesId = [];
                 // Создаём масив с id гидов
-                rows.forEach((item, i) => {
+                rows.forEach((item) => {
                   guidesId.push(item['user_id'])
                 });
 
@@ -62,7 +61,6 @@ class GuideCtrl {
                     res.json(result).end()
                   })
                   .catch(err => console.error(err));
-
               }
             } else {
               res.end();
