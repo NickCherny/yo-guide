@@ -19,7 +19,7 @@ module.exports = (app, config) => {
   app.locals.title = 'Гиды, туры, путешествия';
   app.locals.auth = false;
   app.locals.userId = false;
-  app.locals.imagesDir = (env === 'development') ? '/images' : '/images-bundle';
+  app.locals.imagesDir = (env === 'development') ? '/images' : '/images';
 
   app.use(favicon(`${config.root}/public/images/favicon/favicon32x32.ico`));
   app.use(logger('dev'));
