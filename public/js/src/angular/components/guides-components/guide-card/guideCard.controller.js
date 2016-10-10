@@ -1,7 +1,6 @@
 class GuideCardCtrl {
   constructor () {
     this.guidesInfo
-    console.log(this.guidesInfo)
   }
   createArray (len) {
     let i = 0;

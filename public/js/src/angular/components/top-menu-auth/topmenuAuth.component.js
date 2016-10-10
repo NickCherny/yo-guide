@@ -4,7 +4,6 @@ const topmenuAuthDefinition = {
   controller: topmenuCtrl,
   controllerAs: 'topmenu',
   bindings: {
-    user: '=',
     guideState: '<'
   },
   template: `
@@ -39,11 +38,12 @@ const topmenuAuthDefinition = {
             <div class="top-menu__user-menu top-menu__user-menu_acaunt">
               <a ui-sref="/"
                  class="top-menu__user-acaunt-link">
-                <span class="top-menu__usr-logo-name">User</span>
+                <span class="top-menu__usr-logo-name">{{topmenu.user.fullName}}</span>
 
-                <img data-ng-src=""
+                <img 
                      class="top-menu__usr-logo-img"
-                     data-ng-alt="user.photo.alt"
+                     ng-src="{{topmenu.user.photo}}"
+                     data-ng-alt="topmenu.user.fullName"
                      id="top_menu__ava_ltl">
               </a>
               <div class="drop-down-menu">

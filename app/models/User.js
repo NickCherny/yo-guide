@@ -246,8 +246,8 @@ class User {
   * @param {Object} data - country{String} or city{String}
   * @return Promise Object
    */
-  static uploadUserLocation (id = '', data) {
-    console.log('upload location')
+  static updateUserLocation (data) {
+    return Locations.updateUserLocation(data)
   }
 }
 module.exports = User;

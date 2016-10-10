@@ -1,4 +1,4 @@
 const _ = require('lodash');
-module.export = function (str) {
+module.exports = function (str) {
   return _.trim(_.escape(_.toLower(str)))
 };
