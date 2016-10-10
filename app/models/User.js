@@ -71,6 +71,16 @@ class User {
     let email = data.email.toLowerCase() || '';
     let password = md5(data.password || '');
 
+    function setDefaultState(sql, inserts) {
+      return new Promise((resolve, reject) => {
+        pool.query(sql, inserts, (err, result) => {
+          result['userId'] = userId;
+          if (err) reject(err);
+          resolve(result);
+        })
+      })
+    }
+    let userId = null;
     let sql = `
     INSERT INTO user
     (user_fullName, user_email, user_password)
@@ -87,6 +97,19 @@ class User {
         resolve(result)
       })
     })
+      .then(
+        result => {
+          if (result.affectedRows === 1 && result.insertId) {
+            userId = result.insertId;
+            return setDefaultState('INSERT INTO photo (photo_user_id) VALUES (?)', userId)
+          } else {
+            return result;
+          }
+        },
+        err => {
+          console.error(err)
+        }
+      )
   }
 
   /**
@@ -158,7 +181,7 @@ class User {
       .then(
         photo => {
           if(photo[0]){
-            responseData['photo'] = photo['photo_src'];
+            responseData['photo'] = photo[0]['src'];
           } else {
             responseData['photo'] = '/images/users/photoProfileDefault.png';
           }
@@ -248,6 +271,45 @@ class User {
    */
   static updateUserLocation (data) {
     return Locations.updateUserLocation(data)
+  }
+
+  /**
+   *
+   * @param userId
+   * @param text
+   * @returns {Promise}
+   */
+  static updateUserAbout (userId='', text='') {
+    if (userId !== '' && text !== '') {
+      let sql = `
+      UPDATE user
+      SET user_about = ?
+      WHERE user_id = ?;
+      `;
+      let inserts = [text, userId];
+      return new Promise((resolve, reject) => {
+        pool.query(sql, inserts, (err, result) => {
+          if (err) reject(err);
+          resolve(result);
+        })
+      })
+    }
+  }
+  static updateStatus (userId='', text='') {
+    if (userId !== '' && text !== '') {
+      let sql = `
+      UPDATE user
+      SET user_status = ?
+      WHERE user_id = ?;
+      `;
+      let inserts = [text, userId];
+      return new Promise((resolve, reject) => {
+        pool.query(sql, inserts, (err, result) => {
+          if (err) reject(err);
+          resolve(result);
+        })
+      })
+    }
   }
 }
 module.exports = User;

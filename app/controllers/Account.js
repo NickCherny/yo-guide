@@ -2,6 +2,7 @@
 const UserModels = require('../models/User');
 const GE = require('../service/GuideEvents');
 const clearStr = require('../utils/ClearStr.util');
+
 /**
  *
  * @Class Account - Класс для обработки запросов связонных с авторизацией пользователя
@@ -65,10 +66,9 @@ class Account {
       let data = {
         firstName: clearStr(req.body.firstName) || '',
         lastName: clearStr(req.body.lastName) || '',
-        email: clearStr(req.body.email) || '',
-        password: req.body.password || ''
+        email: clearStr(req.body.email),
+        password: req.body.password
       };
-      console.log(data);
 
       UserModels.isUser(data)
         .then(
@@ -93,34 +93,24 @@ class Account {
             .then(
               result => {
                 if (result.affectedRows === 1) {
-                  return UserModels.selectUIdUEmailUPassword(data)
+                  req.login({username: data.email, password: data.password}, err => {
+                    if (err) res.redirect('/');
+                    res.cookie('userId', result.userId);
+                    return res.redirect('/cabinet');
+                  });
                 }
                 // todo: Нужно реализовать ответ на случей ошибки от СУБД
               }
-            )
-            .then(
-              rows => {
-                if (rows[0]['user_id']) {
-                  res.render('partial/pages/success/registration', {title: 'Успешная регистрация'}, (err, html) => {
-                    if (err) {
-                      next(err)
-                    } else {
-                      res.send(html).end();
-                    }
-                  })
-                }
-              },
-              err => {
-                res.next(err)
-              }
-            )
+            ).catch(err => console.error(err))
         } else {
           res.locals.registrationError = 'Не получилось создать акаунт'
           res.redirect('/user/registration')
+          res.end()
         }
       })
     } else {
-      res.redirect('/')
+      res.redirect('/');
+      res.end();
     }
   }
 }

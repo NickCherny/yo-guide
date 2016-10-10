@@ -17,28 +17,28 @@ const cabinetNavigationDefinition = {
           </span>
         </a>
       </li>
-      <li class="cabinet__cntrl-panel-item">
-        <a ui-sref="/travel" ui-sref-active="cabinet-navigation__item-link_active" class="cabinet__cntrl-panel-item-link">
-          <span class="mobile-icon show-for-small-only">
-            <svg viewBox="0 0 24 24" class="mobile-icon__cabinet-navigation">
-                <path d="M12 10.9c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1c.61 0 1.1-.49 1.1-1.1s-.49-1.1-1.1-1.1zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.19 12.19L6 18l3.81-8.19L18 6l-3.81 8.19z"/>
-                <path d="M0 0h24v24H0z" fill="none"/>
-            </svg>
-          </span>
-          <span class="hide-for-small-only">Поездки</span>
-        </a>
-      </li>
-      <li class="cabinet__cntrl-panel-item">
-        <a ui-sref="/tour" ui-sref-active="cabinet-navigation__item-link_active" class="cabinet__cntrl-panel-item-link">
-          <span class="mobile-icon show-for-small-only">
-          <svg viewBox="0 0 24 24" class="mobile-icon__cabinet-navigation">
-              <path d="M12 12c0-3 2.5-5.5 5.5-5.5S23 9 23 12H12zm0 0c0 3-2.5 5.5-5.5 5.5S1 15 1 12h11zm0 0c-3 0-5.5-2.5-5.5-5.5S9 1 12 1v11zm0 0c3 0 5.5 2.5 5.5 5.5S15 23 12 23V12z"/>
-              <path d="M0 0h24v24H0z" fill="none"/>
-          </svg>
-          </span>
-          <span class="hide-for-small-only">Туры</span>
-        </a>
-      </li>
+      <!--<li class="cabinet__cntrl-panel-item">-->
+        <!--<a ui-sref="/travel" ui-sref-active="cabinet-navigation__item-link_active" class="cabinet__cntrl-panel-item-link">-->
+          <!--<span class="mobile-icon show-for-small-only">-->
+            <!--<svg viewBox="0 0 24 24" class="mobile-icon__cabinet-navigation">-->
+                <!--<path d="M12 10.9c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1c.61 0 1.1-.49 1.1-1.1s-.49-1.1-1.1-1.1zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.19 12.19L6 18l3.81-8.19L18 6l-3.81 8.19z"/>-->
+                <!--<path d="M0 0h24v24H0z" fill="none"/>-->
+            <!--</svg>-->
+          <!--</span>-->
+          <!--<span class="hide-for-small-only">Поездки</span>-->
+        <!--</a>-->
+      <!--</li>-->
+      <!--<li class="cabinet__cntrl-panel-item">-->
+        <!--<a ui-sref="/tour" ui-sref-active="cabinet-navigation__item-link_active" class="cabinet__cntrl-panel-item-link">-->
+          <!--<span class="mobile-icon show-for-small-only">-->
+          <!--<svg viewBox="0 0 24 24" class="mobile-icon__cabinet-navigation">-->
+              <!--<path d="M12 12c0-3 2.5-5.5 5.5-5.5S23 9 23 12H12zm0 0c0 3-2.5 5.5-5.5 5.5S1 15 1 12h11zm0 0c-3 0-5.5-2.5-5.5-5.5S9 1 12 1v11zm0 0c3 0 5.5 2.5 5.5 5.5S15 23 12 23V12z"/>-->
+              <!--<path d="M0 0h24v24H0z" fill="none"/>-->
+          <!--</svg>-->
+          <!--</span>-->
+          <!--<span class="hide-for-small-only">Туры</span>-->
+        <!--</a>-->
+      <!--</li>-->
       <li class="cabinet__cntrl-panel-item">
         <a ui-sref="/profile" ui-sref-active="cabinet-navigation__item-link_active" class="cabinet__cntrl-panel-item-link">
           <span class="mobile-icon show-for-small-only">

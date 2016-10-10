@@ -24,6 +24,8 @@ import messageChatComponent from '../components/user-messages/message-chat/messa
 import messageBlockComponent from '../components/user-messages/message-block/messageBlock.component';
 import messageAuthListComponent from '../components/user-messages/message-auth-list/messageAuthList.component';
 import guidesFilterDefinition from '../components/guides-components/guides-filter/guidesFilter.component';
+import planTravelDefinition from '../components/cabinet-components/plan-travel/planTravel.component';
+import planTravelFormDefinition from '../components/cabinet-components/plan-travel-form/planTravelForm.component';
 
 // Services
 import ServerRequests from '../factorys/server.requests'
@@ -64,5 +66,7 @@ module('cabinetApp')
   .component('messageBlockComponent', messageBlockComponent)
   .component('messageAuthListComponent', messageAuthListComponent)
   .component('guidesFilterComponent', guidesFilterDefinition)
+  .component('planTravelComponent', planTravelDefinition)
+  .component('planTravelFormComponent', planTravelFormDefinition)
 
 export default cabinetApp

@@ -1,3 +1,4 @@
+@import "../design.patterns/style.settings";
 //section profile (begin)
 .Box {
   background-color: #fff;
@@ -69,5 +70,8 @@
 }
 .profile-info__about-text {
   position: relative;
+  font-size: 16px;
+  line-height: 21px;
+  color: $Color5;
 }
 //section profile (end)

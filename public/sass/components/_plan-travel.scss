@@ -1,0 +1,17 @@
+@import "../design.patterns/style.settings";
+//@section plan travel (begin)
+.form__plan{
+  background-color: #fff;
+  max-width: 800px;
+}
+.box__item-plan{
+  position: relative;
+  padding: 20px;
+}
+.title__item-plan{
+  color: $Color5;
+  font-size: 16px;
+  font-weight: 900;
+  margin: 0 0 20px 0;
+}
+//@section plan travel (end)

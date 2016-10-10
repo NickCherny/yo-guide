@@ -2,6 +2,7 @@
 //@section guide board (begin)
 .wrapper__guide{
   background-color: lighten($Color5, 70%);
+  min-height: 64vh;
 }
 .header__guides-board{
   padding: 60px 0 80px;

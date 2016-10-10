@@ -3,6 +3,7 @@ const User = require('../models/User');
 const formidable = require('formidable');
 const fs = require('fs');
 const Files = require('../utils/Files.util.js');
+const clearStr = require('../utils/ClearStr.util');
 
 
 /**
@@ -78,6 +79,45 @@ class Cabinet {
         )
         .catch(err => console.error(err));
     }
+    if (req.body.about) {
+      let text = clearStr(req.body.about);
+      User.updateUserAbout(userId, text)
+        .then(
+          response => {
+            if (response.affectedRows === 1) {
+              console.log('about is update')
+            } else {
+              console.log('about not update')
+            }
+          },
+          err => {
+            console.error(err)
+          }
+        )
+    }
+    if (req.body.status) {
+      let text = clearStr(req.body.status);
+      User.updateStatus(userId, text)
+        .then(
+          result => {
+            console.log(result)
+            if (result.affectedRows === 1) {
+              console.log('status is update');
+            } else {
+              console.log('status not update');
+            }
+          },
+          err => {
+            console.error(err)
+          }
+        )
+    }
+
+
+
+
+
+
     res.json({
       profileUpdate: 1
     });

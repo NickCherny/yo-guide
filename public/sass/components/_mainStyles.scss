@@ -1,5 +1,10 @@
 @import "../design.patterns/style.settings";
 //@section main styles (begin)
+.body{
+  min-width: 320px;
+  max-width: 2700px;
+  margin: 0 auto;
+}
 ul{
   margin: 0;
 }

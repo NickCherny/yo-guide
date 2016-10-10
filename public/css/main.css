@@ -27,6 +27,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -6725,6 +6727,11 @@ th.hide-for-touch {
 .toggle-container_show {
   display: block !important; }
 
+.body {
+  min-width: 320px;
+  max-width: 2700px;
+  margin: 0 auto; }
+
 ul {
   margin: 0; }
 
@@ -7379,6 +7386,9 @@ ul {
   max-width: 33px;
   max-height: 33px;
   border-radius: 50%; }
+
+.top-menu__usr-logo-name {
+  text-transform: capitalize; }
 
 .box__logo {
   position: absolute;
@@ -8763,7 +8773,10 @@ ul {
         color: #435f6f; }
 
 .profile-info__about-text {
-  position: relative; }
+  position: relative;
+  font-size: 16px;
+  line-height: 21px;
+  color: #323232; }
 
 .Btn, .usr-registration__form .usr-registration__submit-btn, .usr-registration__send-user-block .usr-registration__send-user-btn .send-user-btn_light, .usr-login-form__registration-user .usr-registration__send-user-btn .send-user-btn_light, .usr-registration__confirmation-email-b .usr-registration__confirmation-email-link-b, .usr-login-form__item-pole .usr-login-form__submit-btn, .usr-login-form__registration-user .usr-login-form__registration-user-btn .usr-login-form__registration-user-link, .yo-btn_full {
   -webkit-transition: all 300ms;
@@ -9498,6 +9511,20 @@ ul {
   padding-top: 40px;
   text-align: right; }
 
+.form__plan {
+  background-color: #fff;
+  max-width: 800px; }
+
+.box__item-plan {
+  position: relative;
+  padding: 20px; }
+
+.title__item-plan {
+  color: #323232;
+  font-size: 16px;
+  font-weight: 900;
+  margin: 0 0 20px 0; }
+
 .header__guides-board {
   padding: 80px 20px; }
 
@@ -9809,7 +9836,8 @@ ul {
     box-shadow: none; }
 
 .wrapper__guide {
-  background-color: #e5e5e5; }
+  background-color: #e5e5e5;
+  min-height: 64vh; }
 
 .header__guides-board {
   padding: 60px 0 80px;

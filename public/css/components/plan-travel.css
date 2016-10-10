@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+.form__plan {
+  background-color: #fff;
+  max-width: 800px; }
+
+.box__item-plan {
+  position: relative;
+  padding: 20px; }
+
+.title__item-plan {
+  color: #323232;
+  font-size: 16px;
+  font-weight: 900;
+  margin: 0 0 20px 0; }
