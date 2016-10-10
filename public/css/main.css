@@ -9338,7 +9338,7 @@ ul {
     justify-content: flex-start;
     padding: 10px 0;
     margin-bottom: 20px;
-    border-bottom: 1px solid #8c8c8c; }
+    border-bottom: 1px solid #e0e0e0; }
     .regulations-body .flex-element:last-child {
       border-bottom: none; }
     .regulations-body .flex-element .icon {
@@ -9358,8 +9358,6 @@ ul {
   font-weight: 100;
   color: #4c4c4c;
   text-align: left; }
-  .text__regular-item:hover {
-    color: #323232; }
 
 .wrapper__contacts {
   background-color: #f7f7ef;
