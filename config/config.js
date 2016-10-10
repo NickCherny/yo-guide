@@ -56,7 +56,7 @@ var config = {
       connectionLimit: 40,
       host: '127.0.0.1',
       user: 'root',
-      password: '3150061Asd',
+      password: '',
       database: 'yo_db',
       queueLimit: 20,
       acquireTimeout: 20000
