@@ -3,5 +3,3 @@ public/components
 .sass-cache
 .idea
 .vscode/*
-public/js/main.js
-public/js/admin.js
