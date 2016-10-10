@@ -63,7 +63,7 @@ class GuideCtrl {
                   .catch(err => console.error(err));
               }
             } else {
-              res.end();
+              res.status(204).end();
             }
           },
           err => {

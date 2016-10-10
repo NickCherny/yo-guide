@@ -6795,6 +6795,9 @@ ul {
 .textarea {
   resize: none; }
 
+.text_up {
+  text-transform: capitalize; }
+
 .title__messages {
   padding-bottom: 20px;
   border-bottom: 2px solid #e2e2e2;
@@ -7371,6 +7374,11 @@ ul {
     position: absolute;
     height: 1px;
     background-color: rgba(255, 255, 255, 0.3); }
+
+.top-menu__usr-logo-img {
+  max-width: 33px;
+  max-height: 33px;
+  border-radius: 50%; }
 
 .box__logo {
   position: absolute;
@@ -8298,6 +8306,7 @@ ul {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   text-align: center;
+  text-transform: capitalize;
   color: #232121;
   line-height: 24px;
   margin-bottom: 50px;

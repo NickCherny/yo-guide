@@ -7,11 +7,14 @@ class GuidesBoardCtrl {
       .then(
         response => {
           if (response.status === 200) {
-            this.guides = response.data;
-            console.log(this.guides)
+            this.guides = (response.data instanceof Array) ? response.data : [response.data];
+          } else {
+            this.guides = [];
           }
         },
-        err => {}
+        err => {
+          console.error(err)
+        }
       )
 
     $scope.$on('resultSearchGuide', (e, data) => {

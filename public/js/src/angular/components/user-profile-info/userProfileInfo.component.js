@@ -18,20 +18,14 @@ const userDopInfoDefinition = {
         </li>
       </ul>
     </div>
-    <div class="box__profile" ng-if="info.userInfo.location || info.userInfo.gender">
+    <div class="box__profile" ng-if="info.userInfo.location">
       <h2 class="title title__regular">Информация</h2>
       <ul class="ul flex-container">
         <li class="li flex-element">
-          <span class="title__regular-info">Страна: </span><span class="text__regular-info">Беларусь</span>
+          <span class="title__regular-info">Страна: </span><span class="text__regular-info text_up">{{info.userInfo.location.country}}</span>
         </li>
         <li class="li flex-element">
-          <span class="title__regular-info">Город: </span><span class="text__regular-info">Минск</span>
-        </li>
-        <li class="li flex-element">
-          <span class="title__regular-info">Пол: </span><span class="text__regular-info">мужской</span>
-        </li>
-        <li class="li flex-element">
-          <span class="title__regular-info">Язык: </span><span class="text__regular-info">рус</span>
+          <span class="title__regular-info">Город: </span><span class="text__regular-info text_up">{{info.userInfo.location.city}}</span>
         </li>
       </ul>
     </div>

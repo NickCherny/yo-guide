@@ -12,7 +12,6 @@ export default function() {
           i++;
         }
       }
-      console.log(el.parentElement)
     },
     restrict: 'A'
   }

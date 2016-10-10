@@ -1,8 +1,9 @@
 class profileCtrl {
-  constructor ($cookies, serverRequests) {
+  constructor ($scope, $cookies, serverRequests) {
     this.id = $cookies.get('userId');
     this.userId;
-    this.cabinetState
+    this.cabinetState;
+    this._scope = $scope;
     this.defaultUserData = {};
     serverRequests.getUserInfo(this.userId || this.id)
       .then(
@@ -16,6 +17,7 @@ class profileCtrl {
               },
               fullName: this.user.fullName
             }
+            this._scope.$emit('userInfo', this.user);
             console.log(this.userMedia)
           } else {
             this.user = this._defaultUserData
