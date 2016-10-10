@@ -23,6 +23,7 @@ import messageHeaderDefinition from '../components/user-messages/message-header/
 import messageChatComponent from '../components/user-messages/message-chat/messageChat.component';
 import messageBlockComponent from '../components/user-messages/message-block/messageBlock.component';
 import messageAuthListComponent from '../components/user-messages/message-auth-list/messageAuthList.component';
+import guidesFilterDefinition from '../components/guides-components/guides-filter/guidesFilter.component';
 
 // Services
 import ServerRequests from '../factorys/server.requests'
@@ -62,5 +63,6 @@ module('cabinetApp')
   .component('messageChatComponent', messageChatComponent)
   .component('messageBlockComponent', messageBlockComponent)
   .component('messageAuthListComponent', messageAuthListComponent)
+  .component('guidesFilterComponent', guidesFilterDefinition)
 
 export default cabinetApp

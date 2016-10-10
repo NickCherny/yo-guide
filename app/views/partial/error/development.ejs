@@ -1,0 +1,38 @@
+<% layout('../../layout/index') %>
+
+<% if(auth){ %>
+<top-menu-auth>Загрузка...</top-menu-auth>
+<% }else {%>
+<top-menu>Загрузка...</top-menu>
+<% } %>
+
+<section class="wrapper wrapper__error">
+
+    <ul class="ul wrapper ul__error">
+      <li class="flex-element error-info__item">
+        <div class="flex-element">
+          <span class="text_lead">Сообщение</span>
+        </div>
+        <div class="flex-element text_lead__error-message">
+          <%- message %>
+        </div>
+      </li>
+      <li class="flex-element error-info__item">
+        <div class="flex-element">
+          <span class="text_lead">Статус</span>
+        </div>
+        <div class="flex-element text_lead__error-status">
+          <%- error.status %>
+        </div>
+      </li>
+      <li class="flex-element error-info__item">
+        <div class="flex-element">
+          <span class="text_lead">Стэк</span>
+        </div>
+        <div class="flex-element text__error-stack">
+          <%- error.stack %>
+        </div>
+      </li>
+    </ul>
+
+</section>

@@ -1,7 +1,7 @@
 'use strict';
 const UserModels = require('../models/User');
 const GE = require('../service/GuideEvents');
-
+const clearStr = require('../utils/ClearStr.util');
 /**
  *
  * @Class Account - Класс для обработки запросов связонных с авторизацией пользователя
@@ -63,11 +63,13 @@ class Account {
   static registrationUser (req, res, next) {
     if (req.body.email && req.body.password) {
       let data = {
-        firstName: req.body.firstName || '',
-        lastName: req.body.lastName || '',
-        email: req.body.email || '',
+        firstName: clearStr(req.body.firstName) || '',
+        lastName: clearStr(req.body.lastName) || '',
+        email: clearStr(req.body.email) || '',
         password: req.body.password || ''
       };
+      console.log(data);
+
       UserModels.isUser(data)
         .then(
           result => {

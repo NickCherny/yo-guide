@@ -13,7 +13,7 @@ class Main {
       console.log('Главная для залогиненного пользователя');
       res.redirect('/cabinet');
     }else {
-      res.render('partial/pages/mainPage', {
+      res.render('partial/pages/main', {
         title: 'Гиды, туры по всему миру'
       },
         function(err, html){

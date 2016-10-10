@@ -6,7 +6,7 @@ const guideCardDefinition = {
     guidesInfo: '<'
   },
   template: `
-  <aside ng-repeat="guide in g.guidesInfo[0]" class="large-6 small-12 columns">
+  <aside ng-repeat="guide in g.guidesInfo" class="large-6 small-12 columns">
     <a ng-href="/user/{{guide.id}}/profile" class="guide-board__item-link">
       <div class="wrapper wrapper__guide-board-item">
         <div class="guide-board__media">
