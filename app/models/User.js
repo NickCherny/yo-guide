@@ -1,3 +1,4 @@
+'use strict'
 const md5 = require("md5");
 const pool = require("./connect");
 const Locations = require('./Locations');

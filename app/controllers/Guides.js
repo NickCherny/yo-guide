@@ -1,3 +1,4 @@
+'use strict'
 const GuidesModel = require('../models/Guides');
 const _ = require('lodash');
 

@@ -1,3 +1,4 @@
+'use strict';
 /**
  *
  * @Class About - Обрабатывает все запросы связанные с URL /about/*

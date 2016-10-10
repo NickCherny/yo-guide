@@ -1,3 +1,4 @@
+'use strict'
 const pool = require('./connect');
 const User = require('./User');
 class Guides extends User{

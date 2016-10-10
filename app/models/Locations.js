@@ -1,3 +1,4 @@
+'use strict'
 const clearStr = require('../utils/ClearStr.util');
 const pool = require('./connect');
 /**
