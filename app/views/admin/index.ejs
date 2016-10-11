@@ -1,2 +1,14 @@
 <% layout('../layout/admin') %>
-<h1>admin</h1>
+
+<header-component></header-component>
+
+<section class="wrapper">
+  <div class="row row-fix">
+    <div class="large-2 columns columns-fix">
+      <navigation-component></navigation-component>
+    </div>
+    <div class="large-10 columns columns-fix admin-box">
+      <div ui-view></div>
+    </div>
+  </div>
+</section>

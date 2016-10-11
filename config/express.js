@@ -29,7 +29,10 @@ module.exports = (app, config) => {
   }));
   // Set cookies parser session
   app.use(cookieParser());
-  app.use(session({keys: ['secret']}));
+  app.use(session({
+    name: 'userStatus',
+    keys: ['secret', 'admin local']
+  }));
 
   // Initialize passport
   app.use(passport.initialize());

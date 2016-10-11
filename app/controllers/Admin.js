@@ -7,13 +7,18 @@ class Admin {
    * @param {Function} next - next function
    */
   static home (req, res, next) {
-    res.render('admin/index', {title: 'Панель админестратора'}, (err, html) => {
-      if (err) {
-        res.redirect('back');
-      } else {
-        res.send(html);
-      }
-    })
+    if (req.session.userStatus === 'admin') {
+      res.render('admin/index', {title: 'Панель админестратора'}, (err, html) => {
+        if (err) {
+          console.error(err);
+          res.redirect('/')
+        } else {
+          res.send(html).end()
+        }
+      })
+    } else {
+      res.redirect('/')
+    }
   }
   /**
    *
@@ -22,8 +27,9 @@ class Admin {
    * @param {Function} next - next function
    */
   static form (req, res, next) {
-    res.render('admin/form', {title: 'Вход'}, (err, html) => {
+    res.render('admin/login', {title: 'Вход'}, (err, html) => {
       if (err) {
+        console.error(err)
         res.redirect('back');
       } else {
         res.send(html).end();
@@ -31,9 +37,16 @@ class Admin {
     })
   }
   static login (req, res, next) {
-    console.log(req.session);
-    req.session.admin = 'Привет админ';
-    res.redirect('/admin/home')
+    if (req.body.username !== 'admin' || req.body.password !== '123') {
+      res.redirect('/admin/form').end();
+    } else {
+      req.session.userStatus = 'admin';
+      res.redirect('/admin/home');
+    }
+  }
+  static logout (req, res, next) {
+    req.session.userStatus = 'user';
+    res.redirect('/')
   }
 }
 module.exports = Admin;

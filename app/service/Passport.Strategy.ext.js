@@ -27,5 +27,18 @@ class AppStrateges {
         )
     })
   };
+  login () {
+    return new LoacalStrategy({
+      usernameField: 'username',
+      passwordField: 'password'
+    }, function (username, password, done) {
+
+      if (username === 'admin' && password === '123') {
+        done(null, {userName: username})
+      } else {
+        done(null, false, {message: 'Вход запрещён'})
+      }
+    })
+  }
 }
 module.exports = AppStrateges;
