@@ -29,6 +29,9 @@
     &:hover {
       color: $Color2;
     }
+    &:active, &:focus{
+      outline: none;
+    }
   }
   .cabinet-navigation__item-link_active{
     color: #fff;

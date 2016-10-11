@@ -42,11 +42,12 @@ $url_img: '';
       display: table-cell;
       box-sizing: border-box;
       .header__title{
+        text-transform: lowercase;
         margin: 0;
         text-align: center;
         color: #ffffff;
         font-family: $ff;
-        font-weight: $fw_bold;
+        font-weight: 900;
         line-height: 40px;
         font-size: $fs_small;
       }

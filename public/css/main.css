@@ -6448,7 +6448,7 @@ th.hide-for-touch {
   color: #bbbbbb;
   border: 0;
   width: 100%;
-  padding: 14px 0;
+  padding: 0;
   box-shadow: none;
   background-color: #ffffff;
   border-bottom: 1px solid #bbbbbb;
@@ -7228,7 +7228,8 @@ ul {
   position: relative; }
   .top-menu .top-menu__search-b .top-menu__search-inpt {
     border-radius: 20px;
-    padding: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
     border: none; }
   .top-menu .top-menu__search-b .top-menu__search-btn-b {
     position: absolute;
@@ -7488,7 +7489,7 @@ ul {
   color: #bbbbbb;
   border: 0;
   width: 100%;
-  padding: 14px 0;
+  padding: 0;
   box-shadow: none;
   background-color: #ffffff;
   border-bottom: 1px solid #bbbbbb;
@@ -7791,11 +7792,12 @@ ul {
     display: table-cell;
     box-sizing: border-box; }
     .header .main__container-h .middle .header__title {
+      text-transform: lowercase;
       margin: 0;
       text-align: center;
       color: #ffffff;
       font-family: "Roboto", sans-serif;
-      font-weight: 800;
+      font-weight: 900;
       line-height: 40px;
       font-size: 16; }
 
@@ -8268,6 +8270,8 @@ ul {
   border-bottom: 4px solid transparent; }
   .cabinet__cntrl-panel-item .cabinet__cntrl-panel-item-link:hover {
     color: #5de895; }
+  .cabinet__cntrl-panel-item .cabinet__cntrl-panel-item-link:active, .cabinet__cntrl-panel-item .cabinet__cntrl-panel-item-link:focus {
+    outline: none; }
 
 .cabinet__cntrl-panel-item .cabinet-navigation__item-link_active {
   color: #fff;
@@ -8866,7 +8870,7 @@ ul {
   color: #bbbbbb;
   border: 0;
   width: 100%;
-  padding: 14px 0;
+  padding: 0;
   box-shadow: none;
   background-color: #ffffff;
   border-bottom: 1px solid #bbbbbb;
@@ -9907,8 +9911,8 @@ ul {
   align-items: center;
   padding: 20px; }
   .guide-board__media .images__guide-board {
-    max-width: 100px;
-    max-height: 100px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%; }
 
 .guide-board__info {
