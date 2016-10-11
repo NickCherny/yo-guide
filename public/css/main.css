@@ -7775,6 +7775,9 @@ ul {
   fill: #5de895; }
 
 .header_background-images {
+  background-image: url("../images/pages/main/header_background_min.jpg"); }
+
+.header_background-images_max {
   background-image: url("../images/pages/main/header_background.png"); }
 
 .header .main__container-h {
@@ -7869,7 +7872,7 @@ ul {
 
 .hero-section {
   background-color: #f5f5f5;
-  background-image: url("../images/pages/main/main_page__background_strit.png");
+  background-image: url("../images/pages/main/main_page__background_strit_min.jpg");
   background-repeat: no-repeat;
   background-position: left 20px;
   background-size: contain;
@@ -7877,6 +7880,9 @@ ul {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
+
+.hero-section_max {
+  background-image: url("../images/pages/main/main_page__background_strit.png"); }
 
 .hero-section .hero-content {
   margin-left: auto;
@@ -7981,7 +7987,7 @@ ul {
 
 .begin-use {
   position: relative;
-  background-image: url("../images/pages/main/main_page__background_lviv.png");
+  background-image: url("../images/pages/main/main_page__background_lviv_min.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -8005,6 +8011,9 @@ ul {
     margin-right: auto;
     padding: 30px 20px;
     width: 100%; }
+
+.begin-use_max {
+  background-image: url("../images/pages/main/main_page__background_lviv.png"); }
 
 .wrapper__use-diagram {
   padding: 0 0 120px;

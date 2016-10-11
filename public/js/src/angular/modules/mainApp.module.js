@@ -14,6 +14,7 @@ import showHiddenFormRow from '../directives/showHiddeFormRow'
 import toggleControl from '../directives/toggleControl'
 import uploadFile from '../directives/uploadFile'
 import repeatElement from '../directives/repeatElement'
+import imageLoading from '../directives/imageLoading';
 
 // connect components
 import topmenuDefinition from '../components/top-menu/topmenu.component'
@@ -41,6 +42,7 @@ module('mainApp')
   .directive('toggleControl', toggleControl)
   .directive('uploadFile', uploadFile)
   .directive('repeatElement', repeatElement)
+  .directive('imageLoading', imageLoading)
 
 module('mainApp')
   .component('topMenu', topmenuDefinition)
