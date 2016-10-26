@@ -1,6 +1,5 @@
 'use strict';
 const UserModels = require('../models/User');
-const GE = require('../service/GuideEvents');
 class UserCtrl {
   /**
   *

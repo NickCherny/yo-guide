@@ -47,6 +47,13 @@ class Cabinet {
         }
       })
   }
+
+  /**
+   *
+   * @param req
+   * @param res
+   * @param next
+   */
   static updateProfile (req, res, next) {
     let userId = req.params.id || '';
     if (req.body.firstName || req.body.lastName) {
@@ -95,22 +102,19 @@ class Cabinet {
           }
         )
     }
-    if (req.body.status) {
-      let text = clearStr(req.body.status);
-      User.updateStatus(userId, text)
+    if (req.body.photo.src) {
+      let src = clearStr(req.body.photo.src);
+      // update profile photo
+      User.updateProfilePhoto(userId, src, '', 'profile')
         .then(
           result => {
             console.log(result)
-            if (result.affectedRows === 1) {
-              console.log('status is update');
-            } else {
-              console.log('status not update');
-            }
           },
           err => {
             console.error(err)
           }
         )
+        .catch(err => console.error(err))
     }
 
 

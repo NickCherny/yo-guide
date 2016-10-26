@@ -296,6 +296,13 @@ class User {
       })
     }
   }
+
+  /**
+   *
+   * @param userId
+   * @param text
+   * @returns {Promise}
+   */
   static updateStatus (userId='', text='') {
     if (userId !== '' && text !== '') {
       let sql = `
@@ -311,6 +318,18 @@ class User {
         })
       })
     }
+  }
+
+  /**
+   *
+   * @param userid
+   * @param src
+   * @param alt
+   * @param type
+   * @returns {Promise}
+   */
+  static updateProfilePhoto (userid, src, alt, type) {
+    return Photos.updatePhoto(userid, src, alt, type)
   }
 }
 module.exports = User;

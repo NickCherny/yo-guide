@@ -25,5 +25,35 @@ class Photos {
       })
     })
   }
+
+  /**
+   *
+   * @param userid
+   * @param src
+   * @param alt
+   * @param type
+   * @returns {Promise}
+   */
+  static updatePhoto (userid='', src='', alt='', type='profile') {
+    if (userid !== '' && src !== '') {
+      let sql = `
+      UPDATE photo
+      SET photo_src = ?,
+      photo_alt = ?
+      WHERE photo_user_id = ? AND photo_type = ?
+      `;
+      let inserts = [src, alt, userid, type];
+      return new Promise((resolve, reject) => {
+        pool.getConnection((err, _connection) => {
+          if (err) reject(err);
+          _connection.query(sql, inserts, (err, result) => {
+            if (err) reject(err);
+            resolve(result);
+            _connection.release()
+          })
+        })
+      })
+    }
+  }
 }
 module.exports = Photos;
